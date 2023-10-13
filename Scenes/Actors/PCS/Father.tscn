@@ -1,0 +1,131 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/Actors/PCS/Father.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Actors/father.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5.12739, 4.45435 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "move"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10.2548, 23.4002 )
+
+[sub_resource type="AtlasTexture" id=10]
+region = Rect2( 0, 0, 16, 21 )
+
+[sub_resource type="AtlasTexture" id=11]
+region = Rect2( 16, 0, 16, 21 )
+
+[sub_resource type="AtlasTexture" id=12]
+region = Rect2( 32, 0, 16, 21 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 24.0
+} ]
+
+[node name="Father" type="KinematicBody2D"]
+scale = Vector2( 1.75528, 1.75528 )
+collision_mask = 26
+script = ExtResource( 1 )
+
+[node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2( 2.71659e-07, 21.5456 )
+shape = SubResource( 1 )
+
+[node name="PlayerSprite" type="Sprite" parent="."]
+position = Vector2( 1.13942, 5.6971 )
+scale = Vector2( 2.125, 2.16667 )
+texture = ExtResource( 2 )
+hframes = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/move = SubResource( 3 )
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_mask = 34
+monitoring = false
+
+[node name="HurtBoxShape" type="CollisionShape2D" parent="Hurtbox"]
+modulate = Color( 0.709804, 0, 0, 1 )
+position = Vector2( -1.35829e-07, 4.59979 )
+shape = SubResource( 2 )
+disabled = true
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.3, 0.3 )
+limit_left = -1050
+limit_top = -1050
+limit_right = 1050
+limit_bottom = 1050
+limit_smoothed = true
+smoothing_enabled = true
+smoothing_speed = 1.5
+
+[node name="Guns" type="Sprite" parent="."]
+position = Vector2( 0, 4.55768 )
+scale = Vector2( 2.0667, 2.0667 )
+offset = Vector2( 8.26984, -1.65397 )
+hframes = 4
+
+[node name="Muzzle" type="Position2D" parent="Guns"]
+position = Vector2( 15.9884, -1.65397 )
+__meta__ = {
+"_gizmo_extents_": 0.0
+}
+
+[node name="Timer" type="Timer" parent="Guns"]
+one_shot = true
+
+[node name="reload" type="AudioStreamPlayer" parent="Guns"]
+
+[node name="ouchsound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="abilitysound" type="AudioStreamPlayer" parent="."]
+volume_db = -3.0
+
+[node name="error" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+
+[node name="deathsound" type="AudioStreamPlayer" parent="."]
+
+[node name="Burntime" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="fire" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 2.27374e-13, 8.54564 )
+scale = Vector2( 1.85645, 1.85645 )
+frames = SubResource( 9 )
+frame = 1
+playing = true
+
+[node name="firesound" type="AudioStreamPlayer" parent="."]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_started" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_started"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_Hurtbox_body_entered"]
+[connection signal="timeout" from="Guns/Timer" to="Guns" method="_on_Timer_timeout"]
+[connection signal="finished" from="deathsound" to="." method="_on_deathsound_finished"]
+[connection signal="timeout" from="Burntime" to="." method="_on_Burntime_timeout"]
