@@ -1,6 +1,7 @@
 extends Node
 
-
+#1=priest, 2=knight, 3=witch, 4=angel
+var playerCharacter: int = 0 setget set_playerCharacter
 var knightsAgressive: bool = true setget set_knightsAgressive
 signal knightsAgressive
 
@@ -15,4 +16,7 @@ func _ready():
 func set_knightsAgressive(value: bool) -> void:
 	knightsAgressive = value
 	emit_signal("knightsAgressive")
+	
+func set_playerCharacter(value: int) -> void:
+	playerCharacter = value
 	

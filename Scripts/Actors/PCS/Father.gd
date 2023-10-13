@@ -1,11 +1,11 @@
-extends Actor
+extends Player
 
 export (PackedScene) var bomb
 onready var animP:= $AnimationPlayer
 onready var hurtbox:= $Hurtbox/HurtBoxShape
 
 func _ready():
-	playercharacter = true
+	pass
 	
 func _physics_process(_delta):
 	velocity = move_and_slide(velocity)

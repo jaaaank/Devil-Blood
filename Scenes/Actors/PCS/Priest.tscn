@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Scripts/Actors/PCS/Father.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Actors/father.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Actors/father.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Actors/PCS/Father.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.12739, 4.45435 )
@@ -43,10 +43,10 @@ animations = [ {
 "speed": 24.0
 } ]
 
-[node name="Father" type="KinematicBody2D"]
+[node name="Priest" type="KinematicBody2D"]
 scale = Vector2( 1.75528, 1.75528 )
 collision_mask = 26
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2( 2.71659e-07, 21.5456 )
@@ -55,7 +55,7 @@ shape = SubResource( 1 )
 [node name="PlayerSprite" type="Sprite" parent="."]
 position = Vector2( 1.13942, 5.6971 )
 scale = Vector2( 2.125, 2.16667 )
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 hframes = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -117,7 +117,6 @@ visible = false
 position = Vector2( 2.27374e-13, 8.54564 )
 scale = Vector2( 1.85645, 1.85645 )
 frames = SubResource( 9 )
-frame = 1
 playing = true
 
 [node name="firesound" type="AudioStreamPlayer" parent="."]
