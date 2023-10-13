@@ -1,9 +1,12 @@
 extends Node
 
 #1=priest, 2=knight, 3=witch, 4=angel
-var playerCharacter: int = 0 setget set_playerCharacter
+var playerCharacter: int = 1 setget set_playerCharacter
 var knightsAgressive: bool = true setget set_knightsAgressive
+var playerPos: Vector2 = Vector2(0,0) setget set_playerPos
+
 signal knightsAgressive
+signal interact
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,3 +23,5 @@ func set_knightsAgressive(value: bool) -> void:
 func set_playerCharacter(value: int) -> void:
 	playerCharacter = value
 	
+func set_playerPos(value: Vector2)-> void:
+	playerPos=value
