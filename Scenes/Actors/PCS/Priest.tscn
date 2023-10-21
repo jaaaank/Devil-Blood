@@ -56,14 +56,8 @@ disabled = true
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 0.3, 0.3 )
-limit_left = -1050
-limit_top = -1050
-limit_right = 1050
-limit_bottom = 1050
 limit_smoothed = true
 smoothing_enabled = true
-smoothing_speed = 1.5
 
 [node name="Guns" type="Sprite" parent="."]
 position = Vector2( 0, 4.55768 )

@@ -4,7 +4,7 @@ onready var animP:= $AnimationPlayer
 onready var hurtbox:= $Hurtbox/HurtBoxShape
 
 func _ready():
-	print("yead")
+	health = PlayerAutoload.health
 	
 func _physics_process(_delta):
 	PlayerAutoload.playerPos = position

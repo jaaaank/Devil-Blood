@@ -6,6 +6,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _input(_event):
+	velocity = Vector2.ZERO
 	if Input.is_action_pressed("interact"):
 		interact()
 	if Input.is_action_pressed("moveup"):
