@@ -3,6 +3,7 @@ extends Player
 onready var animP:= $AnimationPlayer
 onready var hurtbox:= $Hurtbox/HurtBoxShape
 onready var guns:= $Guns
+onready var bloodParticles: Particles2D= $BloodParticles
 var equippedWeapon: int = 0 setget set_Equipped_Weapon
 
 func _ready():
@@ -31,3 +32,4 @@ func set_Equipped_Weapon(value: int):
 	
 func switchWeapon():
 	print("wah")
+	bloodParticles.emitting = true
