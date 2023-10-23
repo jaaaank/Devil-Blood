@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Actors/NPCS/Enemies/EnemyKnights.gd" type="Script" id=1]
 
@@ -7,6 +7,9 @@ extents = Vector2( 42, 77 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 39.5, 74.25 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 66.25, 10 )
 
 [node name="EnemyKnights" type="KinematicBody2D"]
 collision_layer = 2
@@ -26,5 +29,16 @@ shape = SubResource( 2 )
 
 [node name="walktimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Weapon" type="Position2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Weapon"]
+rotation = 3.14159
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Weapon/Area2D"]
+position = Vector2( 66.25, 0 )
+shape = SubResource( 3 )
 
 [connection signal="timeout" from="walktimer" to="." method="_on_walktimer_timeout"]

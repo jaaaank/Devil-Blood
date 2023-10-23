@@ -3,6 +3,7 @@ extends Actor
 export var walkrange = 200
 var target: Vector2
 onready var walktimer:= $walktimer
+onready var weapon:= $Weapon
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,6 +15,7 @@ func _ready():
 
 
 func _physics_process(delta):
+	weapon.rotation = position.angle_to_point(target)
 	if PlayerAutoload.knightsAgressive:
 		target = PlayerAutoload.playerPos
 		
@@ -28,7 +30,6 @@ func _physics_process(delta):
 	
 func randomWalk():
 	if !PlayerAutoload.knightsAgressive:
-		print("goob")
 		var x = rand_range(-walkrange, walkrange)
 		var y = rand_range(-walkrange, walkrange)
 		target = Vector2(x,y)

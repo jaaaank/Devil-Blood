@@ -9,7 +9,7 @@ export (PackedScene) var Angel
 
 
 func _ready():
-	position = spawnPos
+	position = MapAutoload.spawnPoint 
 	print("spawnin")
 	match PlayerAutoload.playerCharacter:
 		1:
