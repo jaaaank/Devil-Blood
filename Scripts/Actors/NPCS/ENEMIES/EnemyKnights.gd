@@ -6,6 +6,7 @@ onready var walktimer:= $walktimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	randomWalk()
 	randomize()
 	armor = 40
 	health = 60
@@ -18,7 +19,7 @@ func _physics_process(delta):
 		
 	velocity = position.direction_to(target) * speed
 	
-	if position.distance_to(target) > 10:
+	if position.distance_to(target) > 20:
 		move_and_slide(velocity)
 		if target == PlayerAutoload.playerPos:
 			attack()
@@ -27,10 +28,10 @@ func _physics_process(delta):
 	
 func randomWalk():
 	if !PlayerAutoload.knightsAgressive:
+		print("goob")
 		var x = rand_range(-walkrange, walkrange)
 		var y = rand_range(-walkrange, walkrange)
-		var walktarget: Vector2 = Vector2(x,y)
-		walktarget += position
+		target = Vector2(x,y)
 		walktimer.start(rand_range(3,6))
 	else:
 		target = PlayerAutoload.playerPos

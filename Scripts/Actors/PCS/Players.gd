@@ -1,7 +1,6 @@
 extends Actor
 class_name Player
 
-
 func _ready():
 	pass # Replace with function body.
 
@@ -21,3 +20,5 @@ func _input(_event):
 
 func interact():
 	PlayerAutoload.emit_signal("interact")
+
+
