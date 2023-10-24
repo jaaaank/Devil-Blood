@@ -25,6 +25,9 @@ func _input(event):
 		
 	if Input.is_action_just_pressed("weap4")and SaveData.priestSkillTree[2]:
 		set_Equipped_Weapon(3)
+
+func attack():
+	guns.shoot()
 	
 func set_Equipped_Weapon(value: int):
 	equippedWeapon = value

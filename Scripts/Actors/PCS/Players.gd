@@ -6,7 +6,7 @@ func _ready():
 
 func _input(_event):
 	velocity = Vector2.ZERO
-	if Input.is_action_pressed("interact"):
+	if Input.is_action_just_pressed("interact"):
 		interact()
 	if Input.is_action_pressed("moveup"):
 		velocity.y = -speed.y
@@ -16,6 +16,10 @@ func _input(_event):
 		velocity.x = -speed.x
 	if Input.is_action_pressed("moveright"):
 		velocity.x = speed.x
+		
+	if Input.is_action_just_pressed("attack"):
+		call_deferred("attack")
+		
 	velocity = velocity.normalized() * speed
 
 func interact():
