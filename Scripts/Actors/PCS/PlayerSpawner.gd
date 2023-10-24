@@ -1,6 +1,5 @@
 extends Node2D
 
-export var spawnPos: Vector2
 export (PackedScene) var Priest
 export (PackedScene) var Knight
 export (PackedScene) var Witch
@@ -9,7 +8,7 @@ export (PackedScene) var Angel
 
 
 func _ready():
-	position = MapAutoload.spawnPoint 
+	set_position(MapAutoload.spawnPoint)
 	print("spawnin")
 	match PlayerAutoload.playerCharacter:
 		1:
