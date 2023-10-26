@@ -1,22 +1,24 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Actors/NPCS/Enemies/EnemyKnights.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Actors/bloodwitchplaceholder.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 42, 77 )
+extents = Vector2( 160, 433.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 39.5, 74.25 )
+extents = Vector2( 149, 421 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 66.25, 10 )
+extents = Vector2( 350, 34.0009 )
 
-[node name="EnemyKnights" type="KinematicBody2D"]
+[node name="EnemyKnight" type="KinematicBody2D"]
 collision_layer = 2
 collision_mask = 19
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 9, 9.5 )
 shape = SubResource( 1 )
 
 [node name="Hurtbox" type="Area2D" parent="."]
@@ -26,20 +28,24 @@ input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 11, 9 )
 shape = SubResource( 2 )
+
+[node name="Sword" type="Area2D" parent="."]
+rotation = 3.14159
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sword"]
+position = Vector2( 350, 0 )
+shape = SubResource( 3 )
+
+[node name="KnightSprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
 
 [node name="walktimer" type="Timer" parent="."]
 one_shot = true
 
 [node name="Weapon" type="Position2D" parent="."]
-
-[node name="Area2D" type="Area2D" parent="Weapon"]
-rotation = 3.14159
-collision_layer = 8
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Weapon/Area2D"]
-position = Vector2( 66.25, 0 )
-shape = SubResource( 3 )
 
 [connection signal="timeout" from="walktimer" to="." method="_on_walktimer_timeout"]

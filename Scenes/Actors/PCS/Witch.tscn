@@ -47,7 +47,6 @@ editor_draw_drag_margin = true
 
 [node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2( 9.00001, 286.1 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="PlayerSprite" type="Sprite" parent="."]
