@@ -6,7 +6,7 @@ var health: int = 100 setget set_playerHealth
 #1=priest, 2=knight, 3=witch, 4=angel
 var playerCharacter: int = 3 setget set_playerCharacter
 #decides whether or not ALL knights on the map are agressive
-var knightsAgressive: bool = false setget set_knightsAgressive
+var knightsAgressive: bool = true setget set_knightsAgressive
 var playerPos: Vector2 = Vector2(0,0) setget set_playerPos
 var soul: int = 0 setget set_soul
 
@@ -17,6 +17,8 @@ func _ready():
 	pass 
 
 func startRun():
+	if playerCharacter==2:
+		knightsAgressive = false
 	soul = 0
 
 func heal(healingFactor: float):

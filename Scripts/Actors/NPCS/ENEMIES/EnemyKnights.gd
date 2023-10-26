@@ -15,13 +15,11 @@ func _ready():
 
 
 func _physics_process(delta):
-	velocity = position.direction_to(target) * speed
-	
-	weapon.rotation = position.angle_to_point(target)
-	
+	velocity = global_position.direction_to(target) * speed * delta * 40
+	weapon.rotation = global_position.angle_to_point(target)
 	if PlayerAutoload.knightsAgressive:
 		target = PlayerAutoload.playerPos
-	if position.distance_to(target) > 100:
+	if global_position.distance_to(target) > 50:
 		move_and_slide(velocity)
 		if target == PlayerAutoload.playerPos:
 			attack()
@@ -31,9 +29,10 @@ func _physics_process(delta):
 	
 func randomWalk():
 	if !PlayerAutoload.knightsAgressive:
-		var x = rand_range(-walkrange, walkrange)
-		var y = rand_range(-walkrange, walkrange)
-		target = Vector2(x,y)
+		var rice = rand_range(-walkrange, walkrange)
+		var beans = rand_range(-walkrange, walkrange)
+		target = Vector2(rice,beans)
+		print(target)
 		walktimer.start(rand_range(3,6))
 	else:
 		target = PlayerAutoload.playerPos
@@ -42,4 +41,4 @@ func _on_walktimer_timeout():
 	randomWalk()
 
 func attack():
-	pass
+	weapon.monitorable = true

@@ -14,10 +14,10 @@ var wasrev
 func _ready():
 	health = PlayerAutoload.health
 	
-func _physics_process(_delta):
-	$Muzzle.look_at(get_global_mouse_position())
-	PlayerAutoload.playerPos = position
-	velocity = move_and_slide(velocity)
+func _physics_process(delta):
+	$Guns/Muzzle.look_at(get_global_mouse_position())
+	PlayerAutoload.playerPos = global_position
+	velocity = move_and_slide(velocity * delta)
 
 func _input(event):
 	if Input.is_action_just_pressed("weap1"):

@@ -25,7 +25,6 @@ locationName = "Garrison"
 
 [node name="EnemyKnights" parent="." instance=ExtResource( 3 )]
 position = Vector2( 276, -255 )
-walkrange = 500
 
 [node name="SceneLoader" parent="." instance=ExtResource( 5 )]
 position = Vector2( -4850, 181 )

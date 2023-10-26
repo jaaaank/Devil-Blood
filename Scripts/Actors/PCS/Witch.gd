@@ -13,7 +13,7 @@ func _ready():
 
 
 func _physics_process(_delta):
-	PlayerAutoload.playerPos = position
+	PlayerAutoload.playerPos = global_position
 	velocity = move_and_slide(velocity)
 	$Sigil/Muzzle.look_at(get_global_mouse_position())
 func attack():
@@ -27,3 +27,6 @@ func attack():
 
 func _on_Timer_timeout():
 	cooldown = false
+
+
+

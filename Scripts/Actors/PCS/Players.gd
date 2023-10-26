@@ -20,9 +20,11 @@ func _input(_event):
 	if Input.is_action_just_pressed("attack"):
 		call_deferred("attack")
 		
-	velocity = velocity.normalized() * speed
+	velocity = velocity.normalized() * speed 
 
 func interact():
 	PlayerAutoload.emit_signal("interact")
 
-
+func _on_Hurtbox_area_entered(area):
+	if area.is_in_group("enemyWeapon"):
+		print("damaged")
