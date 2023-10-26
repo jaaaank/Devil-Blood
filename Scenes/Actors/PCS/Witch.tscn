@@ -41,7 +41,7 @@ Sigi = ExtResource( 4 )
 [node name="PlayerCamera" type="Camera2D" parent="."]
 scale = Vector2( 8.8, 8.8 )
 current = true
-zoom = Vector2( 15, 15 )
+zoom = Vector2( 10, 10 )
 smoothing_enabled = true
 editor_draw_drag_margin = true
 
