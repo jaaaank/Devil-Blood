@@ -1,4 +1,5 @@
 extends Area2D
+class_name projectile
 var speed := Vector2(5000,5000)
 
 func _physics_process(delta):

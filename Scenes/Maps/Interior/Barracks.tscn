@@ -11,7 +11,7 @@ position = Vector2( 800, 100 )
 
 [node name="SceneLoader" parent="." instance=ExtResource( 2 )]
 position = Vector2( 984, 40 )
-newSpawnPoint = Vector2( -1000, 0 )
+newSpawnPoint = Vector2( -36700, 0 )
 nextScene = "res://Scenes/Maps/Exterior/HellGarrison.tscn"
 
 [node name="UI" type="CanvasLayer" parent="."]

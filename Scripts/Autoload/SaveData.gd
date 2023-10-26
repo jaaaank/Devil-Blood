@@ -10,8 +10,9 @@ var witchSkillTree: Array =[false,false,false]
 #angel skill tree, reference drawing for info
 var angelSkillTree: Array =[false,false,false]
 
-#devil blood collected at the end of each run
+#total currency (collected at the end of each run)
 var savedDevilBlood: int = 0
+var savedSoul: int = 0
 
 func _ready():
 	pass # Replace with function body.

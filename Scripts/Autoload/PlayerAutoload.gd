@@ -4,7 +4,7 @@ extends Node
 var spawnPoint: int = 0 setget set_spawnPoint
 var health: int = 100 setget set_playerHealth
 #1=priest, 2=knight, 3=witch, 4=angel
-var playerCharacter: int = 1 setget set_playerCharacter
+var playerCharacter: int = 3 setget set_playerCharacter
 #decides whether or not ALL knights on the map are agressive
 var knightsAgressive: bool = false setget set_knightsAgressive
 var playerPos: Vector2 = Vector2(0,0) setget set_playerPos
@@ -18,6 +18,9 @@ func _ready():
 
 func startRun():
 	soul = 0
+
+func heal(healingFactor: float):
+	set_playerHealth(health + healingFactor)
 
 func set_soul(value: int):
 	soul = value
