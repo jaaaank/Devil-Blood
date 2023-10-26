@@ -24,7 +24,7 @@ format = 1
 locationName = "Garrison"
 
 [node name="EnemyKnights" parent="." instance=ExtResource( 3 )]
-position = Vector2( 276, -255 )
+position = Vector2( 5663, 408 )
 
 [node name="SceneLoader" parent="." instance=ExtResource( 5 )]
 position = Vector2( -4850, 181 )

@@ -7,15 +7,15 @@ onready var timey:= $Sigil/Timer
 var reloadTime: float = 1.0
 var cooldown = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	health = PlayerAutoload.health
 
+func _ready():
+	pass
 
 func _physics_process(_delta):
 	PlayerAutoload.playerPos = global_position
 	velocity = move_and_slide(velocity)
 	$Sigil/Muzzle.look_at(get_global_mouse_position())
+	
 func attack():
 	if !cooldown:
 		var b = Sigi.instance()
@@ -23,7 +23,6 @@ func attack():
 		b.transform = $Sigil/Muzzle.global_transform
 		cooldown = true
 		timey.start()
-
 
 func _on_Timer_timeout():
 	cooldown = false

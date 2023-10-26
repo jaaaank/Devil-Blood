@@ -28,3 +28,10 @@ func interact():
 func _on_Hurtbox_area_entered(area):
 	if area.is_in_group("enemyWeapon"):
 		print("damaged")
+		PlayerAutoload.damage(10)
+		if PlayerAutoload.health<=0:
+			die()
+			
+func die():
+	PlayerAutoload.charDie()
+	queue_free()
