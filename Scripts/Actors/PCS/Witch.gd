@@ -9,7 +9,7 @@ var cooldown = false
 
 
 func _ready():
-	pass
+	sprite = $PlayerSprite
 
 func _physics_process(_delta):
 	PlayerAutoload.playerPos = global_position

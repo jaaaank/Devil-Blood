@@ -4,8 +4,8 @@ var speed := Vector2(5000,5000)
 
 func _physics_process(delta):
 	position += transform.x * speed * delta
-
-
+	#make the sprites symmetrical so i dont have to flip them
+	
 func _on_Timer_timeout():
 	queue_free()
 

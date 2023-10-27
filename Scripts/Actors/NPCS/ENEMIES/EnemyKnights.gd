@@ -7,6 +7,7 @@ onready var walktimer:= $walktimer
 var attacking:= false
 
 func _ready():
+	sprite = $KnightSprite
 	randomWalk()
 	randomize()
 	armor = 40
