@@ -4,10 +4,8 @@ export (PackedScene) var swordattack
 export var walkrange = 10000
 var target: Vector2
 onready var walktimer:= $walktimer
-onready var weapon:= $Weapon/Sword
 var attacking:= false
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	randomWalk()
 	randomize()
@@ -20,7 +18,7 @@ func _physics_process(delta):
 	$Weapon.rotation = global_position.angle_to_point(target)
 	if PlayerAutoload.knightsAgressive:
 		target = PlayerAutoload.playerPos
-	if global_position.distance_to(target) > 700:
+	if global_position.distance_to(target) > 500:
 		move_and_slide(velocity)
 	else:
 		if target == PlayerAutoload.playerPos:
@@ -45,10 +43,7 @@ func attack():
 		$Weapon.add_child(b)
 		b.global_position = $Weapon.global_position
 		attacking = true
-		weapon.monitoring = true
-		
-func _on_Sword_area_entered(area):
-	if area.is_in_group("playerHurtbox"):
-		PlayerAutoload.damage(10)
-		weapon.monitoring = false
-		attacking = false
+		$attkcooldown.start(1)
+
+func _on_attkcooldown_timeout():
+	attacking = false

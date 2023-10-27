@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Actors/NPCS/Enemies/EnemyKnights.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Actors/bloodwitchplaceholder.png" type="Texture" id=2]
@@ -9,9 +9,6 @@ extents = Vector2( 160, 433.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 149, 421 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 350, 34.0009 )
 
 [node name="EnemyKnight" type="KinematicBody2D"]
 collision_layer = 2
@@ -35,20 +32,14 @@ shape = SubResource( 2 )
 
 [node name="Weapon" type="Position2D" parent="."]
 
-[node name="Sword" type="Area2D" parent="Weapon"]
-collision_layer = 8
-input_pickable = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Weapon/Sword"]
-position = Vector2( -350, 0 )
-rotation = 3.14159
-shape = SubResource( 3 )
-
 [node name="KnightSprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
 [node name="walktimer" type="Timer" parent="."]
 one_shot = true
 
-[connection signal="area_entered" from="Weapon/Sword" to="." method="_on_Sword_area_entered"]
+[node name="attkcooldown" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="timeout" from="walktimer" to="." method="_on_walktimer_timeout"]
+[connection signal="timeout" from="attkcooldown" to="." method="_on_attkcooldown_timeout"]
