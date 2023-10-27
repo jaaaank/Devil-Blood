@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/floortilesplaceholder.png-6140fb4e50d18b4065a9386ed4a49580.stex"
+path="res://.import/placeholdertilemappart1.png-e99ee744346821e229fb82581f11fc42.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TileMaps/floortilesplaceholder.png"
-dest_files=[ "res://.import/floortilesplaceholder.png-6140fb4e50d18b4065a9386ed4a49580.stex" ]
+source_file="res://Assets/TileMaps/placeholdertilemappart1.png"
+dest_files=[ "res://.import/placeholdertilemappart1.png-e99ee744346821e229fb82581f11fc42.stex" ]
 
 [params]
 
