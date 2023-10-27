@@ -2,7 +2,7 @@ extends Actor
 class_name Player
 
 func _ready():
-	pass # Replace with function body.
+	PlayerAutoload.connect("player_dead", self, "die")
 
 func _input(_event):
 	velocity = Vector2.ZERO
@@ -24,14 +24,6 @@ func _input(_event):
 
 func interact():
 	PlayerAutoload.emit_signal("interact")
-
-func _on_Hurtbox_area_entered(area):
-	if area.is_in_group("enemyWeapon"):
-		print("damaged")
-		PlayerAutoload.damage(10)
-		if PlayerAutoload.health<=0:
-			die()
-			
+	
 func die():
-	PlayerAutoload.charDie()
 	queue_free()

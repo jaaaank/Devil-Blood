@@ -14,6 +14,7 @@ var soul: int = 0 setget set_soul
 var devilBlood: int = 0 setget set_devilBlood
 
 signal interact
+signal player_dead
 
 func _ready():
 	startRun(0) 
@@ -51,6 +52,7 @@ func charDie():
 		knightsAgressive = true
 	soul = 0
 	devilBlood = 0
+	emit_signal("player_dead")
 
 func damage(damageTaken: float):
 	set_playerHealth(round(health - damageTaken*armorCalculation()*difficulty))
@@ -91,6 +93,8 @@ func set_spawnPoint(value: int):
 	
 func set_playerHealth(value: int):
 	health = value
+	if health <=0:
+		charDie()
 
 func set_playerArmor(value: int):
 	armor = value

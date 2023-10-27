@@ -1,6 +1,5 @@
 extends Player
 
-onready var animP:= $AnimationPlayer
 onready var hurtbox:= $Hurtbox/HurtBoxShape
 onready var bloodParticles: Particles2D= $BloodParticles
 var equippedWeapon: int = 0 setget set_Equipped_Weapon

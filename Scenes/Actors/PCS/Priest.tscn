@@ -5,10 +5,10 @@
 [ext_resource path="res://Scenes/Actors/Objects/Bullet.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.12739, 4.45435 )
+extents = Vector2( 188, 436.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 10.2548, 23.4002 )
+extents = Vector2( 174, 427.5 )
 
 [sub_resource type="ParticlesMaterial" id=4]
 lifetime_randomness = 0.5
@@ -39,19 +39,19 @@ script = ExtResource( 2 )
 Bullet = ExtResource( 4 )
 
 [node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2( 2.71659e-07, 21.5456 )
+position = Vector2( 3.00001, -2.50002 )
 shape = SubResource( 1 )
 
 [node name="PlayerSprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 
-[node name="Hurtbox" type="Area2D" parent="."]
+[node name="Hurtbox" type="Area2D" parent="." groups=["playerHurtbox"]]
 collision_mask = 8
 monitoring = false
 
 [node name="HurtBoxShape" type="CollisionShape2D" parent="Hurtbox"]
 modulate = Color( 0.709804, 0, 0, 1 )
-position = Vector2( -1.35829e-07, 4.59979 )
+position = Vector2( 9, -8.5 )
 shape = SubResource( 2 )
 disabled = true
 
