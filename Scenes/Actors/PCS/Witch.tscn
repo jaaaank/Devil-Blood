@@ -41,7 +41,7 @@ Sigi = ExtResource( 4 )
 [node name="PlayerCamera" type="Camera2D" parent="."]
 scale = Vector2( 8.8, 8.8 )
 current = true
-zoom = Vector2( 10, 10 )
+zoom = Vector2( 8, 8 )
 smoothing_enabled = true
 editor_draw_drag_margin = true
 
@@ -63,7 +63,7 @@ shape = SubResource( 2 )
 [node name="Sigil" type="Sprite" parent="."]
 
 [node name="Muzzle" type="Position2D" parent="Sigil"]
-scale = Vector2( 10, 10 )
+scale = Vector2( 6, 6 )
 __meta__ = {
 "_gizmo_extents_": 0.0
 }

@@ -58,7 +58,7 @@ disabled = true
 [node name="PlayerCamera" type="Camera2D" parent="."]
 scale = Vector2( 6.23674, 6.23674 )
 current = true
-zoom = Vector2( 10, 10 )
+zoom = Vector2( 8, 8 )
 limit_smoothed = true
 smoothing_enabled = true
 editor_draw_drag_margin = true

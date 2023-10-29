@@ -24,12 +24,6 @@ func _input(event):
 
 	if Input.is_action_just_pressed("weap2")and SaveData.priestSkillTree[0]:
 		set_Equipped_Weapon(1)
-		
-	if Input.is_action_just_pressed("weap3")and SaveData.priestSkillTree[1]:
-		set_Equipped_Weapon(2)
-		
-	if Input.is_action_just_pressed("weap4")and SaveData.priestSkillTree[2]:
-		set_Equipped_Weapon(3)
 
 func attack():
 	if !cooldown:

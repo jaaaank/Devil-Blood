@@ -44,6 +44,7 @@ visible = false
 polygon = PoolVector2Array( -22.5597, -5.63994, -39.4795, -16.9198, 11.2799, -28.1997, 33.8396, -22.5597, 50.7594, -5.63994, 50.7594, 0, 50.7594, 11.2799, 45.1195, 22.5597, -11.2799, 22.5597, -23, 12, -33.8396, 11.2799, -33.8396, 0 )
 
 [node name="BloodParticles" type="Particles2D" parent="."]
+position = Vector2( -24.6, -1.39835e-11 )
 rotation = 1.57079
 amount = 30
 lifetime = 7.0
