@@ -5,7 +5,7 @@ var spawnPoint: int = 0 setget set_spawnPoint
 var health: int = 100 setget set_playerHealth
 var armor: int = 0 setget set_playerArmor
 #1=priest, 2=knight, 3=witch, 4=angel
-var playerCharacter: int = 3 setget set_playerCharacter
+var playerCharacter: int = 1 setget set_playerCharacter
 #decides whether or not ALL knights on the map are agressive
 var knightsAgressive: bool = true setget set_knightsAgressive
 var playerPos: Vector2 = Vector2(0,0) setget set_playerPos
@@ -14,6 +14,7 @@ var soul: int = 0 setget set_soul
 var devilBlood: int = 0 setget set_devilBlood
 
 signal interact
+signal player_damaged
 signal player_dead
 
 func _ready():
@@ -56,7 +57,8 @@ func charDie():
 
 func damage(damageTaken: float):
 	set_playerHealth(round(health - damageTaken*armorCalculation()*difficulty))
-	print("Damaged; Health = " + String(health))
+	emit_signal("player_damaged", damageTaken)
+	print("Player damaged; Health = " + String(health))
 	
 func heal(healingFactor: float):
 	set_playerHealth(round(health + healingFactor/difficulty))

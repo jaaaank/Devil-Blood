@@ -1,8 +1,11 @@
 extends Actor
 class_name Player
 
+export (PackedScene) var damagenumbers = load("res://Scenes/Actors/Objects/DamageNumbers.tscn")
+
 func _ready():
 	PlayerAutoload.connect("player_dead", self, "die")
+	PlayerAutoload.connect("player_damaged", self, "spawnDamageNums")
 
 func _input(_event):
 	velocity = Vector2.ZERO
@@ -27,3 +30,9 @@ func interact():
 	
 func die():
 	queue_free()
+	
+func spawnDamageNums(damagetaken):
+	var b = damagenumbers.instance()
+	add_child(b)
+	b.get_node("RichTextLabel").text = String(damagetaken)
+	
