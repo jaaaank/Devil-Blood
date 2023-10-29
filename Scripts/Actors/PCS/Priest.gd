@@ -11,7 +11,7 @@ var cooldown = false
 var wasrev
 
 func _ready():
-	sprite = $P
+	sprite = $PleyerSprite
 	
 func _physics_process(delta):
 	$Guns/Muzzle.look_at(get_global_mouse_position())

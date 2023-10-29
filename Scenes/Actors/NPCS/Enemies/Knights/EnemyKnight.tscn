@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/Actors/NPCS/Enemies/EnemyKnights.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Actors/bloodwitchplaceholder.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/Actors/Objects/swordattack.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Actors/Objects/enemyswordattack.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 160, 433.5 )
@@ -41,5 +41,6 @@ one_shot = true
 [node name="attkcooldown" type="Timer" parent="."]
 one_shot = true
 
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="timeout" from="walktimer" to="." method="_on_walktimer_timeout"]
 [connection signal="timeout" from="attkcooldown" to="." method="_on_attkcooldown_timeout"]

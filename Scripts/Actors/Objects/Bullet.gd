@@ -15,4 +15,4 @@ func _on_Bullet_body_entered(body):
 
 
 func _on_Bullet_area_entered(area):
-	queue_free()
+	area.owner.call("damage", 10)

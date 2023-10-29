@@ -48,3 +48,4 @@ func attack():
 
 func _on_attkcooldown_timeout():
 	attacking = false
+
