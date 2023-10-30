@@ -31,7 +31,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -60.0, 60.0 ]
+"values": [ 240.0, 180.0 ]
 }
 
 [sub_resource type="RectangleShape2D" id=3]

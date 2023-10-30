@@ -1,11 +1,11 @@
 extends Node
 
-
+var iframes = false
 var spawnPoint: int = 0 setget set_spawnPoint
 var health: int = 100 setget set_playerHealth
 var armor: int = 0 setget set_playerArmor
 #1=priest, 2=knight, 3=witch, 4=angel
-var playerCharacter: int = 1 setget set_playerCharacter
+var playerCharacter: int = 2 setget set_playerCharacter
 #decides whether or not ALL knights on the map are agressive
 var knightsAgressive: bool = true setget set_knightsAgressive
 var playerPos: Vector2 = Vector2(0,0) setget set_playerPos
@@ -56,9 +56,11 @@ func charDie():
 	emit_signal("player_dead")
 
 func damage(damageTaken: float):
-	set_playerHealth(round(health - damageTaken*armorCalculation()*difficulty))
-	emit_signal("player_damaged", damageTaken)
-	print("Player damaged; Health = " + String(health))
+	if !iframes:
+		set_playerHealth(round(health - damageTaken*armorCalculation()*difficulty))
+		emit_signal("player_damaged", damageTaken)
+		print("Player damaged; Health = " + String(health))
+		iframes = true
 	
 func heal(healingFactor: float):
 	set_playerHealth(round(health + healingFactor/difficulty))

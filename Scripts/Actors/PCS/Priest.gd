@@ -1,6 +1,5 @@
 extends Player
 
-onready var hurtbox:= $Hurtbox/HurtBoxShape
 onready var bloodParticles: Particles2D= $BloodParticles
 var equippedWeapon: int = 0 setget set_Equipped_Weapon
 export (PackedScene) var Bullet
@@ -10,8 +9,6 @@ var revolve: int = 0
 var cooldown = false
 var wasrev
 
-func _ready():
-	sprite = $PlayerSprite
 	
 func _physics_process(delta):
 	$Guns/Muzzle.look_at(get_global_mouse_position())

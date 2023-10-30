@@ -2,8 +2,11 @@ extends Actor
 class_name Player
 
 export (PackedScene) var damagenumbers = load("res://Scenes/Actors/Objects/DamageNumbers.tscn")
+onready var hurtbox:= $Hurtbox/HurtBoxShape
+onready var iframesTimer:= $IframesTimer
 
 func _ready():
+	sprite = $PlayerSprite
 	PlayerAutoload.connect("player_dead", self, "die")
 	PlayerAutoload.connect("player_damaged", self, "spawnDamageNums")
 
@@ -21,7 +24,10 @@ func _input(_event):
 		velocity.x = speed.x
 		
 	if Input.is_action_just_pressed("attack"):
-		call_deferred("attack")
+		call("attack")
+		
+	if Input.is_action_just_pressed("altattack"):
+		call("altAttack")
 		
 	velocity = velocity.normalized() * speed 
 
@@ -35,4 +41,7 @@ func spawnDamageNums(damagetaken):
 	var b = damagenumbers.instance()
 	add_child(b)
 	b.get_node("RichTextLabel").text = String(round(damagetaken*PlayerAutoload.armorCalculation()*PlayerAutoload.difficulty))
-	
+	iframesTimer.start()
+
+func _on_IframesTimer_timeout():
+	PlayerAutoload.iframes = false

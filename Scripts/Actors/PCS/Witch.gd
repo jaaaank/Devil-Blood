@@ -1,15 +1,10 @@
 extends Player
 
 export (PackedScene) var Sigi
-onready var hurtbox:= $Hurtbox/HurtBoxShape
 onready var sigil:= $Sigil
 onready var timey:= $Sigil/Timer
 var reloadTime: float = 1.0
 var cooldown = false
-
-
-func _ready():
-	sprite = $PlayerSprite
 
 func _physics_process(_delta):
 	PlayerAutoload.playerPos = global_position
@@ -26,6 +21,5 @@ func attack():
 
 func _on_Timer_timeout():
 	cooldown = false
-
 
 

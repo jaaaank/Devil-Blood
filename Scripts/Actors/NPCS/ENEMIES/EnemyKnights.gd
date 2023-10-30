@@ -7,6 +7,7 @@ onready var walktimer:= $walktimer
 var attacking:= false
 
 func _ready():
+	knight = true
 	sprite = $KnightSprite
 	randomWalk()
 	randomize()
@@ -42,7 +43,6 @@ func attack():
 	if !attacking:
 		var b = swordattack.instance()
 		$Weapon.add_child(b)
-		b.global_position = $Weapon.global_position
 		attacking = true
 		$attkcooldown.start(1)
 
