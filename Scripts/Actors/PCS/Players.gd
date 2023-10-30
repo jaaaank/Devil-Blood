@@ -34,5 +34,5 @@ func die():
 func spawnDamageNums(damagetaken):
 	var b = damagenumbers.instance()
 	add_child(b)
-	b.get_node("RichTextLabel").text = String(damagetaken)
+	b.get_node("RichTextLabel").text = String(round(damagetaken*PlayerAutoload.armorCalculation()*PlayerAutoload.difficulty))
 	

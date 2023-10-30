@@ -15,4 +15,5 @@ func _on_Bullet_body_entered(body):
 
 
 func _on_Bullet_area_entered(area):
-	area.owner.call("damage", 10)
+	if area.collision_layer == 2:
+		area.owner.call("damage", 10)

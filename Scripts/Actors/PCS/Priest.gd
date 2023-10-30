@@ -41,7 +41,6 @@ func randomSpread():
 		return spread
 	else: return 1
 
-
 func _on_Timer_timeout():
 	cooldown=false
 	
