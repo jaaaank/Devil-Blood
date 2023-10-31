@@ -7,4 +7,4 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 
 func _on_Sword_area_entered(area):
-	area.owner.call("damage", 10)
+	area.owner.call("damage", 15)
