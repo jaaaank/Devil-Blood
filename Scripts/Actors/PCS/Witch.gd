@@ -21,5 +21,3 @@ func attack():
 
 func _on_Timer_timeout():
 	cooldown = false
-
-

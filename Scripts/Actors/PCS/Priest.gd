@@ -8,7 +8,6 @@ var reloadTime: float = 1.0
 var revolve: int = 0
 var cooldown = false
 var wasrev
-
 	
 func _physics_process(delta):
 	$Guns/Muzzle.look_at(get_global_mouse_position())

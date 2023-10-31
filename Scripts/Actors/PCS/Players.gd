@@ -4,6 +4,7 @@ class_name Player
 export (PackedScene) var damagenumbers = load("res://Scenes/Actors/Objects/DamageNumbers.tscn")
 onready var hurtbox:= $Hurtbox/HurtBoxShape
 onready var iframesTimer:= $IframesTimer
+var acceleration = 0.25
 
 func _ready():
 	sprite = $PlayerSprite
@@ -29,7 +30,7 @@ func _input(_event):
 	if Input.is_action_just_pressed("altattack"):
 		call("altAttack")
 		
-	velocity = velocity.normalized() * speed 
+
 
 func interact():
 	PlayerAutoload.emit_signal("interact")
