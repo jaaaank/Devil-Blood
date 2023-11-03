@@ -15,24 +15,30 @@ func _physics_process(_delta):
 		$Weapons/hand.look_at(get_global_mouse_position())
 
 func attack():
-	if !cooldown:
+	if !dashing and !cooldown:
 		var b = SwordAttack.instance()
 		$Weapons/hand.add_child(b)
 		cooldown = true
 		timey.start(reloadTime)
+		print("main attack")
+		
 		
 func altAttack():
-	var b = LanceAttack.instance()
-	$Weapons/hand.add_child(b)
-#	if !dashing:
-#		velocity = Vector2(10000, 10000)
-#		dashing = true
-#		$dashtimer.start()
-#		print("alt attack")
-	pass
-
+	if !dashing and !cooldown:
+		set_process_input(false)
+		var b = LanceAttack.instance()
+		$Weapons/hand.add_child(b)
+		velocity = global_position.direction_to(get_global_mouse_position())*25000
+		dashing = true
+		$dashtimer.start()
+		print("alt attack")
+		
 func _on_Timer_timeout():
 	cooldown = false
 	
 func _on_dashtimer_timeout():
+	cooldown = true
+	timey.start(reloadTime)
 	dashing = false
+	velocity = Vector2.ZERO
+	set_process_input(true)

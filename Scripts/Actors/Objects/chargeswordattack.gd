@@ -1,0 +1,26 @@
+extends Position2D
+
+var player = Node
+
+func _ready():
+	player = get_parent().get_parent().get_parent()
+	
+#func _physics_process(delta):
+	#player.global_position = $Sword.global_position
+
+
+func _on_Sword_area_entered(area):
+	if area.collision_layer == 2:
+		area.owner.call("damage", 15)
+		area.owner.call("stun")
+	#player.set_process_input(true)
+	queue_free()
+
+
+func _on_Sword_body_entered(body):
+	#player.set_process_input(true)
+	queue_free()
+
+
+func _on_Timer_timeout():
+	queue_free()

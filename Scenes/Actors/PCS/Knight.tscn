@@ -96,6 +96,8 @@ process_material = SubResource( 4 )
 [node name="IframesTimer" type="Timer" parent="."]
 
 [node name="dashtimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
 
 [connection signal="timeout" from="Weapons/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="finished" from="deathsound" to="." method="_on_deathsound_finished"]

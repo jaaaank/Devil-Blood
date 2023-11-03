@@ -12,8 +12,6 @@ func _ready():
 
 func _input(_event):
 	velocity = Vector2.ZERO
-	if Input.is_action_just_pressed("interact"):
-		interact()
 	if Input.is_action_pressed("moveup"):
 		velocity.y = -speed.y
 	if Input.is_action_pressed("movedown"):
@@ -24,9 +22,10 @@ func _input(_event):
 		velocity.x = speed.x
 		
 	velocity = velocity.normalized() * speed
+	if Input.is_action_just_pressed("interact"):
+		interact()
 	if Input.is_action_just_pressed("attack"):
 		call("attack")
-		
 	if Input.is_action_just_pressed("altattack"):
 		call("altAttack")
 		

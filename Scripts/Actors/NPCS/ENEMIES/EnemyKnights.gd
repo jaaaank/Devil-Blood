@@ -40,11 +40,17 @@ func _on_walktimer_timeout():
 	randomWalk()
 
 func attack():
-	if !attacking:
+	if !attacking and !stunned:
 		var b = swordattack.instance()
 		$Weapon.add_child(b)
 		attacking = true
 		$attkcooldown.start(1)
+		
+
+func stun():
+	stunned = true
+	$attkcooldown.start(0.3)
 
 func _on_attkcooldown_timeout():
 	attacking = false
+	stunned = false

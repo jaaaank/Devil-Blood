@@ -3,6 +3,7 @@ class_name enemy
 
 export (PackedScene) var damagenumbers = load("res://Scenes/Actors/Objects/DamageNumbers.tscn")
 var knight = false
+var stunned = false
 
 
 func damage(dmgdealt):
