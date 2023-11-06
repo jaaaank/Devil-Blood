@@ -7,16 +7,17 @@ onready var walktimer:= $walktimer
 var attacking:= false
 
 func _ready():
+	speed = Vector2(160000, 160000)
+	randomize()
 	knight = true
 	sprite = $KnightSprite
 	randomWalk()
-	randomize()
 	armor = 40
 	health = 60
 
 
 func _physics_process(delta):
-	velocity = global_position.direction_to(target) * speed * delta * 40
+	velocity = global_position.direction_to(target) * speed * delta
 	$Weapon.rotation = global_position.angle_to_point(target)
 	if PlayerAutoload.knightsAgressive:
 		target = PlayerAutoload.playerPos

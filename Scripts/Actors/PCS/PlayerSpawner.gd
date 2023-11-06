@@ -5,8 +5,6 @@ export (PackedScene) var Knight
 export (PackedScene) var Witch
 export (PackedScene) var Angel
 
-
-
 func _ready():
 	set_position(MapAutoload.spawnPoint)
 	print("spawnin")
