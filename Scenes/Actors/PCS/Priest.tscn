@@ -105,3 +105,4 @@ process_material = SubResource( 4 )
 [connection signal="timeout" from="Guns/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="finished" from="deathsound" to="." method="_on_deathsound_finished"]
 [connection signal="timeout" from="Burntime" to="." method="_on_Burntime_timeout"]
+[connection signal="timeout" from="IframesTimer" to="." method="_on_IframesTimer_timeout"]

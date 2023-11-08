@@ -207,6 +207,7 @@ altattack={
 2d_physics/layer_3="playerAttacks"
 2d_physics/layer_4="enemyAttacks"
 2d_physics/layer_5="environmentCollision"
+2d_physics/layer_6="cruceable"
 2d_physics/layer_7="holyLight"
 
 [physics]

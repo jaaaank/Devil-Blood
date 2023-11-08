@@ -1,0 +1,284 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Screens/Popups/LocationText.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Actors/PCS/PlayerSpawner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/TileMaps/mappart1.tres" type="TileSet" id=6]
+[ext_resource path="res://Scenes/Actors/NPCS/Enemies/LowTier/Mass.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/TileMaps/decor.tres" type="TileSet" id=8]
+
+[node name="PriestCave" type="Node2D"]
+__meta__ = {
+"_edit_vertical_guides_": [ 1341.0 ]
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 1024, 1024 )
+collision_layer = 16
+collision_mask = 15
+format = 1
+tile_data = PoolIntArray( -65554, 0, 8, -65553, 0, 10, -65552, 0, 10, -65551, 0, 10, -65550, 0, 10, -65549, 0, 10, -65548, 0, 10, -65547, 0, 10, -65546, 0, 10, -65545, 0, 10, -65544, 0, 10, -65543, 0, 10, -65542, 0, 10, -65541, 0, 10, -65540, 0, 10, -65539, 0, 10, -65538, 0, 10, -65537, 0, 10, -131072, 0, 11, -18, 0, 65544, -17, 0, 131081, -16, 0, 131081, -15, 0, 131081, -14, 0, 131081, -13, 0, 131081, -12, 0, 131081, -11, 0, 131081, -10, 0, 131081, -9, 0, 131081, -8, 0, 131081, -7, 0, 131081, -6, 0, 131081, -5, 0, 131081, -4, 0, 131081, -3, 0, 131081, -2, 0, 131081, -1, 0, 131081, -65536, 0, 131083, 65518, 0, 196616, 65519, 0, 196617, 65520, 0, 196617, 65521, 0, 196617, 65522, 0, 196617, 65523, 0, 196617, 65524, 0, 196617, 65525, 0, 196617, 65526, 0, 196617, 65527, 0, 196617, 65528, 0, 196617, 65529, 0, 196617, 65530, 0, 196617, 65531, 0, 196617, 65532, 0, 196617, 65533, 0, 196617, 65534, 0, 196617, 65535, 0, 196617, 0, 0, 196619 )
+
+[node name="DecorTileMap" type="TileMap" parent="."]
+visible = false
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 512, 512 )
+centered_textures = true
+format = 1
+tile_data = PoolIntArray( -917496, 0, 1, -851966, 0, 0, -786424, 0, 65537, -720890, 0, 65537, -720885, 0, 65537, -655350, 0, 65537, -589822, 0, 65536, -589815, 0, 65537, -589806, 0, 0, -458762, 0, 1, -458757, 0, 0, -458743, 0, 65536, -393203, 0, 1, -262153, 0, 65537, -131076, 0, 0, -65545, 0, 65536, -131067, 0, 0, 262138, 0, 1, 262152, 0, 1, 655346, 0, 0, 720881, 0, 65537 )
+
+[node name="PlayerSpawner" parent="." instance=ExtResource( 4 )]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="LocationText" parent="UI" instance=ExtResource( 2 )]
+locationName = "Infested Cave"
+
+[node name="Masses" type="Node2D" parent="."]
+position = Vector2( -1280, -96 )
+
+[node name="Mass" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -3124, -551 )
+
+[node name="Mass2" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -3956, -23 )
+
+[node name="Mass3" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -4580, -351 )
+
+[node name="Mass4" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -5644, -447 )
+
+[node name="Mass5" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -6148, 137 )
+
+[node name="Mass6" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -5260, 193 )
+
+[node name="Mass7" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -4612, 265 )
+
+[node name="Mass8" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -2636, 81 )
+
+[node name="Mass9" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -3276, 177 )
+
+[node name="Mass10" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -2076, -719 )
+
+[node name="Mass11" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -1916, 25 )
+
+[node name="Mass12" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -1372, -335 )
+
+[node name="Mass13" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -1292, 49 )
+
+[node name="Mass14" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -3996, 393 )
+
+[node name="Mass15" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -3948, -375 )
+
+[node name="Mass16" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -3980, -775 )
+
+[node name="Mass17" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -4564, -759 )
+
+[node name="Mass18" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -5132, -295 )
+
+[node name="Mass19" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -5164, -831 )
+
+[node name="Mass20" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -2540, -351 )
+
+[node name="Mass21" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -3188, -223 )
+
+[node name="Mass22" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -1924, -343 )
+
+[node name="Mass23" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -1308, -695 )
+
+[node name="Mass24" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -2676, -831 )
+
+[node name="Mass25" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -2140, 409 )
+
+[node name="Mass26" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -2828, 489 )
+
+[node name="Mass27" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -1476, 465 )
+
+[node name="Mass28" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -844, 457 )
+
+[node name="Mass29" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -580, 57 )
+
+[node name="Mass30" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -628, -271 )
+
+[node name="Mass31" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -692, -727 )
+
+[node name="Mass32" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -108, -791 )
+
+[node name="Mass33" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -20, -407 )
+
+[node name="Mass34" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( 36, -55 )
+
+[node name="Mass35" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -100, 433 )
+
+[node name="Mass36" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( 452, -807 )
+
+[node name="Mass37" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -9837, -704 )
+
+[node name="Mass38" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -10669, -176 )
+
+[node name="Mass39" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -11293, -504 )
+
+[node name="Mass40" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -12357, -600 )
+
+[node name="Mass41" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -12861, -16 )
+
+[node name="Mass42" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -11973, 40 )
+
+[node name="Mass43" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -11325, 112 )
+
+[node name="Mass44" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -9349, -72 )
+
+[node name="Mass45" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -9989, 24 )
+
+[node name="Mass46" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -8789, -872 )
+
+[node name="Mass47" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -8629, -128 )
+
+[node name="Mass48" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -8085, -488 )
+
+[node name="Mass49" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -8005, -104 )
+
+[node name="Mass50" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -10709, 240 )
+
+[node name="Mass51" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -10661, -528 )
+
+[node name="Mass52" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -10693, -928 )
+
+[node name="Mass53" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -11277, -912 )
+
+[node name="Mass54" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -11845, -448 )
+
+[node name="Mass55" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -11877, -984 )
+
+[node name="Mass56" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -9253, -504 )
+
+[node name="Mass57" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -9901, -376 )
+
+[node name="Mass58" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -8637, -496 )
+
+[node name="Mass59" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -8021, -848 )
+
+[node name="Mass60" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -9389, -984 )
+
+[node name="Mass61" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -8853, 256 )
+
+[node name="Mass62" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -9541, 336 )
+
+[node name="Mass63" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -8189, 312 )
+
+[node name="Mass64" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -7557, 304 )
+
+[node name="Mass65" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -7293, -96 )
+
+[node name="Mass66" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -7341, -424 )
+
+[node name="Mass67" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -7405, -880 )
+
+[node name="Mass68" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -6821, -944 )
+
+[node name="Mass69" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -6733, -560 )
+
+[node name="Mass70" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -6677, -208 )
+
+[node name="Mass71" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -6813, 280 )
+
+[node name="Mass72" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -6261, -960 )
+
+[node name="Mass73" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -6071, -189 )
+
+[node name="Mass74" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -6138, 544 )
+
+[node name="Mass75" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -10105, 544 )
+
+[node name="Mass76" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -10876, 601 )
+
+[node name="Mass77" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -11609, 515 )
+
+[node name="Mass78" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -12408, 420 )
+
+[node name="Mass79" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -12988, 563 )
+
+[node name="Mass80" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -12988, -398 )
+
+[node name="Mass81" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -13036, -845 )
+
+[node name="Mass82" parent="Masses" instance=ExtResource( 7 )]
+position = Vector2( -12437, -1007 )

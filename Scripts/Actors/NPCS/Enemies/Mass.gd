@@ -15,7 +15,6 @@ func _physics_process(delta):
 	velocity = global_position.direction_to(target) * speed * delta
 	if global_position.distance_to(target) > 500:
 		move_and_slide(velocity)
-
 	
 
 func randomWalk():
@@ -30,7 +29,12 @@ func _on_walktimer_timeout():
 
 func stun():
 	stunned = true
+	set_physics_process(false)
+	
+func unstun():
+	stunned = false
+	set_physics_process(true)
 	
 func _on_Hurtbox_area_entered(area):
-	if area.collision_layer ==1:
+	if area.get_collision_layer_bit(0) and !stunned:
 		PlayerAutoload.damage(5)

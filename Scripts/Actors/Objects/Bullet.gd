@@ -15,5 +15,6 @@ func _on_Bullet_body_entered(body):
 
 
 func _on_Bullet_area_entered(area):
-	if area.collision_layer == 2:
+	if area.get_collision_layer_bit(1):
 		area.owner.call("damage", 10)
+		print("penis")
