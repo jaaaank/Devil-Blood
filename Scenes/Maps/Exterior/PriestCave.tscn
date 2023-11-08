@@ -27,13 +27,6 @@ centered_textures = true
 format = 1
 tile_data = PoolIntArray( -917496, 0, 1, -851966, 0, 0, -786424, 0, 65537, -720890, 0, 65537, -720885, 0, 65537, -655350, 0, 65537, -589822, 0, 65536, -589815, 0, 65537, -589806, 0, 0, -458762, 0, 1, -458757, 0, 0, -458743, 0, 65536, -393203, 0, 1, -262153, 0, 65537, -131076, 0, 0, -65545, 0, 65536, -131067, 0, 0, 262138, 0, 1, 262152, 0, 1, 655346, 0, 0, 720881, 0, 65537 )
 
-[node name="PlayerSpawner" parent="." instance=ExtResource( 4 )]
-
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="LocationText" parent="UI" instance=ExtResource( 2 )]
-locationName = "Infested Cave"
-
 [node name="Masses" type="Node2D" parent="."]
 position = Vector2( -1280, -96 )
 
@@ -282,3 +275,10 @@ position = Vector2( -13036, -845 )
 
 [node name="Mass82" parent="Masses" instance=ExtResource( 7 )]
 position = Vector2( -12437, -1007 )
+
+[node name="PlayerSpawner" parent="." instance=ExtResource( 4 )]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="LocationText" parent="UI" instance=ExtResource( 2 )]
+locationName = "Infested Cave"
