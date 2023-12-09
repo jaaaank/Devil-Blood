@@ -12,7 +12,6 @@ var wasrev
 var cruce
 var crucing = false
 
-	
 func _physics_process(delta):
 	$Guns/Muzzle.look_at(get_global_mouse_position())
 	PlayerAutoload.playerPos = global_position
