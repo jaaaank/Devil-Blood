@@ -7,8 +7,8 @@ onready var walktimer:= $walktimer
 var attacking:= false
 
 func _ready():
-	speed = Vector2(160000, 160000)
 	randomize()
+	speed = 300
 	knight = true
 	sprite = $KnightSprite
 	randomWalk()
@@ -16,12 +16,12 @@ func _ready():
 	health = 60
 
 
-func _physics_process(delta):
-	velocity = global_position.direction_to(target) * speed * delta
+func _physics_process(_delta):
 	$Weapon.rotation = global_position.angle_to_point(target)
 	if PlayerAutoload.knightsAgressive:
 		target = PlayerAutoload.playerPos
-	if global_position.distance_to(target) > 500:
+	if global_position.distance_to(target) > attackrange:
+		velocity = global_position.direction_to(target) * speed
 		move_and_slide(velocity)
 	else:
 		if target == PlayerAutoload.playerPos:
@@ -32,7 +32,6 @@ func randomWalk():
 		var rice = rand_range(-walkrange, walkrange)
 		var beans = rand_range(-walkrange, walkrange)
 		target = Vector2(rice,beans)
-		print(target)
 		walktimer.start(rand_range(3,6))
 	else:
 		target = PlayerAutoload.playerPos

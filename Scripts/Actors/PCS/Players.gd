@@ -10,16 +10,19 @@ func _ready():
 	PlayerAutoload.connect("player_dead", self, "die")
 	PlayerAutoload.connect("player_damaged", self, "spawnDamageNums")
 
+func _physics_process(_delta):
+	move_and_slide(velocity)
+	
 func _input(_event):
 	velocity = Vector2.ZERO
 	if Input.is_action_pressed("moveup"):
-		velocity.y = -speed.y
+		velocity.y = -1 
 	if Input.is_action_pressed("movedown"):
-		velocity.y = speed.y
+		velocity.y = 1
 	if Input.is_action_pressed("moveleft"):
-		velocity.x = -speed.x
+		velocity.x = -1
 	if Input.is_action_pressed("moveright"):
-		velocity.x = speed.x
+		velocity.x = 1
 		
 	velocity = velocity.normalized() * speed
 	if Input.is_action_just_pressed("interact"):
@@ -39,7 +42,8 @@ func die():
 	
 func spawnDamageNums(damagetaken):
 	var b = damagenumbers.instance()
-	add_child(b)
+	get_parent().add_child(b)
+	b.global_position = global_position
 	b.get_node("RichTextLabel").text = String(round(damagetaken*PlayerAutoload.armorCalculation()*PlayerAutoload.difficulty))
 	iframesTimer.start()
 

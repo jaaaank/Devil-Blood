@@ -5,11 +5,11 @@
 [ext_resource path="res://Scenes/Actors/Objects/Crucifix.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Actors/Objects/Bullet.tscn" type="PackedScene" id=4]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 188, 436.5 )
-
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 174, 427.5 )
+extents = Vector2( 34, 73 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 27.5, 69.5 )
 
 [sub_resource type="ParticlesMaterial" id=4]
 lifetime_randomness = 0.5
@@ -40,10 +40,6 @@ script = ExtResource( 2 )
 Bullet = ExtResource( 4 )
 Crucifix = ExtResource( 3 )
 
-[node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2( 3.00001, -2.50002 )
-shape = SubResource( 1 )
-
 [node name="PlayerSprite" type="Sprite" parent="."]
 position = Vector2( -3.49998, 3.49998 )
 texture = ExtResource( 1 )
@@ -54,13 +50,16 @@ input_pickable = false
 
 [node name="HurtBoxShape" type="CollisionShape2D" parent="Hurtbox"]
 modulate = Color( 0.709804, 0, 0, 1 )
-position = Vector2( 9, -8.5 )
+position = Vector2( -1, 2 )
 shape = SubResource( 2 )
+
+[node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2( -2.5, 1.5 )
+shape = SubResource( 1 )
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 scale = Vector2( 6.23674, 6.23674 )
 current = true
-zoom = Vector2( 8, 8 )
 process_mode = 0
 limit_smoothed = true
 smoothing_enabled = true
@@ -70,7 +69,6 @@ editor_draw_drag_margin = true
 hframes = 4
 
 [node name="Muzzle" type="Position2D" parent="Guns"]
-scale = Vector2( 3, 3 )
 __meta__ = {
 "_gizmo_extents_": 0.0
 }

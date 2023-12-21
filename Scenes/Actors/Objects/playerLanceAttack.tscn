@@ -51,7 +51,7 @@ tracks/0/keys = {
 }
 
 [node name="Position2D" type="Position2D"]
-scale = Vector2( 4, 2 )
+scale = Vector2( 2, 1 )
 script = ExtResource( 2 )
 __meta__ = {
 "_gizmo_extents_": 100.0

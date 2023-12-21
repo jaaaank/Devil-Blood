@@ -10,7 +10,6 @@ var dashing = false
 
 func _physics_process(_delta):
 	PlayerAutoload.playerPos = global_position
-	velocity = move_and_slide(velocity)
 	if !cooldown:
 		$Weapons/hand.look_at(get_global_mouse_position())
 

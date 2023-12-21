@@ -4,7 +4,7 @@ class_name enemy
 export (PackedScene) var damagenumbers = load("res://Scenes/Actors/Objects/DamageNumbers.tscn")
 var knight = false
 var stunned = false
-
+var attackrange = 125
 
 func damage(dmgdealt):
 	if knight:
@@ -12,7 +12,8 @@ func damage(dmgdealt):
 	health -= round(dmgdealt * armorCalculation())
 	print("Enemy has this much health: " + String(health))
 	var b = damagenumbers.instance()
-	add_child(b)
+	get_parent().add_child(b)
+	b.global_position = global_position
 	b.get_node("RichTextLabel").text = String(round(dmgdealt * armorCalculation()))
 	if health<=0:
 		queue_free()

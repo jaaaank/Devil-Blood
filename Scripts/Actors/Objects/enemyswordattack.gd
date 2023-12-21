@@ -5,5 +5,5 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	queue_free()
 	
 
-func _on_Sword_area_entered(area):
+func _on_Sword_area_entered(_area):
 	PlayerAutoload.damage(10)

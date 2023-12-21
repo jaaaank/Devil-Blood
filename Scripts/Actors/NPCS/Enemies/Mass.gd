@@ -4,7 +4,7 @@ var target: Vector2
 onready var walktimer:= $walktimer
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	speed = Vector2(10000, 10000)
+	speed = 100
 	sprite = $Masssheet
 	randomize()
 	randomWalk()
@@ -12,8 +12,8 @@ func _ready():
 	health = 5
 	
 func _physics_process(delta):
-	velocity = global_position.direction_to(target) * speed * delta
-	if global_position.distance_to(target) > 500:
+	if global_position.distance_to(target) > 100:
+		velocity = global_position.direction_to(target) * speed
 		move_and_slide(velocity)
 	
 

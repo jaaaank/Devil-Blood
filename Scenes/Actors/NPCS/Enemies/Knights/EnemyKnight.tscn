@@ -1,15 +1,15 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Actors/NPCS/Enemies/EnemyKnights.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Actors/bloodwitchplaceholder.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Actors/knight.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Actors/Objects/enemyswordattack.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Actors/Objects/DamageNumbers.tscn" type="PackedScene" id=4]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 160, 433.5 )
-
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 149, 421 )
+extents = Vector2( 33, 67.5 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 30, 63.5 )
 
 [node name="EnemyKnight" type="KinematicBody2D"]
 collision_layer = 2
@@ -18,10 +18,6 @@ script = ExtResource( 1 )
 damagenumbers = ExtResource( 4 )
 swordattack = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 9, 9.5 )
-shape = SubResource( 1 )
-
 [node name="Hurtbox" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 4
@@ -29,8 +25,12 @@ input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 11, 9 )
+position = Vector2( 0, -1.5 )
 shape = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -0.5 )
+shape = SubResource( 1 )
 
 [node name="Weapon" type="Position2D" parent="."]
 
