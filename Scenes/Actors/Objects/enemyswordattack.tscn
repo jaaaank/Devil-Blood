@@ -35,7 +35,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 142.25, 34.0009 )
+extents = Vector2( 63, 8.5 )
 
 [node name="Position2D" type="Position2D"]
 script = ExtResource( 2 )
@@ -44,7 +44,7 @@ __meta__ = {
 }
 
 [node name="Swordplaceholder" type="Sprite" parent="."]
-position = Vector2( -150, 0 )
+position = Vector2( -71, 0 )
 rotation = 3.14159
 texture = ExtResource( 1 )
 
@@ -58,7 +58,7 @@ collision_layer = 8
 input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sword"]
-position = Vector2( -142.25, -0.000526684 )
+position = Vector2( -63, -0.499979 )
 rotation = 3.14159
 shape = SubResource( 3 )
 
