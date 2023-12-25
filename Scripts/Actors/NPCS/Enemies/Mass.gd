@@ -15,7 +15,6 @@ func _physics_process(delta):
 	if global_position.distance_to(target) > 100:
 		velocity = global_position.direction_to(target) * speed
 		move_and_slide(velocity)
-	
 
 func randomWalk():
 	var rice = rand_range(-walkrange, walkrange)
