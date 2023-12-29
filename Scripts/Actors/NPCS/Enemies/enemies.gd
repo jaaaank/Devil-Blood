@@ -9,6 +9,7 @@ var attackrange = 125
 func damage(dmgdealt):
 	if knight:
 		PlayerAutoload.knightsAgressive = true
+# warning-ignore:narrowing_conversion
 	health -= round(dmgdealt * armorCalculation())
 	print("Enemy has this much health: " + String(health))
 	var b = damagenumbers.instance()

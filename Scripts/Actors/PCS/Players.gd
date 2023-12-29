@@ -7,10 +7,13 @@ onready var iframesTimer:= $IframesTimer
 
 func _ready():
 	sprite = $PlayerSprite
+# warning-ignore:return_value_discarded
 	PlayerAutoload.connect("player_dead", self, "die")
+# warning-ignore:return_value_discarded
 	PlayerAutoload.connect("player_damaged", self, "spawnDamageNums")
 
 func _physics_process(_delta):
+# warning-ignore:return_value_discarded
 	move_and_slide(velocity)
 	
 func _input(_event):

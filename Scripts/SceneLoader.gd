@@ -7,8 +7,9 @@ export var nextScene: String
 
 
 
-func _on_SceneLoader_body_entered(body):
+func _on_SceneLoader_body_entered(_body):
 	MapAutoload.set_spawnPoint(newSpawnPoint)
+# warning-ignore:return_value_discarded
 	get_tree().change_scene(nextScene)
 	
 func _get_configuration_warning() -> String:

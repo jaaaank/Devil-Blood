@@ -13,6 +13,7 @@ var difficulty: float = 1.0 setget set_difficulty
 var soul: int = 0 setget set_soul
 var devilBlood: int = 0 setget set_devilBlood
 
+# warning-ignore:unused_signal
 signal interact
 signal player_damaged
 signal player_dead
@@ -57,12 +58,14 @@ func charDie():
 
 func damage(damageTaken: float):
 	if !iframes:
+# warning-ignore:narrowing_conversion
 		set_playerHealth(round(health - damageTaken*armorCalculation()*difficulty))
 		emit_signal("player_damaged", damageTaken)
 		print("Player damaged; Health = " + String(health))
 		iframes = true
 	
 func heal(healingFactor: float):
+# warning-ignore:narrowing_conversion
 	set_playerHealth(round(health + healingFactor/difficulty))
 	print("Healed; Health = " + String(health))
 

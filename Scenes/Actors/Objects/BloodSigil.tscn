@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scripts/Actors/Objects/BloodSigil.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Actors/Objects/Bullet.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Actors/objects/bloodsigilplaceholder.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 12.3065
 
 [sub_resource type="ParticlesMaterial" id=1]
 lifetime_randomness = 0.5
@@ -27,11 +30,11 @@ hue_variation = 0.06
 hue_variation_random = 1.0
 
 [node name="BloodSigil" type="Area2D"]
-scale = Vector2( 10, 10 )
 collision_layer = 4
-collision_mask = 26
+collision_mask = 10
 input_pickable = false
 script = ExtResource( 1 )
+speed = Vector2( 1000, 1000 )
 
 [node name="Bulletplaceholderispenttoolongon" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -39,9 +42,9 @@ texture = ExtResource( 2 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
-polygon = PoolVector2Array( -22.5597, -5.63994, -39.4795, -16.9198, 11.2799, -28.1997, 33.8396, -22.5597, 50.7594, -5.63994, 50.7594, 0, 50.7594, 11.2799, 45.1195, 22.5597, -11.2799, 22.5597, -23, 12, -33.8396, 11.2799, -33.8396, 0 )
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
+position = Vector2( 14.6, 0 )
+shape = SubResource( 2 )
 
 [node name="BloodParticles" type="Particles2D" parent="."]
 position = Vector2( -24.6, -1.39835e-11 )

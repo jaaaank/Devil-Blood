@@ -1,11 +1,14 @@
 extends Position2D
 
 var player = Node
+var ogdegrees
 
 func _ready():
+	ogdegrees=global_rotation_degrees
 	player = get_parent().get_parent().get_parent()
 	
-#func _physics_process(delta):
+func _physics_process(_delta):
+	global_rotation_degrees = ogdegrees
 	#player.global_position = $Sword.global_position
 
 
@@ -17,7 +20,7 @@ func _on_Sword_area_entered(area):
 	queue_free()
 
 
-func _on_Sword_body_entered(body):
+func _on_Sword_body_entered(_body):
 	#player.set_process_input(true)
 	queue_free()
 

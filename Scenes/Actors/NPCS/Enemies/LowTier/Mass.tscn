@@ -5,10 +5,10 @@
 [ext_resource path="res://Scenes/Actors/Objects/DamageNumbers.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 35, 19.5 )
+extents = Vector2( 27, 11 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 33, 13 )
+extents = Vector2( 32, 20.5 )
 
 [node name="Mass" type="KinematicBody2D"]
 collision_layer = 42
@@ -19,18 +19,18 @@ damagenumbers = ExtResource( 3 )
 [node name="Masssheet" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
-[node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 14 )
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 19 )
 shape = SubResource( 1 )
 
 [node name="Hurtbox" type="Area2D" parent="."]
-collision_layer = 34
-collision_mask = 69
+collision_layer = 2
+collision_mask = 68
 input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 0, 20 )
+position = Vector2( 0, 10.5 )
 shape = SubResource( 2 )
 
 [node name="walktimer" type="Timer" parent="."]

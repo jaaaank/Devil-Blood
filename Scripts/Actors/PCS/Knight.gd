@@ -7,7 +7,7 @@ onready var timey:= $Weapons/Timer
 var reloadTime: float = 1.0
 var cooldown = false
 var dashing = false
-
+	
 func _physics_process(_delta):
 	PlayerAutoload.playerPos = global_position
 	if !cooldown:
@@ -19,7 +19,6 @@ func attack():
 		$Weapons/hand.add_child(b)
 		cooldown = true
 		timey.start(reloadTime)
-		print("main attack")
 		
 		
 func altAttack():
@@ -28,10 +27,9 @@ func altAttack():
 		set_process_input(false)
 		var b = LanceAttack.instance()
 		$Weapons/hand.add_child(b)
-		velocity = global_position.direction_to(get_global_mouse_position())*25000
+		velocity = global_position.direction_to(get_global_mouse_position())*2500
 		dashing = true
 		$dashtimer.start()
-		print("alt attack")
 		
 func _on_Timer_timeout():
 	cooldown = false
