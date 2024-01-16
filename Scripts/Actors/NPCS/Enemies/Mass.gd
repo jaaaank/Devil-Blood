@@ -37,5 +37,5 @@ func unstun():
 	set_physics_process(true)
 	
 func _on_Hurtbox_area_entered(area):
-	if area.get_collision_layer_bit(0) and !stunned:
-		PlayerAutoload.damage(5)
+	if area.collision_layer == 1 and !stunned:
+		area.owner.damage(basedamage)

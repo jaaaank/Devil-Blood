@@ -42,6 +42,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_gizmo_extents_": 100.0
 }
+basedamage = 10
 
 [node name="Swordplaceholder" type="Sprite" parent="."]
 position = Vector2( -71, 0 )

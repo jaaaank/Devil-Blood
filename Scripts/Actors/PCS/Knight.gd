@@ -7,7 +7,7 @@ onready var timey:= $Weapons/Timer
 var reloadTime: float = 1.0
 var cooldown = false
 var dashing = false
-	
+
 func _physics_process(_delta):
 	PlayerAutoload.playerPos = global_position
 	if !cooldown:

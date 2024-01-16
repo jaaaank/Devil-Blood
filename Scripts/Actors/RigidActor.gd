@@ -4,15 +4,15 @@ class_name RigidActor
 export var speed: = 500
 export var health: = 100
 export var armor: = 0
-var sprite: Sprite
-var attackrange = 125
+var sprite
+export var attackrange = 125
 export (PackedScene) var damagenumbers
 
 func _physics_process(_delta):
 	if linear_velocity.x<0:
-		sprite.flip_h = true
+		sprite.scale.x = -1
 	if linear_velocity.x>0:
-		sprite.flip_h = false
+		sprite.scale.x = 1
 
 func damage(dmgdealt):
 # warning-ignore:narrowing_conversion

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/father.png-ba1cca011b8a0894e45458d802d1d12a.stex"
+path="res://.import/father.png-8ba2926118b551d6c89d3c4170625296.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Actors/father.png"
-dest_files=[ "res://.import/father.png-ba1cca011b8a0894e45458d802d1d12a.stex" ]
+source_file="res://Assets/Placeholders/father.png"
+dest_files=[ "res://.import/father.png-8ba2926118b551d6c89d3c4170625296.stex" ]
 
 [params]
 

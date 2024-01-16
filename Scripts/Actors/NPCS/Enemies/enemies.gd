@@ -1,6 +1,7 @@
 extends Actor
 class_name enemy
 
+export var basedamage: int
 export (PackedScene) var damagenumbers = load("res://Scenes/Actors/Objects/DamageNumbers.tscn")
 var knight = false
 var stunned = false

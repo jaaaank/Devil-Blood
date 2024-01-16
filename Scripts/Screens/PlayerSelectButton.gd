@@ -3,8 +3,6 @@ extends Button
 
 export var characternum: int
 
-
-func _on_PlayerSelectButton_pressed():
+func _on_PlayerSelectButton_pressed() -> void:
 	PlayerAutoload.playerCharacter = characternum
-# warning-ignore:return_value_discarded
-	get_tree().change_scene("res://Scenes/Maps/Exterior/Garrison.tscn")
+	get_tree().change_scene("res://Scenes/Screens/PreRunShop.tscn")

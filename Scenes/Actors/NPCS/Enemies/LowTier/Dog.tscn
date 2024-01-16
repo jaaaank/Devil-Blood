@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/Actors/NPCS/Enemies/Dog.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Actors/dog.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Actors/objects/stake.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Actors/objects/chain.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Actors/Objects/DamageNumbers.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Actors/Objects/enemybiteattack.tscn" type="PackedScene" id=7]
 
 [sub_resource type="GDScript" id=10]
 script/source = "extends Sprite
@@ -88,6 +89,37 @@ script/source = "extends Area2D
 func _ready():
 	set_owner(get_parent())
 "
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CollisionPolygon2D/DogSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "bark"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("CollisionPolygon2D/DogSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 2, 1, 0, 0, 1, 2, 2, 1, 0 ]
+}
 
 [node name="Stake" type="StaticBody2D"]
 collision_layer = 0
@@ -242,20 +274,28 @@ collision_layer = 0
 collision_mask = 16
 gravity_scale = 0.0
 script = ExtResource( 1 )
+health = 45
+attackrange = 150
 damagenumbers = ExtResource( 6 )
+biteattack = ExtResource( 7 )
 
-[node name="DogSprite" type="Sprite" parent="Dog"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Dog"]
+polygon = PoolVector2Array( -62, 10, -21, -9, 22, -18, 34, -32, 52, -20, 47, -13, 40, -10, 26, 8, 25, 32, 19, 32, 2, 32, -5, 32, -19, 29, -23, 17, -33, 32, -39, 29, -35, 9, -57, 12 )
+
+[node name="DogSprite" type="Sprite" parent="Dog/CollisionPolygon2D"]
+position = Vector2( -5, 0 )
 texture = ExtResource( 2 )
+hframes = 3
+vframes = 3
 
-[node name="shadow" type="Sprite" parent="Dog/DogSprite"]
-position = Vector2( -1.6059, 26 )
+[node name="shadow" type="Sprite" parent="Dog/CollisionPolygon2D/DogSprite"]
+position = Vector2( -5.00001, 26 )
 scale = Vector2( 1.5, 0.8 )
 z_index = -1
 texture = ExtResource( 3 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Dog"]
-visible = false
-polygon = PoolVector2Array( -64, 10, -21, -10, 20, -18, 31, -32, 50, -20, 45, -12, 23, 10, 25, 32, 19, 32, 14, 28, 10, 12, -5, 10, -5, 32, -19, 29, -27, 18, -33, 32, -40, 32, -44, 11, -62, 11 )
+[node name="Position2D" type="Position2D" parent="Dog/CollisionPolygon2D/DogSprite"]
+position = Vector2( 40, -16 )
 
 [node name="attkcooldown" type="Timer" parent="Dog"]
 
@@ -267,5 +307,9 @@ script = SubResource( 11 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Dog/hurtbox"]
 polygon = PoolVector2Array( -1, -13, 21, -18, 32, -28, 50, -20, 43, -13, 21, 11, 24, 31, -13, 32, -19, 24, -20, 16, -34, 31, -40, 33, -38, 16, -31, 9, -51, 9, -48, 3, -29, -4, -21, -10 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Dog"]
+anims/RESET = SubResource( 13 )
+anims/bark = SubResource( 12 )
 
 [connection signal="timeout" from="Dog/attkcooldown" to="Dog" method="_on_attkcooldown_timeout"]

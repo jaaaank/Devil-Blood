@@ -1,9 +1,14 @@
 extends Position2D
 
-func _on_AnimationPlayer_animation_finished(anim_name):
-	print("enemy attacked")
+export var basedamage: int
+
+func _on_AnimationPlayer_animation_finished(_anim_name):
 	queue_free()
 	
 
-func _on_Sword_area_entered(_area):
-	PlayerAutoload.damage(10)
+func _on_Sword_area_entered(area):
+	area.owner.damage(basedamage)
+
+
+func _on_Timer_timeout():
+	queue_free()
