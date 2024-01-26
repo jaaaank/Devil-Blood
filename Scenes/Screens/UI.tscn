@@ -1,19 +1,25 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://dewtt0y5sychm"]
 
-[ext_resource path="res://Scripts/Screens/UI.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Screens/Popups/SelectionWheel.tscn" type="PackedScene" id=2]
+[ext_resource type="Script" path="res://Scripts/Screens/UI.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://ddmifqa1yt0ab" path="res://Scenes/Screens/Popups/SelectionWheel.tscn" id="2"]
 
 [node name="UI" type="Control"]
-pause_mode = 2
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
 
 [node name="Label" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 14.0
 text = "Last Used Item: "
 
-[node name="SelectionWheel" parent="." instance=ExtResource( 2 )]
+[node name="SelectionWheel" parent="." instance=ExtResource("2")]
 visible = false
-slots = [  ]
+layout_mode = 1
+slots = Array[Resource("res://Scripts/itemType.gd")]([])

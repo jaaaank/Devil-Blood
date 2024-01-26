@@ -1,7 +1,7 @@
 extends Control
 
-onready var itemsText:= $rightside/SelectedItemsText
-onready var moneyText:= $rightside/MoneyText
+@onready var itemsText:= $rightside/SelectedItemsText
+@onready var moneyText:= $rightside/MoneyText
 var moneySpent:int = 0
 var selectedItems: Array
 
@@ -17,9 +17,9 @@ func updateShopInterface():
 		itemsText.text += i[0] + "\n"
 		moneySpent += i[1]
 		
-	moneyText.text = "Devil Blood: " + String(SaveData.soulboundDevilBlood) + "\n" \
-	+"Devil Blood Spent: " + String(moneySpent) + "\n"\
-	+"Devil Blood Remaining: " + String(SaveData.soulboundDevilBlood - moneySpent)
+	moneyText.text = "Devil Blood: " + str(SaveData.soulboundDevilBlood) + "\n" \
+	+"Devil Blood Spent: " + str(moneySpent) + "\n"\
+	+"Devil Blood Remaining: " + str(SaveData.soulboundDevilBlood - moneySpent)
 	
 	
 func buythis(cost):

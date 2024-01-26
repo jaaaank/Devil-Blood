@@ -1,6 +1,6 @@
 extends Control
 
-var paused: = false setget set_paused
+var paused: = false: set = set_paused
 
 
 # Called when the node enters the scene tree for the first time.
@@ -14,7 +14,7 @@ func _ready():
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		self.paused = !paused
-		get_tree().set_input_as_handled()
+		get_viewport().set_input_as_handled()
 		
 func set_paused(value: bool) -> void:
 	paused = value

@@ -11,38 +11,38 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -105.0
-margin_top = -20.0
-margin_right = 105.0
-margin_bottom = 20.0
+offset_left = -105.0
+offset_top = -20.0
+offset_right = 105.0
+offset_bottom = 20.0
 
 [node name="PlayerSelectButton" type="Button" parent="HBoxContainer"]
-margin_right = 49.0
-margin_bottom = 40.0
+offset_right = 49.0
+offset_bottom = 40.0
 text = "Priest"
 script = ExtResource( 1 )
 characternum = 1
 
 [node name="PlayerSelectButton2" type="Button" parent="HBoxContainer"]
-margin_left = 53.0
-margin_right = 105.0
-margin_bottom = 40.0
+offset_left = 53.0
+offset_right = 105.0
+offset_bottom = 40.0
 text = "Knight"
 script = ExtResource( 1 )
 characternum = 2
 
 [node name="PlayerSelectButton3" type="Button" parent="HBoxContainer"]
-margin_left = 109.0
-margin_right = 158.0
-margin_bottom = 40.0
+offset_left = 109.0
+offset_right = 158.0
+offset_bottom = 40.0
 text = "Witch"
 script = ExtResource( 1 )
 characternum = 3
 
 [node name="PlayerSelectButton4" type="Button" parent="HBoxContainer"]
-margin_left = 162.0
-margin_right = 210.0
-margin_bottom = 40.0
+offset_left = 162.0
+offset_right = 210.0
+offset_bottom = 40.0
 text = "Angel"
 script = ExtResource( 1 )
 characternum = 4

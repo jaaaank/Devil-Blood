@@ -3,7 +3,7 @@ extends Node2D
 var offset
 
 func _ready():
-	offset = rand_range(-40, 40)
+	offset = randf_range(-40, 40)
 	position.x += offset
 	position.y += offset
 	

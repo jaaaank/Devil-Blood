@@ -1,8 +1,8 @@
 extends Actor
 class_name enemy
 
-export var basedamage: int
-export (PackedScene) var damagenumbers = load("res://Scenes/Actors/Objects/DamageNumbers.tscn")
+@export var basedamage: int
+@export var damagenumbers:PackedScene = load("res://Scenes/Actors/Objects/DamageNumbers.tscn")
 var knight = false
 var stunned = false
 var attackrange = 125
@@ -12,11 +12,11 @@ func damage(dmgdealt):
 		PlayerAutoload.knightsAgressive = true
 # warning-ignore:narrowing_conversion
 	health -= round(dmgdealt * armorCalculation())
-	print("Enemy has this much health: " + String(health))
-	var b = damagenumbers.instance()
+	print("Enemy has this much health: " + str(health))
+	var b = damagenumbers.instantiate()
 	get_parent().add_child(b)
 	b.global_position = global_position
-	b.get_node("RichTextLabel").text = String(round(dmgdealt * armorCalculation()))
+	b.get_node("RichTextLabel").text = str(round(dmgdealt * armorCalculation()))
 	if health<=0:
 		queue_free()
 		

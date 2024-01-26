@@ -1,75 +1,75 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=3 uid="uid://dcrsm1jbpr0nb"]
 
-[ext_resource path="res://Scripts/Actors/NPCS/Enemies/Dog.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Actors/dog.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Actors/objects/shadow.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Actors/objects/stake.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Actors/objects/chain.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/Actors/Objects/DamageNumbers.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Actors/Objects/enemybiteattack.tscn" type="PackedScene" id=7]
+[ext_resource type="Script" path="res://Scripts/Actors/NPCS/Enemies/Dog.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cglxeqkpxjmug" path="res://Assets/Actors/dog.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://b58hx0107aaj1" path="res://Assets/Actors/objects/stake.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dde2yhvg35dh0" path="res://Assets/Actors/objects/chain.png" id="5"]
+[ext_resource type="PackedScene" path="res://Scenes/Actors/Objects/DamageNumbers.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://Scenes/Actors/Objects/enemybiteattack.tscn" id="7"]
 
-[sub_resource type="GDScript" id=10]
-script/source = "extends Sprite
-export var nextnode: String
+[sub_resource type="GDScript" id="10"]
+script/source = "extends Sprite2D
+@export var nextnode: String
 
 
 func _physics_process(_delta):
 	look_at(owner.get_node(nextnode).global_position)
 "
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id="2"]
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id="3"]
 radius = 3.0
 
-[sub_resource type="GDScript" id=4]
-script/source = "extends Sprite
-export var nextnode: String
+[sub_resource type="GDScript" id="4"]
+script/source = "extends Sprite2D
+@export var nextnode: String
 
 
 func _physics_process(_delta):
 	look_at(owner.get_node(nextnode).global_position)
 "
 
-[sub_resource type="GDScript" id=5]
-script/source = "extends Sprite
-export var nextnode: String
+[sub_resource type="GDScript" id="5"]
+script/source = "extends Sprite2D
+@export var nextnode: String
 
 
 func _physics_process(_delta):
 	look_at(owner.get_node(nextnode).global_position)
 "
 
-[sub_resource type="GDScript" id=6]
-script/source = "extends Sprite
-export var nextnode: String
+[sub_resource type="GDScript" id="6"]
+script/source = "extends Sprite2D
+@export var nextnode: String
 
 
 func _physics_process(_delta):
 	look_at(owner.get_node(nextnode).global_position)
 "
 
-[sub_resource type="GDScript" id=7]
-script/source = "extends Sprite
-export var nextnode: String
+[sub_resource type="GDScript" id="7"]
+script/source = "extends Sprite2D
+@export var nextnode: String
 
 
 func _physics_process(_delta):
 	look_at(owner.get_node(nextnode).global_position)
 "
 
-[sub_resource type="GDScript" id=8]
-script/source = "extends Sprite
-export var nextnode: String
+[sub_resource type="GDScript" id="8"]
+script/source = "extends Sprite2D
+@export var nextnode: String
 
 
 func _physics_process(_delta):
 	look_at(owner.get_node(nextnode).global_position)
 "
 
-[sub_resource type="GDScript" id=9]
-script/source = "extends Sprite
-export var nextnode: String
+[sub_resource type="GDScript" id="9"]
+script/source = "extends Sprite2D
+@export var nextnode: String
 
 
 func _physics_process(_delta):
@@ -79,7 +79,7 @@ func _physics_process(_delta):
 		get_parent().set_physics_process(false)
 "
 
-[sub_resource type="GDScript" id=11]
+[sub_resource type="GDScript" id="11"]
 script/source = "extends Area2D
 
 
@@ -90,58 +90,64 @@ func _ready():
 	set_owner(get_parent())
 "
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id="13"]
 length = 0.001
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("CollisionPolygon2D/DogSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ 0 ]
+"values": [0]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id="12"]
 resource_name = "bark"
 step = 0.05
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("CollisionPolygon2D/DogSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ 0, 1, 2, 2, 1, 0, 0, 1, 2, 2, 1, 0 ]
+"values": [0, 1, 2, 2, 1, 0, 0, 1, 2, 2, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qqweo"]
+_data = {
+"RESET": SubResource("13"),
+"bark": SubResource("12")
 }
 
 [node name="Stake" type="StaticBody2D"]
 collision_layer = 0
 collision_mask = 0
 
-[node name="Chain" type="Sprite" parent="."]
-texture = ExtResource( 5 )
-offset = Vector2( 25, 0 )
-script = SubResource( 10 )
+[node name="Chain" type="Sprite2D" parent="."]
+texture = ExtResource("5")
+offset = Vector2(25, 0)
+script = SubResource("10")
 nextnode = "joint1"
 
-[node name="Stake" type="Sprite" parent="."]
-texture = ExtResource( 4 )
+[node name="Stake" type="Sprite2D" parent="."]
+texture = ExtResource("4")
 
-[node name="Shadow" type="Sprite" parent="Stake"]
-position = Vector2( 1.19209e-07, 12 )
-scale = Vector2( 0.170756, 0.170756 )
+[node name="Shadow" type="Sprite2D" parent="Stake"]
 z_index = -1
-texture = ExtResource( 3 )
+position = Vector2(1.19209e-07, 12)
+scale = Vector2(0.170756, 0.170756)
+texture = ExtResource("3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
+shape = SubResource("2")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 node_a = NodePath("..")
@@ -149,7 +155,7 @@ node_b = NodePath("../joint1")
 bias = 0.9
 
 [node name="joint1" type="RigidBody2D" parent="."]
-position = Vector2( 50, 0 )
+position = Vector2(50, 0)
 collision_layer = 0
 collision_mask = 0
 gravity_scale = 0.0
@@ -160,142 +166,142 @@ node_b = NodePath("../../joint2")
 bias = 0.9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="joint1"]
-shape = SubResource( 3 )
+shape = SubResource("3")
 
-[node name="Chain" type="Sprite" parent="joint1"]
-texture = ExtResource( 5 )
-offset = Vector2( 25, 0 )
-script = SubResource( 4 )
+[node name="Chain" type="Sprite2D" parent="joint1"]
+texture = ExtResource("5")
+offset = Vector2(25, 0)
+script = SubResource("4")
 nextnode = "joint2"
 
 [node name="joint2" type="RigidBody2D" parent="."]
-position = Vector2( 100, 0 )
+position = Vector2(100, 0)
 collision_layer = 0
 collision_mask = 0
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="joint2"]
-shape = SubResource( 3 )
+shape = SubResource("3")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="joint2"]
 node_a = NodePath("..")
 node_b = NodePath("../../joint3")
 bias = 0.9
 
-[node name="Chain" type="Sprite" parent="joint2"]
-texture = ExtResource( 5 )
-offset = Vector2( 25, 0 )
-script = SubResource( 5 )
+[node name="Chain" type="Sprite2D" parent="joint2"]
+texture = ExtResource("5")
+offset = Vector2(25, 0)
+script = SubResource("5")
 nextnode = "joint3"
 
 [node name="joint3" type="RigidBody2D" parent="."]
-position = Vector2( 150, 0 )
+position = Vector2(150, 0)
 collision_layer = 0
 collision_mask = 0
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="joint3"]
-shape = SubResource( 3 )
+shape = SubResource("3")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="joint3"]
 node_a = NodePath("..")
 node_b = NodePath("../../joint4")
 bias = 0.9
 
-[node name="Chain" type="Sprite" parent="joint3"]
-texture = ExtResource( 5 )
-offset = Vector2( 25, 0 )
-script = SubResource( 6 )
+[node name="Chain" type="Sprite2D" parent="joint3"]
+texture = ExtResource("5")
+offset = Vector2(25, 0)
+script = SubResource("6")
 nextnode = "joint4"
 
 [node name="joint4" type="RigidBody2D" parent="."]
-position = Vector2( 200, 0 )
+position = Vector2(200, 0)
 collision_layer = 0
 collision_mask = 0
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="joint4"]
-shape = SubResource( 3 )
+shape = SubResource("3")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="joint4"]
 node_a = NodePath("..")
 node_b = NodePath("../../joint5")
 bias = 0.9
 
-[node name="Chain" type="Sprite" parent="joint4"]
-texture = ExtResource( 5 )
-offset = Vector2( 25, 0 )
-script = SubResource( 7 )
+[node name="Chain" type="Sprite2D" parent="joint4"]
+texture = ExtResource("5")
+offset = Vector2(25, 0)
+script = SubResource("7")
 nextnode = "joint5"
 
 [node name="joint5" type="RigidBody2D" parent="."]
-position = Vector2( 250, 0 )
+position = Vector2(250, 0)
 collision_layer = 0
 collision_mask = 0
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="joint5"]
-shape = SubResource( 3 )
+shape = SubResource("3")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="joint5"]
 node_a = NodePath("..")
 node_b = NodePath("../../joint6")
 bias = 0.9
 
-[node name="Chain" type="Sprite" parent="joint5"]
-texture = ExtResource( 5 )
-offset = Vector2( 25, 0 )
-script = SubResource( 8 )
+[node name="Chain" type="Sprite2D" parent="joint5"]
+texture = ExtResource("5")
+offset = Vector2(25, 0)
+script = SubResource("8")
 nextnode = "joint6"
 
 [node name="joint6" type="RigidBody2D" parent="."]
-position = Vector2( 300, 0 )
+position = Vector2(300, 0)
 collision_layer = 0
 collision_mask = 0
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="joint6"]
-shape = SubResource( 3 )
+shape = SubResource("3")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="joint6"]
 node_a = NodePath("..")
 node_b = NodePath("../../Dog")
 bias = 0.9
 
-[node name="Chain" type="Sprite" parent="joint6"]
-texture = ExtResource( 5 )
-offset = Vector2( 25, 0 )
-script = SubResource( 9 )
+[node name="Chain" type="Sprite2D" parent="joint6"]
+texture = ExtResource("5")
+offset = Vector2(25, 0)
+script = SubResource("9")
 nextnode = "Dog"
 
 [node name="Dog" type="RigidBody2D" parent="."]
-position = Vector2( 350, 0 )
+position = Vector2(350, 0)
 collision_layer = 0
 collision_mask = 16
 gravity_scale = 0.0
-script = ExtResource( 1 )
+script = ExtResource("1")
+biteattack = ExtResource("7")
 health = 45
 attackrange = 150
-damagenumbers = ExtResource( 6 )
-biteattack = ExtResource( 7 )
+damagenumbers = ExtResource("6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Dog"]
-polygon = PoolVector2Array( -62, 10, -21, -9, 22, -18, 34, -32, 52, -20, 47, -13, 40, -10, 26, 8, 25, 32, 19, 32, 2, 32, -5, 32, -19, 29, -23, 17, -33, 32, -39, 29, -35, 9, -57, 12 )
+polygon = PackedVector2Array(-62, 10, -21, -9, 22, -18, 34, -32, 52, -20, 47, -13, 40, -10, 26, 8, 25, 32, 19, 32, 2, 32, -5, 32, -19, 29, -23, 17, -33, 32, -39, 29, -35, 9, -57, 12)
 
-[node name="DogSprite" type="Sprite" parent="Dog/CollisionPolygon2D"]
-position = Vector2( -5, 0 )
-texture = ExtResource( 2 )
+[node name="DogSprite" type="Sprite2D" parent="Dog/CollisionPolygon2D"]
+position = Vector2(-5, 0)
+texture = ExtResource("2")
 hframes = 3
 vframes = 3
 
-[node name="shadow" type="Sprite" parent="Dog/CollisionPolygon2D/DogSprite"]
-position = Vector2( -5.00001, 26 )
-scale = Vector2( 1.5, 0.8 )
+[node name="shadow" type="Sprite2D" parent="Dog/CollisionPolygon2D/DogSprite"]
 z_index = -1
-texture = ExtResource( 3 )
+position = Vector2(-5.00001, 26)
+scale = Vector2(1.5, 0.8)
+texture = ExtResource("3")
 
-[node name="Position2D" type="Position2D" parent="Dog/CollisionPolygon2D/DogSprite"]
-position = Vector2( 40, -16 )
+[node name="Marker2D" type="Marker2D" parent="Dog/CollisionPolygon2D/DogSprite"]
+position = Vector2(40, -16)
 
 [node name="attkcooldown" type="Timer" parent="Dog"]
 
@@ -303,13 +309,14 @@ position = Vector2( 40, -16 )
 visible = false
 collision_layer = 2
 collision_mask = 4
-script = SubResource( 11 )
+script = SubResource("11")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Dog/hurtbox"]
-polygon = PoolVector2Array( -1, -13, 21, -18, 32, -28, 50, -20, 43, -13, 21, 11, 24, 31, -13, 32, -19, 24, -20, 16, -34, 31, -40, 33, -38, 16, -31, 9, -51, 9, -48, 3, -29, -4, -21, -10 )
+polygon = PackedVector2Array(-1, -13, 21, -18, 32, -28, 50, -20, 43, -13, 21, 11, 24, 31, -13, 32, -19, 24, -20, 16, -34, 31, -40, 33, -38, 16, -31, 9, -51, 9, -48, 3, -29, -4, -21, -10)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Dog"]
-anims/RESET = SubResource( 13 )
-anims/bark = SubResource( 12 )
+libraries = {
+"": SubResource("AnimationLibrary_qqweo")
+}
 
 [connection signal="timeout" from="Dog/attkcooldown" to="Dog" method="_on_attkcooldown_timeout"]

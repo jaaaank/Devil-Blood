@@ -1,0 +1,10 @@
+[gd_resource type="AtlasTexture" script_class="itemType" load_steps=3 format=3 uid="uid://yba4i31mj8li"]
+
+[ext_resource type="Texture2D" uid="uid://87qhkav5hs3q" path="res://Assets/Items/allItems.png" id="1_juwkl"]
+[ext_resource type="Script" path="res://Scripts/itemType.gd" id="2_trfpf"]
+
+[resource]
+atlas = ExtResource("1_juwkl")
+region = Rect2(16, 0, 16, 16)
+script = ExtResource("2_trfpf")
+name = "Crystalized Devil Blood"

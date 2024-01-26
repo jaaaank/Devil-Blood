@@ -7,7 +7,7 @@ var witchSkillTree: Array =[false,false,false]
 var angelSkillTree: Array =[false,false,false]
 var soulboundDevilBlood: int = 10
 
-export(Dictionary) var saveDict = {
+@export var saveDict: Dictionary = {
 	priestsave = priestSkillTree,
 	knightsave = knightSkillTree,
 	witchsave = witchSkillTree,
@@ -24,9 +24,9 @@ func _ready() -> void:
 func saveData() -> void:
 	editData()
 	print ("Saving Data")
-	var file = File.new()
-	file.open(saveFile, File.WRITE)
-	file.store_line(to_json(saveDict))
+	var file = FileAccess.open(saveFile, FileAccess.WRITE)
+	file.open(saveFile, FileAccess.WRITE)
+	file.store_line(JSON.new().stringify(saveDict))
 	file.close()
 	
 func editData() -> void:
@@ -39,16 +39,18 @@ func editData() -> void:
 }
 
 func loadData() -> void:
-	var dataFile = File.new()
+	var dataFile = FileAccess.open(saveFile, FileAccess.WRITE)
 	if !dataFile.file_exists(saveFile):
 		print ("No Save Data Found")
 		return
 	else:
 		print ("Loading Save Data")
-	dataFile.open(saveFile, File.READ)
+	dataFile.open(saveFile, FileAccess.READ)
 	
-	while dataFile.get_position() < dataFile.get_len():
-		var nodeData = parse_json(dataFile.get_line())
+	while dataFile.get_position() < dataFile.get_length():
+		var test_json_conv = JSON.new()
+		test_json_conv.parse(dataFile.get_line())
+		var nodeData = test_json_conv.get_data()
 		saveDict.priestsave = nodeData["priestsave"]
 		saveDict.knightsave = nodeData["knightsave"]
 		saveDict.witchsave = nodeData["witchsave"]

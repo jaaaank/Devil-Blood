@@ -1,10 +1,10 @@
 extends Player
 
-onready var bloodParticles: Particles2D= $BloodParticles
-var equippedWeapon: int = 0 setget set_Equipped_Weapon
-export (PackedScene) var Bullet
-export (PackedScene) var Crucifix
-onready var timey:= $Guns/Timer
+@onready var bloodParticles: GPUParticles2D= $BloodParticles
+var equippedWeapon: int = 0: set = set_Equipped_Weapon
+@export var Bullet: PackedScene
+@export var Crucifix: PackedScene
+@onready var timey:= $Guns/Timer
 var reloadTime: float = 1.0
 var revolve: int = 0
 var cooldown = false
@@ -13,13 +13,14 @@ var cruce
 var crucing = false
 
 func _physics_process(_delta):
+	super(_delta)
 	$Guns/Muzzle.look_at(get_global_mouse_position())
 	PlayerAutoload.playerPos = global_position
 
 func _input(_event):
+	super(_event)
 	if Input.is_action_just_released("altattack"):
 		unaltAttack()
-		
 	if Input.is_action_just_pressed("weap1"):
 		set_Equipped_Weapon(0)
 
@@ -28,7 +29,7 @@ func _input(_event):
 
 func attack():
 	if !cooldown:
-		var b = Bullet.instance()
+		var b = Bullet.instantiate()
 		get_parent().get_parent().add_child(b)
 		b.position = $Guns/Muzzle.global_position
 		b.scale = $Guns/Muzzle.scale
@@ -39,7 +40,7 @@ func attack():
 func altAttack():
 	if !crucing:
 		crucing = true
-		var b = Crucifix.instance()
+		var b = Crucifix.instantiate()
 		add_child(b)
 		cruce = b
 		speed /= 3
@@ -53,7 +54,7 @@ func unaltAttack():
 	
 func randomSpread():
 	if !SaveData.priestSkillTree[2]:
-		var spread = rand_range(-5.0, 5.0)
+		var spread = randf_range(-5.0, 5.0)
 		return spread
 	else: return 1
 

@@ -1,12 +1,12 @@
 extends RigidBody2D
 class_name RigidActor
 
-export var speed: = 500
-export var health: = 100
-export var armor: = 0
+@export var speed: = 500
+@export var health: = 100
+@export var armor: = 0
 var sprite
-export var attackrange = 125
-export (PackedScene) var damagenumbers
+@export var attackrange = 125
+@export var damagenumbers: PackedScene
 
 func _physics_process(_delta):
 	if linear_velocity.x<0:
@@ -17,11 +17,11 @@ func _physics_process(_delta):
 func damage(dmgdealt):
 # warning-ignore:narrowing_conversion
 	health -= round(dmgdealt * armorCalculation())
-	print("Enemy has this much health: " + String(health))
-	var b = damagenumbers.instance()
+	print("Enemy has this much health: " + str(health))
+	var b = damagenumbers.instantiate()
 	get_parent().add_child(b)
 	b.global_position = global_position
-	b.get_node("RichTextLabel").text = String(round(dmgdealt * armorCalculation()))
+	b.get_node("RichTextLabel").text = str(round(dmgdealt * armorCalculation()))
 	if health<=0:
 		queue_free()
 

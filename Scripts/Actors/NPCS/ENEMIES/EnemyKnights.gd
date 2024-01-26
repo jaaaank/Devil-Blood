@@ -1,9 +1,9 @@
 extends enemy
 
-export (PackedScene) var swordattack
-export var walkrange = 10000
+@export (PackedScene) var swordattack
+@export var walkrange = 10000
 var target: Vector2
-onready var walktimer:= $walktimer
+@onready var walktimer:= $walktimer
 var attacking:= false
 
 func _ready():
@@ -22,17 +22,18 @@ func _physics_process(_delta):
 		target = PlayerAutoload.playerPos
 	if global_position.distance_to(target) > attackrange:
 		velocity = global_position.direction_to(target) * speed
-		move_and_slide(velocity)
+		set_velocity(velocity)
+		move_and_slide()
 	else:
 		if target == PlayerAutoload.playerPos:
 			attack()
 	
 func randomWalk():
 	if !PlayerAutoload.knightsAgressive:
-		var rice = rand_range(-walkrange, walkrange)
-		var beans = rand_range(-walkrange, walkrange)
+		var rice = randf_range(-walkrange, walkrange)
+		var beans = randf_range(-walkrange, walkrange)
 		target = Vector2(rice,beans)
-		walktimer.start(rand_range(3,6))
+		walktimer.start(randf_range(3,6))
 	else:
 		target = PlayerAutoload.playerPos
 	
@@ -41,7 +42,7 @@ func _on_walktimer_timeout():
 
 func attack():
 	if !attacking and !stunned:
-		var b = swordattack.instance()
+		var b = swordattack.instantiate()
 		$Weapon.add_child(b)
 		attacking = true
 		$attkcooldown.start(1)

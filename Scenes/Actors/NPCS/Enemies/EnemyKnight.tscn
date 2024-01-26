@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Actors/NPCS/Enemies/EnemyKnights.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Actors/knight.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Actors/knight.png" type="Texture2D" id=2]
 [ext_resource path="res://Scenes/Actors/Objects/enemyswordattack.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Actors/Objects/DamageNumbers.tscn" type="PackedScene" id=4]
 
@@ -11,7 +11,7 @@ extents = Vector2( 33, 67.5 )
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 30, 11 )
 
-[node name="EnemyKnight" type="KinematicBody2D"]
+[node name="EnemyKnight" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 18
 script = ExtResource( 1 )
@@ -32,9 +32,9 @@ shape = SubResource( 2 )
 position = Vector2( 0, 52 )
 shape = SubResource( 1 )
 
-[node name="Weapon" type="Position2D" parent="."]
+[node name="Weapon" type="Marker2D" parent="."]
 
-[node name="KnightSprite" type="Sprite" parent="."]
+[node name="KnightSprite" type="Sprite2D" parent="."]
 texture = ExtResource( 2 )
 
 [node name="walktimer" type="Timer" parent="."]

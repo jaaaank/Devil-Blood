@@ -1,6 +1,4 @@
-tool
-extends Resource
+extends AtlasTexture
 class_name itemType
 
-export(Texture) var icon
-export var name = ""
+@export var name: String

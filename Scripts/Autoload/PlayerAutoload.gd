@@ -1,15 +1,15 @@
 extends Node
 
-var spawnPoint: int = 0 setget set_spawnPoint
+var spawnPoint: int = 0: set = set_spawnPoint
 
 #1=priest, 2=knight, 3=witch, 4=angel
-var playerCharacter: int = 1 setget set_playerCharacter
+var playerCharacter: int = 1: set = set_playerCharacter
 var player
 #decides whether or not ALL knights on the map are agressive
-var knightsAgressive: bool = false setget set_knightsAgressive
-var playerPos: Vector2 = Vector2(0,0) setget set_playerPos
-var difficulty: float = 1.0 setget set_difficulty
-var devilBlood: int = 0 setget set_devilBlood
+var knightsAgressive: bool = false: set = set_knightsAgressive
+var playerPos: Vector2 = Vector2(0,0): set = set_playerPos
+var difficulty: float = 1.0: set = set_difficulty
+var devilBlood: int = 0: set = set_devilBlood
 
 # warning-ignore:unused_signal
 signal interact

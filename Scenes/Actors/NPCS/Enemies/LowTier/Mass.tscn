@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Actors/NPCS/Enemies/Mass.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Actors/masssheet.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Actors/masssheet.png" type="Texture2D" id=2]
 [ext_resource path="res://Scenes/Actors/Objects/DamageNumbers.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -10,14 +10,14 @@ extents = Vector2( 27, 11 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 32, 20.5 )
 
-[node name="Mass" type="KinematicBody2D"]
+[node name="Mass" type="CharacterBody2D"]
 collision_layer = 42
 collision_mask = 19
 script = ExtResource( 1 )
 basedamage = 5
 damagenumbers = ExtResource( 3 )
 
-[node name="Masssheet" type="Sprite" parent="."]
+[node name="Masssheet" type="Sprite2D" parent="."]
 texture = ExtResource( 2 )
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]

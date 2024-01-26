@@ -1,9 +1,10 @@
-[gd_resource type="Resource" load_steps=3 format=2]
+[gd_resource type="AtlasTexture" script_class="itemType" load_steps=3 format=3 uid="uid://dja17vewt4g0f"]
 
-[ext_resource path="res://Scripts/itemType.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Items/coagulateddevilblood.png" type="Texture" id=2]
+[ext_resource type="Texture2D" uid="uid://87qhkav5hs3q" path="res://Assets/Items/allItems.png" id="1_qj8rp"]
+[ext_resource type="Script" path="res://Scripts/itemType.gd" id="2_luqmk"]
 
 [resource]
-script = ExtResource( 1 )
-icon = ExtResource( 2 )
-name = "Coagulated Devil Blood"
+atlas = ExtResource("1_qj8rp")
+region = Rect2(32, 0, 16, 16)
+script = ExtResource("2_luqmk")
+name = "satchel"

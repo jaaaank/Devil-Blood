@@ -1,7 +1,7 @@
 extends Button
 
-onready var mainshop = get_parent().get_parent()
-export(Array) var itemID
+@onready var mainshop = get_parent().get_parent()
+@export var itemID: Array
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

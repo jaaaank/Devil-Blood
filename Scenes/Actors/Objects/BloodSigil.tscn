@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Actors/Objects/Bullet.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Actors/objects/bloodsigilplaceholder.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Actors/objects/bloodsigilplaceholder.png" type="Texture2D" id=2]
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 12.3065
 
-[sub_resource type="ParticlesMaterial" id=1]
+[sub_resource type="ParticleProcessMaterial" id=1]
 lifetime_randomness = 0.5
 emission_shape = 2
 emission_box_extents = Vector3( 20, 16, 1 )
@@ -36,7 +36,7 @@ input_pickable = false
 script = ExtResource( 1 )
 speed = Vector2( 1000, 1000 )
 
-[node name="Bulletplaceholderispenttoolongon" type="Sprite" parent="."]
+[node name="Bulletplaceholderispenttoolongon" type="Sprite2D" parent="."]
 texture = ExtResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
@@ -46,7 +46,7 @@ wait_time = 5.0
 position = Vector2( 14.6, 0 )
 shape = SubResource( 2 )
 
-[node name="BloodParticles" type="Particles2D" parent="."]
+[node name="BloodParticles" type="GPUParticles2D" parent="."]
 position = Vector2( -24.6, -1.39835e-11 )
 rotation = 1.57079
 amount = 30
