@@ -37,6 +37,7 @@ armor = null
 [node name="UI" parent="." instance=ExtResource("6")]
 
 [node name="Inventorymockup" type="Sprite2D" parent="UI"]
+visible = false
 texture = ExtResource("7")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
