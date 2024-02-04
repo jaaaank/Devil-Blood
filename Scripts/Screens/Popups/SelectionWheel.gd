@@ -40,7 +40,7 @@ func _draw():
 		var draw_pos = radius * Vector2.from_angle(mid_rads) + offset
 		draw_texture_rect_region(slots[i].atlas, Rect2(draw_pos, SPRITE_SIZE), slots[i].region)
 		
-func _process(delta):
+func _process(_delta):
 	var mouse_pos = get_local_mouse_position()
 	var mouse_radius = mouse_pos.length()
 	var mouse_rads = fposmod(mouse_pos.angle(), TAU)

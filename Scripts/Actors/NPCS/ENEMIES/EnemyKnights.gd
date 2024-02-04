@@ -1,6 +1,6 @@
 extends enemy
 
-@export (PackedScene) var swordattack
+@export var swordattack: PackedScene 
 @export var walkrange = 10000
 var target: Vector2
 @onready var walktimer:= $walktimer
@@ -17,7 +17,7 @@ func _ready():
 
 
 func _physics_process(_delta):
-	$Weapon.rotation = global_position.angle_to_point(target)
+	$Weapon.global_rotation = global_position.angle_to_point(target)
 	if PlayerAutoload.knightsAgressive:
 		target = PlayerAutoload.playerPos
 	if global_position.distance_to(target) > attackrange:

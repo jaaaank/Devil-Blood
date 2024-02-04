@@ -8,8 +8,6 @@ var target
 
 func _ready():
 	sprite = $CollisionPolygon2D
-	speed = 300
-	attackrange = 25
 	
 func _integrate_forces(_state):
 	target = PlayerAutoload.playerPos
@@ -25,7 +23,6 @@ func attack():
 		$CollisionPolygon2D/DogSprite/Marker2D.add_child(b)
 		attacking = true
 		$attkcooldown.start(1)
-		
 
 func stun():
 	stunned = true
@@ -34,3 +31,5 @@ func stun():
 func _on_attkcooldown_timeout():
 	attacking = false
 	stunned = false
+
+

@@ -1,73 +1,71 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=6 format=3 uid="uid://dbi1kwx8e0c8l"]
 
-[ext_resource path="res://Scripts/Screens/PreRunShop.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/Screens/buyThingButtons.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Items/coagulateddevilblood.png" type="Texture2D" id=3]
-[ext_resource path="res://Assets/Items/crystalizeddevilblood.png" type="Texture2D" id=4]
-[ext_resource path="res://Scripts/Screens/startRunButton.gd" type="Script" id=5]
+[ext_resource type="Script" path="res://Scripts/Screens/PreRunShop.gd" id="1"]
+[ext_resource type="Script" path="res://Scripts/Screens/buyThingButtons.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dmmidshso6o0j" path="res://Assets/Items/coagulateddevilblood.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://c4aduu1b2oqpb" path="res://Assets/Items/crystalizeddevilblood.png" id="4"]
+[ext_resource type="Script" path="res://Scripts/Screens/startRunButton.gd" id="5"]
 
 [node name="PreRunShop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
+script = ExtResource("1")
 
 [node name="Purchasables" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 52.0
 offset_top = 44.0
 offset_right = 302.0
 offset_bottom = 578.0
 
 [node name="Active Items" type="Label" parent="Purchasables"]
-offset_right = 250.0
-offset_bottom = 14.0
+layout_mode = 2
 text = "Active items"
 
 [node name="COADB" type="Button" parent="Purchasables"]
-offset_top = 18.0
-offset_right = 250.0
-offset_bottom = 38.0
+layout_mode = 2
 text = "Coagulated Devil Blood"
-script = ExtResource( 2 )
-itemID = [ "Coagulated Devil Blood", 10, 1, ExtResource( 3 ) ]
+script = ExtResource("2")
+itemID = ["Coagulated Devil Blood", 10, 1, ExtResource("3")]
 
 [node name="CRYDB" type="Button" parent="Purchasables"]
-offset_top = 42.0
-offset_right = 250.0
-offset_bottom = 62.0
+layout_mode = 2
 text = "Crystalized Devil Blood"
-script = ExtResource( 2 )
-itemID = [ "Crystallized Devil Blood", 25, 2, ExtResource( 4 ) ]
+script = ExtResource("2")
+itemID = ["Crystallized Devil Blood", 25, 2, ExtResource("4")]
 
 [node name="Passive Items" type="Label" parent="Purchasables"]
-offset_top = 66.0
-offset_right = 250.0
-offset_bottom = 80.0
+layout_mode = 2
 text = "Passive items"
 
 [node name="buyThingButton3" type="Button" parent="Purchasables"]
-offset_top = 84.0
-offset_right = 250.0
-offset_bottom = 104.0
+layout_mode = 2
 
 [node name="GREAVES" type="Button" parent="Purchasables"]
-offset_top = 108.0
-offset_right = 250.0
-offset_bottom = 128.0
+layout_mode = 2
 text = "Hellsteel Greaves"
+script = ExtResource("2")
+itemID = ["Hellsteel Greaves", 25, 3, ExtResource("4")]
+singlePurchase = true
 
 [node name="CUIRASS" type="Button" parent="Purchasables"]
-offset_top = 132.0
-offset_right = 250.0
-offset_bottom = 152.0
+layout_mode = 2
 text = "Hellsteel Cuirass"
+script = ExtResource("2")
+itemID = ["Hellsteel Cuirass", 25, 4, ExtResource("4")]
+singlePurchase = true
 
 [node name="SABATON" type="Button" parent="Purchasables"]
-offset_top = 156.0
-offset_right = 250.0
-offset_bottom = 176.0
+layout_mode = 2
 text = "Hellsteel Sabaton"
+script = ExtResource("2")
+itemID = ["Hellsteel Sabaton", 25, 5, ExtResource("4")]
+singlePurchase = true
 
 [node name="rightside" type="VBoxContainer" parent="."]
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -78,31 +76,30 @@ offset_right = -25.0
 offset_bottom = -22.0
 
 [node name="MoneyText" type="RichTextLabel" parent="rightside"]
-offset_right = 250.0
-offset_bottom = 30.0
-text = "Devil Blood:
-"
-fit_content_height = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Devil Blood:"
+fit_content = true
+scroll_active = false
 scroll_following = true
 
 [node name="SelectedItemsText" type="RichTextLabel" parent="rightside"]
-offset_top = 34.0
-offset_right = 250.0
-offset_bottom = 134.0
-custom_minimum_size = Vector2( 250, 100 )
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 2
 text = "Items:
 "
 scroll_following = true
 
 [node name="continue" type="Button" parent="rightside"]
-offset_top = 138.0
-offset_right = 250.0
-offset_bottom = 238.0
-custom_minimum_size = Vector2( 250, 100 )
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 2
 text = "Play"
-script = ExtResource( 5 )
+script = ExtResource("5")
 
 [connection signal="pressed" from="Purchasables/COADB" to="Purchasables/COADB" method="_on_buyThingButton_pressed"]
 [connection signal="pressed" from="Purchasables/CRYDB" to="Purchasables/CRYDB" method="_on_buyThingButton_pressed"]
+[connection signal="pressed" from="Purchasables/GREAVES" to="Purchasables/GREAVES" method="_on_buyThingButton_pressed"]
+[connection signal="pressed" from="Purchasables/CUIRASS" to="Purchasables/CUIRASS" method="_on_buyThingButton_pressed"]
+[connection signal="pressed" from="Purchasables/SABATON" to="Purchasables/SABATON" method="_on_buyThingButton_pressed"]
 [connection signal="pressed" from="rightside/continue" to="." method="buythis"]
 [connection signal="pressed" from="rightside/continue" to="rightside/continue" method="_on_continue_pressed"]

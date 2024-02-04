@@ -13,7 +13,7 @@ func _ready():
 # warning-ignore:return_value_discarded
 	PlayerAutoload.connect("player_damaged", Callable(self, "spawnDamageNums"))
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var direction = Input.get_vector("moveleft", "moveright", "moveup", "movedown",0)
 	velocity = direction * speed
 	move_and_slide()

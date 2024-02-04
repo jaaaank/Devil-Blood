@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource path="res://Scenes/Actors/PCS/PlayerSpawner.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Maps/SceneLoader.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Screens/Popups/LocationText.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/TileMaps/interiorFloors.tres" type="TileSet" id=4]
+[ext_resource type="PackedScene" uid="uid://djsnpeesrgq5f" path="res://Scenes/Actors/PCS/PlayerSpawner.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://Scenes/Maps/SceneLoader.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://cuugv52nxnrn7" path="res://Scenes/Screens/Popups/LocationText.tscn" id="3"]
+[ext_resource type="TileSet" uid="uid://br1c7ik3swwjb" path="res://Assets/TileMaps/interiorFloors.tres" id="4"]
 
 [node name="armory" type="Node2D"]
 

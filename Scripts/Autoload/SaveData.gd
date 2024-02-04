@@ -5,14 +5,14 @@ var priestSkillTree: Array =[false,false,false]
 var knightSkillTree: Array =[false,false,false]
 var witchSkillTree: Array =[false,false,false]
 var angelSkillTree: Array =[false,false,false]
-var soulboundDevilBlood: int = 10
+var soulboundDevilBlood: int = 100
 
 @export var saveDict: Dictionary = {
-	priestsave = priestSkillTree,
-	knightsave = knightSkillTree,
-	witchsave = witchSkillTree,
-	angelsave = angelSkillTree,
-	devilblood = soulboundDevilBlood
+	"priestsave" = priestSkillTree,
+	"knightsave" = knightSkillTree,
+	"witchsave" = witchSkillTree,
+	"angelsave" = angelSkillTree,
+	"devilblood" = soulboundDevilBlood
 }
 
 func _ready() -> void:
@@ -31,11 +31,11 @@ func saveData() -> void:
 	
 func editData() -> void:
 	saveDict = {
-	priestsave = priestSkillTree,
-	knightsave = knightSkillTree,
-	witchsave = witchSkillTree,
-	angelsave = angelSkillTree,
-	devilblood = soulboundDevilBlood
+	"priestsave" = priestSkillTree,
+	"knightsave" = knightSkillTree,
+	"witchsave" = witchSkillTree,
+	"angelsave" = angelSkillTree,
+	"devilblood" = soulboundDevilBlood
 }
 
 func loadData() -> void:

@@ -1,12 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://ckh7b65wr83dv"]
+[gd_scene load_steps=10 format=3 uid="uid://ckh7b65wr83dv"]
 
 [ext_resource type="Texture2D" uid="uid://dw73u4kyeofv0" path="res://Assets/Actors/priest.png" id="1"]
 [ext_resource type="Script" path="res://Scripts/Actors/PCS/Priest.gd" id="2"]
 [ext_resource type="PackedScene" path="res://Scenes/Actors/Objects/Crucifix.tscn" id="3"]
-[ext_resource type="PackedScene" path="res://Scenes/Actors/Objects/Bullet.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://cpgb6vtopm1m5" path="res://Scenes/Actors/Objects/Bullet.tscn" id="4"]
 [ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="5"]
 [ext_resource type="PackedScene" uid="uid://dewtt0y5sychm" path="res://Scenes/Screens/UI.tscn" id="6"]
-[ext_resource type="Texture2D" uid="uid://ivnlil5nfni1" path="res://Assets/Placeholders/inventorymockup.png" id="7"]
 
 [sub_resource type="RectangleShape2D" id="2"]
 size = Vector2(48, 121)
@@ -29,16 +28,10 @@ motion_mode = 1
 script = ExtResource("2")
 Bullet = ExtResource("4")
 Crucifix = ExtResource("3")
-speed = null
-sprint_mult = null
 health = 90
-armor = null
 
 [node name="UI" parent="." instance=ExtResource("6")]
-
-[node name="Inventorymockup" type="Sprite2D" parent="UI"]
 visible = false
-texture = ExtResource("7")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1")
@@ -58,6 +51,7 @@ shape = SubResource("1")
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 scale = Vector2(6.23674, 6.23674)
+process_callback = 0
 limit_smoothed = true
 position_smoothing_enabled = true
 editor_draw_drag_margin = true

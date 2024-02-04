@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://7860j6hshwo1" path="res://Assets/Placeholders/garrisonPlaceholder.jpg" id="1"]
 [ext_resource type="TileSet" uid="uid://dl3q7oy5jowgi" path="res://Assets/TileMaps/outDoorRed.tres" id="3"]
 [ext_resource type="PackedScene" uid="uid://cuugv52nxnrn7" path="res://Scenes/Screens/Popups/LocationText.tscn" id="4"]
-[ext_resource type="PackedScene" uid="uid://5ikcj1daatlv" path="res://Scenes/Actors/Enemies/EnemyKnight.tscn" id="5_ocf8v"]
+[ext_resource type="PackedScene" path="res://Scenes/Actors/Enemies/EnemyKnight.tscn" id="5_ocf8v"]
 [ext_resource type="PackedScene" uid="uid://djsnpeesrgq5f" path="res://Scenes/Actors/PCS/PlayerSpawner.tscn" id="8"]
 
 [node name="HellGarrison" type="Node2D"]

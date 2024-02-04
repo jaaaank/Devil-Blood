@@ -6,6 +6,7 @@ var moneySpent:int = 0
 var selectedItems: Array
 
 signal runStarted
+signal updated
 
 func _ready():
 	updateShopInterface()
@@ -20,6 +21,7 @@ func updateShopInterface():
 	moneyText.text = "Devil Blood: " + str(SaveData.soulboundDevilBlood) + "\n" \
 	+"Devil Blood Spent: " + str(moneySpent) + "\n"\
 	+"Devil Blood Remaining: " + str(SaveData.soulboundDevilBlood - moneySpent)
+	emit_signal("updated")
 	
 	
 func buythis(cost):

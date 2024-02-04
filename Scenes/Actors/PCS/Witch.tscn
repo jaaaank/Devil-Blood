@@ -32,6 +32,7 @@ health = 75
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 scale = Vector2(8.8, 8.8)
+process_callback = 0
 position_smoothing_enabled = true
 editor_draw_drag_margin = true
 

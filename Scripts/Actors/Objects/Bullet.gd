@@ -13,6 +13,7 @@ func _on_Bullet_body_entered(_body):
 	queue_free()
 
 func _on_Bullet_area_entered(area):
-	if area.get_collision_layer_value(1):
+	if area.get_collision_layer_value(2):
 		area.owner.call("damage", 10)
 		queue_free()
+	queue_free()

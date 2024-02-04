@@ -23,6 +23,24 @@ PlayerAutoload="*res://Scripts/Autoload/PlayerAutoload.gd"
 MapAutoload="*res://Scripts/Autoload/MapAutoload.gd"
 SaveData="*res://Scripts/Autoload/SaveData.gd"
 
+[editor]
+
+movie_writer/movie_file="C:/Users/panca/Desktop/Game Dev Stuff/!GODOT/Videos/playtestvid.avi"
+movie_writer/fps=30
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "red",
+"res://Scenes/": "blue",
+"res://Scenes/Actors/": "teal",
+"res://Scenes/Actors/Enemies/": "red",
+"res://Scenes/Actors/Objects/": "gray",
+"res://Scenes/Actors/PCS/": "pink",
+"res://Scenes/Maps/": "purple",
+"res://Scripts/": "green"
+}
+
 [global]
 
 gpu=false

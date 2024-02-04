@@ -20,7 +20,7 @@ func set_paused(value: bool) -> void:
 	paused = value
 	get_tree().paused = value
 
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("wheelSelect"):
 		$SelectionWheel.set_deferred("visible", true)
 	if Input.is_action_just_released("wheelSelect"):
