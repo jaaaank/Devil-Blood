@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dw73u4kyeofv0" path="res://Assets/Actors/priest.png" id="1"]
 [ext_resource type="Script" path="res://Scripts/Actors/PCS/Priest.gd" id="2"]
-[ext_resource type="PackedScene" path="res://Scenes/Actors/Objects/Crucifix.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://dahxkqiclhhvn" path="res://Scenes/Actors/Objects/Crucifix.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://cpgb6vtopm1m5" path="res://Scenes/Actors/Objects/Bullet.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://cci7teggrridn" path="res://Scenes/Actors/Objects/DamageNumbers.tscn" id="4_gxsg4"]
 [ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="5"]

@@ -12,7 +12,7 @@ size = Vector2(64, 41)
 
 [node name="Mass" type="CharacterBody2D"]
 collision_layer = 42
-collision_mask = 19
+collision_mask = 18
 script = ExtResource("1")
 basedamage = 5
 damagenumbers = ExtResource("3")
