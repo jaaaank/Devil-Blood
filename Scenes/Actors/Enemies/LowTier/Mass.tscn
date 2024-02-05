@@ -1,28 +1,28 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=6 format=3 uid="uid://blmpwvome25ko"]
 
-[ext_resource path="res://Scripts/Actors/NPCS/Enemies/Mass.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Actors/masssheet.png" type="Texture2D" id=2]
-[ext_resource path="res://Scenes/Actors/Objects/DamageNumbers.tscn" type="PackedScene" id=3]
+[ext_resource type="Script" path="res://Scripts/Actors/NPCS/Enemies/Mass.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cjc87yril4sye" path="res://Assets/Actors/masssheet.png" id="2"]
+[ext_resource type="PackedScene" uid="uid://cci7teggrridn" path="res://Scenes/Actors/Objects/DamageNumbers.tscn" id="3"]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 27, 11 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(54, 22)
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 32, 20.5 )
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(64, 41)
 
 [node name="Mass" type="CharacterBody2D"]
 collision_layer = 42
 collision_mask = 19
-script = ExtResource( 1 )
+script = ExtResource("1")
 basedamage = 5
-damagenumbers = ExtResource( 3 )
+damagenumbers = ExtResource("3")
 
 [node name="Masssheet" type="Sprite2D" parent="."]
-texture = ExtResource( 2 )
+texture = ExtResource("2")
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 19 )
-shape = SubResource( 1 )
+position = Vector2(0, 19)
+shape = SubResource("1")
 
 [node name="Hurtbox" type="Area2D" parent="."]
 collision_layer = 2
@@ -30,9 +30,9 @@ collision_mask = 69
 input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 0, 10.5 )
-shape = SubResource( 2 )
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, 10.5)
+shape = SubResource("2")
 
 [node name="walktimer" type="Timer" parent="."]
 one_shot = true

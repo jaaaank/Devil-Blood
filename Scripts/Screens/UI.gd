@@ -1,11 +1,13 @@
 extends Control
 
 var paused: = false: set = set_paused
+@onready var healthbar= $CanvasLayer/HealthBar
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	healthbar.max_value = get_parent().health
+	updateUI()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
@@ -25,3 +27,6 @@ func _input(_event):
 		$SelectionWheel.set_deferred("visible", true)
 	if Input.is_action_just_released("wheelSelect"):
 		$SelectionWheel.set_deferred("visible", false)
+
+func updateUI():
+	healthbar.value = get_parent().health

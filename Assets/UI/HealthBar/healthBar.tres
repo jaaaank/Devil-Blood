@@ -1,0 +1,45 @@
+[gd_resource type="AnimatedTexture" load_steps=14 format=3 uid="uid://bbvods5tvijga"]
+
+[ext_resource type="Texture2D" uid="uid://cacnagr7gnpmj" path="res://Assets/UI/HealthBar/hbFrame1.png" id="1_eskly"]
+[ext_resource type="Texture2D" uid="uid://dcfsve6vwit4y" path="res://Assets/UI/HealthBar/hbFrame2.png" id="2_j2ldk"]
+[ext_resource type="Texture2D" uid="uid://dqf1an8nw47ol" path="res://Assets/UI/HealthBar/hbFrame11.png" id="3_1d7vf"]
+[ext_resource type="Texture2D" uid="uid://kd1sklxudecx" path="res://Assets/UI/HealthBar/hbFrame3.png" id="3_1w278"]
+[ext_resource type="Texture2D" uid="uid://hi57lnxvc3j3" path="res://Assets/UI/HealthBar/hbFrame12.png" id="4_1sn5i"]
+[ext_resource type="Texture2D" uid="uid://c3lxp0d5m75c1" path="res://Assets/UI/HealthBar/hbFrame4.png" id="4_utkux"]
+[ext_resource type="Texture2D" uid="uid://ciekg0qf7ft20" path="res://Assets/UI/HealthBar/hbFrame13.png" id="5_1vrcs"]
+[ext_resource type="Texture2D" uid="uid://dlogv86fuqs83" path="res://Assets/UI/HealthBar/hbFrame5.png" id="5_cloh5"]
+[ext_resource type="Texture2D" uid="uid://bso2mirmikqox" path="res://Assets/UI/HealthBar/hbFrame6.png" id="6_48dww"]
+[ext_resource type="Texture2D" uid="uid://jj1oov3e4hpi" path="res://Assets/UI/HealthBar/hbFrame7.png" id="7_asap5"]
+[ext_resource type="Texture2D" uid="uid://cxkhkox1ppl8h" path="res://Assets/UI/HealthBar/hbFrame8.png" id="8_g6088"]
+[ext_resource type="Texture2D" uid="uid://dv3wtr40jb5pd" path="res://Assets/UI/HealthBar/hbFrame9.png" id="9_v6a80"]
+[ext_resource type="Texture2D" uid="uid://cur3548ebqcxu" path="res://Assets/UI/HealthBar/hbFrame10.png" id="13_fg8f8"]
+
+[resource]
+frames = 13
+speed_scale = 2.0
+frame_0/texture = ExtResource("1_eskly")
+frame_0/duration = 12.0
+frame_1/texture = ExtResource("2_j2ldk")
+frame_1/duration = 0.05
+frame_2/texture = ExtResource("3_1w278")
+frame_2/duration = 0.05
+frame_3/texture = ExtResource("4_utkux")
+frame_3/duration = 0.05
+frame_4/texture = ExtResource("5_cloh5")
+frame_4/duration = 0.05
+frame_5/texture = ExtResource("6_48dww")
+frame_5/duration = 0.05
+frame_6/texture = ExtResource("7_asap5")
+frame_6/duration = 0.05
+frame_7/texture = ExtResource("8_g6088")
+frame_7/duration = 0.05
+frame_8/texture = ExtResource("9_v6a80")
+frame_8/duration = 0.05
+frame_9/texture = ExtResource("13_fg8f8")
+frame_9/duration = 0.05
+frame_10/texture = ExtResource("3_1d7vf")
+frame_10/duration = 0.05
+frame_11/texture = ExtResource("4_1sn5i")
+frame_11/duration = 0.05
+frame_12/texture = ExtResource("5_1vrcs")
+frame_12/duration = 0.05

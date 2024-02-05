@@ -10,8 +10,6 @@ func _ready():
 	sprite = $PlayerSprite
 # warning-ignore:return_value_discarded
 	PlayerAutoload.connect("player_dead", Callable(self, "die"))
-	
-	#TODO: set camera limits
 
 func _physics_process(_delta):
 	var direction = Input.get_vector("moveleft", "moveright", "moveup", "movedown",0)
@@ -40,6 +38,7 @@ func damage(damageTaken: float):
 		health -= round(damageTaken*armorCalculation()*PlayerAutoload.difficulty)
 		iframes = true
 		spawnDamageNums(round(damageTaken*armorCalculation()*PlayerAutoload.difficulty), Color.FIREBRICK)
+		find_child("UI").call("updateUI")
 	if health <=0:
 		PlayerAutoload.charDie()
 		queue_free()
@@ -49,6 +48,7 @@ func heal(healingFactor: float):
 	health += round(healingFactor/PlayerAutoload.difficulty)
 	print("Healed; Health = " + str(health))
 	spawnDamageNums(round(healingFactor/PlayerAutoload.difficulty), Color.FOREST_GREEN)
+	find_child("UI").call("updateUI")
 
 func armorCalculation():
 	if armor !=0:

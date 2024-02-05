@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dewtt0y5sychm"]
+[gd_scene load_steps=5 format=3 uid="uid://dewtt0y5sychm"]
 
 [ext_resource type="Script" path="res://Scripts/Screens/UI.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://ddmifqa1yt0ab" path="res://Scenes/Screens/Popups/SelectionWheel.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://c26guwe5ckkbj" path="res://Assets/UI/HealthBar/armorBar.png" id="3_famag"]
+[ext_resource type="Texture2D" uid="uid://bbvods5tvijga" path="res://Assets/UI/HealthBar/healthBar.tres" id="3_kpc5h"]
 
 [node name="UI" type="Control"]
 process_mode = 3
@@ -18,6 +20,13 @@ visible = false
 layout_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_right = 480.0
+offset_bottom = 50.0
+value = 100.0
+texture_over = ExtResource("3_famag")
+texture_progress = ExtResource("3_kpc5h")
 
 [node name="PauseMenu" type="ColorRect" parent="CanvasLayer"]
 visible = false

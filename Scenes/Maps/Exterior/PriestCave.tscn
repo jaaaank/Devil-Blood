@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://blr80b87lchfo"]
+[gd_scene load_steps=5 format=3 uid="uid://blr80b87lchfo"]
 
 [ext_resource type="PackedScene" uid="uid://cuugv52nxnrn7" path="res://Scenes/Screens/Popups/LocationText.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://djsnpeesrgq5f" path="res://Scenes/Actors/PCS/PlayerSpawner.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://blmpwvome25ko" path="res://Scenes/Actors/Enemies/LowTier/Mass.tscn" id="4_nnb4d"]
 [ext_resource type="TileSet" uid="uid://dl3q7oy5jowgi" path="res://Assets/TileMaps/outDoorRed.tres" id="6"]
 
 [node name="PriestCave" type="Node2D"]
@@ -18,3 +19,6 @@ position = Vector2(64, -738)
 
 [node name="LocationText" parent="UI" instance=ExtResource("2")]
 locationName = "Infested Cave"
+
+[node name="Mass" parent="." instance=ExtResource("4_nnb4d")]
+position = Vector2(-179, -226)
