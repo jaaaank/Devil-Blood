@@ -1,12 +1,15 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://dsmfgri18ldv4"]
 
-[ext_resource path="res://Scripts/Screens/PlayerSelectButton.gd" type="Script" id=1]
+[ext_resource type="Script" path="res://Scripts/Screens/PlayerSelectButton.gd" id="1"]
 
 [node name="PlayerSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -17,34 +20,27 @@ offset_right = 105.0
 offset_bottom = 20.0
 
 [node name="PlayerSelectButton" type="Button" parent="HBoxContainer"]
-offset_right = 49.0
-offset_bottom = 40.0
+layout_mode = 2
 text = "Priest"
-script = ExtResource( 1 )
+script = ExtResource("1")
 characternum = 1
 
 [node name="PlayerSelectButton2" type="Button" parent="HBoxContainer"]
-offset_left = 53.0
-offset_right = 105.0
-offset_bottom = 40.0
+layout_mode = 2
 text = "Knight"
-script = ExtResource( 1 )
+script = ExtResource("1")
 characternum = 2
 
 [node name="PlayerSelectButton3" type="Button" parent="HBoxContainer"]
-offset_left = 109.0
-offset_right = 158.0
-offset_bottom = 40.0
+layout_mode = 2
 text = "Witch"
-script = ExtResource( 1 )
+script = ExtResource("1")
 characternum = 3
 
 [node name="PlayerSelectButton4" type="Button" parent="HBoxContainer"]
-offset_left = 162.0
-offset_right = 210.0
-offset_bottom = 40.0
+layout_mode = 2
 text = "Angel"
-script = ExtResource( 1 )
+script = ExtResource("1")
 characternum = 4
 
 [connection signal="pressed" from="HBoxContainer/PlayerSelectButton" to="HBoxContainer/PlayerSelectButton" method="_on_PlayerSelectButton_pressed"]

@@ -1,0 +1,15 @@
+[gd_resource type="AtlasTexture" script_class="itemType" load_steps=3 format=3 uid="uid://mn6yg32fyd0p"]
+
+[ext_resource type="Script" path="res://Scripts/itemType.gd" id="2_22ry7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncdtx"]
+
+[resource]
+atlas = SubResource("AtlasTexture_ncdtx")
+script = ExtResource("2_22ry7")
+name = "null"
+id = 99
+cost = 0
+singlePurchase = true
+purchased = false
+description = " "

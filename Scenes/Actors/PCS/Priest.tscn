@@ -31,7 +31,6 @@ Crucifix = ExtResource("3")
 health = 90
 
 [node name="UI" parent="." instance=ExtResource("6")]
-visible = false
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1")

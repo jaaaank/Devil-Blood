@@ -1,4 +1,3 @@
-@tool
 extends Control
 
 const SPRITE_SIZE = Vector2(16,16)
@@ -9,9 +8,13 @@ const SPRITE_SIZE = Vector2(16,16)
 @export var width: int = 128
 @export var linewidth: int = 32
 @export var line_clr: Color
+@export var empty: itemType
 
 @export var slots: Array[itemType]
 var select = 0
+
+func _ready():
+	slots = PlayerAutoload.inventory
 
 func _draw():
 	var offset = SPRITE_SIZE/-2
@@ -24,9 +27,8 @@ func _draw():
 	for i in range(0,len(slots)):
 		var start_rads = (TAU*(i-1)/len(slots))
 		var end_rads = (TAU * (i)/len(slots))
-		var mid_rads = (start_rads + end_rads)/2.0 *-1
-		if select == i:
-			#help
+		var mid_rads = (start_rads + end_rads)/2.0
+		if select == i and slots[i]!=null:
 			#var poi_per_arc = 32
 			#var poiinner = PackedVector2Array()
 			#var poiouter = PackedVector2Array()
@@ -37,8 +39,9 @@ func _draw():
 			#poiouter.reverse()
 			#draw_polygon(poiinner+poiouter, PackedColorArray([highclr]))
 			draw_arc(Vector2.ZERO,radius,start_rads,end_rads,128,highclr,width)
-		var draw_pos = radius * Vector2.from_angle(mid_rads) + offset
-		draw_texture_rect_region(slots[i].atlas, Rect2(draw_pos, SPRITE_SIZE), slots[i].region)
+		if slots[i] != null:
+			var draw_pos = radius * Vector2.from_angle(mid_rads) + offset*3
+			draw_texture_rect_region(slots[i].atlas, Rect2(draw_pos, SPRITE_SIZE*3), slots[i].region)
 		
 func _process(_delta):
 	var mouse_pos = get_local_mouse_position()
@@ -48,3 +51,8 @@ func _process(_delta):
 	if select == len(slots): select= 0
 	#print(select)
 	queue_redraw()
+	
+func _input(event):
+	if Input.is_action_just_pressed("attack") and !slots.is_empty() and visible and slots[select]!=null:
+		print("itemused: " + slots[select].name)
+		slots[select] = null

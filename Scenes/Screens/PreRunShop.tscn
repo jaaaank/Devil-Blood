@@ -1,16 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbi1kwx8e0c8l"]
+[gd_scene load_steps=7 format=3 uid="uid://dbi1kwx8e0c8l"]
 
 [ext_resource type="Script" path="res://Scripts/Screens/PreRunShop.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Screens/buyThingButtons.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://dmmidshso6o0j" path="res://Assets/Items/coagulateddevilblood.png" id="3"]
-[ext_resource type="Texture2D" uid="uid://c4aduu1b2oqpb" path="res://Assets/Items/crystalizeddevilblood.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cep45no1j83h3" path="res://Assets/Items/coagdevbl.tres" id="3_5uyeq"]
+[ext_resource type="Texture2D" uid="uid://yba4i31mj8li" path="res://Assets/Items/crystdevbl.tres" id="4_e5qw7"]
 [ext_resource type="Script" path="res://Scripts/Screens/startRunButton.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://dja17vewt4g0f" path="res://Assets/Items/satchel.tres" id="5_yi2nl"]
 
 [node name="PreRunShop" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1")
 
 [node name="Purchasables" type="VBoxContainer" parent="."]
@@ -28,13 +31,13 @@ text = "Active items"
 layout_mode = 2
 text = "Coagulated Devil Blood"
 script = ExtResource("2")
-itemID = ["Coagulated Devil Blood", 10, 1, ExtResource("3")]
+itemID = ExtResource("3_5uyeq")
 
 [node name="CRYDB" type="Button" parent="Purchasables"]
 layout_mode = 2
 text = "Crystalized Devil Blood"
 script = ExtResource("2")
-itemID = ["Crystallized Devil Blood", 25, 2, ExtResource("4")]
+itemID = ExtResource("4_e5qw7")
 
 [node name="Passive Items" type="Label" parent="Purchasables"]
 layout_mode = 2
@@ -47,22 +50,19 @@ layout_mode = 2
 layout_mode = 2
 text = "Hellsteel Greaves"
 script = ExtResource("2")
-itemID = ["Hellsteel Greaves", 25, 3, ExtResource("4")]
-singlePurchase = true
+itemID = ExtResource("5_yi2nl")
 
 [node name="CUIRASS" type="Button" parent="Purchasables"]
 layout_mode = 2
 text = "Hellsteel Cuirass"
 script = ExtResource("2")
-itemID = ["Hellsteel Cuirass", 25, 4, ExtResource("4")]
-singlePurchase = true
+itemID = ExtResource("5_yi2nl")
 
 [node name="SABATON" type="Button" parent="Purchasables"]
 layout_mode = 2
 text = "Hellsteel Sabaton"
 script = ExtResource("2")
-itemID = ["Hellsteel Sabaton", 25, 5, ExtResource("4")]
-singlePurchase = true
+itemID = ExtResource("5_yi2nl")
 
 [node name="rightside" type="VBoxContainer" parent="."]
 layout_mode = 0

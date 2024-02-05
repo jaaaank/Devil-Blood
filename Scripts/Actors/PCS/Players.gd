@@ -12,6 +12,7 @@ func _ready():
 	PlayerAutoload.connect("player_dead", Callable(self, "die"))
 # warning-ignore:return_value_discarded
 	PlayerAutoload.connect("player_damaged", Callable(self, "spawnDamageNums"))
+	#TODO: set camera limits
 
 func _physics_process(_delta):
 	var direction = Input.get_vector("moveleft", "moveright", "moveup", "movedown",0)
@@ -25,6 +26,11 @@ func _input(_event):
 		call("attack")
 	if Input.is_action_just_pressed("altattack"):
 		call("altAttack")
+	if Input.is_action_just_pressed("wheelSelect"):
+		$UI/SelectionWheel.set_visible(true)
+	if Input.is_action_just_released("wheelSelect"):
+		$UI/SelectionWheel.set_visible(false)
+		
 
 func interact():
 	PlayerAutoload.emit_signal("interact")

@@ -1,10 +1,15 @@
 [gd_resource type="AtlasTexture" script_class="itemType" load_steps=3 format=3 uid="uid://dja17vewt4g0f"]
 
-[ext_resource type="Texture2D" uid="uid://87qhkav5hs3q" path="res://Assets/Items/allItems.png" id="1_qj8rp"]
+[ext_resource type="Texture2D" uid="uid://dp32n2w0ht0qg" path="res://Assets/Items/satchel.png" id="1_aynhq"]
 [ext_resource type="Script" path="res://Scripts/itemType.gd" id="2_luqmk"]
 
 [resource]
-atlas = ExtResource("1_qj8rp")
-region = Rect2(32, 0, 16, 16)
+atlas = ExtResource("1_aynhq")
+region = Rect2(0, 0, 16, 16)
 script = ExtResource("2_luqmk")
-name = "satchel"
+name = "Satchel"
+id = 6
+cost = 10
+singlePurchase = true
+purchased = false
+description = "Bwebhbewhbewh"

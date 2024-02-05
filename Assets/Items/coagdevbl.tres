@@ -1,10 +1,15 @@
 [gd_resource type="AtlasTexture" script_class="itemType" load_steps=3 format=3 uid="uid://cep45no1j83h3"]
 
 [ext_resource type="Script" path="res://Scripts/itemType.gd" id="1_gdhd4"]
-[ext_resource type="Texture2D" uid="uid://87qhkav5hs3q" path="res://Assets/Items/allItems.png" id="1_lwjl6"]
+[ext_resource type="Texture2D" uid="uid://dmmidshso6o0j" path="res://Assets/Items/coagulateddevilblood.png" id="1_qjboo"]
 
 [resource]
-atlas = ExtResource("1_lwjl6")
+atlas = ExtResource("1_qjboo")
 region = Rect2(0, 0, 16, 16)
 script = ExtResource("1_gdhd4")
 name = "Coagulated Devil Blood"
+id = 1
+cost = 10
+singlePurchase = false
+purchased = false
+description = "Heals slightly."

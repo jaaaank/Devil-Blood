@@ -10,6 +10,8 @@ var knightsAgressive: bool = false: set = set_knightsAgressive
 var playerPos: Vector2 = Vector2(0,0): set = set_playerPos
 var difficulty: float = 1.0: set = set_difficulty
 var devilBlood: int = 0: set = set_devilBlood
+var inventory: Array[itemType]
+var inventorySize: = 3
 
 # warning-ignore:unused_signal
 signal interact
@@ -51,6 +53,7 @@ func set_knightsAgressive(value: bool):
 	
 func set_playerCharacter(value: int):
 	playerCharacter = value
+	inventory.resize(inventorySize)
 	
 func set_playerPos(value: Vector2):
 	playerPos=value

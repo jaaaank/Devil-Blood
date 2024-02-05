@@ -7,10 +7,6 @@ var paused: = false: set = set_paused
 func _ready():
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		self.paused = !paused
@@ -18,6 +14,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 func set_paused(value: bool) -> void:
 	paused = value
+	if paused:
+		$CanvasLayer/PauseMenu.set_deferred("visible", true)
+	else:
+		$CanvasLayer/PauseMenu.set_deferred("visible", false)
 	get_tree().paused = value
 
 func _input(_event):
