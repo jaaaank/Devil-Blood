@@ -13,10 +13,17 @@ grow_vertical = 2
 script = ExtResource("1")
 next_scene_path = "res://scenes/Screens/PlayerSelect.tscn"
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 768.0
+offset_bottom = 440.0
+grow_horizontal = 2
+grow_vertical = 2
 stream = ExtResource("2")
 volume_db = 10.0
 autoplay = true
