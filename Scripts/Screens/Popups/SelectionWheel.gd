@@ -55,4 +55,6 @@ func _process(_delta):
 func _input(event):
 	if Input.is_action_just_pressed("attack") and !slots.is_empty() and visible and slots[select]!=null:
 		print("itemused: " + slots[select].name)
+		get_parent().get_parent().call("useItem", slots[select].id)
 		slots[select] = null
+		

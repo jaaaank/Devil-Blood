@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdm51vxixprtr"]
+[gd_scene load_steps=7 format=3 uid="uid://bdm51vxixprtr"]
 
 [ext_resource type="Texture2D" uid="uid://7860j6hshwo1" path="res://Assets/Placeholders/garrisonPlaceholder.jpg" id="1"]
+[ext_resource type="Script" path="res://Scripts/maps.gd" id="1_vi2p1"]
 [ext_resource type="TileSet" uid="uid://dl3q7oy5jowgi" path="res://Assets/TileMaps/outDoorRed.tres" id="3"]
 [ext_resource type="PackedScene" uid="uid://cuugv52nxnrn7" path="res://Scenes/Screens/Popups/LocationText.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://5ikcj1daatlv" path="res://Scenes/Actors/Enemies/EnemyKnight.tscn" id="5_ocf8v"]
 [ext_resource type="PackedScene" uid="uid://djsnpeesrgq5f" path="res://Scenes/Actors/PCS/PlayerSpawner.tscn" id="8"]
 
 [node name="HellGarrison" type="Node2D"]
+script = ExtResource("1_vi2p1")
+limits = Array[float]([-1775.0, -1800.0, 2175.0, 1150.0])
 
 [node name="GarrisonPlaceholder" type="Sprite2D" parent="."]
 visible = false

@@ -10,8 +10,7 @@ func _ready():
 	sprite = $PlayerSprite
 # warning-ignore:return_value_discarded
 	PlayerAutoload.connect("player_dead", Callable(self, "die"))
-# warning-ignore:return_value_discarded
-	PlayerAutoload.connect("player_damaged", Callable(self, "spawnDamageNums"))
+	
 	#TODO: set camera limits
 
 func _physics_process(_delta):
@@ -38,29 +37,37 @@ func interact():
 func damage(damageTaken: float):
 	if !iframes:
 # warning-ignore:narrowing_conversion
-		health = round(health - damageTaken*armorCalculation()*PlayerAutoload.difficulty)
+		health -= round(damageTaken*armorCalculation()*PlayerAutoload.difficulty)
 		iframes = true
-		spawnDamageNums(damageTaken)
+		spawnDamageNums(round(damageTaken*armorCalculation()*PlayerAutoload.difficulty), Color.FIREBRICK)
 	if health <=0:
 		PlayerAutoload.charDie()
 		queue_free()
 		
 func heal(healingFactor: float):
 # warning-ignore:narrowing_conversion
-	health=round(health + healingFactor/PlayerAutoload.difficulty)
+	health += round(healingFactor/PlayerAutoload.difficulty)
 	print("Healed; Health = " + str(health))
+	spawnDamageNums(round(healingFactor/PlayerAutoload.difficulty), Color.FOREST_GREEN)
 
 func armorCalculation():
 	if armor !=0:
 		return (abs(armor-100)*0.01)
 	else: return 1
 	
-func spawnDamageNums(damagetaken):
+func spawnDamageNums(damagetaken, clr):
 	var b = damagenumbers.instantiate()
 	get_parent().add_child(b)
 	b.global_position = global_position
-	b.get_node("RichTextLabel").text = str(round(damagetaken*armorCalculation()*PlayerAutoload.difficulty))
+	b.get_node("RichTextLabel").text = str(damagetaken)
+	b.get_node("RichTextLabel").add_theme_color_override("default_color", clr)
 	iframesTimer.start()
 
 func _on_IframesTimer_timeout():
 	iframes = false
+
+func useItem(id):
+	print(id)
+	match id:
+		1:
+			heal(10)
