@@ -22,12 +22,17 @@ config/icon="res://icon.png"
 PlayerAutoload="*res://Scripts/Autoload/PlayerAutoload.gd"
 MapAutoload="*res://Scripts/Autoload/MapAutoload.gd"
 SaveData="*res://Scripts/Autoload/SaveData.gd"
+DiscordSDKLoader="*res://addons/discord-sdk-gd/nodes/discord_autoload.gd"
 
 [editor]
 
 movie_writer/mjpeg_quality=0.9
 movie_writer/movie_file="C:/Users/panca/Desktop/Game Dev Stuff/!GODOT/Videos/playtestvid.avi"
 movie_writer/fps=30
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/discord-sdk-gd/plugin.cfg")
 
 [file_customization]
 
