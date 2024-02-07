@@ -6,6 +6,7 @@ class_name Actor
 @export var health: = 100
 @export var armor: = 0
 var sprite: Sprite2D
+var push_force = 80
 
 func _process(_delta):
 	if velocity.x<0:

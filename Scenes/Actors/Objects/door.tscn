@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcpjy60mgi6kg"]
+
+[ext_resource type="Texture2D" uid="uid://shfnxql0ajpo" path="res://Assets/Placeholders/doorplaceholder.png" id="1_i23dq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x6lds"]
+radius = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_llwks"]
+size = Vector2(180, 2)
+
+[node name="Door" type="StaticBody2D"]
+disable_mode = 1
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x6lds")
+
+[node name="Door" type="RigidBody2D" parent="."]
+position = Vector2(96, 0)
+collision_layer = 16
+collision_mask = 19
+gravity_scale = 0.0
+angular_damp = 100.0
+
+[node name="Doorplaceholder" type="Sprite2D" parent="Door"]
+position = Vector2(-96, -24)
+texture = ExtResource("1_i23dq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(-96, 0)
+shape = SubResource("RectangleShape2D_llwks")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Door"]
+node_a = NodePath("../..")
+node_b = NodePath("..")

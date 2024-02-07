@@ -25,6 +25,7 @@ SaveData="*res://Scripts/Autoload/SaveData.gd"
 
 [editor]
 
+movie_writer/mjpeg_quality=0.9
 movie_writer/movie_file="C:/Users/panca/Desktop/Game Dev Stuff/!GODOT/Videos/playtestvid.avi"
 movie_writer/fps=30
 
