@@ -30,6 +30,7 @@ func _on_walktimer_timeout():
 
 func stun():
 	stunned = true
+	print("stunned")
 	set_physics_process(false)
 	$stuntimer.start()
 	
