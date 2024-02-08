@@ -8,7 +8,7 @@ var target
 
 func _ready():
 	sprite = $CollisionPolygon2D
-	
+
 func _integrate_forces(_state):
 	target = PlayerAutoload.playerPos
 	$CollisionPolygon2D.global_rotation_degrees=0

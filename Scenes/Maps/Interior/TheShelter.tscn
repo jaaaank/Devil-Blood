@@ -13,7 +13,7 @@
 z_as_relative = false
 y_sort_enabled = true
 script = ExtResource("1_dg40k")
-limits = Array[float]([-3200.0, -3200.0, 3328.0, 3328.0])
+limits = Array[float]([-3200.0, -3200.0, 3328.0, 3325.0])
 
 [node name="PlayerSpawner" parent="." instance=ExtResource("3_2r1n7")]
 z_as_relative = false
@@ -29,7 +29,7 @@ texture = ExtResource("1_eev7f")
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="LocationText" parent="UI" instance=ExtResource("4_0h8w0")]
-locationName = "Garrison"
+locationName = "The Shelter"
 
 [node name="Dog" parent="." instance=ExtResource("5_3jdrn")]
 position = Vector2(-1130, 2957)
