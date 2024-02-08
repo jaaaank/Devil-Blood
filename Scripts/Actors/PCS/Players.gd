@@ -34,7 +34,7 @@ func _input(_event):
 		
 
 func interact():
-	PlayerAutoload.emit_signal("interact")
+	PlayerAutoload.emit_signal("interacted")
 
 func damage(damageTaken: float):
 	if !iframes:

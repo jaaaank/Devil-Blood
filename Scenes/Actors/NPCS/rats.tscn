@@ -1,13 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgqi0y0iofow"]
+[gd_scene load_steps=7 format=3 uid="uid://dgqi0y0iofow"]
 
 [ext_resource type="Texture2D" uid="uid://cvctslx0ljdj1" path="res://Assets/Actors/rats.png" id="1_m6yfr"]
 [ext_resource type="Script" path="res://Scripts/Actors/NPCS/rats.gd" id="1_pdmw7"]
-[ext_resource type="PackedScene" uid="uid://ca3qq02cwak41" path="res://Scenes/Screens/Popups/PopupTextBox.tscn" id="2_vn21l"]
+[ext_resource type="PackedScene" path="res://Scenes/Screens/Popups/PopupTextBox.tscn" id="2_vn21l"]
 [ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="3_2vxxn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lid8e"]
 radius = 5.0
 height = 24.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cble4"]
+radius = 58.0
+height = 150.0
 
 [node name="Rats" type="CharacterBody2D"]
 collision_layer = 128
@@ -29,6 +33,9 @@ oneTime = true
 sequential = true
 possilbleText = Array[String](["wassup lil bitch", "my name is rats", "the fuck are you lookin at"])
 
+[node name="CollisionShape2D" parent="PopupTextBox/DetectionArea" index="0"]
+position = Vector2(0, 11)
+
 [node name="TextBG" parent="PopupTextBox" index="1"]
 offset_left = -74.0
 offset_top = -112.0
@@ -40,5 +47,16 @@ z_index = -1
 position = Vector2(0, 43)
 scale = Vector2(0.858752, 0.547005)
 texture = ExtResource("3_2vxxn")
+
+[node name="InteractionShape2D" type="Area2D" parent="."]
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionShape2D"]
+position = Vector2(0, 16)
+shape = SubResource("CapsuleShape2D_cble4")
+
+[connection signal="body_entered" from="InteractionShape2D" to="." method="_on_interaction_shape_2d_body_entered"]
+[connection signal="body_exited" from="InteractionShape2D" to="." method="_on_interaction_shape_2d_body_exited"]
 
 [editable path="PopupTextBox"]

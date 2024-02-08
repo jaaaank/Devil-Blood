@@ -14,7 +14,7 @@ var inventory: Array[itemType]
 var inventorySize: = 3
 
 # warning-ignore:unused_signal
-signal interact
+signal interacted
 signal player_dead
 
 func startRun():

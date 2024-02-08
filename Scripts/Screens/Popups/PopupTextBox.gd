@@ -20,20 +20,15 @@ func showText():
 		talking = true
 		$TextBG.set_visible(true)
 		if sequential:
-			print("sequential text started")
 			for i in range(len(possilbleText)):
 				$TextBG/Text.text = possilbleText[i]
 				$talkingTimer.start()
 				await $talkingTimer.timeout
-				print("next line")
 			talking = false
 			if oneTime:
 				queue_free()
-				#blah blah ill finish this later, wait a few seconds then display the next message
-		if random:
+		elif random:
 			var beans = randi_range(0,len(possilbleText)-1)
 			$TextBG/Text.text = possilbleText[beans]
-			
-			
-		if oneTime:
-			queue_free()
+			if oneTime:
+				queue_free()

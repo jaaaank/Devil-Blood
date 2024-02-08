@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dgqi0y0iofow" path="res://Scenes/Actors/NPCS/rats.tscn" id="8_gn36m"]
 
 [node name="Shelter" type="Node2D"]
+z_as_relative = false
 y_sort_enabled = true
 script = ExtResource("1_dg40k")
 limits = Array[float]([-3200.0, -3200.0, 3328.0, 3328.0])
@@ -31,7 +32,7 @@ texture = ExtResource("1_eev7f")
 locationName = "Garrison"
 
 [node name="Dog" parent="." instance=ExtResource("5_3jdrn")]
-position = Vector2(1543, 2733)
+position = Vector2(-1130, 2957)
 speed = 450
 
 [node name="Door" parent="." instance=ExtResource("6_ghfkt")]
