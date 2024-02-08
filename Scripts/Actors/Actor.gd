@@ -5,6 +5,8 @@ class_name Actor
 @export var sprint_mult: = 1.2
 @export var health: = 100
 @export var armor: = 0
+
+var stunned = false
 var sprite: Sprite2D
 var push_force = 80
 

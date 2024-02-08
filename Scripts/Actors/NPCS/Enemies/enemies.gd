@@ -4,7 +4,6 @@ class_name enemy
 @export var basedamage: int
 @export var damagenumbers:PackedScene = load("res://Scenes/Actors/Objects/DamageNumbers.tscn")
 var knight = false
-var stunned = false
 var attackrange = 125
 
 func damage(dmgdealt):

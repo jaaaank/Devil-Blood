@@ -26,7 +26,6 @@ DiscordSDKLoader="*res://addons/discord-sdk-gd/nodes/discord_autoload.gd"
 
 [editor]
 
-movie_writer/mjpeg_quality=0.9
 movie_writer/movie_file="C:/Users/panca/Desktop/Game Dev Stuff/!GODOT/Videos/playtestvid.avi"
 movie_writer/fps=30
 
@@ -146,6 +145,7 @@ wheelSelect={
 2d_physics/layer_5="environmentCollision"
 2d_physics/layer_6="cruceable"
 2d_physics/layer_7="holyLight"
+2d_physics/layer_8="npcs"
 
 [physics]
 
