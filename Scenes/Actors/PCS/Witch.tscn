@@ -3,11 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://s7ecjctr06vx" path="res://Assets/Actors/witch.png" id="1"]
 [ext_resource type="Script" path="res://Scripts/Actors/PCS/Witch.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="3"]
-[ext_resource type="PackedScene" path="res://Scenes/Actors/Objects/BloodSigil.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://c6sd4tp3c5p78" path="res://Scenes/Actors/Objects/BloodSigil.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://dewtt0y5sychm" path="res://Scenes/Screens/UI.tscn" id="5"]
 
 [sub_resource type="RectangleShape2D" id="1"]
-size = Vector2(62, 39)
+size = Vector2(62, 21)
 
 [sub_resource type="RectangleShape2D" id="2"]
 size = Vector2(56, 131)
@@ -37,7 +37,7 @@ position_smoothing_enabled = true
 editor_draw_drag_margin = true
 
 [node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(0, 49.5)
+position = Vector2(0, 58.5)
 shape = SubResource("1")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]

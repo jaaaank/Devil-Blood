@@ -1,60 +1,46 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://c6sd4tp3c5p78"]
 
-[ext_resource path="res://Scripts/Actors/Objects/Bullet.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Actors/objects/bloodsigilplaceholder.png" type="Texture2D" id=2]
+[ext_resource type="Script" path="res://Scripts/Actors/Objects/Bullet.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dc08pb5qidgdi" path="res://Assets/Actors/objects/bloodsigilplaceholder.png" id="2"]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id="2"]
 radius = 12.3065
 
-[sub_resource type="ParticleProcessMaterial" id=1]
+[sub_resource type="ParticleProcessMaterial" id="1"]
 lifetime_randomness = 0.5
 emission_shape = 2
-emission_box_extents = Vector3( 20, 16, 1 )
-flag_disable_z = true
+emission_sphere_radius = 1.0
 spread = 45.39
 flatness = 1.0
-gravity = Vector3( 0, 98, 0 )
-angular_velocity = 360.0
-angular_velocity_random = 1.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-radial_accel = 5.0
-radial_accel_random = 1.0
-damping = 90.0
-angle = 360.0
-angle_random = 1.0
-scale = 10.0
-scale_random = 1.0
-color = Color( 0.886275, 0, 0, 1 )
-hue_variation = 0.06
-hue_variation_random = 1.0
+gravity = Vector3(0, 98, 0)
+color = Color(0.886275, 0, 0, 1)
 
 [node name="BloodSigil" type="Area2D"]
 collision_layer = 4
-collision_mask = 10
+collision_mask = 266
 input_pickable = false
-script = ExtResource( 1 )
-speed = Vector2( 1000, 1000 )
+script = ExtResource("1")
+speed = Vector2(1000, 1000)
 
 [node name="Bulletplaceholderispenttoolongon" type="Sprite2D" parent="."]
-texture = ExtResource( 2 )
+texture = ExtResource("2")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
-position = Vector2( 14.6, 0 )
-shape = SubResource( 2 )
+position = Vector2(14.6, 0)
+shape = SubResource("2")
 
 [node name="BloodParticles" type="GPUParticles2D" parent="."]
-position = Vector2( -24.6, -1.39835e-11 )
+position = Vector2(-24.6, -1.39835e-11)
 rotation = 1.57079
 amount = 30
+process_material = SubResource("1")
 lifetime = 7.0
 speed_scale = 4.0
 randomness = 1.0
-process_material = SubResource( 1 )
 
 [connection signal="area_entered" from="." to="." method="_on_Bullet_area_entered"]
-[connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

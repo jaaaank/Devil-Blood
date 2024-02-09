@@ -11,9 +11,10 @@ func _ready():
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
-		self.paused = !paused
+		set_paused(!paused)
 		get_viewport().set_input_as_handled()
-		
+	
+#button not working when actually in the scene for some reason
 func set_paused(value: bool) -> void:
 	paused = value
 	if paused:

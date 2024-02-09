@@ -145,6 +145,7 @@ wheelSelect={
 2d_physics/layer_6="cruceable"
 2d_physics/layer_7="holyLight"
 2d_physics/layer_8="npcs"
+2d_physics/layer_9="bulletKiller"
 
 [physics]
 

@@ -38,6 +38,7 @@ func interact():
 
 func damage(damageTaken: float):
 	if !iframes:
+		sprite.set_modulate(Color.WEB_MAROON)
 # warning-ignore:narrowing_conversion
 		health -= round(damageTaken*armorCalculation()*PlayerAutoload.difficulty)
 		iframes = true
@@ -69,6 +70,7 @@ func spawnDamageNums(damagetaken, clr):
 
 func _on_IframesTimer_timeout():
 	iframes = false
+	sprite.set_modulate(Color.WHITE)
 
 func useItem(id):
 	print(id)

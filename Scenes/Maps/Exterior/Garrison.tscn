@@ -11,6 +11,11 @@
 script = ExtResource("1_vi2p1")
 limits = Array[float]([-1775.0, -1800.0, 2175.0, 1150.0])
 
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="LocationText" parent="UI" instance=ExtResource("4")]
+locationName = "Garrison"
+
 [node name="GarrisonPlaceholder" type="Sprite2D" parent="."]
 visible = false
 z_index = -100
@@ -25,11 +30,6 @@ layer_0/tile_data = PackedInt32Array(-262139, 589824, 2, -262140, 655360, 1, -26
 
 [node name="PlayerSpawner" parent="." instance=ExtResource("8")]
 position = Vector2(1144, 351)
-
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="LocationText" parent="UI" instance=ExtResource("4")]
-locationName = "Garrison"
 
 [node name="EnemyKnight" parent="." instance=ExtResource("5_ocf8v")]
 position = Vector2(248, -91)

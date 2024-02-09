@@ -29,6 +29,7 @@ texture_over = ExtResource("3_famag")
 texture_progress = ExtResource("3_kpc5h")
 
 [node name="PauseMenu" type="ColorRect" parent="CanvasLayer"]
+process_mode = 2
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,3 +37,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0588235, 0.0588235, 0.0588235, 0.509804)
+
+[node name="MenuButtons" type="VBoxContainer" parent="CanvasLayer/PauseMenu"]
+process_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -20.0
+offset_right = 35.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResumeButton" type="Button" parent="CanvasLayer/PauseMenu/MenuButtons"]
+process_mode = 2
+process_priority = 10
+layout_mode = 2
+text = "Resume"
+
+[connection signal="pressed" from="CanvasLayer/PauseMenu/MenuButtons/ResumeButton" to="." method="set_paused" binds= [false]]

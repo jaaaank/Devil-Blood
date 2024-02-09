@@ -13,7 +13,7 @@ y_sort_enabled = true
 z_index = -10
 tile_set = ExtResource("6")
 format = 2
-layer_0/tile_data = PackedInt32Array(-458752, 0, 0, -327680, 0, 1, -393216, 0, 1, -262144, 458752, 1, -196608, 393216, 1, -196609, 655360, 0, -131073, 655360, 1, -131072, 655360, 3, -65536, 0, 1, -65537, 589824, 3, -196607, 655360, 0, -196606, 720896, 0, -131071, 589824, 3, -131070, 720896, 3, -196610, 524288, 0, -131074, 524288, 1, -65538, 524288, 3, 0, 458752, 1, 65535, 524288, 0, 131071, 262144, 2, 65536, 720896, 3, 196607, 0, 1, 262143, 0, 1, 327679, 0, 2)
+layer_0/tile_data = PackedInt32Array(-458752, 0, 0, -327680, 0, 1, -393216, 0, 1, -262144, 458752, 1, -196608, 393216, 1, -196609, 655360, 0, -131073, 655360, 1, -131072, 655360, 3, -65536, 0, 1, -65537, 589824, 3, -196607, 655360, 0, -196606, 720896, 0, -131071, 589824, 3, -131070, 720896, 3, -196610, 524288, 0, -131074, 524288, 1, -65538, 524288, 3, 0, 458752, 1, 65535, 524288, 0, 131071, 262144, 2, 65536, 720896, 3, 196607, 0, 1, 262143, 589824, 0, 327679, 589824, 3, 196608, 655360, 0, 262144, 327680, 2, 262145, 655360, 1, 262146, 655360, 1, 262147, 589824, 2, 196611, 655360, 0, 196610, 655360, 0, 196609, 655360, 0, 262148, 393216, 1, 196612, 720896, 0, 393221, 720896, 3, 327685, 720896, 2, 262149, 720896, 0, 393220, 589824, 3, 327684, 655360, 1, 393219, 589824, 3, 327683, 655360, 1, 393218, 589824, 3, 327682, 655360, 1, 393217, 589824, 3, 327681, 655360, 1, 393216, 524288, 3, 327680, 524288, 1, 262142, 655360, 0, 327678, 589824, 3, 327677, 589824, 3, 262141, 655360, 0, 327676, 589824, 3, 262140, 655360, 0, 327675, 589824, 3, 262139, 655360, 0, 327674, 589824, 3, 262138, 655360, 0, 327673, 589824, 3, 262137, 655360, 0, 327672, 589824, 3, 262136, 655360, 0, 327671, 589824, 3, 262135, 655360, 0, 327670, 589824, 3, 262134, 655360, 0, 327669, 589824, 3, 262133, 655360, 0, 327668, 589824, 3, 262132, 655360, 0, 327667, 589824, 3, 262131, 655360, 0, 327666, 589824, 3, 262130, 655360, 0, 327665, 589824, 3, 262129, 655360, 0, 327664, 589824, 3, 262128, 655360, 0, 327663, 589824, 3, 262127, 655360, 0, 327662, 589824, 3, 262126, 655360, 0, 327661, 589824, 3, 262125, 655360, 0, 327660, 589824, 3, 262124, 655360, 0, 327659, 589824, 3, 262123, 655360, 0, 327658, 589824, 3, 262122, 655360, 0, 327657, 589824, 3, 262121, 655360, 0, 327656, 589824, 3, 262120, 655360, 0, 327655, 589824, 3, 262119, 655360, 0, 327654, 589824, 3, 262118, 655360, 0, 327653, 589824, 3, 262117, 655360, 0, 327652, 589824, 3, 262116, 655360, 0, 327651, 589824, 3, 262115, 655360, 0, 327650, 589824, 3, 262114, 655360, 0, 327649, 589824, 3, 262113, 655360, 0, 327648, 589824, 3, 262112, 655360, 0, 327647, 589824, 3, 262111, 655360, 0, 327646, 589824, 3, 262110, 655360, 0, 327645, 589824, 3, 262109, 655360, 0, 327644, 589824, 3, 262108, 655360, 0, 327643, 589824, 3, 262107, 655360, 0, 327642, 589824, 3, 262106, 655360, 0, 327641, 589824, 3, 262105, 655360, 0, 327640, 589824, 3, 262104, 655360, 0, 327639, 589824, 3, 262103, 655360, 0, 327638, 589824, 3, 262102, 655360, 0, 327637, 589824, 3, 262101, 655360, 0, 327636, 589824, 3, 262100, 655360, 0, 327635, 589824, 3, 262099, 655360, 0, 327634, 393216, 2, 262098, 393216, 1, 458706, 720896, 3, 393170, 720896, 2, 196562, 720896, 2, 131026, 720896, 0, 458705, 589824, 3, 393169, 655360, 1, 327633, 589824, 2, 262097, 655360, 1, 196561, 655360, 1, 131025, 655360, 0, 458704, 589824, 3, 393168, 655360, 1, 327632, 589824, 2, 262096, 655360, 1, 196560, 589824, 2, 131024, 655360, 0, 458703, 589824, 3, 393167, 655360, 1, 327631, 655360, 1, 262095, 655360, 1, 196559, 589824, 2, 131023, 655360, 0, 458702, 589824, 3, 393166, 589824, 2, 327630, 655360, 1, 262094, 655360, 1, 196558, 589824, 2, 131022, 655360, 0, 458701, 589824, 3, 393165, 589824, 2, 327629, 655360, 1, 262093, 589824, 2, 196557, 655360, 1, 131021, 655360, 0, 458700, 589824, 3, 393164, 589824, 2, 327628, 655360, 1, 262092, 589824, 2, 196556, 655360, 1, 131020, 655360, 0, 458699, 589824, 3, 393163, 589824, 2, 327627, 655360, 1, 262091, 655360, 1, 196555, 655360, 1, 131019, 655360, 0, 458698, 524288, 3, 393162, 524288, 1, 327626, 524288, 1, 262090, 524288, 1, 196554, 524288, 1, 131018, 524288, 0)
 
 [node name="PlayerSpawner" parent="." instance=ExtResource("4")]
 z_as_relative = false
@@ -27,3 +27,445 @@ locationName = "Infested Cave"
 
 [node name="Mass" parent="." instance=ExtResource("4_nnb4d")]
 position = Vector2(-179, -226)
+
+[node name="BlockingMasses" type="Node2D" parent="."]
+z_as_relative = false
+y_sort_enabled = true
+
+[node name="Mass2" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-531, 524)
+
+[node name="Mass3" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-633, 578)
+
+[node name="Mass4" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-719, 530)
+
+[node name="Mass5" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-774, 567)
+
+[node name="Mass6" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-849, 532)
+
+[node name="Mass7" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-892, 572)
+
+[node name="Mass8" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-977, 528)
+
+[node name="Mass9" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1033, 569)
+
+[node name="Mass10" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1130, 517)
+
+[node name="Mass11" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1221, 568)
+
+[node name="Mass12" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1304, 527)
+
+[node name="Mass13" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1399, 559)
+
+[node name="Mass14" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1477, 521)
+
+[node name="Mass15" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1587, 570)
+
+[node name="Mass16" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1612, 513)
+
+[node name="Mass17" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1497, 559)
+
+[node name="Mass18" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1718, 538)
+
+[node name="Mass121" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3434, 535)
+
+[node name="Mass122" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3536, 589)
+
+[node name="Mass123" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3622, 541)
+
+[node name="Mass124" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3677, 578)
+
+[node name="Mass125" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3752, 543)
+
+[node name="Mass126" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3795, 583)
+
+[node name="Mass127" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3880, 539)
+
+[node name="Mass128" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3936, 580)
+
+[node name="Mass129" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4033, 528)
+
+[node name="Mass130" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4124, 579)
+
+[node name="Mass131" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4207, 538)
+
+[node name="Mass132" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4302, 570)
+
+[node name="Mass133" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4380, 532)
+
+[node name="Mass134" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4490, 581)
+
+[node name="Mass135" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4515, 524)
+
+[node name="Mass136" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4400, 570)
+
+[node name="Mass137" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4621, 549)
+
+[node name="Mass19" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1667, 568)
+
+[node name="Mass20" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1858, 574)
+
+[node name="Mass21" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1791, 531)
+
+[node name="Mass22" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1873, 520)
+
+[node name="Mass23" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1952, 564)
+
+[node name="Mass24" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1960, 518)
+
+[node name="Mass25" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-2028, 568)
+
+[node name="Mass26" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-2070, 514)
+
+[node name="Mass27" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-2112, 564)
+
+[node name="Mass28" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-2168, 516)
+
+[node name="Mass29" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-2203, 564)
+
+[node name="Mass30" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-2283, 521)
+
+[node name="Mass31" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-2284, 571)
+
+[node name="Mass32" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-2357, 528)
+
+[node name="Mass33" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-2362, 567)
+
+[node name="Mass34" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-2422, 525)
+
+[node name="Mass35" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-2447, 560)
+
+[node name="Mass36" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-2544, 523)
+
+[node name="Mass37" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-815, 528)
+
+[node name="Mass38" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-700, 574)
+
+[node name="Mass39" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-921, 553)
+
+[node name="Mass40" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-870, 583)
+
+[node name="Mass41" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1061, 589)
+
+[node name="Mass42" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-994, 546)
+
+[node name="Mass43" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1076, 535)
+
+[node name="Mass44" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1155, 579)
+
+[node name="Mass45" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1163, 533)
+
+[node name="Mass46" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1231, 583)
+
+[node name="Mass47" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1273, 529)
+
+[node name="Mass48" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1315, 579)
+
+[node name="Mass49" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1371, 531)
+
+[node name="Mass50" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1406, 579)
+
+[node name="Mass51" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1486, 536)
+
+[node name="Mass52" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1487, 586)
+
+[node name="Mass53" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1560, 543)
+
+[node name="Mass138" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-5113, 569)
+
+[node name="Mass139" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-5121, 523)
+
+[node name="Mass140" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-5189, 573)
+
+[node name="Mass141" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-5231, 519)
+
+[node name="Mass142" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-5273, 569)
+
+[node name="Mass143" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-5329, 521)
+
+[node name="Mass144" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-5364, 569)
+
+[node name="Mass145" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-5444, 526)
+
+[node name="Mass146" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-5445, 576)
+
+[node name="Mass147" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-5518, 533)
+
+[node name="Mass54" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1565, 582)
+
+[node name="Mass55" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1625, 540)
+
+[node name="Mass56" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1650, 575)
+
+[node name="Mass57" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-1747, 538)
+
+[node name="Mass58" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-2487, 524)
+
+[node name="Mass59" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-2372, 570)
+
+[node name="Mass60" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-2593, 549)
+
+[node name="Mass61" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-2542, 579)
+
+[node name="Mass62" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-2733, 585)
+
+[node name="Mass63" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-2666, 542)
+
+[node name="Mass64" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-2748, 531)
+
+[node name="Mass65" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-2827, 575)
+
+[node name="Mass66" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-2835, 529)
+
+[node name="Mass67" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-2903, 579)
+
+[node name="Mass68" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-2945, 525)
+
+[node name="Mass69" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-2987, 575)
+
+[node name="Mass70" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3043, 527)
+
+[node name="Mass71" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3078, 575)
+
+[node name="Mass72" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3158, 532)
+
+[node name="Mass73" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3159, 582)
+
+[node name="Mass74" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3232, 539)
+
+[node name="Mass75" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3237, 578)
+
+[node name="Mass76" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3297, 536)
+
+[node name="Mass77" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3322, 571)
+
+[node name="Mass78" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3419, 534)
+
+[node name="Mass79" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3385, 519)
+
+[node name="Mass80" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3270, 565)
+
+[node name="Mass81" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3491, 544)
+
+[node name="Mass82" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3440, 574)
+
+[node name="Mass83" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3631, 580)
+
+[node name="Mass84" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3564, 537)
+
+[node name="Mass85" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3646, 526)
+
+[node name="Mass86" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3725, 570)
+
+[node name="Mass87" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3733, 524)
+
+[node name="Mass88" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3801, 574)
+
+[node name="Mass89" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3843, 520)
+
+[node name="Mass90" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3885, 570)
+
+[node name="Mass91" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3941, 522)
+
+[node name="Mass92" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-3976, 570)
+
+[node name="Mass93" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4056, 527)
+
+[node name="Mass94" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4057, 577)
+
+[node name="Mass95" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4130, 534)
+
+[node name="Mass96" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4135, 573)
+
+[node name="Mass97" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4195, 531)
+
+[node name="Mass98" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4220, 566)
+
+[node name="Mass99" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4317, 529)
+
+[node name="Mass100" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4228, 522)
+
+[node name="Mass101" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4113, 568)
+
+[node name="Mass102" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4334, 547)
+
+[node name="Mass103" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4283, 577)
+
+[node name="Mass104" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4474, 583)
+
+[node name="Mass105" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4407, 540)
+
+[node name="Mass106" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4489, 529)
+
+[node name="Mass107" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4568, 573)
+
+[node name="Mass108" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4576, 527)
+
+[node name="Mass109" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4644, 577)
+
+[node name="Mass110" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4686, 523)
+
+[node name="Mass111" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4728, 573)
+
+[node name="Mass112" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4784, 525)
+
+[node name="Mass113" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4819, 573)
+
+[node name="Mass114" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4899, 530)
+
+[node name="Mass115" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4900, 580)
+
+[node name="Mass116" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4973, 537)
+
+[node name="Mass117" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-4978, 576)
+
+[node name="Mass118" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-5038, 534)
+
+[node name="Mass119" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-5063, 569)
+
+[node name="Mass120" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
+position = Vector2(-5160, 532)

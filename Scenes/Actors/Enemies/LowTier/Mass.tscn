@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://blmpwvome25ko"]
+[gd_scene load_steps=7 format=3 uid="uid://blmpwvome25ko"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/NPCS/Enemies/Mass.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://cjc87yril4sye" path="res://Assets/Actors/masssheet.png" id="2"]
 [ext_resource type="PackedScene" uid="uid://cci7teggrridn" path="res://Scenes/Actors/Objects/DamageNumbers.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="4_d76ti"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(54, 22)
@@ -15,6 +16,7 @@ z_as_relative = false
 y_sort_enabled = true
 collision_layer = 42
 collision_mask = 18
+motion_mode = 1
 script = ExtResource("1")
 basedamage = 5
 damagenumbers = ExtResource("3")
@@ -42,6 +44,12 @@ one_shot = true
 [node name="stuntimer" type="Timer" parent="."]
 wait_time = 2.5
 one_shot = true
+
+[node name="Shadow" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, 29)
+scale = Vector2(0.900362, 0.57351)
+texture = ExtResource("4_d76ti")
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="timeout" from="walktimer" to="." method="_on_walktimer_timeout"]
