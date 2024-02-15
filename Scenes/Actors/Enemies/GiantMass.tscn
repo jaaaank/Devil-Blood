@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://1jx4svoldd4m"]
+
+[ext_resource type="Script" path="res://Scripts/Actors/NPCS/Enemies/Mass.gd" id="1_otds7"]
+[ext_resource type="PackedScene" uid="uid://cci7teggrridn" path="res://Scenes/Actors/Objects/DamageNumbers.tscn" id="2_xlypf"]
+[ext_resource type="Texture2D" uid="uid://c1l3cr7pqsvjw" path="res://Assets/Actors/giantmass.png" id="3_ht247"]
+[ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="4_xmaav"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(589, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uohr4"]
+size = Vector2(586, 80)
+
+[node name="GiantMass" type="CharacterBody2D"]
+z_as_relative = false
+y_sort_enabled = true
+collision_layer = 42
+collision_mask = 18
+collision_priority = 5.0
+motion_mode = 1
+platform_on_leave = 2
+script = ExtResource("1_otds7")
+basedamage = 5
+damagenumbers = ExtResource("2_xlypf")
+
+[node name="Masssheet" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -67)
+texture = ExtResource("3_ht247")
+offset = Vector2(0, -260)
+hframes = 3
+vframes = 3
+
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+position = Vector2(0, -32)
+shape = SubResource("1")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+position = Vector2(0, 2)
+scale = Vector2(2, 2)
+collision_layer = 34
+collision_mask = 69
+input_pickable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox"]
+polygon = PackedVector2Array(-5, -2, -139, -3, -161, -34, -151, -88, -127, -153.5, -74, -219.5, -0.5, -241.5, 88, -211.5, 134.5, -141.5, 156, -77, 161, -34, 137, -1)
+
+[node name="walktimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="stuntimer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[node name="Shadow" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, -162)
+scale = Vector2(5.32764, 3.39359)
+texture = ExtResource("4_xmaav")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, -30)
+shape = SubResource("RectangleShape2D_uohr4")
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="timeout" from="walktimer" to="." method="_on_walktimer_timeout"]
+[connection signal="timeout" from="stuntimer" to="." method="unstun"]

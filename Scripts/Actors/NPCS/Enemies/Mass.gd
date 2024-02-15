@@ -15,7 +15,6 @@ func _physics_process(_delta):
 	if global_position.distance_to(target) > 100:
 		velocity = global_position.direction_to(target) * speed
 # warning-ignore:return_value_discarded
-		set_velocity(velocity)
 		move_and_slide()
 
 func randomWalk():
