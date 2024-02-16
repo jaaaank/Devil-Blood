@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://1jx4svoldd4m"]
+[gd_scene load_steps=11 format=3 uid="uid://1jx4svoldd4m"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/NPCS/Enemies/GiantMass.gd" id="1_5ayer"]
+[ext_resource type="PackedScene" uid="uid://bgcdy521frcxo" path="res://Scenes/Actors/Enemies/Bosses/Tendril.tscn" id="2_3vadu"]
 [ext_resource type="PackedScene" uid="uid://cci7teggrridn" path="res://Scenes/Actors/Objects/DamageNumbers.tscn" id="2_xlypf"]
 [ext_resource type="Texture2D" uid="uid://c1l3cr7pqsvjw" path="res://Assets/Actors/giantmass.png" id="3_ht247"]
 [ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="4_xmaav"]
@@ -201,6 +202,7 @@ collision_priority = 5.0
 motion_mode = 1
 platform_on_leave = 2
 script = ExtResource("1_5ayer")
+tendril = ExtResource("2_3vadu")
 walkrange = 1000
 basedamage = 10
 damagenumbers = ExtResource("2_xlypf")
@@ -256,6 +258,9 @@ one_shot = true
 libraries = {
 "": SubResource("AnimationLibrary_lmibj")
 }
+
+[node name="Aim" type="Node2D" parent="."]
+position = Vector2(0, -206)
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="timeout" from="walktimer" to="." method="_on_walktimer_timeout"]

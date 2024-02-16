@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cuugv52nxnrn7" path="res://Scenes/Screens/Popups/LocationText.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://djsnpeesrgq5f" path="res://Scenes/Actors/PCS/PlayerSpawner.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://blmpwvome25ko" path="res://Scenes/Actors/Enemies/LowTier/Mass.tscn" id="4_nnb4d"]
-[ext_resource type="PackedScene" uid="uid://1jx4svoldd4m" path="res://Scenes/Actors/Enemies/GiantMass.tscn" id="5_hcuel"]
+[ext_resource type="PackedScene" uid="uid://1jx4svoldd4m" path="res://Scenes/Actors/Enemies/Bosses/GiantMass.tscn" id="5_hcuel"]
 [ext_resource type="TileSet" uid="uid://dl3q7oy5jowgi" path="res://Assets/TileMaps/outDoorRed.tres" id="6"]
 
 [node name="PriestCave" type="Node2D"]

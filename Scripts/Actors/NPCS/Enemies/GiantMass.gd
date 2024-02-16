@@ -1,6 +1,7 @@
 extends mass
 
 @onready var animP = $AnimationPlayer
+@export var tendril: PackedScene
 
 func _ready():
 	super()
@@ -12,12 +13,14 @@ func _ready():
 #1: Tendril
 #2: Summon babies
 func attack():
-	var attackChosen = randi_range(0,3)
+	var attackChosen = randi_range(0,1)
 	match attackChosen:
 		0:
 			animP.play("jumpajumpa")
+			await animP.animation_finished
 		1:
-			pass
+			$Aim.look_at(PlayerAutoload.playerPos)
+			$Aim.add_child(tendril.instantiate())
 		2:
 			pass
 		3:
