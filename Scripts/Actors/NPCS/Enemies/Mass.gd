@@ -1,18 +1,16 @@
 extends enemy
-@export var walkrange = 10000
+class_name  mass
+@export var walkrange = 500
 var target: Vector2
 @onready var walktimer:= $walktimer
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
-	speed = 100
 	sprite = $Masssheet
 	randomize()
 	randomWalk()
-	armor = 0
-	health = 5
 	
 func _physics_process(_delta):
-	if global_position.distance_to(target) > 100:
+	if global_position.distance_to(target) > 50:
 		velocity = global_position.direction_to(target) * speed
 # warning-ignore:return_value_discarded
 		move_and_slide()
@@ -20,8 +18,7 @@ func _physics_process(_delta):
 func randomWalk():
 	var rice = randf_range(-walkrange, walkrange)
 	var beans = randf_range(-walkrange, walkrange)
-	target = Vector2(rice,beans)
-	print(target)
+	target = global_position + Vector2(rice,beans)
 	walktimer.start(randf_range(3,6))
 	
 func _on_walktimer_timeout():
@@ -29,7 +26,6 @@ func _on_walktimer_timeout():
 
 func stun():
 	stunned = true
-	print("stunned")
 	set_physics_process(false)
 	$stuntimer.start()
 	

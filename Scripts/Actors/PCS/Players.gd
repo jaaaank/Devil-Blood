@@ -44,6 +44,7 @@ func damage(damageTaken: float):
 		iframes = true
 		spawnDamageNums(round(damageTaken*armorCalculation()*PlayerAutoload.difficulty), Color.FIREBRICK)
 		find_child("UI").call("updateUI")
+		$Hurtbox.monitoring = false
 	if health <=0:
 		PlayerAutoload.charDie()
 		queue_free()
@@ -70,6 +71,7 @@ func spawnDamageNums(damagetaken, clr):
 
 func _on_IframesTimer_timeout():
 	iframes = false
+	$Hurtbox.monitoring = true
 	sprite.set_modulate(Color.WHITE)
 
 func useItem(id):

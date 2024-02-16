@@ -20,6 +20,8 @@ motion_mode = 1
 script = ExtResource("1")
 basedamage = 5
 damagenumbers = ExtResource("3")
+speed = 100
+health = 5
 
 [node name="Masssheet" type="Sprite2D" parent="."]
 texture = ExtResource("2")
