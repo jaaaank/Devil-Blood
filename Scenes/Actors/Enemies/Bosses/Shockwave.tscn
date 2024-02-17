@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgcdy521frcxo"]
+[gd_scene load_steps=7 format=3 uid="uid://c4tlkb7wxnw71"]
 
-[ext_resource type="Texture2D" uid="uid://dnanqkhnbugie" path="res://Assets/Actors/objects/tendril.png" id="1_oqtwy"]
+[ext_resource type="Texture2D" uid="uid://n2h47av13cqf" path="res://Assets/Actors/objects/shockwave.png" id="1_p3piv"]
 
 [sub_resource type="GDScript" id="GDScript_y2noi"]
 script/source = "extends Area2D
@@ -20,26 +20,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionPolygon2D:position")
+tracks/0/path = NodePath("CollisionShape2D:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-700, 0)]
+"values": [Vector2(1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/path = NodePath("Sprite2D:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [3]
+"update": 0,
+"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_yp6l3"]
@@ -49,26 +49,26 @@ step = 0.025
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionPolygon2D:position")
+tracks/0/path = NodePath("CollisionShape2D:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.2, 0.6, 0.8, 1.2),
-"transitions": PackedFloat32Array(6, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-700, 0), Vector2(0, 0), Vector2(0, 0), Vector2(-700, 0)]
+"values": [Vector2(1, 1), Vector2(30, 30)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/path = NodePath("Sprite2D:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.525, 0.575, 0.6, 0.875, 1.025, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [3, 2, 1, 0, 1, 2, 3]
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.035, 0.035), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v0ww4"]
@@ -77,26 +77,27 @@ _data = {
 "attack": SubResource("Animation_yp6l3")
 }
 
-[node name="Tendril" type="Area2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rfqex"]
+radius = 16.6667
+height = 54.0667
+
+[node name="Shockwave" type="Area2D"]
 z_index = -1
 collision_layer = 0
 script = SubResource("GDScript_y2noi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(501, 0)
-texture = ExtResource("1_oqtwy")
-vframes = 4
-frame = 3
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-700, 0)
-polygon = PackedVector2Array(40, -132, 751, -64, 823, -54, 1000, 47, 857, 59, 786, 66, 498, 66, 11, 144)
+texture = ExtResource("1_p3piv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_v0ww4")
 }
 autoplay = "attack"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_rfqex")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
