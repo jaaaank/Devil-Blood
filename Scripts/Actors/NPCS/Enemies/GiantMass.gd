@@ -6,10 +6,10 @@ extends mass
 @export var shockwave: PackedScene
 
 func _ready():
-	super()
+	sprite = $Masssheet
 	randomize()
 	$attackTimer.start(3)
-	
+	randomWalk()
 
 #0: Jumpa Jumpa
 #1: Tendril
