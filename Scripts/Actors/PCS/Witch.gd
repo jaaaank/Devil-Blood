@@ -1,7 +1,8 @@
 extends Player
 
 @export var Sigi: PackedScene
-@onready var sigil:= $Sigil
+@export var scythe: PackedScene
+@onready var aim:= $Sigil/hand
 @onready var timey:= $Sigil/Timer
 var reloadTime: float = 1.0
 var cooldown = false
@@ -9,13 +10,21 @@ var cooldown = false
 func _physics_process(_delta):
 	super(_delta)
 	PlayerAutoload.playerPos = global_position
-	$Sigil/Muzzle.look_at(get_global_mouse_position())
+	if !cooldown:
+		aim.look_at(get_global_mouse_position())
 	
 func attack():
 	if !cooldown:
 		var b = Sigi.instantiate()
 		get_parent().get_parent().add_child(b)
-		b.transform = $Sigil/Muzzle.global_transform
+		b.transform = aim.global_transform
+		cooldown = true
+		timey.start()
+
+func altAttack():
+	if !cooldown:
+		var b = scythe.instantiate()
+		aim.add_child(b)
 		cooldown = true
 		timey.start()
 

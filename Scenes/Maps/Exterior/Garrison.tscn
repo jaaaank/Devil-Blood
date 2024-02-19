@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://djsnpeesrgq5f" path="res://Scenes/Actors/PCS/PlayerSpawner.tscn" id="8"]
 
 [node name="HellGarrison" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_vi2p1")
 limits = Array[float]([-1775.0, -1800.0, 2175.0, 1150.0])
 

@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://ckemnaeok2ood"]
+[gd_scene load_steps=9 format=3 uid="uid://ckemnaeok2ood"]
 
 [ext_resource type="Texture2D" uid="uid://dtbtjrc6w2t2j" path="res://Assets/Actors/knight.png" id="1"]
 [ext_resource type="Script" path="res://Scripts/Actors/PCS/Knight.gd" id="2"]
-[ext_resource type="PackedScene" path="res://Scenes/Actors/Objects/playerSwordAttack.tscn" id="3"]
-[ext_resource type="PackedScene" path="res://Scenes/Actors/Objects/playerLanceAttack.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://bcg40bubf73t4" path="res://Scenes/Actors/Objects/playerSwordAttack.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://ccdohvwqd23c5" path="res://Scenes/Actors/Objects/playerLanceAttack.tscn" id="4"]
 [ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="5"]
 [ext_resource type="PackedScene" uid="uid://dewtt0y5sychm" path="res://Scenes/Screens/UI.tscn" id="6"]
 
@@ -12,15 +12,6 @@ size = Vector2(62, 129)
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(75, 29)
-
-[sub_resource type="ParticleProcessMaterial" id="4"]
-lifetime_randomness = 0.5
-emission_shape = 2
-emission_sphere_radius = 1.0
-spread = 45.39
-flatness = 1.0
-gravity = Vector3(0, 150, 0)
-color = Color(0.839216, 0, 0, 1)
 
 [node name="Knight" type="CharacterBody2D"]
 collision_mask = 16
@@ -69,19 +60,7 @@ one_shot = true
 [node name="abilitysound" type="AudioStreamPlayer" parent="."]
 volume_db = -3.0
 
-[node name="error" type="AudioStreamPlayer" parent="."]
-volume_db = -10.0
-
 [node name="deathsound" type="AudioStreamPlayer" parent="."]
-
-[node name="BloodParticles" type="GPUParticles2D" parent="."]
-emitting = false
-amount = 10
-process_material = SubResource("4")
-one_shot = true
-speed_scale = 1.5
-explosiveness = 1.0
-randomness = 1.0
 
 [node name="IframesTimer" type="Timer" parent="."]
 

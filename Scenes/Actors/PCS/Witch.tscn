@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cf6q2wrwpvmjj"]
+[gd_scene load_steps=11 format=3 uid="uid://cf6q2wrwpvmjj"]
 
 [ext_resource type="Texture2D" uid="uid://s7ecjctr06vx" path="res://Assets/Actors/witch.png" id="1"]
 [ext_resource type="Script" path="res://Scripts/Actors/PCS/Witch.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://cci7teggrridn" path="res://Scenes/Actors/Objects/DamageNumbers.tscn" id="3_nlqyh"]
+[ext_resource type="PackedScene" uid="uid://cnejo1i66r0c1" path="res://Scenes/Actors/Objects/scytheAttack.tscn" id="3_v6k73"]
 [ext_resource type="PackedScene" uid="uid://c6sd4tp3c5p78" path="res://Scenes/Actors/Objects/BloodSigil.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://dewtt0y5sychm" path="res://Scenes/Screens/UI.tscn" id="5"]
 
@@ -26,6 +28,8 @@ collision_mask = 16
 motion_mode = 1
 script = ExtResource("2")
 Sigi = ExtResource("4")
+scythe = ExtResource("3_v6k73")
+damagenumbers = ExtResource("3_nlqyh")
 health = 75
 
 [node name="UI" parent="." instance=ExtResource("5")]
@@ -54,7 +58,7 @@ shape = SubResource("2")
 
 [node name="Sigil" type="Sprite2D" parent="."]
 
-[node name="Muzzle" type="Marker2D" parent="Sigil"]
+[node name="hand" type="Marker2D" parent="Sigil"]
 
 [node name="Timer" type="Timer" parent="Sigil"]
 one_shot = true

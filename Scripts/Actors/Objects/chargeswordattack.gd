@@ -9,6 +9,7 @@ func _ready():
 	
 func _physics_process(_delta):
 	global_rotation_degrees = ogdegrees
+	#player.set_process_input(false)
 	#player.global_position = $Sword.global_position
 
 

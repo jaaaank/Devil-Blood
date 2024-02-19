@@ -12,8 +12,8 @@ func _ready():
 	PlayerAutoload.connect("player_dead", Callable(self, "die"))
 
 func _physics_process(_delta):
-	var direction = Input.get_vector("moveleft", "moveright", "moveup", "movedown",0)
-	velocity = direction * speed
+	#var direction = Input.get_vector("moveleft", "moveright", "moveup", "movedown",0)
+	#velocity = direction * speed
 	move_and_slide()
 	for i in get_slide_collision_count():
 		var c = get_slide_collision(i)
@@ -21,6 +21,17 @@ func _physics_process(_delta):
 			c.get_collider().apply_central_impulse(-c.get_normal()*push_force)
 
 func _input(_event):
+	velocity = Vector2.ZERO
+	if Input.is_action_pressed("moveup"):
+		velocity.y = -1 
+	if Input.is_action_pressed("movedown"):
+		velocity.y = 1
+	if Input.is_action_pressed("moveleft"):
+		velocity.x = -1
+	if Input.is_action_pressed("moveright"):
+		velocity.x = 1
+	velocity = velocity.normalized()*speed
+	
 	if Input.is_action_just_pressed("interact"):
 		interact()
 	if Input.is_action_just_pressed("attack"):

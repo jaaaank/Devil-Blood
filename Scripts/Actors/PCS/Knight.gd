@@ -21,10 +21,9 @@ func attack():
 		cooldown = true
 		timey.start(reloadTime)
 		
-		
 func altAttack():
 	if !dashing and !cooldown:
-		PlayerAutoload.iframes = true 
+		iframes = true 
 		set_process_input(false)
 		var b = LanceAttack.instantiate()
 		$Weapons/hand.add_child(b)
@@ -36,7 +35,7 @@ func _on_Timer_timeout():
 	cooldown = false
 	
 func _on_dashtimer_timeout():
-	PlayerAutoload.iframes = false 
+	iframes = false 
 	cooldown = true
 	timey.start(reloadTime)
 	dashing = false
