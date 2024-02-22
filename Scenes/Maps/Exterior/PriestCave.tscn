@@ -32,26 +32,17 @@ position = Vector2(-179, -226)
 z_as_relative = false
 y_sort_enabled = true
 
-[node name="Mass2" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-531, 524)
-
 [node name="Mass3" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-633, 578)
 
 [node name="Mass4" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-719, 530)
 
-[node name="Mass5" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-774, 567)
-
 [node name="Mass6" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-849, 532)
 
 [node name="Mass7" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-892, 572)
-
-[node name="Mass8" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-977, 528)
 
 [node name="Mass9" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-1033, 569)
@@ -73,9 +64,6 @@ position = Vector2(-1477, 521)
 
 [node name="Mass15" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-1587, 570)
-
-[node name="Mass16" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-1612, 513)
 
 [node name="Mass17" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-1497, 559)
@@ -143,35 +131,17 @@ position = Vector2(-1858, 574)
 [node name="Mass21" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-1791, 531)
 
-[node name="Mass22" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-1873, 520)
-
-[node name="Mass23" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-1952, 564)
-
 [node name="Mass24" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-1960, 518)
 
 [node name="Mass25" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-2028, 568)
 
-[node name="Mass26" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-2070, 514)
-
 [node name="Mass27" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-2112, 564)
 
-[node name="Mass28" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-2168, 516)
-
-[node name="Mass29" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-2203, 564)
-
 [node name="Mass30" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-2283, 521)
-
-[node name="Mass31" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-2284, 571)
 
 [node name="Mass32" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-2357, 528)
@@ -191,56 +161,20 @@ position = Vector2(-2544, 523)
 [node name="Mass37" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-815, 528)
 
-[node name="Mass38" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-700, 574)
-
 [node name="Mass39" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-921, 553)
-
-[node name="Mass40" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-870, 583)
 
 [node name="Mass41" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-1061, 589)
 
-[node name="Mass42" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-994, 546)
-
-[node name="Mass43" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-1076, 535)
-
 [node name="Mass44" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-1155, 579)
-
-[node name="Mass45" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-1163, 533)
-
-[node name="Mass46" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-1231, 583)
-
-[node name="Mass47" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-1273, 529)
 
 [node name="Mass48" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-1315, 579)
 
-[node name="Mass49" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-1371, 531)
-
-[node name="Mass50" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-1406, 579)
-
-[node name="Mass51" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-1486, 536)
-
 [node name="Mass52" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-1487, 586)
-
-[node name="Mass53" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-1560, 543)
-
-[node name="Mass138" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-5113, 569)
 
 [node name="Mass139" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-5121, 523)
@@ -254,56 +188,26 @@ position = Vector2(-5231, 519)
 [node name="Mass142" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-5273, 569)
 
-[node name="Mass143" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-5329, 521)
-
-[node name="Mass144" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-5364, 569)
-
 [node name="Mass145" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-5444, 526)
 
 [node name="Mass146" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-5445, 576)
 
-[node name="Mass147" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-5518, 533)
-
 [node name="Mass54" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-1565, 582)
-
-[node name="Mass55" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-1625, 540)
 
 [node name="Mass56" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-1650, 575)
 
-[node name="Mass57" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-1747, 538)
-
-[node name="Mass58" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-2487, 524)
-
-[node name="Mass59" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-2372, 570)
-
 [node name="Mass60" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-2593, 549)
-
-[node name="Mass61" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-2542, 579)
 
 [node name="Mass62" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-2733, 585)
 
-[node name="Mass63" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-2666, 542)
-
 [node name="Mass64" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-2748, 531)
-
-[node name="Mass65" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-2827, 575)
 
 [node name="Mass66" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-2835, 529)
@@ -311,23 +215,14 @@ position = Vector2(-2835, 529)
 [node name="Mass67" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-2903, 579)
 
-[node name="Mass68" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-2945, 525)
-
 [node name="Mass69" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-2987, 575)
 
 [node name="Mass70" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-3043, 527)
 
-[node name="Mass71" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-3078, 575)
-
 [node name="Mass72" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-3158, 532)
-
-[node name="Mass73" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-3159, 582)
 
 [node name="Mass74" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-3232, 539)
@@ -338,23 +233,14 @@ position = Vector2(-3237, 578)
 [node name="Mass76" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-3297, 536)
 
-[node name="Mass77" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-3322, 571)
-
 [node name="Mass78" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-3419, 534)
 
 [node name="Mass79" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-3385, 519)
 
-[node name="Mass80" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-3270, 565)
-
 [node name="Mass81" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-3491, 544)
-
-[node name="Mass82" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-3440, 574)
 
 [node name="Mass83" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-3631, 580)
@@ -362,20 +248,11 @@ position = Vector2(-3631, 580)
 [node name="Mass84" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-3564, 537)
 
-[node name="Mass85" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-3646, 526)
-
 [node name="Mass86" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-3725, 570)
 
 [node name="Mass87" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-3733, 524)
-
-[node name="Mass88" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-3801, 574)
-
-[node name="Mass89" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-3843, 520)
 
 [node name="Mass90" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-3885, 570)
@@ -383,20 +260,11 @@ position = Vector2(-3885, 570)
 [node name="Mass91" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-3941, 522)
 
-[node name="Mass92" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-3976, 570)
-
 [node name="Mass93" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-4056, 527)
 
-[node name="Mass94" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-4057, 577)
-
 [node name="Mass95" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-4130, 534)
-
-[node name="Mass96" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-4135, 573)
 
 [node name="Mass97" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-4195, 531)
@@ -404,50 +272,17 @@ position = Vector2(-4195, 531)
 [node name="Mass98" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-4220, 566)
 
-[node name="Mass99" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-4317, 529)
-
 [node name="Mass100" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-4228, 522)
-
-[node name="Mass101" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-4113, 568)
-
-[node name="Mass102" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-4334, 547)
-
-[node name="Mass103" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-4283, 577)
-
-[node name="Mass104" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-4474, 583)
-
-[node name="Mass105" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-4407, 540)
-
-[node name="Mass106" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-4489, 529)
 
 [node name="Mass107" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-4568, 573)
 
-[node name="Mass108" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-4576, 527)
-
-[node name="Mass109" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-4644, 577)
-
 [node name="Mass110" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-4686, 523)
 
-[node name="Mass111" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-4728, 573)
-
 [node name="Mass112" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-4784, 525)
-
-[node name="Mass113" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-4819, 573)
 
 [node name="Mass114" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-4899, 530)
@@ -457,9 +292,6 @@ position = Vector2(-4900, 580)
 
 [node name="Mass116" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-4973, 537)
-
-[node name="Mass117" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-4978, 576)
 
 [node name="Mass118" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-5038, 534)
@@ -476,20 +308,11 @@ position = Vector2(-5534, 574)
 [node name="Mass149" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-5576, 520)
 
-[node name="Mass150" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-5618, 570)
-
 [node name="Mass151" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-5674, 522)
 
 [node name="Mass152" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-5709, 570)
-
-[node name="Mass153" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-5789, 527)
-
-[node name="Mass154" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-5790, 577)
 
 [node name="Mass155" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-5863, 534)
@@ -500,38 +323,23 @@ position = Vector2(-5868, 573)
 [node name="Mass157" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-5928, 531)
 
-[node name="Mass158" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-5953, 566)
-
 [node name="Mass159" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-6050, 529)
 
 [node name="Mass160" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-5961, 522)
 
-[node name="Mass161" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-5846, 568)
-
 [node name="Mass162" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-6067, 547)
 
-[node name="Mass163" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-6016, 577)
-
 [node name="Mass164" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-6207, 583)
-
-[node name="Mass165" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-6140, 540)
 
 [node name="Mass166" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-6222, 529)
 
 [node name="Mass167" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-6301, 573)
-
-[node name="Mass168" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-6309, 527)
 
 [node name="Mass169" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-6377, 577)
@@ -542,23 +350,11 @@ position = Vector2(-6419, 523)
 [node name="Mass171" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-6461, 573)
 
-[node name="Mass172" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-6517, 525)
-
-[node name="Mass173" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-6552, 573)
-
 [node name="Mass174" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-6632, 530)
 
-[node name="Mass175" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-6633, 580)
-
 [node name="Mass176" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-6706, 537)
-
-[node name="Mass177" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-6711, 576)
 
 [node name="Mass178" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-6771, 534)
@@ -569,9 +365,6 @@ position = Vector2(-6796, 569)
 [node name="Mass180" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-6893, 532)
 
-[node name="Mass181" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-6939, 574)
-
 [node name="Mass182" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-6981, 520)
 
@@ -580,15 +373,6 @@ position = Vector2(-7023, 570)
 
 [node name="Mass184" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-7079, 522)
-
-[node name="Mass185" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-7114, 570)
-
-[node name="Mass186" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-7194, 527)
-
-[node name="Mass187" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-7195, 577)
 
 [node name="Mass188" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-7268, 534)
@@ -608,20 +392,8 @@ position = Vector2(-7455, 529)
 [node name="Mass193" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-7366, 522)
 
-[node name="Mass194" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-7251, 568)
-
 [node name="Mass195" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-7472, 547)
-
-[node name="Mass196" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-7421, 577)
-
-[node name="Mass197" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-7612, 583)
-
-[node name="Mass198" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-7545, 540)
 
 [node name="Mass199" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-7627, 529)
@@ -632,32 +404,17 @@ position = Vector2(-7706, 573)
 [node name="Mass201" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-7714, 527)
 
-[node name="Mass202" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-7782, 577)
-
 [node name="Mass203" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-7824, 523)
-
-[node name="Mass204" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-7866, 573)
 
 [node name="Mass205" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-7922, 525)
 
-[node name="Mass206" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-7957, 573)
-
 [node name="Mass207" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-8037, 530)
 
-[node name="Mass208" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-8038, 580)
-
 [node name="Mass209" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-8111, 537)
-
-[node name="Mass210" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-8116, 576)
 
 [node name="Mass211" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-8176, 534)
@@ -668,14 +425,8 @@ position = Vector2(-8201, 569)
 [node name="Mass213" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-8298, 532)
 
-[node name="Mass214" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-8167, 567)
-
 [node name="Mass215" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-8209, 513)
-
-[node name="Mass216" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-8251, 563)
 
 [node name="Mass217" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-8307, 515)
@@ -692,14 +443,8 @@ position = Vector2(-8423, 570)
 [node name="Mass221" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-8496, 527)
 
-[node name="Mass222" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-8501, 566)
-
 [node name="Mass223" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-8561, 524)
-
-[node name="Mass224" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-8586, 559)
 
 [node name="Mass225" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-8683, 522)
@@ -728,9 +473,6 @@ position = Vector2(-9052, 516)
 [node name="Mass237" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-9094, 566)
 
-[node name="Mass238" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-9150, 518)
-
 [node name="Mass239" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-9185, 566)
 
@@ -740,44 +482,17 @@ position = Vector2(-9265, 523)
 [node name="Mass241" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-9266, 573)
 
-[node name="Mass242" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-9339, 530)
-
 [node name="Mass243" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-9344, 569)
 
 [node name="Mass245" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-9429, 562)
 
-[node name="Mass246" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-9526, 525)
-
-[node name="Mass247" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-8462, 574)
-
-[node name="Mass249" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-8546, 570)
-
 [node name="Mass250" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-8602, 522)
 
-[node name="Mass252" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-8717, 527)
-
-[node name="Mass253" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-8718, 577)
-
-[node name="Mass254" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-8791, 534)
-
-[node name="Mass255" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-8796, 573)
-
 [node name="Mass256" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-8856, 531)
-
-[node name="Mass257" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-8881, 566)
 
 [node name="Mass258" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-8978, 529)
@@ -785,23 +500,8 @@ position = Vector2(-8978, 529)
 [node name="Mass260" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-8774, 568)
 
-[node name="Mass261" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-8995, 547)
-
-[node name="Mass263" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-9135, 583)
-
 [node name="Mass264" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-9068, 540)
-
-[node name="Mass266" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-9229, 573)
-
-[node name="Mass270" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-9389, 573)
-
-[node name="Mass271" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-9445, 525)
 
 [node name="Mass272" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-9480, 573)
@@ -811,9 +511,6 @@ position = Vector2(-9561, 580)
 
 [node name="Mass275" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-9634, 537)
-
-[node name="Mass276" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
-position = Vector2(-9639, 576)
 
 [node name="Mass277" parent="BlockingMasses" instance=ExtResource("4_nnb4d")]
 position = Vector2(-9699, 534)

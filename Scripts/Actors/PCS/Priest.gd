@@ -26,7 +26,7 @@ func _input(_event):
 
 	if Input.is_action_just_pressed("weap2")and SaveData.priestSkillTree[0]:
 		set_Equipped_Weapon(1)
-		reloadTime = 0
+		reloadTime = 0.1
 
 func attack():
 	if !cooldown:
@@ -42,7 +42,7 @@ func attack():
 				timey.start(reloadTime)
 			1:
 				b.projDamage = 5
-				b.scale /= .5
+				b.scale *= .5
 				revolve -=1
 				if revolve <= 0:
 					timey.start(5)
