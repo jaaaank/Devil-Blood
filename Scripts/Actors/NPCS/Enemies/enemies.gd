@@ -12,7 +12,6 @@ func damage(dmgdealt):
 		PlayerAutoload.knightsAgressive = true
 # warning-ignore:narrowing_conversion
 	health -= round(dmgdealt * armorCalculation())
-	print("Enemy has this much health: " + str(health))
 	spawnDamageNums(round(dmgdealt*armorCalculation()), Color.FIREBRICK)
 	if health<=0:
 		queue_free()

@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://blr80b87lchfo"]
+[gd_scene load_steps=7 format=3 uid="uid://blr80b87lchfo"]
 
+[ext_resource type="Script" path="res://Scripts/maps.gd" id="1_s4rqn"]
 [ext_resource type="PackedScene" uid="uid://cuugv52nxnrn7" path="res://Scenes/Screens/Popups/LocationText.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://djsnpeesrgq5f" path="res://Scenes/Actors/PCS/PlayerSpawner.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://blmpwvome25ko" path="res://Scenes/Actors/Enemies/LowTier/Mass.tscn" id="4_nnb4d"]
@@ -9,6 +10,8 @@
 [node name="PriestCave" type="Node2D"]
 z_as_relative = false
 y_sort_enabled = true
+script = ExtResource("1_s4rqn")
+limits = Array[float]([-12800.0, -1023.0, 2815.0, 2303.0])
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -10
