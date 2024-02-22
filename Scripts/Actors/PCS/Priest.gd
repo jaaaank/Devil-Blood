@@ -6,9 +6,8 @@ var equippedWeapon: int = 0: set = set_Equipped_Weapon
 @export var Crucifix: PackedScene
 @onready var timey:= $Guns/Timer
 var reloadTime: float = 1.0
-var revolve: int = 0
+var revolve: int = 6
 var cooldown = false
-var wasrev
 var cruce
 var crucing = false
 
@@ -23,9 +22,11 @@ func _input(_event):
 		unaltAttack()
 	if Input.is_action_just_pressed("weap1"):
 		set_Equipped_Weapon(0)
+		reloadTime = 1
 
 	if Input.is_action_just_pressed("weap2")and SaveData.priestSkillTree[0]:
 		set_Equipped_Weapon(1)
+		reloadTime = 0
 
 func attack():
 	if !cooldown:
@@ -35,7 +36,19 @@ func attack():
 		b.scale = $Guns/Muzzle.scale
 		b.rotation_degrees = $Guns/Muzzle.rotation_degrees + randomSpread()
 		cooldown = true
-		timey.start()
+		match equippedWeapon:
+			0:
+				b.projDamage = 10
+				timey.start(reloadTime)
+			1:
+				b.projDamage = 5
+				b.scale /= .5
+				revolve -=1
+				if revolve <= 0:
+					timey.start(5)
+					revolve = 6
+				else:
+					timey.start(reloadTime)
 	
 func altAttack():
 	if !crucing:

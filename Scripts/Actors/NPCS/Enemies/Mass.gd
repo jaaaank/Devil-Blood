@@ -37,4 +37,4 @@ func unstun():
 	
 func _on_Hurtbox_area_entered(area):
 	if area.collision_layer == 1 and !stunned:
-		area.owner.damage(basedamage)
+		area.get_parent().damage(basedamage)
