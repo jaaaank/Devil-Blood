@@ -1,10 +1,10 @@
 extends enemy
 
 @export var swordattack: PackedScene 
-@export var walkrange = 10000
+@export var walkrange:int = 10000
 var target: Vector2
-@onready var walktimer:= $walktimer
-var attacking:= false
+@onready var walktimer:Timer= $walktimer
+var attacking:bool= false
 
 func _ready():
 	randomize()
@@ -14,7 +14,6 @@ func _ready():
 	randomWalk()
 	armor = 40
 	health = 60
-
 
 func _physics_process(_delta):
 	$Weapon.global_rotation = global_position.angle_to_point(target)

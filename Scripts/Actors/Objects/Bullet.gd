@@ -5,11 +5,17 @@ class_name projectile
 
 func _physics_process(delta):
 	position += transform.x * speed * delta
-
+	if $SeekingArea:
+		var closestOne: Vector2
+		if $SeekingArea.get_overlapping_areas().size()!=0:
+			for i in $SeekingArea.get_overlapping_areas():
+				closestOne = i.global_position
+		if closestOne:
+			rotation = lerp(rotation, global_position.angle_to_point(closestOne), 0.05)
 	
 func _on_Timer_timeout():
 	queue_free()
-
+	
 func _on_Bullet_area_entered(area):
 	if area.get_collision_layer_value(2):
 		area.owner.call("damage", projDamage)
