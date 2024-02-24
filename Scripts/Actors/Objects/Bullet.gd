@@ -6,12 +6,13 @@ class_name projectile
 func _physics_process(delta):
 	position += transform.x * speed * delta
 	if $SeekingArea:
+		print(rotation_degrees)
 		var closestOne: Vector2
 		if $SeekingArea.get_overlapping_areas().size()!=0:
 			for i in $SeekingArea.get_overlapping_areas():
 				closestOne = i.global_position
 		if closestOne:
-			rotation = lerp(rotation, global_position.angle_to_point(closestOne), 0.05)
+			rotation_degrees = lerp(rotation_degrees, rad_to_deg(global_position.angle_to_point(closestOne)), 0.01)
 	
 func _on_Timer_timeout():
 	queue_free()
