@@ -12,8 +12,8 @@ func _physics_process(delta):
 			for i in $SeekingArea.get_overlapping_areas():
 				closestOne = i.global_position
 		if closestOne:
-			rotation_degrees = lerp(rotation_degrees, rad_to_deg(global_position.angle_to_point(closestOne)), 0.01)
-	
+			rotation_degrees = rotate_toward(rotation_degrees,rad_to_deg(global_position.angle_to_point(closestOne)),100)
+			
 func _on_Timer_timeout():
 	queue_free()
 	
