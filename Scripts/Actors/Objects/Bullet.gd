@@ -6,14 +6,20 @@ class_name projectile
 func _physics_process(delta):
 	position += transform.x * speed * delta
 	if $SeekingArea:
-		print(rotation_degrees)
 		var closestOne: Vector2
-		if $SeekingArea.get_overlapping_areas().size()!=0:
-			for i in $SeekingArea.get_overlapping_areas():
-				closestOne = i.global_position
-		if closestOne:
+		var targets: Array = $SeekingArea.get_overlapping_areas()
+		if targets.size()>0:
+			targets.sort_custom(sort_distance)
+			closestOne = targets[0].global_position
 			rotation_degrees = rotate_toward(rotation_degrees,rad_to_deg(global_position.angle_to_point(closestOne)),100)
-			
+
+#i don't think this sorting is really working at all tbh but I'll get back to it later if it becomes a problem
+func sort_distance(a, b):
+	#print(global_position.distance_to(a.global_position))
+	#print(global_position.distance_to(b.global_position))
+	#print(global_position.distance_to(a.global_position)>global_position.distance_to(b.global_position))
+	return global_position.distance_to(a.global_position)>global_position.distance_to(b.global_position)
+	
 func _on_Timer_timeout():
 	queue_free()
 	

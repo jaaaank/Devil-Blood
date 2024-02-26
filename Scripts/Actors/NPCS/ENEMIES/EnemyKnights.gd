@@ -15,18 +15,18 @@ func _ready():
 	armor = 40
 	health = 60
 
-#func _physics_process(_delta):
-	#$Weapon.global_rotation = global_position.angle_to_point(target)
-	#if PlayerAutoload.knightsAgressive:
-		#target = PlayerAutoload.playerPos
-	#if global_position.distance_to(target) > attackrange:
-		#velocity = global_position.direction_to(target) * speed
-		#set_velocity(velocity)
-		#move_and_slide()
-	#else:
-		#if target == PlayerAutoload.playerPos:
-			#attack()
-	#
+func _physics_process(_delta):
+	$Weapon.global_rotation = global_position.angle_to_point(target)
+	if PlayerAutoload.knightsAgressive:
+		target = PlayerAutoload.playerPos
+	if global_position.distance_to(target) > attackrange:
+		velocity = global_position.direction_to(target) * speed
+		set_velocity(velocity)
+		move_and_slide()
+	else:
+		if target == PlayerAutoload.playerPos:
+			attack()
+	
 func randomWalk():
 	if !PlayerAutoload.knightsAgressive:
 		var rice = randf_range(-walkrange, walkrange)
