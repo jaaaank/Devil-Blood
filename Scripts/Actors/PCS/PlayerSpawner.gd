@@ -9,7 +9,7 @@ func _ready():
 	if MapAutoload.spawnPoint:
 		set_position(MapAutoload.spawnPoint)
 	else:
-		print("spawnin")
+		print("Player Spawned")
 		match PlayerAutoload.playerCharacter:
 			1:
 				add_child(Priest.instantiate())

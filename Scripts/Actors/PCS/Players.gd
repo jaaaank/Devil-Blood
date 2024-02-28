@@ -86,7 +86,6 @@ func _on_IframesTimer_timeout():
 	sprite.set_modulate(Color.WHITE)
 
 func useItem(id):
-	print(id)
 	match id:
 		1:
 			heal(10)
