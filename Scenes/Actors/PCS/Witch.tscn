@@ -93,5 +93,4 @@ scale = Vector2(1.06349, 0.677419)
 texture = ExtResource("3")
 
 [connection signal="timeout" from="Sigil/Timer" to="." method="_on_Timer_timeout"]
-[connection signal="finished" from="deathsound" to="." method="_on_deathsound_finished"]
 [connection signal="timeout" from="IframesTimer" to="." method="_on_IframesTimer_timeout"]

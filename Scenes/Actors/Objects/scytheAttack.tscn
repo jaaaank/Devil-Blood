@@ -76,5 +76,5 @@ input_pickable = false
 polygon = PackedVector2Array(-2, 1, -196, 1, -193, -59, -163, -93, -141, -29, -2, -13)
 
 [connection signal="animation_finished" from="scythe/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
-[connection signal="area_entered" from="Scythe" to="." method="_on_Scythe_area_entered"]
 [connection signal="area_entered" from="Scythe" to="." method="_on_Sword_area_entered"]
+[connection signal="area_entered" from="Scythe" to="." method="_on_Scythe_area_entered"]

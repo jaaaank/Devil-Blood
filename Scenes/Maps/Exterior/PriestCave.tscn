@@ -21,7 +21,7 @@ layer_0/tile_data = PackedInt32Array(-458752, 0, 0, -327680, 0, 1, -393216, 0, 1
 
 [node name="PlayerSpawner" parent="." instance=ExtResource("4")]
 y_sort_enabled = true
-position = Vector2(-10143, 1262)
+position = Vector2(65, -710)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
