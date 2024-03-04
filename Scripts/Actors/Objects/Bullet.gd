@@ -5,7 +5,7 @@ class_name projectile
 
 func _physics_process(delta):
 	position += transform.x * speed * delta
-	if $SeekingArea:
+	if get_node_or_null("SeekingArea"):
 		var closestOne: Vector2
 		var targets: Array = $SeekingArea.get_overlapping_areas()
 		if targets.size()>0:

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://djsnpeesrgq5f"]
 
 [ext_resource type="Script" path="res://scripts/Actors/PCS/PlayerSpawner.gd" id="1"]
-[ext_resource type="PackedScene" uid="uid://ckh7b65wr83dv" path="res://Scenes/Actors/PCS/Priest.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://ckh7b65wr83dv" path="res://Scenes/Actors/Objects/Priest.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://cf6q2wrwpvmjj" path="res://Scenes/Actors/PCS/Witch.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://ckemnaeok2ood" path="res://Scenes/Actors/PCS/Knight.tscn" id="4"]
 

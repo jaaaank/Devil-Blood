@@ -32,7 +32,7 @@ scale = Vector2(4, 4)
 texture = ExtResource("1_eev7f")
 
 [node name="Dog" parent="." instance=ExtResource("5_3jdrn")]
-position = Vector2(-1130, 2957)
+position = Vector2(-1502, 2656)
 speed = 450
 
 [node name="Door" parent="." instance=ExtResource("6_ghfkt")]
