@@ -21,7 +21,7 @@ func _physics_process(_delta):
 		target = PlayerAutoload.playerPos
 	if global_position.distance_to(target) > attackrange:
 		velocity = global_position.direction_to(target) * speed
-		set_velocity(velocity)
+		set_velocity(velocity) #check if i need this line at some point
 		move_and_slide()
 	else:
 		if target == PlayerAutoload.playerPos:

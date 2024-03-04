@@ -25,7 +25,7 @@ SaveData="*res://Scripts/Autoload/SaveData.gd"
 
 [editor]
 
-movie_writer/movie_file="C:/Users/panca/Desktop/Game Dev Stuff/!GODOT/Videos/playtestvid.avi"
+movie_writer/movie_file="C:/Users/panca/OneDrive/Desktop/gameygames/Godot/projects/Devil-Blood/playtestvid.avi"
 movie_writer/fps=30
 
 [editor_plugins]

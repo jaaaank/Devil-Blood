@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://cd6u3mart6c8p"]
+
+[ext_resource type="Texture2D" uid="uid://dtbtjrc6w2t2j" path="res://Assets/Actors/knight.png" id="4_s1yhb"]
+
+[sub_resource type="GDScript" id="GDScript_wklai"]
+script/source = "extends enemy
+
+var movement_target_position: Vector2 
+
+@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
+
+func _ready():
+	sprite = $KnightSprite
+
+func set_movement_target(movement_target: Vector2):
+	navigation_agent.target_position = movement_target
+
+func _physics_process(delta):
+	movement_target_position = PlayerAutoload.playerPos
+	set_movement_target(movement_target_position)
+	if navigation_agent.is_navigation_finished():
+		return
+
+	var current_agent_position: Vector2 = global_position
+	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
+
+	velocity = current_agent_position.direction_to(next_path_position) * speed/2
+	move_and_slide()
+
+"
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(66, 135)
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(60, 22)
+
+[node name="SmartEnemyKnight" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 18
+motion_mode = 1
+script = SubResource("GDScript_wklai")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+position = Vector2(0, -65)
+collision_layer = 2
+collision_mask = 4
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -1.5)
+shape = SubResource("2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -13)
+shape = SubResource("1")
+
+[node name="Weapon" type="Marker2D" parent="."]
+position = Vector2(0, -65)
+
+[node name="KnightSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -65)
+texture = ExtResource("4_s1yhb")
+
+[node name="walktimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="attkcooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+
+[connection signal="timeout" from="walktimer" to="." method="_on_walktimer_timeout"]
+[connection signal="timeout" from="attkcooldown" to="." method="_on_attkcooldown_timeout"]
