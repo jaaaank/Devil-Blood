@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b87aptxvt5py5"
-path="res://.godot/imported/wtfisthis.png-b4393a6411c0b3bb3294cb94dbd1c5a4.ctex"
+uid="uid://ck163xv1b2olp"
+path="res://.godot/imported/wastes.png-58bdd60cc479e01cacbd546eb6c7e3c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TileMaps/wtfisthis.png"
-dest_files=["res://.godot/imported/wtfisthis.png-b4393a6411c0b3bb3294cb94dbd1c5a4.ctex"]
+source_file="res://Assets/TileMaps/wastes.png"
+dest_files=["res://.godot/imported/wastes.png-58bdd60cc479e01cacbd546eb6c7e3c0.ctex"]
 
 [params]
 

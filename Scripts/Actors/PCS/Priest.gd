@@ -35,7 +35,6 @@ func _input(_event):
 func attack():
 	if !cooldown:
 		shoot()
-		print("wawasa")
 		cooldown = true
 		
 func shoot():
@@ -69,7 +68,7 @@ func shoot():
 				get_parent().get_parent().add_child(n)
 				n.position = $Guns/Muzzle.global_position
 				a.scale = $Guns/Muzzle.scale
-				n.rotation_degrees = $Guns/Muzzle.rotation_degrees + randomSpread()
+				n.rotation_degrees = $Guns/Muzzle.rotation_degrees + randomSpread()*3
 				n.projDamage = 6
 	timey.start(reloadTime)
 	

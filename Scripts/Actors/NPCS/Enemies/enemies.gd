@@ -17,9 +17,10 @@ func damage(dmgdealt):
 		queue_free()
 		
 func spawnDamageNums(damagetaken, clr):
+	randomize()
 	var b = damagenumbers.instantiate()
 	get_parent().add_child(b)
-	b.global_position = global_position
+	b.global_position = global_position + Vector2(randi_range(-50, 50), randi_range(-50, 50))
 	b.get_node("RichTextLabel").text = str(damagetaken)
 	b.get_node("RichTextLabel").add_theme_color_override("default_color", clr)
 		

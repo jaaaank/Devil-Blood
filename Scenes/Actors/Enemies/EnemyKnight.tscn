@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://5ikcj1daatlv"]
+[gd_scene load_steps=8 format=3 uid="uid://cd6u3mart6c8p"]
 
-[ext_resource type="Script" path="res://Scripts/Actors/NPCS/Enemies/EnemyKnights.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://dtbtjrc6w2t2j" path="res://Assets/Actors/knight.png" id="2"]
-[ext_resource type="PackedScene" uid="uid://bbys06gd5dlqu" path="res://Scenes/Actors/Objects/enemyswordattack.tscn" id="3"]
+[ext_resource type="Script" path="res://Scripts/Actors/NPCS/Enemies/EnemyKnight.gd" id="1_p7cqs"]
+[ext_resource type="PackedScene" uid="uid://bbys06gd5dlqu" path="res://Scenes/Actors/Objects/enemyswordattack.tscn" id="1_x8u6l"]
 [ext_resource type="PackedScene" uid="uid://cci7teggrridn" path="res://Scenes/Actors/Objects/DamageNumbers.tscn" id="4"]
+[ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="4_k2v14"]
+[ext_resource type="Texture2D" uid="uid://dtbtjrc6w2t2j" path="res://Assets/Actors/knight.png" id="4_s1yhb"]
 
 [sub_resource type="RectangleShape2D" id="2"]
 size = Vector2(66, 135)
@@ -12,12 +13,16 @@ size = Vector2(66, 135)
 size = Vector2(60, 22)
 
 [node name="EnemyKnight" type="CharacterBody2D"]
+y_sort_enabled = true
 collision_layer = 2
 collision_mask = 18
 motion_mode = 1
-script = ExtResource("1")
-swordattack = ExtResource("3")
+script = ExtResource("1_p7cqs")
+swordattack = ExtResource("1_x8u6l")
 damagenumbers = ExtResource("4")
+speed = 300
+health = 60
+armor = 35
 
 [node name="Hurtbox" type="Area2D" parent="."]
 position = Vector2(0, -64)
@@ -39,7 +44,7 @@ position = Vector2(0, -64)
 
 [node name="KnightSprite" type="Sprite2D" parent="."]
 position = Vector2(0, -64)
-texture = ExtResource("2")
+texture = ExtResource("4_s1yhb")
 
 [node name="walktimer" type="Timer" parent="."]
 one_shot = true
@@ -48,6 +53,12 @@ one_shot = true
 one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Shadow" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = ExtResource("4_k2v14")
 
 [connection signal="timeout" from="walktimer" to="." method="_on_walktimer_timeout"]
 [connection signal="timeout" from="attkcooldown" to="." method="_on_attkcooldown_timeout"]
