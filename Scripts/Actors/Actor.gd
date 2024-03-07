@@ -7,11 +7,11 @@ class_name Actor
 @export var armor: = 0
 
 var stunned = false
-var sprite: Sprite2D
+var sprite
 var push_force = 80
 
 func _process(_delta):
 	if velocity.x<0:
-		sprite.flip_h = true
+		sprite.scale = Vector2(-1,1)
 	if velocity.x>0:
-		sprite.flip_h = false
+		sprite.scale = Vector2(1,1)

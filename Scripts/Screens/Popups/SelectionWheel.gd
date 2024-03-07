@@ -52,7 +52,7 @@ func _process(_delta):
 	#print(select)
 	queue_redraw()
 	
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("attack") and !slots.is_empty() and visible and slots[select]!=null:
 		print("itemused: " + slots[select].name)
 		get_parent().get_parent().call("useItem", slots[select].id)

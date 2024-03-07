@@ -23,13 +23,14 @@ func _input(_event):
 	if Input.is_action_just_pressed("weap1"):
 		set_Equipped_Weapon(0)
 		reloadTime = 1
-
 	if Input.is_action_just_pressed("weap2")and SaveData.priestSkillTree[0]:
 		set_Equipped_Weapon(1)
 		reloadTime = 0.1
-		
 	if Input.is_action_just_pressed("weap3"):
 		set_Equipped_Weapon(2)
+		reloadTime = 2
+	if Input.is_action_just_pressed("weap4"):
+		set_Equipped_Weapon(3)
 		reloadTime = 2
 		
 func attack():
@@ -70,6 +71,13 @@ func shoot():
 				a.scale = $Guns/Muzzle.scale
 				n.rotation_degrees = $Guns/Muzzle.rotation_degrees + randomSpread()*3
 				n.projDamage = 6
+		3:
+			get_parent().get_parent().add_child(a)
+			a.position = $Guns/Muzzle.global_position
+			a.scale = $Guns/Muzzle.scale
+			a.rotation_degrees = $Guns/Muzzle.rotation_degrees
+			a.projDamage = 8
+			a.pierce = 3
 	timey.start(reloadTime)
 	
 func altAttack():

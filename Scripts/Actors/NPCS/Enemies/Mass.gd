@@ -1,11 +1,11 @@
 extends enemy
 class_name  mass
-@export var walkrange = 500
 @export var textures: Array
 var target: Vector2
 @onready var walktimer:= $walktimer
 
 func _ready():
+	walkrange = 500
 	sprite = $Masssheet
 	randomize()
 	sprite.texture = textures.pick_random()

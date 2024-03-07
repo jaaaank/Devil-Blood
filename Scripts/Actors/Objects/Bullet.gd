@@ -2,6 +2,7 @@ extends Area2D
 class_name projectile
 @export var speed := Vector2(2500,2500)
 @export var projDamage: int = 10
+@export var pierce: int = 0
 
 func _physics_process(delta):
 	position += transform.x * speed * delta
@@ -26,7 +27,11 @@ func _on_Timer_timeout():
 func _on_Bullet_area_entered(area):
 	if area.get_collision_layer_value(2):
 		area.owner.call("damage", projDamage)
-		queue_free()
+		pierce -=1
+		if pierce<=0:
+			queue_free()
 
 func _on_body_entered(_body):
-	queue_free()
+	pierce -=1
+	if pierce<=0:
+		queue_free()

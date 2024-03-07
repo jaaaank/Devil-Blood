@@ -3,7 +3,6 @@ extends enemy
 var movementTarget: Vector2 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 @export var swordattack: PackedScene 
-@export var walkrange: int = 1000
 @onready var walktimer: Timer = $walktimer
 var attacking: bool = false
 
@@ -26,7 +25,7 @@ func _physics_process(delta):
 		attack()
 	else:
 		var next_path_position: Vector2 = navigation_agent.get_next_path_position()
-		velocity = global_position.direction_to(next_path_position) * speed/2
+		velocity = global_position.direction_to(next_path_position) * speed
 		move_and_slide()
 	
 func attack():
@@ -42,9 +41,8 @@ func randomWalk():
 		var beans = randf_range(-walkrange, walkrange)
 		movementTarget = Vector2(rice,beans)
 		walktimer.start(randf_range(3,6))
-		print(movementTarget)
 	else:
-		speed = 450
+		#speed *= sprint_mult
 		movementTarget = PlayerAutoload.playerPos
 		
 func stun():

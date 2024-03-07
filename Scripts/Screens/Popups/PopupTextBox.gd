@@ -11,7 +11,7 @@ var talking: bool
 func _ready():
 	randomize()
 
-func _on_detection_area_body_entered(body):
+func _on_detection_area_body_entered(_body):
 	showText()
 
 

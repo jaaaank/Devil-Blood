@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=3 uid="uid://vcu3wc3ch0n1"]
+
+[ext_resource type="Script" path="res://Scripts/Actors/NPCS/Enemies/FireFlailEnemy.gd" id="1_8a60b"]
+[ext_resource type="PackedScene" uid="uid://cci7teggrridn" path="res://Scenes/Actors/Objects/DamageNumbers.tscn" id="3_02qj4"]
+[ext_resource type="Texture2D" uid="uid://dtbtjrc6w2t2j" path="res://Assets/Actors/knight.png" id="4_c88qh"]
+[ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="5_68vnc"]
+[ext_resource type="Texture2D" uid="uid://bc6o2qj0qokhn" path="res://Assets/Actors/objects/fireflail.png" id="6_s60iw"]
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(66, 135)
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(60, 22)
+
+[sub_resource type="GDScript" id="GDScript_rbwvf"]
+script/source = "extends Area2D
+
+
+
+func _on_area_entered(area):
+	area.owner.damage(5)
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4q6rg"]
+radius = 3.35
+height = 8.25
+
+[node name="FireFlailEnemy" type="CharacterBody2D"]
+y_sort_enabled = true
+collision_layer = 2
+collision_mask = 18
+motion_mode = 1
+script = ExtResource("1_8a60b")
+damagenumbers = ExtResource("3_02qj4")
+speed = 200
+
+[node name="Hurtbox" type="Area2D" parent="."]
+position = Vector2(0, -64)
+collision_layer = 2
+collision_mask = 4
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -1.5)
+shape = SubResource("2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("1")
+
+[node name="Weapon" type="Marker2D" parent="."]
+z_index = 1
+position = Vector2(0, -71)
+
+[node name="Fireflail" type="Sprite2D" parent="Weapon"]
+position = Vector2(-17, 8)
+scale = Vector2(5.08753, 5.08753)
+texture = ExtResource("6_s60iw")
+offset = Vector2(-14.1523, -2.16215)
+vframes = 3
+
+[node name="HitBox" type="Area2D" parent="Weapon/Fireflail"]
+position = Vector2(-26.1424, -0.589677)
+collision_layer = 0
+script = SubResource("GDScript_rbwvf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Weapon/Fireflail/HitBox"]
+position = Vector2(0, -0.196559)
+shape = SubResource("CapsuleShape2D_4q6rg")
+
+[node name="KnightSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -64)
+texture = ExtResource("4_c88qh")
+
+[node name="walktimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="attkcooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+target_desired_distance = 50.0
+path_postprocessing = 1
+
+[node name="Shadow" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = ExtResource("5_68vnc")
+
+[connection signal="area_entered" from="Weapon/Fireflail/HitBox" to="Weapon/Fireflail/HitBox" method="_on_area_entered"]
+[connection signal="timeout" from="walktimer" to="." method="_on_walktimer_timeout"]
+[connection signal="timeout" from="attkcooldown" to="." method="_on_attkcooldown_timeout"]

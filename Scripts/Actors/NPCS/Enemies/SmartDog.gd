@@ -7,7 +7,7 @@ var attacking: bool = false
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
 func _ready():
-	sprite = $DogSprite
+	sprite = $hurtbox
 	await get_tree().physics_frame
 	set_movement_target(PlayerAutoload.playerPos)
 
@@ -17,17 +17,17 @@ func set_movement_target(target: Vector2):
 func _physics_process(delta):
 	super(delta)
 	set_movement_target(PlayerAutoload.playerPos)
-	if navigation_agent.is_navigation_finished():
+	if navigation_agent.distance_to_target()<50:
 		attack()
 	elif navigation_agent.distance_to_target()<1000:
 		var next_path_position: Vector2 = navigation_agent.get_next_path_position()
-		velocity = global_position.direction_to(next_path_position) * speed/2
+		velocity = global_position.direction_to(next_path_position) * speed
 		move_and_slide()
 
 func attack():
 	if !attacking and !stunned:
 		var b = biteattack.instantiate()
-		$DogSprite/Marker2D.add_child(b)
+		$hurtbox/DogSprite/Marker2D.add_child(b)
 		attacking = true
 		$attkcooldown.start(1)
 

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cglxeqkpxjmug" path="res://Assets/Actors/dog.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="3"]
 [ext_resource type="PackedScene" uid="uid://cci7teggrridn" path="res://Scenes/Actors/Objects/DamageNumbers.tscn" id="6"]
-[ext_resource type="PackedScene" path="res://Scenes/Actors/Objects/enemybiteattack.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://db0oj2l3gdnuk" path="res://Scenes/Actors/Objects/enemybiteattack.tscn" id="7"]
 
 [sub_resource type="GDScript" id="11"]
 script/source = "extends Area2D
@@ -62,6 +62,7 @@ collision_mask = 16
 gravity_scale = 0.0
 script = ExtResource("1")
 biteattack = ExtResource("7")
+speed = 350
 health = 45
 attackrange = 25
 damagenumbers = ExtResource("6")
