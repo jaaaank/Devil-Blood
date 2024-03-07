@@ -90,6 +90,7 @@ libraries = {
 }
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+target_desired_distance = 50.0
 path_postprocessing = 1
 
 [node name="DogSprite" type="Sprite2D" parent="."]
@@ -105,6 +106,6 @@ scale = Vector2(1.5, 0.8)
 texture = ExtResource("5_ieq8p")
 
 [node name="Marker2D" type="Marker2D" parent="DogSprite"]
-position = Vector2(40, -16)
+position = Vector2(49, -17)
 
 [connection signal="timeout" from="attkcooldown" to="." method="_on_attkcooldown_timeout"]

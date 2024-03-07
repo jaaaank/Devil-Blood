@@ -67,7 +67,7 @@ attackrange = 25
 damagenumbers = ExtResource("6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(0, -35)
+position = Vector2(0, -34)
 polygon = PackedVector2Array(-62, 10, -21, -9, 22, -18, 34, -32, 52, -20, 47, -13, 40, -10, 26, 8, 25, 32, 19, 32, 2, 32, -5, 32, -19, 29, -23, 17, -33, 32, -39, 29, -35, 9, -57, 12)
 
 [node name="DogSprite" type="Sprite2D" parent="CollisionPolygon2D"]

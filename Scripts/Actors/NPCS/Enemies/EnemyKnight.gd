@@ -17,13 +17,13 @@ func set_movement_target(target: Vector2):
 	navigation_agent.target_position = target
 
 func _physics_process(delta):
+	super(delta)
 	$Weapon.global_rotation = global_position.angle_to_point(movementTarget)
 	if PlayerAutoload.knightsAgressive:
 		movementTarget = PlayerAutoload.playerPos
 	set_movement_target(movementTarget)
-	if navigation_agent.is_navigation_finished():
-		if movementTarget == PlayerAutoload.playerPos:
-			attack()
+	if navigation_agent.is_navigation_finished() && movementTarget == PlayerAutoload.playerPos:
+		attack()
 	else:
 		var next_path_position: Vector2 = navigation_agent.get_next_path_position()
 		velocity = global_position.direction_to(next_path_position) * speed/2
