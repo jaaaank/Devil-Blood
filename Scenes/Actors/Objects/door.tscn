@@ -23,6 +23,11 @@ collision_mask = 19
 gravity_scale = 0.0
 angular_damp = 100.0
 
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Door"]
+position = Vector2(-96, 0)
+radius = 1.0
+vertices = PackedVector2Array(0, -13, 86, -13, 96, -1, 85, 9, -87, 9, -96, 0, -88, -13)
+
 [node name="Doorplaceholder" type="Sprite2D" parent="Door"]
 position = Vector2(-96, -24)
 texture = ExtResource("1_i23dq")

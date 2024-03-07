@@ -1,8 +1,8 @@
 extends RigidActor
 
-var attacking = false
-var stunned = false
-var target
+var attacking: bool = false
+var stunned: bool = false
+var target: Vector2
 @export var biteattack: PackedScene
 
 

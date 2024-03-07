@@ -77,16 +77,19 @@ func _physics_process(_delta):
 "
 
 [node name="Stake" type="StaticBody2D"]
+y_sort_enabled = true
 collision_layer = 0
 collision_mask = 0
 
 [node name="Chain" type="Sprite2D" parent="."]
+position = Vector2(0, -33)
 texture = ExtResource("5")
 offset = Vector2(25, 0)
 script = SubResource("10")
 nextnode = "joint1"
 
 [node name="Stake" type="Sprite2D" parent="."]
+position = Vector2(0, -33)
 texture = ExtResource("4")
 
 [node name="Shadow" type="Sprite2D" parent="Stake"]
@@ -96,15 +99,17 @@ scale = Vector2(0.170756, 0.170756)
 texture = ExtResource("3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -33)
 shape = SubResource("2")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(0, -33)
 node_a = NodePath("..")
 node_b = NodePath("../joint1")
 bias = 0.9
 
 [node name="joint1" type="RigidBody2D" parent="."]
-position = Vector2(50, 0)
+position = Vector2(50, -33)
 collision_layer = 0
 collision_mask = 0
 gravity_scale = 0.0
@@ -124,7 +129,7 @@ script = SubResource("4")
 nextnode = "joint2"
 
 [node name="joint2" type="RigidBody2D" parent="."]
-position = Vector2(100, 0)
+position = Vector2(100, -33)
 collision_layer = 0
 collision_mask = 0
 gravity_scale = 0.0
@@ -144,7 +149,7 @@ script = SubResource("5")
 nextnode = "joint3"
 
 [node name="joint3" type="RigidBody2D" parent="."]
-position = Vector2(150, 0)
+position = Vector2(150, -33)
 collision_layer = 0
 collision_mask = 0
 gravity_scale = 0.0
@@ -164,7 +169,7 @@ script = SubResource("6")
 nextnode = "joint4"
 
 [node name="joint4" type="RigidBody2D" parent="."]
-position = Vector2(200, 0)
+position = Vector2(200, -33)
 collision_layer = 0
 collision_mask = 0
 gravity_scale = 0.0
@@ -184,7 +189,7 @@ script = SubResource("7")
 nextnode = "joint5"
 
 [node name="joint5" type="RigidBody2D" parent="."]
-position = Vector2(250, 0)
+position = Vector2(250, -33)
 collision_layer = 0
 collision_mask = 0
 gravity_scale = 0.0
@@ -204,7 +209,7 @@ script = SubResource("8")
 nextnode = "joint6"
 
 [node name="joint6" type="RigidBody2D" parent="."]
-position = Vector2(300, 0)
+position = Vector2(300, -33)
 collision_layer = 0
 collision_mask = 0
 gravity_scale = 0.0

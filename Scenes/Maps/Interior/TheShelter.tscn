@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://b37n648cudhu2" path="res://Assets/Placeholders/theshelterplaceholdermap.png" id="1_eev7f"]
 [ext_resource type="PackedScene" uid="uid://djsnpeesrgq5f" path="res://Scenes/Actors/PCS/PlayerSpawner.tscn" id="3_2r1n7"]
 [ext_resource type="PackedScene" uid="uid://cuugv52nxnrn7" path="res://Scenes/Screens/Popups/LocationText.tscn" id="4_0h8w0"]
-[ext_resource type="PackedScene" uid="uid://brfy0gch4x60s" path="res://Scenes/Actors/Enemies/LowTier/Dog.tscn" id="5_3jdrn"]
 [ext_resource type="PackedScene" uid="uid://dcpjy60mgi6kg" path="res://Scenes/Actors/Objects/door.tscn" id="6_ghfkt"]
 [ext_resource type="TileSet" uid="uid://b6akqfrrsw2h5" path="res://Assets/TileMaps/shelterInterrior.tres" id="7_01f04"]
 [ext_resource type="PackedScene" uid="uid://dgqi0y0iofow" path="res://Scenes/Actors/NPCS/rats.tscn" id="8_gn36m"]
 [ext_resource type="PackedScene" uid="uid://cd6u3mart6c8p" path="res://Scenes/Actors/Enemies/EnemyKnight.tscn" id="9_kmil2"]
+[ext_resource type="PackedScene" uid="uid://8hk32ilblkwt" path="res://Scenes/Actors/Enemies/LowTier/SmartDog.tscn" id="10_ymjr5"]
 
 [node name="Shelter" type="Node2D"]
 z_as_relative = false
@@ -32,10 +32,6 @@ z_index = -100
 scale = Vector2(4, 4)
 texture = ExtResource("1_eev7f")
 
-[node name="Dog" parent="." instance=ExtResource("5_3jdrn")]
-position = Vector2(-1502, 2656)
-speed = 450
-
 [node name="Door" parent="." instance=ExtResource("6_ghfkt")]
 position = Vector2(-896, 1008)
 
@@ -55,3 +51,6 @@ position = Vector2(-746, 2870)
 
 [node name="SmartEnemyKnight" parent="." instance=ExtResource("9_kmil2")]
 position = Vector2(-220, 2267)
+
+[node name="SmartDog" parent="." instance=ExtResource("10_ymjr5")]
+position = Vector2(-1112, 2774)
