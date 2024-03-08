@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdm51vxixprtr"]
+[gd_scene load_steps=8 format=3 uid="uid://bdm51vxixprtr"]
 
 [ext_resource type="Texture2D" uid="uid://7860j6hshwo1" path="res://Assets/Placeholders/garrisonPlaceholder.jpg" id="1"]
 [ext_resource type="Script" path="res://Scripts/maps.gd" id="1_vi2p1"]
 [ext_resource type="TileSet" uid="uid://dl3q7oy5jowgi" path="res://Assets/TileMaps/wastes.tres" id="3"]
 [ext_resource type="PackedScene" uid="uid://cuugv52nxnrn7" path="res://Scenes/Screens/Popups/LocationText.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://cd6u3mart6c8p" path="res://Scenes/Actors/Enemies/EnemyKnight.tscn" id="7_3k7ta"]
+[ext_resource type="PackedScene" uid="uid://vcu3wc3ch0n1" path="res://Scenes/Actors/Enemies/FireFlail.tscn" id="7_f5qpe"]
 [ext_resource type="PackedScene" uid="uid://djsnpeesrgq5f" path="res://Scenes/Actors/PCS/PlayerSpawner.tscn" id="8"]
 
 [node name="HellGarrison" type="Node2D"]
@@ -44,20 +45,14 @@ position = Vector2(-1057, 253)
 [node name="SmartEnemyKnight3" parent="knights" instance=ExtResource("7_3k7ta")]
 position = Vector2(-817, -238)
 
-[node name="SmartEnemyKnight4" parent="knights" instance=ExtResource("7_3k7ta")]
-position = Vector2(641, -644)
+[node name="FireFlailEnemy" parent="knights" instance=ExtResource("7_f5qpe")]
+position = Vector2(527, -26)
 
-[node name="SmartEnemyKnight5" parent="knights" instance=ExtResource("7_3k7ta")]
-position = Vector2(64, -302)
+[node name="FireFlailEnemy2" parent="knights" instance=ExtResource("7_f5qpe")]
+position = Vector2(796, -264)
 
-[node name="SmartEnemyKnight6" parent="knights" instance=ExtResource("7_3k7ta")]
-position = Vector2(1335, -478)
+[node name="FireFlailEnemy3" parent="knights" instance=ExtResource("7_f5qpe")]
+position = Vector2(289, -493)
 
-[node name="SmartEnemyKnight7" parent="knights" instance=ExtResource("7_3k7ta")]
-position = Vector2(417, 499)
-
-[node name="SmartEnemyKnight8" parent="knights" instance=ExtResource("7_3k7ta")]
-position = Vector2(-250, 536)
-
-[node name="SmartEnemyKnight9" parent="knights" instance=ExtResource("7_3k7ta")]
-position = Vector2(1464, 280)
+[node name="FireFlailEnemy4" parent="knights" instance=ExtResource("7_f5qpe")]
+position = Vector2(989, -677)

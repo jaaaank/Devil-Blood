@@ -8,13 +8,12 @@ collision_layer = 4
 collision_mask = 266
 input_pickable = false
 script = ExtResource("1")
-speed = Vector2(4000, 4000)
 
 [node name="Bulletplaceholderispenttoolongon" type="Sprite2D" parent="."]
 texture = ExtResource("2")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 4.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-15, -1, -8, -3, 10, -3, 14, -1, 14, 1, 10, 3, -8, 3, -15, 1)

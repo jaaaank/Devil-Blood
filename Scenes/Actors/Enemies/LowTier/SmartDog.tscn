@@ -66,14 +66,8 @@ collision_mask = 16
 motion_mode = 1
 script = ExtResource("1_x6amr")
 biteattack = ExtResource("2_hw7ha")
-walkrange = null
-basedamage = null
 damagenumbers = ExtResource("3_utmxs")
-attackrange = null
 speed = 350
-sprint_mult = null
-health = null
-armor = null
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)

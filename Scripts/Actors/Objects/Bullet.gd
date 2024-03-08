@@ -1,6 +1,6 @@
 extends Area2D
 class_name projectile
-@export var speed := Vector2(2500,2500)
+@export var speed: int = 2500
 @export var projDamage: int = 10
 @export var pierce: int = 0
 

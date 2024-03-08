@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtaauklbu7xhf"]
+
+[ext_resource type="Texture2D" uid="uid://djyq4i7oi607w" path="res://Assets/Actors/objects/fireball.png" id="1_6efq1"]
+
+[sub_resource type="GDScript" id="GDScript_5x61o"]
+script/source = "extends projectile
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _physics_process(delta):
+	super(delta)
+	rotate(-.01)
+	
+func _on_Bullet_area_entered(area):
+	if area.get_collision_layer_value(1):
+		area.owner.call(\"damage\", projDamage)
+		pierce -=1
+		if pierce<=0:
+			queue_free()
+"
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_04bio"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+angle_max = 360.0
+direction = Vector3(-1, 0, 0)
+spread = 25.0
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0re5t"]
+radius = 15.0
+height = 42.0
+
+[node name="FireBall" type="Area2D"]
+collision_layer = 8
+collision_mask = 261
+script = SubResource("GDScript_5x61o")
+speed = 500
+projDamage = 5
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(13, -1)
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_04bio")
+texture = ExtResource("1_6efq1")
+speed_scale = 1.5
+randomness = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("1_6efq1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_0re5t")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="area_entered" from="." to="." method="_on_Bullet_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

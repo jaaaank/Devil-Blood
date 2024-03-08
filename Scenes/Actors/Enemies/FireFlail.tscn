@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://vcu3wc3ch0n1"]
+[gd_scene load_steps=11 format=3 uid="uid://vcu3wc3ch0n1"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/NPCS/Enemies/FireFlailEnemy.gd" id="1_8a60b"]
 [ext_resource type="PackedScene" uid="uid://cci7teggrridn" path="res://Scenes/Actors/Objects/DamageNumbers.tscn" id="3_02qj4"]
 [ext_resource type="Texture2D" uid="uid://dtbtjrc6w2t2j" path="res://Assets/Actors/knight.png" id="4_c88qh"]
+[ext_resource type="PackedScene" uid="uid://dtaauklbu7xhf" path="res://Scenes/Actors/Objects/FireBall.tscn" id="4_tg1op"]
 [ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="5_68vnc"]
 [ext_resource type="Texture2D" uid="uid://bc6o2qj0qokhn" path="res://Assets/Actors/objects/fireflail.png" id="6_s60iw"]
 
@@ -15,10 +16,18 @@ size = Vector2(60, 22)
 [sub_resource type="GDScript" id="GDScript_rbwvf"]
 script/source = "extends Area2D
 
-
+@export var fireball: PackedScene
 
 func _on_area_entered(area):
-	area.owner.damage(5)
+	area.owner.damage(10)
+
+func _on_timer_timeout():
+	var b = fireball.instantiate()
+	get_parent().get_parent().get_parent().get_parent().add_child(b)
+	b.global_position = global_position
+	b.global_rotation_degrees = global_rotation_degrees +90
+	b.speed *= get_parent().get_parent().get_parent().spinspeed/6
+	$Timer.start(randf_range(.5, 4))
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4q6rg"]
@@ -51,23 +60,27 @@ shape = SubResource("1")
 
 [node name="Weapon" type="Marker2D" parent="."]
 z_index = 1
-position = Vector2(0, -71)
+position = Vector2(-13, -59)
 
 [node name="Fireflail" type="Sprite2D" parent="Weapon"]
-position = Vector2(-17, 8)
-scale = Vector2(5.08753, 5.08753)
+position = Vector2(-3.8147e-06, 4.76837e-07)
+scale = Vector2(5, 5)
 texture = ExtResource("6_s60iw")
 offset = Vector2(-14.1523, -2.16215)
 vframes = 3
 
-[node name="HitBox" type="Area2D" parent="Weapon/Fireflail"]
+[node name="Fireflail" type="Area2D" parent="Weapon/Fireflail"]
 position = Vector2(-26.1424, -0.589677)
 collision_layer = 0
 script = SubResource("GDScript_rbwvf")
+fireball = ExtResource("4_tg1op")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Weapon/Fireflail/HitBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Weapon/Fireflail/Fireflail"]
 position = Vector2(0, -0.196559)
 shape = SubResource("CapsuleShape2D_4q6rg")
+
+[node name="Timer" type="Timer" parent="Weapon/Fireflail/Fireflail"]
+autostart = true
 
 [node name="KnightSprite" type="Sprite2D" parent="."]
 position = Vector2(0, -64)
@@ -89,6 +102,7 @@ path_postprocessing = 1
 y_sort_enabled = true
 texture = ExtResource("5_68vnc")
 
-[connection signal="area_entered" from="Weapon/Fireflail/HitBox" to="Weapon/Fireflail/HitBox" method="_on_area_entered"]
+[connection signal="area_entered" from="Weapon/Fireflail/Fireflail" to="Weapon/Fireflail/Fireflail" method="_on_area_entered"]
+[connection signal="timeout" from="Weapon/Fireflail/Fireflail/Timer" to="Weapon/Fireflail/Fireflail" method="_on_timer_timeout"]
 [connection signal="timeout" from="walktimer" to="." method="_on_walktimer_timeout"]
 [connection signal="timeout" from="attkcooldown" to="." method="_on_attkcooldown_timeout"]

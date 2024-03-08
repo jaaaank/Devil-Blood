@@ -4,9 +4,11 @@ var movementTarget: Vector2
 @onready var navigationAgent: NavigationAgent2D = $NavigationAgent2D
 @onready var walktimer: Timer = $walktimer
 var agressive: bool = false
+var spinspeed: int = 2
 
 func _ready():
 	randomize()
+	spinspeed = randf_range(6,14)
 	sprite = $KnightSprite
 	await get_tree().physics_frame
 	set_movement_target(PlayerAutoload.playerPos)
@@ -17,7 +19,7 @@ func set_movement_target(target: Vector2):
 
 func _physics_process(delta):
 	super(delta)
-	$Weapon.global_rotation -= 2 * delta 
+	$Weapon.global_rotation -= spinspeed * delta 
 	set_movement_target(PlayerAutoload.playerPos)
 	if navigationAgent.distance_to_target()<50:
 		attack()
