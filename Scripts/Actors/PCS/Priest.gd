@@ -87,7 +87,6 @@ func altAttack():
 		add_child(b)
 		cruce = b
 		speed /= 3
-		print("alt attacked")
 	
 func unaltAttack():
 	if crucing:
@@ -96,10 +95,9 @@ func unaltAttack():
 		cruce.queue_free()
 	
 func randomSpread():
-	if !SaveData.priestSkillTree[2]:
-		var spread = randf_range(-5.0, 5.0)
-		return spread
 	var spread = randf_range(-2.0, 2.0)
+	if !SaveData.priestSkillTree[2]:
+		spread = randf_range(-5.0, 5.0)
 	return spread
 
 func _on_Timer_timeout():
@@ -110,5 +108,4 @@ func set_Equipped_Weapon(value: int):
 	switchWeapon()
 	
 func switchWeapon():
-	print("wah")
 	bloodParticles.emitting = true

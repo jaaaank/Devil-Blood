@@ -7,13 +7,15 @@ extends mass
 
 func _ready():
 	sprite = $Masssheet
+	set_physics_process(false)
+
+func activate(_body):
+	set_physics_process(true)
 	randomize()
 	$attackTimer.start(3)
 	randomWalk()
-
-#0: Jumpa Jumpa
-#1: Tendril
-#2: Summon babies
+	$ActivationSensor.queue_free()
+	
 func attack():
 	var attackChosen = randi_range(0,2)
 	match attackChosen:
@@ -30,9 +32,6 @@ func attack():
 				var b = baby.instantiate()
 				add_sibling(b)
 				b.global_position = i
-		#3:
-			#print("didnt attack")
-			#pass
 	$attackTimer.start(randi_range(2,5))
 
 func spawnShockwave():

@@ -17,6 +17,7 @@ func _physics_process(_delta):
 func damage(dmgdealt):
 	if knight:
 		PlayerAutoload.knightsAgressive = true
+		speed = 300
 # warning-ignore:narrowing_conversion
 	health -= round(dmgdealt * armorCalculation())
 	spawnDamageNums(round(dmgdealt*armorCalculation()), Color.FIREBRICK)

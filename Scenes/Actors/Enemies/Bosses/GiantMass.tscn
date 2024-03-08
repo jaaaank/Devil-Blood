@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://1jx4svoldd4m"]
+[gd_scene load_steps=14 format=3 uid="uid://1jx4svoldd4m"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/NPCS/Enemies/GiantMass.gd" id="1_5ayer"]
 [ext_resource type="PackedScene" uid="uid://bgcdy521frcxo" path="res://Scenes/Actors/Enemies/Bosses/Tendril.tscn" id="2_3vadu"]
@@ -191,6 +191,9 @@ _data = {
 "jumpajumpa": SubResource("Animation_gl0ki")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5opdb"]
+size = Vector2(69, 202)
+
 [node name="GiantMass" type="CharacterBody2D"]
 z_as_relative = false
 y_sort_enabled = true
@@ -203,7 +206,6 @@ script = ExtResource("1_5ayer")
 tendril = ExtResource("2_3vadu")
 baby = ExtResource("3_7wq30")
 shockwave = ExtResource("4_ovfwl")
-walkrange = 1000
 basedamage = 10
 damagenumbers = ExtResource("2_xlypf")
 attackrange = 1000
@@ -263,7 +265,16 @@ autoplay = "RESET"
 [node name="Aim" type="Node2D" parent="."]
 position = Vector2(0, -206)
 
+[node name="ActivationSensor" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActivationSensor"]
+position = Vector2(1656, -196)
+shape = SubResource("RectangleShape2D_5opdb")
+debug_color = Color(1, 0, 0.0980392, 0.419608)
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="timeout" from="walktimer" to="." method="_on_walktimer_timeout"]
 [connection signal="timeout" from="stuntimer" to="." method="unstun"]
 [connection signal="timeout" from="attackTimer" to="." method="attack"]
+[connection signal="area_entered" from="ActivationSensor" to="." method="activate"]

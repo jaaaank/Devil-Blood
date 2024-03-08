@@ -1,7 +1,7 @@
 extends enemy
 
 var movementTarget: Vector2 
-@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
+@onready var navigationAgent: NavigationAgent2D = $NavigationAgent2D
 @export var swordattack: PackedScene 
 @onready var walktimer: Timer = $walktimer
 var attacking: bool = false
@@ -13,7 +13,7 @@ func _ready():
 	randomWalk()
 
 func set_movement_target(target: Vector2):
-	navigation_agent.target_position = target
+	navigationAgent.target_position = target
 
 func _physics_process(delta):
 	super(delta)
@@ -21,12 +21,16 @@ func _physics_process(delta):
 	if PlayerAutoload.knightsAgressive:
 		movementTarget = PlayerAutoload.playerPos
 	set_movement_target(movementTarget)
-	if navigation_agent.is_navigation_finished() && movementTarget == PlayerAutoload.playerPos:
-		attack()
-	else:
-		var next_path_position: Vector2 = navigation_agent.get_next_path_position()
-		velocity = global_position.direction_to(next_path_position) * speed
-		move_and_slide()
+	
+	if navigationAgent.distance_to_target()<attackrange:
+		if movementTarget == PlayerAutoload.playerPos:
+			attack()
+			return
+		else:
+			return
+	var next_path_position: Vector2 = navigationAgent.get_next_path_position()
+	velocity = global_position.direction_to(next_path_position) * speed
+	move_and_slide()
 	
 func attack():
 	if !attacking and !stunned:
@@ -37,12 +41,13 @@ func attack():
 		
 func randomWalk():
 	if !PlayerAutoload.knightsAgressive:
+		speed = 100
 		var rice = randf_range(-walkrange, walkrange)
 		var beans = randf_range(-walkrange, walkrange)
 		movementTarget = Vector2(rice,beans)
 		walktimer.start(randf_range(3,6))
 	else:
-		#speed *= sprint_mult
+		speed = 300
 		movementTarget = PlayerAutoload.playerPos
 		
 func stun():

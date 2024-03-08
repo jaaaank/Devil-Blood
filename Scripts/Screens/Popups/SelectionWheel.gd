@@ -22,7 +22,6 @@ func _draw():
 	for i in range(len(slots)):
 		var rads = TAU * i/len(slots)
 		var point = Vector2.from_angle(rads)
-# warning-ignore:integer_division
 		draw_line(point * (radius+width/2), point * (radius-width/2), line_clr, linewidth)
 	for i in range(0,len(slots)):
 		var start_rads = (TAU*(i-1)/len(slots))
@@ -45,7 +44,7 @@ func _draw():
 		
 func _process(_delta):
 	var mouse_pos = get_local_mouse_position()
-	var mouse_radius = mouse_pos.length()
+	var _mouse_radius = mouse_pos.length()
 	var mouse_rads = fposmod(mouse_pos.angle(), TAU)
 	select = floorf((mouse_rads/TAU) * (len(slots))) +1
 	if select == len(slots): select= 0

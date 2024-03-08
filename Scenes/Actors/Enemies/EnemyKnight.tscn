@@ -20,6 +20,7 @@ motion_mode = 1
 script = ExtResource("1_p7cqs")
 swordattack = ExtResource("1_x8u6l")
 damagenumbers = ExtResource("4")
+attackrange = 60
 speed = 300
 health = 60
 armor = 35
@@ -55,7 +56,8 @@ one_shot = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-target_desired_distance = 50.0
+target_desired_distance = 100.0
+path_max_distance = 150.0
 path_postprocessing = 1
 
 [node name="Shadow" type="Sprite2D" parent="."]
