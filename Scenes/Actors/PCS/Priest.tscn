@@ -23,7 +23,7 @@ flatness = 1.0
 gravity = Vector3(0, 150, 0)
 color = Color(0.839216, 0, 0, 1)
 
-[node name="Priest" type="CharacterBody2D"]
+[node name="Priest" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
 collision_mask = 144
 motion_mode = 1

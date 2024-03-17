@@ -1,17 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://vcu3wc3ch0n1"]
+[gd_scene load_steps=13 format=3 uid="uid://vcu3wc3ch0n1"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/NPCS/Enemies/FireFlailEnemy.gd" id="1_8a60b"]
 [ext_resource type="PackedScene" uid="uid://cci7teggrridn" path="res://Scenes/Actors/Objects/DamageNumbers.tscn" id="3_02qj4"]
-[ext_resource type="Texture2D" uid="uid://dtbtjrc6w2t2j" path="res://Assets/Actors/knight.png" id="4_c88qh"]
+[ext_resource type="Texture2D" uid="uid://wpqchm11756g" path="res://Assets/Actors/fireguyBack.png" id="4_jyrhh"]
 [ext_resource type="PackedScene" uid="uid://dtaauklbu7xhf" path="res://Scenes/Actors/Objects/FireBall.tscn" id="4_tg1op"]
 [ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="5_68vnc"]
+[ext_resource type="Texture2D" uid="uid://bqra2vum200ct" path="res://Assets/Actors/fireguy.png" id="5_fpfqh"]
+[ext_resource type="Texture2D" uid="uid://b4e47breh5co8" path="res://Assets/Actors/fireguySide.png" id="5_ngnaj"]
 [ext_resource type="Texture2D" uid="uid://bc6o2qj0qokhn" path="res://Assets/Actors/objects/fireflail.png" id="6_s60iw"]
 
 [sub_resource type="RectangleShape2D" id="2"]
-size = Vector2(66, 135)
+size = Vector2(50, 112)
 
 [sub_resource type="RectangleShape2D" id="1"]
-size = Vector2(60, 22)
+size = Vector2(50, 12)
 
 [sub_resource type="GDScript" id="GDScript_rbwvf"]
 script/source = "extends Area2D
@@ -36,35 +38,36 @@ height = 8.25
 
 [node name="FireFlailEnemy" type="CharacterBody2D"]
 y_sort_enabled = true
+position = Vector2(0, -6)
 collision_layer = 2
 collision_mask = 18
 motion_mode = 1
 script = ExtResource("1_8a60b")
 damagenumbers = ExtResource("3_02qj4")
 speed = 200
+sprites = Array[Texture2D]([ExtResource("5_fpfqh"), ExtResource("4_jyrhh"), ExtResource("5_ngnaj")])
 
 [node name="Hurtbox" type="Area2D" parent="."]
-position = Vector2(0, -64)
+position = Vector2(0, -57)
 collision_layer = 2
 collision_mask = 4
 input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(0, -1.5)
+position = Vector2(0, 8)
 shape = SubResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -12)
 shape = SubResource("1")
 
 [node name="Weapon" type="Marker2D" parent="."]
-z_index = 1
-position = Vector2(-13, -59)
+z_index = -1
+position = Vector2(-26, -41)
 
 [node name="Fireflail" type="Sprite2D" parent="Weapon"]
 position = Vector2(-3.8147e-06, 4.76837e-07)
-scale = Vector2(5, 5)
+scale = Vector2(4, 4)
 texture = ExtResource("6_s60iw")
 offset = Vector2(-14.1523, -2.16215)
 vframes = 3
@@ -82,9 +85,10 @@ shape = SubResource("CapsuleShape2D_4q6rg")
 [node name="Timer" type="Timer" parent="Weapon/Fireflail/Fireflail"]
 autostart = true
 
-[node name="KnightSprite" type="Sprite2D" parent="."]
-position = Vector2(0, -64)
-texture = ExtResource("4_c88qh")
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, 7)
+texture = ExtResource("5_fpfqh")
+offset = Vector2(0, -58)
 
 [node name="walktimer" type="Timer" parent="."]
 one_shot = true
@@ -95,11 +99,12 @@ one_shot = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-target_desired_distance = 50.0
+target_desired_distance = 75.0
 path_postprocessing = 1
 
 [node name="Shadow" type="Sprite2D" parent="."]
 y_sort_enabled = true
+position = Vector2(0, 5)
 texture = ExtResource("5_68vnc")
 
 [connection signal="area_entered" from="Weapon/Fireflail/Fireflail" to="Weapon/Fireflail/Fireflail" method="_on_area_entered"]

@@ -23,7 +23,7 @@ flatness = 1.0
 gravity = Vector3(0, 150, 0)
 color = Color(0.839216, 0, 0, 1)
 
-[node name="Witch" type="CharacterBody2D"]
+[node name="Witch" type="CharacterBody2D" groups=["player"]]
 collision_mask = 16
 motion_mode = 1
 script = ExtResource("2")

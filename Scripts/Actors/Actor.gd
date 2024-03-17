@@ -5,6 +5,7 @@ class_name Actor
 @export var sprint_mult: = 1.2
 @export var health: = 100
 @export var armor: = 0
+@export var sprites: Array[Texture2D]
 
 var stunned = false
 var sprite

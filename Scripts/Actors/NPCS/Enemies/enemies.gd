@@ -24,6 +24,16 @@ func damage(dmgdealt):
 	if health<=0:
 		queue_free()
 		
+func spriteDirection():
+	var angl = rad_to_deg(velocity.angle())
+	print(angl)
+	if (angl<=0 and angl>=-45) or (angl >=-180 and angl <=-135): 
+		sprite.texture = sprites[2]
+	elif angl<0 and angl>-180:
+		sprite.texture = sprites[1]
+	else:
+		sprite.texture = sprites[0]
+		
 func spawnDamageNums(damagetaken, clr):
 	randomize()
 	var b = damagenumbers.instantiate()

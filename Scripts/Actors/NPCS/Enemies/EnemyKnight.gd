@@ -21,7 +21,6 @@ func _physics_process(delta):
 	if PlayerAutoload.knightsAgressive:
 		movementTarget = PlayerAutoload.playerPos
 	set_movement_target(movementTarget)
-	
 	if navigationAgent.distance_to_target()<attackrange:
 		if movementTarget == PlayerAutoload.playerPos:
 			attack()
