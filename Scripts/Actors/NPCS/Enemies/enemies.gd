@@ -1,6 +1,7 @@
 extends Actor
 class_name enemy
 
+@export var drops: Array[PackedScene]
 @export var walkrange: int = 1000
 @export var basedamage: int
 @export var damagenumbers:PackedScene = load("res://Scenes/Actors/Objects/DamageNumbers.tscn")
@@ -22,11 +23,10 @@ func damage(dmgdealt):
 	health -= round(dmgdealt * armorCalculation())
 	spawnDamageNums(round(dmgdealt*armorCalculation()), Color.FIREBRICK)
 	if health<=0:
-		queue_free()
+		die()
 		
 func spriteDirection():
 	var angl = rad_to_deg(velocity.angle())
-	print(angl)
 	if (angl<=0 and angl>=-45) or (angl >=-180 and angl <=-135): 
 		sprite.texture = sprites[2]
 	elif angl<0 and angl>-180:
@@ -47,3 +47,9 @@ func armorCalculation():
 		return (abs(armor-100)*0.01)
 	else: return 1
 	
+func die():
+	for i in drops:
+		var a = i.instantiate()
+		get_parent().add_child(a)
+		a.global_transform = global_transform
+	queue_free()
