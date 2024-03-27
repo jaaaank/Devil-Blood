@@ -4,14 +4,12 @@ var saveFile: String = "user://playerData.txt"
 var priestSkillTree: Array =[true,false,false]
 var knightSkillTree: Array =[false,false,false]
 var witchSkillTree: Array =[false,false,false]
-var angelSkillTree: Array =[false,false,false]
 var soulboundDevilBlood: int = 100
 
 @export var saveDict: Dictionary = {
 	"priestsave" = priestSkillTree,
 	"knightsave" = knightSkillTree,
 	"witchsave" = witchSkillTree,
-	"angelsave" = angelSkillTree,
 	"devilblood" = soulboundDevilBlood
 }
 
@@ -34,7 +32,6 @@ func editData() -> void:
 	"priestsave" = priestSkillTree,
 	"knightsave" = knightSkillTree,
 	"witchsave" = witchSkillTree,
-	"angelsave" = angelSkillTree,
 	"devilblood" = soulboundDevilBlood
 }
 
@@ -54,6 +51,5 @@ func loadData() -> void:
 		saveDict.priestsave = nodeData["priestsave"]
 		saveDict.knightsave = nodeData["knightsave"]
 		saveDict.witchsave = nodeData["witchsave"]
-		saveDict.angelsave = nodeData["angelsave"]
 		saveDict.devilblood = nodeData["devilblood"]
 	dataFile.close()

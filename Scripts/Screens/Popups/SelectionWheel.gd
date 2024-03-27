@@ -22,6 +22,7 @@ func _draw():
 	for i in range(len(slots)):
 		var rads = TAU * i/len(slots)
 		var point = Vector2.from_angle(rads)
+		@warning_ignore("integer_division")
 		draw_line(point * (radius+width/2), point * (radius-width/2), line_clr, linewidth)
 	for i in range(0,len(slots)):
 		var start_rads = (TAU*(i-1)/len(slots))

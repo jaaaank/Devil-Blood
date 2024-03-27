@@ -29,6 +29,4 @@ nextScene = "res://Scenes/Maps/Interior/Armory.tscn"
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="LocationText" parent="UI" instance=ExtResource("3")]
-grow_horizontal = 2
-grow_vertical = 2
 locationName = "Barracks"

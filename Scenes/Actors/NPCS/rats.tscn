@@ -14,41 +14,48 @@ radius = 58.0
 height = 150.0
 
 [node name="Rats" type="CharacterBody2D"]
+position = Vector2(0, -4)
 collision_layer = 128
 collision_mask = 159
 script = ExtResource("1_pdmw7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3.72529e-09, 42)
+position = Vector2(-3.72529e-09, 0)
 rotation = 1.56995
 shape = SubResource("CapsuleShape2D_lid8e")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 z_as_relative = false
 y_sort_enabled = true
+position = Vector2(0, -42)
 texture = ExtResource("1_m6yfr")
 
 [node name="PopupTextBox" parent="." instance=ExtResource("2_vn21l")]
+position = Vector2(0, -42)
 oneTime = true
 sequential = true
-possilbleText = Array[String](["wassup lil bitch", "my name is rats", "the fuck are you lookin at"])
+waitTime = 3.0
+possilbleText = Array[String](["Hey, can you help me?", "My name is Rats...", "I went into this building with my friends, ", "but then some scary monsters came out", "None of my friends made it out...", "Can you help me find them?"])
 
 [node name="CollisionShape2D" parent="PopupTextBox/DetectionArea" index="0"]
 position = Vector2(0, 11)
 
-[node name="TextBG" parent="PopupTextBox" index="1"]
-offset_left = -74.0
-offset_top = -112.0
-offset_right = 73.0
-offset_bottom = -47.0
+[node name="Text" parent="PopupTextBox" index="1"]
+visible = false
+anchors_preset = 0
+offset_left = -73.0
+offset_top = -137.0
+offset_right = 74.0
+offset_bottom = -72.0
 
 [node name="Shadow" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(0, 43)
+position = Vector2(0, 1)
 scale = Vector2(0.858752, 0.547005)
 texture = ExtResource("3_2vxxn")
 
 [node name="InteractionShape2D" type="Area2D" parent="."]
+position = Vector2(0, -42)
 collision_layer = 0
 monitorable = false
 

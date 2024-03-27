@@ -47,9 +47,12 @@ func armorCalculation():
 		return (abs(armor-100)*0.01)
 	else: return 1
 	
+func dropDrops():
+		for i in drops:
+			var a = i.instantiate()
+			get_parent().add_child(a)
+			a.global_transform = global_transform
+	
 func die():
-	for i in drops:
-		var a = i.instantiate()
-		get_parent().add_child(a)
-		a.global_transform = global_transform
+	dropDrops()
 	queue_free()

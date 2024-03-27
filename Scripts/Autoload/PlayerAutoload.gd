@@ -2,7 +2,7 @@ extends Node
 
 var spawnPoint: int = 0: set = set_spawnPoint
 
-#1=priest, 2=knight, 3=witch, 4=angel
+#1=priest, 2=knight, 3=witch
 var playerCharacter: int = 1: set = set_playerCharacter
 var player
 #decides whether or not ALL knights on the map are agressive

@@ -3,9 +3,11 @@
 [ext_resource type="Script" path="res://Scripts/Screens/Popups/PopupTextBox.gd" id="1_7wbxq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0rx1s"]
-radius = 156.051
+radius = 181.025
 
 [node name="PopupTextBox" type="Node2D"]
+z_index = 5
+z_as_relative = false
 script = ExtResource("1_7wbxq")
 
 [node name="DetectionArea" type="Area2D" parent="."]
@@ -15,21 +17,26 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 shape = SubResource("CircleShape2D_0rx1s")
 
-[node name="TextBG" type="ColorRect" parent="."]
-visible = false
+[node name="Text" type="RichTextLabel" parent="."]
+anchors_preset = -1
 offset_right = 147.0
-offset_bottom = 65.0
-color = Color(1, 1, 1, 0.32549)
-
-[node name="Text" type="RichTextLabel" parent="TextBG"]
-layout_mode = 0
-offset_right = 147.0
-offset_bottom = 65.0
+offset_bottom = 69.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "You know you're not welcome here."
+bbcode_enabled = true
+text = "[center]You know you're not welcome"
+fit_content = true
+
+[node name="TextBG" type="ColorRect" parent="Text"]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.32549)
 
 [node name="talkingTimer" type="Timer" parent="."]
 wait_time = 2.0
 
-[connection signal="area_shape_entered" from="DetectionArea" to="." method="_on_detection_area_area_shape_entered"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
