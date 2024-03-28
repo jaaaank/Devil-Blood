@@ -1,12 +1,12 @@
 extends Control
 
 var paused: = false: set = set_paused
-@onready var healthbar= $CanvasLayer/HealthBar
-
+@onready var healthBar= $CanvasLayer/TopLeftUI/HealthBar
+@onready var soulCount= $CanvasLayer/TopLeftUI/SoulCount
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	healthbar.max_value = get_parent().health
+	healthBar.max_value = get_parent().health
 	updateUI()
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -30,4 +30,5 @@ func _input(_event):
 		$SelectionWheel.set_deferred("visible", false)
 
 func updateUI():
-	healthbar.value = get_parent().health
+	healthBar.value = get_parent().health
+	soulCount.text = "	Soul: " + str(PlayerAutoload.soul)

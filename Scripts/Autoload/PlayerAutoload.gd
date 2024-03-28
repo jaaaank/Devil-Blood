@@ -1,10 +1,8 @@
 extends Node
 
 var spawnPoint: int = 0: set = set_spawnPoint
-
 #1=priest, 2=knight, 3=witch
 var playerCharacter: int = 1: set = set_playerCharacter
-var player
 #decides whether or not ALL knights on the map are agressive
 var knightsAgressive: bool = false: set = set_knightsAgressive
 var playerPos: Vector2 = Vector2(0,0): set = set_playerPos
@@ -21,7 +19,6 @@ func startRun():
 		knightsAgressive = false
 	else:
 		knightsAgressive = true
-	#player = get_tree().root.get_child(3).get_node("PlayerSpawner").get_child(0)
 	
 func winRun():
 	SaveData.saveData()
@@ -31,6 +28,7 @@ func charDie():
 		
 func set_soul(value: int):
 	soul = value
+	get_player().find_child("UI").updateUI()
 	
 func get_player():
 	return get_tree().root.get_child(3).get_node("PlayerSpawner").get_child(0)

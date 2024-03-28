@@ -21,12 +21,24 @@ layout_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HealthBar" type="TextureProgressBar" parent="CanvasLayer"]
-offset_right = 480.0
-offset_bottom = 50.0
+[node name="TopLeftUI" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.417
+anchor_bottom = 0.167
+offset_right = -0.384033
+offset_bottom = -0.216003
+
+[node name="HealthBar" type="TextureProgressBar" parent="CanvasLayer/TopLeftUI"]
+layout_mode = 2
 value = 100.0
 texture_over = ExtResource("3_famag")
 texture_progress = ExtResource("3_kpc5h")
+
+[node name="SoulCount" type="RichTextLabel" parent="CanvasLayer/TopLeftUI"]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 35
+text = "	Soul: 000"
 
 [node name="PauseMenu" type="ColorRect" parent="CanvasLayer"]
 process_mode = 2
