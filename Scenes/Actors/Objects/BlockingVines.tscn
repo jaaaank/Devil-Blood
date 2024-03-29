@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://bl1jm4fcdllqj"]
+
+[ext_resource type="Texture2D" uid="uid://eqwvydy2d55v" path="res://Assets/Actors/objects/blockingVines.png" id="1_aqnpc"]
+
+[sub_resource type="GDScript" id="GDScript_l1viy"]
+script/source = "extends StaticBody2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_area_2d_area_entered(area):
+	queue_free()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j54wc"]
+size = Vector2(199, 56)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s21h4"]
+radius = 32.0
+height = 154.0
+
+[node name="BlockingVines" type="StaticBody2D"]
+collision_layer = 272
+collision_mask = 0
+script = SubResource("GDScript_l1viy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_j54wc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_aqnpc")
+region_rect = Rect2(0, 0, 154, 75)
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 64
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_s21h4")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

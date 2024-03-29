@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://blmpwvome25ko" path="res://Scenes/Actors/Enemies/LowTier/Mass.tscn" id="4_nnb4d"]
 [ext_resource type="PackedScene" uid="uid://1jx4svoldd4m" path="res://Scenes/Actors/Enemies/Bosses/GiantMass.tscn" id="5_hcuel"]
 [ext_resource type="TileSet" uid="uid://dl3q7oy5jowgi" path="res://Assets/TileMaps/wastes.tres" id="6"]
-[ext_resource type="PackedScene" uid="uid://vcu3wc3ch0n1" path="res://Scenes/Actors/Enemies/FireFlail.tscn" id="7_jh52i"]
+[ext_resource type="PackedScene" uid="uid://bl1jm4fcdllqj" path="res://Scenes/Actors/Objects/BlockingVines.tscn" id="6_nc2t3"]
 [ext_resource type="PackedScene" uid="uid://ly01s1e7dope" path="res://Scenes/Actors/Objects/soul.tscn" id="8_niswn"]
 
 [node name="PriestCave" type="Node2D"]
@@ -32,6 +32,10 @@ locationName = "Infested Cave"
 
 [node name="Mass" parent="." instance=ExtResource("4_nnb4d")]
 position = Vector2(-179, -226)
+
+[node name="BlockingVines" parent="." instance=ExtResource("6_nc2t3")]
+position = Vector2(-290, 531)
+rotation = 1.5708
 
 [node name="BlockingMasses" type="Node2D" parent="."]
 z_as_relative = false
@@ -528,10 +532,6 @@ position = Vector2(-9821, 532)
 
 [node name="GiantMass" parent="." instance=ExtResource("5_hcuel")]
 position = Vector2(-11303, 735)
-
-[node name="FireFlailEnemy" parent="." instance=ExtResource("7_jh52i")]
-position = Vector2(448, 801)
-viewRange = 500
 
 [node name="Mass2" parent="." instance=ExtResource("4_nnb4d")]
 position = Vector2(2700, 2083)
