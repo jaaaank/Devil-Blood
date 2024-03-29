@@ -9,10 +9,10 @@ script/source = "extends Area2D
 
 func _on_body_entered(body):
 	if body.name!=\"GiantMass\":
-		body.call(\"damage\", 10)
+		body.call(\"damage\", 15)
 
 
-func _on_animation_player_animation_finished(anim_name):
+func _on_animation_player_animation_finished(_anim_name):
 	queue_free()
 "
 
@@ -45,8 +45,8 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_yp6l3"]
 resource_name = "attack"
-length = 1.2
-step = 0.025
+length = 1.5
+step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -54,10 +54,10 @@ tracks/0/path = NodePath("CollisionShape2D:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.2),
+"times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(30, 30)]
+"values": [Vector2(1, 1), Vector2(50, 50)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -66,10 +66,10 @@ tracks/1/path = NodePath("Sprite2D:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.2),
+"times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.035, 0.035), Vector2(1, 1)]
+"values": [Vector2(0.035, 0.035), Vector2(1.7, 1.7)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v0ww4"]

@@ -30,7 +30,9 @@ func stun():
 	stunned = true
 	set_physics_process(false)
 	$stuntimer.start()
-	
+	if PlayerAutoload.playerCharacter == 1 and SaveData.priestSkillTree[8]:
+		die()
+		
 func unstun():
 	stunned = false
 	set_physics_process(true)

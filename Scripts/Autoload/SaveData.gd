@@ -1,7 +1,7 @@
 extends Node
 var saveFile: String = "user://playerData.txt"
 
-var priestSkillTree: Array =[true,false,false]
+var priestSkillTree: Array =[true,true,true,true,true,true,true,true,true]
 var knightSkillTree: Array =[false,false,false]
 var witchSkillTree: Array =[false,false,false]
 var soulboundDevilBlood: int = 100

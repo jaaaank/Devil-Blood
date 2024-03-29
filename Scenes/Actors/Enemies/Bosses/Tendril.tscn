@@ -8,10 +8,10 @@ script/source = "extends Area2D
 
 
 func _on_body_entered(body):
-	body.call(\"damage\", 10)
+	body.call(\"damage\", 20)
 
 
-func _on_animation_player_animation_finished(anim_name):
+func _on_animation_player_animation_finished(_anim_name):
 	queue_free()
 "
 

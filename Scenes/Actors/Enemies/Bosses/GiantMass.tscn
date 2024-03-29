@@ -206,10 +206,11 @@ script = ExtResource("1_5ayer")
 tendril = ExtResource("2_3vadu")
 baby = ExtResource("3_7wq30")
 shockwave = ExtResource("4_ovfwl")
-basedamage = 10
+basedamage = 15
 damagenumbers = ExtResource("2_xlypf")
 attackrange = 1000
 speed = 200
+health = 200
 
 [node name="Masssheet" type="Sprite2D" parent="."]
 y_sort_enabled = true

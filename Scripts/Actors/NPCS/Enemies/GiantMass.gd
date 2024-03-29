@@ -32,8 +32,11 @@ func attack():
 				var b = baby.instantiate()
 				add_sibling(b)
 				b.global_position = i
-	$attackTimer.start(randi_range(2,5))
+	$attackTimer.start(randi_range(1,3))
 
+func stun():
+	pass
+	
 func spawnShockwave():
 	var pee = shockwave.instantiate()
 	add_sibling(pee)

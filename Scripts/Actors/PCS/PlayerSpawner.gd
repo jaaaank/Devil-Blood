@@ -8,14 +8,14 @@ extends Node2D
 func _ready():
 	if MapAutoload.spawnPoint:
 		set_position(MapAutoload.spawnPoint)
-	else:
 		print("Player Spawned")
-		match PlayerAutoload.playerCharacter:
-			1:
-				add_child(Priest.instantiate())
-			2:
-				add_child(Knight.instantiate())
-			3:
-				add_child(Witch.instantiate())
-			4:
-				add_child(Angel.instantiate())
+	match PlayerAutoload.playerCharacter:
+		1:
+			add_child(Priest.instantiate())
+		2:
+			add_child(Knight.instantiate())
+		3:
+			add_child(Witch.instantiate())
+		4:
+			add_child(Angel.instantiate())
+	get_parent().setLimits()

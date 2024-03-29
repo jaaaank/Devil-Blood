@@ -11,6 +11,11 @@ var cooldown = false
 var cruce
 var crucing = false
 
+func _ready():
+	super()
+	if SaveData.priestSkillTree[1]:
+		armor = 5
+
 func _physics_process(_delta):
 	super(_delta)
 	$Guns/Muzzle.look_at(get_global_mouse_position())
@@ -26,10 +31,10 @@ func _input(_event):
 	if Input.is_action_just_pressed("weap2")and SaveData.priestSkillTree[0]:
 		set_Equipped_Weapon(1)
 		reloadTime = 0.1
-	if Input.is_action_just_pressed("weap3"):
+	if Input.is_action_just_pressed("weap3")and SaveData.priestSkillTree[5]:
 		set_Equipped_Weapon(2)
 		reloadTime = 2
-	if Input.is_action_just_pressed("weap4"):
+	if Input.is_action_just_pressed("weap4")and SaveData.priestSkillTree[3]:
 		set_Equipped_Weapon(3)
 		reloadTime = 2
 		
@@ -63,25 +68,27 @@ func shoot():
 			var b = Bullet.instantiate()
 			var c = Bullet.instantiate()
 			var d = Bullet.instantiate()
-			var e = Bullet.instantiate() #mk for shotgun
-			var bullets:Array =[a,b,c,d,e]
-			for n in bullets:
-				get_parent().get_parent().add_child(n)
-				n.position = $Guns/Muzzle.global_position
-				a.scale = $Guns/Muzzle.scale
-				n.rotation_degrees = $Guns/Muzzle.rotation_degrees + randomSpread()*3
-				n.projDamage = 6
+			var bullets:Array =[a,b,c,d]
+			if SaveData.priestSkillTree[7]:
+				var e = Bullet.instantiate()
+				bullets.append(e)
+			for i in bullets:
+				get_parent().get_parent().add_child(i)
+				i.position = $Guns/Muzzle.global_position
+				i.scale = $Guns/Muzzle.scale
+				i.rotation_degrees = $Guns/Muzzle.rotation_degrees + randomSpread()*3
+				i.projDamage = 5
 		3:
 			get_parent().get_parent().add_child(a)
 			a.position = $Guns/Muzzle.global_position
 			a.scale = $Guns/Muzzle.scale
 			a.rotation_degrees = $Guns/Muzzle.rotation_degrees
-			a.projDamage = 8
+			a.projDamage = 6
 			a.pierce = 3
 	timey.start(reloadTime)
 	
 func altAttack():
-	if !crucing:
+	if !crucing and SaveData.priestSkillTree[4]:
 		crucing = true
 		var b = Crucifix.instantiate()
 		add_child(b)

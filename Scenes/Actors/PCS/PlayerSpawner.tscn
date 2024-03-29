@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://cf6q2wrwpvmjj" path="res://Scenes/Actors/PCS/Witch.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://ckemnaeok2ood" path="res://Scenes/Actors/PCS/Knight.tscn" id="4"]
 
-
 [node name="PlayerSpawner" type="Node2D"]
 script = ExtResource("1")
 Priest = ExtResource("2")
