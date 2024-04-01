@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://ba1va04mwqw42"
+path="res://.godot/imported/skillButtonMask.png-6a6ff197518a3b56440014a033df4f5b.res"
+
+[deps]
+
+source_file="res://Assets/UI/skillButtonMask.png"
+dest_files=["res://.godot/imported/skillButtonMask.png-6a6ff197518a3b56440014a033df4f5b.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

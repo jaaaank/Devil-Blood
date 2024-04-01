@@ -102,9 +102,9 @@ func unaltAttack():
 		cruce.queue_free()
 	
 func randomSpread():
-	var spread = randf_range(-2.0, 2.0)
-	if !SaveData.priestSkillTree[2]:
-		spread = randf_range(-5.0, 5.0)
+	var spread = randf_range(-5.0, 5.0)
+	if SaveData.priestSkillTree[2]:
+		spread = randf_range(-2.0, 2.0)
 	return spread
 
 func _on_Timer_timeout():

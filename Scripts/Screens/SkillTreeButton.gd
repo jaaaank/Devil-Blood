@@ -1,12 +1,18 @@
 extends TextureButton
 
 @export var cost: int
+@export var skillIndex: int
+@export var character: int
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	match character:
+		1: if SaveData.priestSkillTree[skillIndex]:
+				texture_disabled = texture_hover
+				disabled = true
+		2: if SaveData.knightSkillTree[skillIndex]:
+				texture_disabled = texture_hover
+				disabled = true
+		3: if SaveData.witchSkillTree[skillIndex]:
+				texture_disabled = texture_hover
+				disabled = true
+			
