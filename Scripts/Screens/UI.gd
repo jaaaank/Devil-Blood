@@ -30,5 +30,5 @@ func _input(_event):
 		$SelectionWheel.set_deferred("visible", false)
 
 func updateUI():
-	healthBar.value = get_parent().health
+	healthBar.value = PlayerAutoload.health
 	soulCount.text = "	Soul: " + str(PlayerAutoload.soul)

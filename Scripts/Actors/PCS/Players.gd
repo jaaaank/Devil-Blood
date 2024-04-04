@@ -49,19 +49,18 @@ func damage(damageTaken: float):
 	if !iframes:
 		sprite.set_modulate(Color.WEB_MAROON)
 # warning-ignore:narrowing_conversion
-		health -= round(damageTaken*armorCalculation())
+		PlayerAutoload.health -= round(damageTaken*armorCalculation())
 		iframes = true
 		spawnDamageNums(round(damageTaken*armorCalculation()), Color.FIREBRICK)
 		find_child("UI").call("updateUI")
 		$Hurtbox.monitoring = false
-	if health <=0:
+	if PlayerAutoload.health <=0:
 		PlayerAutoload.charDie()
 		queue_free()
 		
 func heal(healingFactor: float):
 # warning-ignore:narrowing_conversion
-	health += round(healingFactor)
-	print("Healed; Health = " + str(health))
+	PlayerAutoload.health += round(healingFactor)
 	spawnDamageNums(round(healingFactor), Color.FOREST_GREEN)
 	find_child("UI").call("updateUI")
 

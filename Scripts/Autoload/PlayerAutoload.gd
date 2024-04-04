@@ -7,6 +7,7 @@ var playerCharacter: int = 1: set = set_playerCharacter
 var knightsAgressive: bool = false: set = set_knightsAgressive
 var playerPos: Vector2 = Vector2(0,0): set = set_playerPos
 var soul: int = 0: set = set_soul
+var health: int = 0: set = set_health
 var inventory: Array[itemType]
 var inventorySize: = 3
 
@@ -15,10 +16,14 @@ signal interacted
 signal player_dead
 
 func startRun():
-	if playerCharacter==2:
-		knightsAgressive = false
-	else:
-		knightsAgressive = true
+	match playerCharacter:
+		1:
+			health = 90
+		2:
+			health = 110
+			knightsAgressive = false
+		3:
+			health = 75
 	
 func winRun():
 	SaveData.saveData()
@@ -28,6 +33,10 @@ func charDie():
 		
 func set_soul(value: int):
 	soul = value
+	get_player().find_child("UI").updateUI()
+	
+func set_health(value: int):
+	health = value
 	get_player().find_child("UI").updateUI()
 	
 func get_player():

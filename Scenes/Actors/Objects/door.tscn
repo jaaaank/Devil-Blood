@@ -1,6 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcpjy60mgi6kg"]
+[gd_scene load_steps=6 format=3 uid="uid://dcpjy60mgi6kg"]
 
 [ext_resource type="Texture2D" uid="uid://shfnxql0ajpo" path="res://Assets/Placeholders/doorplaceholder.png" id="1_i23dq"]
+
+[sub_resource type="GDScript" id="GDScript_5tsct"]
+script/source = "extends StaticBody2D
+
+@export var locked: bool
+@export var keyItemID: int
+
+func _ready():
+	if locked:
+		$Door.set_deferred(\"freeze\",false)
+	else:
+		$Door/unlockSensor.queue_free()
+
+func _on_unlock_sensor_body_entered(body):
+	if body.is_in_group(\"player\"):
+		for i in PlayerAutoload.inventory:
+			if i.id == keyItemID:
+				print(\"unlocked\")
+				$Door.set_deferred(\"freeze\",false)
+				$Door/unlockSensor.queue_free()
+"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x6lds"]
 radius = 1.0
@@ -8,10 +29,14 @@ radius = 1.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_llwks"]
 size = Vector2(180, 2)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6o57d"]
+radius = 102.0
+
 [node name="Door" type="StaticBody2D"]
 disable_mode = 1
 collision_layer = 0
 collision_mask = 0
+script = SubResource("GDScript_5tsct")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_x6lds")
@@ -21,6 +46,9 @@ position = Vector2(96, 0)
 collision_layer = 16
 collision_mask = 19
 gravity_scale = 0.0
+max_contacts_reported = 5
+contact_monitor = true
+linear_damp = 5.0
 angular_damp = 100.0
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Door"]
@@ -39,3 +67,11 @@ shape = SubResource("RectangleShape2D_llwks")
 [node name="PinJoint2D" type="PinJoint2D" parent="Door"]
 node_a = NodePath("../..")
 node_b = NodePath("..")
+
+[node name="unlockSensor" type="Area2D" parent="Door"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/unlockSensor"]
+position = Vector2(-96, 0)
+shape = SubResource("CircleShape2D_6o57d")
+
+[connection signal="body_entered" from="Door/unlockSensor" to="." method="_on_unlock_sensor_body_entered"]
