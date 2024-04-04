@@ -99,7 +99,7 @@ position = Vector2(-1081, 511)
 position = Vector2(-1098, 591)
 
 [node name="GiantMass" parent="." instance=ExtResource("5_hcuel")]
-position = Vector2(-3962, 735)
+position = Vector2(-3589, 735)
 
 [node name="Mass2" parent="." instance=ExtResource("4_nnb4d")]
 position = Vector2(2700, 2083)

@@ -270,7 +270,7 @@ position = Vector2(0, -206)
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActivationSensor"]
-position = Vector2(1656, -196)
+position = Vector2(1178, -196)
 shape = SubResource("RectangleShape2D_5opdb")
 debug_color = Color(1, 0, 0.0980392, 0.419608)
 
