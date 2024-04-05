@@ -27,32 +27,6 @@ grow_vertical = 2
 texture = ExtResource("1_xgc1w")
 expand_mode = 1
 
-[node name="Rosary" type="TextureButton" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_left = 0.221
-anchor_top = 0.117
-anchor_right = 0.221
-anchor_bottom = 0.117
-offset_left = -49.592
-offset_top = -49.816
-offset_right = 50.408
-offset_bottom = 50.184
-tooltip_text = "ya momma"
-texture_normal = ExtResource("2_vifq7")
-texture_hover = ExtResource("3_lk838")
-texture_disabled = ExtResource("4_hnwak")
-texture_focused = ExtResource("3_lk838")
-texture_click_mask = ExtResource("4_jck84")
-script = ExtResource("3_80er7")
-cost = 1
-skillIndex = 1
-character = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Rosary"]
-visible = false
-texture = ExtResource("4_mfbkj")
-offset = Vector2(50, 50)
-
 [node name="Revolver" type="TextureButton" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_left = 0.5
@@ -79,6 +53,58 @@ visible = false
 texture = ExtResource("4_mfbkj")
 offset = Vector2(50, 50)
 
+[node name="Rosary" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.221
+anchor_top = 0.117
+anchor_right = 0.221
+anchor_bottom = 0.117
+offset_left = -49.592
+offset_top = -49.816
+offset_right = 50.408
+offset_bottom = 50.184
+tooltip_text = "ya momma"
+texture_normal = ExtResource("2_vifq7")
+texture_hover = ExtResource("3_lk838")
+texture_disabled = ExtResource("4_hnwak")
+texture_focused = ExtResource("3_lk838")
+texture_click_mask = ExtResource("4_jck84")
+script = ExtResource("3_80er7")
+cost = 1
+skillIndex = 1
+character = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Rosary"]
+visible = false
+texture = ExtResource("4_mfbkj")
+offset = Vector2(50, 50)
+
+[node name="Crucifix" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.221
+anchor_top = 0.383
+anchor_right = 0.221
+anchor_bottom = 0.383
+offset_left = -49.592
+offset_top = -50.184
+offset_right = 50.408
+offset_bottom = 49.816
+tooltip_text = "ya momma"
+texture_normal = ExtResource("2_vifq7")
+texture_hover = ExtResource("3_lk838")
+texture_disabled = ExtResource("4_hnwak")
+texture_focused = ExtResource("3_lk838")
+texture_click_mask = ExtResource("4_jck84")
+script = ExtResource("3_80er7")
+cost = 2
+skillIndex = 4
+character = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Crucifix"]
+visible = false
+texture = ExtResource("4_mfbkj")
+offset = Vector2(50, 50)
+
 [node name="Scope" type="TextureButton" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_left = 0.803
@@ -101,32 +127,6 @@ skillIndex = 2
 character = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Scope"]
-visible = false
-texture = ExtResource("4_mfbkj")
-offset = Vector2(50, 50)
-
-[node name="ExtraShell" type="TextureButton" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_left = 0.803
-anchor_top = 0.627
-anchor_right = 0.803
-anchor_bottom = 0.627
-offset_left = -50.056
-offset_top = -50.296
-offset_right = 49.944
-offset_bottom = 49.704
-tooltip_text = "ya momma"
-texture_normal = ExtResource("2_vifq7")
-texture_hover = ExtResource("3_lk838")
-texture_disabled = ExtResource("4_hnwak")
-texture_focused = ExtResource("3_lk838")
-texture_click_mask = ExtResource("4_jck84")
-script = ExtResource("3_80er7")
-cost = 1
-skillIndex = 7
-character = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ExtraShell"]
 visible = false
 texture = ExtResource("4_mfbkj")
 offset = Vector2(50, 50)
@@ -210,3 +210,31 @@ character = 1
 visible = false
 texture = ExtResource("4_mfbkj")
 offset = Vector2(50, 50)
+
+[node name="ExtraShell" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.803
+anchor_top = 0.627
+anchor_right = 0.803
+anchor_bottom = 0.627
+offset_left = -50.056
+offset_top = -50.296
+offset_right = 49.944
+offset_bottom = 49.704
+tooltip_text = "ya momma"
+texture_normal = ExtResource("2_vifq7")
+texture_hover = ExtResource("3_lk838")
+texture_disabled = ExtResource("4_hnwak")
+texture_focused = ExtResource("3_lk838")
+texture_click_mask = ExtResource("4_jck84")
+script = ExtResource("3_80er7")
+cost = 1
+skillIndex = 7
+character = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ExtraShell"]
+visible = false
+texture = ExtResource("4_mfbkj")
+offset = Vector2(50, 50)
+
+[connection signal="pressed" from="CanvasLayer/Revolver" to="CanvasLayer/Revolver" method="_on_pressed"]
