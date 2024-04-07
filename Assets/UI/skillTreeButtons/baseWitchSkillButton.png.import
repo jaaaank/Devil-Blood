@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://derm45wox2o5c"
-path="res://.godot/imported/priestDisabledSkillButton.png-746c8f26d385f85103f27e204b525274.ctex"
+uid="uid://y8g80iooeeec"
+path="res://.godot/imported/baseWitchSkillButton.png-015ad49fd8fea1648241bc25eb9921e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/priestDisabledSkillButton.png"
-dest_files=["res://.godot/imported/priestDisabledSkillButton.png-746c8f26d385f85103f27e204b525274.ctex"]
+source_file="res://Assets/UI/skillTreeButtons/baseWitchSkillButton.png"
+dest_files=["res://.godot/imported/baseWitchSkillButton.png-015ad49fd8fea1648241bc25eb9921e9.ctex"]
 
 [params]
 

@@ -18,15 +18,15 @@ func updateShopInterface():
 		itemsText.text += i["name"] + "\n"
 		moneySpent += i["cost"]
 		
-	moneyText.text = "Devil Blood: " + str(SaveData.soulboundDevilBlood) + "\n" \
-	+"Devil Blood Spent: " + str(moneySpent) + "\n"\
-	+"Devil Blood Remaining: " + str(SaveData.soulboundDevilBlood - moneySpent)
+	moneyText.text = "Refined Soul: " + str(SaveData.refinedSoul) + "\n" \
+	+"Refined Soul Spent: " + str(moneySpent) + "\n"\
+	+"Refined Soul Remaining: " + str(SaveData.refinedSoul - moneySpent)
 	emit_signal("updated")
 	for i in selectedItems:
 		print(i.name)
 	
 func buythis():
-	SaveData.soulboundDevilBlood -= moneySpent
+	SaveData.refinedSoul -= moneySpent
 	PlayerAutoload.inventory.clear()
 	for i in selectedItems:
 		print(i.name)

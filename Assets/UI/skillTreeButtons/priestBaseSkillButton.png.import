@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nncfj6jvqtkj"
-path="res://.godot/imported/skilltreebackground.png-8c4d54a905e2d902d54bea7989150e0e.ctex"
+uid="uid://vbuu0grr4u6y"
+path="res://.godot/imported/priestBaseSkillButton.png-5a1e2495599d4342a11cb56c7a948760.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/skilltreebackground.png"
-dest_files=["res://.godot/imported/skilltreebackground.png-8c4d54a905e2d902d54bea7989150e0e.ctex"]
+source_file="res://Assets/UI/skillTreeButtons/priestBaseSkillButton.png"
+dest_files=["res://.godot/imported/priestBaseSkillButton.png-5a1e2495599d4342a11cb56c7a948760.ctex"]
 
 [params]
 

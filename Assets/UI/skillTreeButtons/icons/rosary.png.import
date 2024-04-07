@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bai2vyorsc2se"
-path="res://.godot/imported/scytheButton.png-70e6958fa3575131e432f52711854bd3.ctex"
+uid="uid://dpc8b30gb5hwl"
+path="res://.godot/imported/rosary.png-9f0899dc88d4edd8c07fa3676578cae0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/scytheButton.png"
-dest_files=["res://.godot/imported/scytheButton.png-70e6958fa3575131e432f52711854bd3.ctex"]
+source_file="res://Assets/UI/skillTreeButtons/icons/rosary.png"
+dest_files=["res://.godot/imported/rosary.png-9f0899dc88d4edd8c07fa3676578cae0.ctex"]
 
 [params]
 

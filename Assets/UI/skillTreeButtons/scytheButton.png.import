@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fcugklpstngp"
-path="res://.godot/imported/disabledButtonOverlay.png-d44ed0a9b51169a44d1b891427973d93.ctex"
+uid="uid://bai2vyorsc2se"
+path="res://.godot/imported/scytheButton.png-a79e767d7003b802e9f80958cf7e0999.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/disabledButtonOverlay.png"
-dest_files=["res://.godot/imported/disabledButtonOverlay.png-d44ed0a9b51169a44d1b891427973d93.ctex"]
+source_file="res://Assets/UI/skillTreeButtons/scytheButton.png"
+dest_files=["res://.godot/imported/scytheButton.png-a79e767d7003b802e9f80958cf7e0999.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dygk2r2obr6ln"
-path="res://.godot/imported/baseSkillButton.png-9a44e67415a1db862108e32f7dbb5797.ctex"
+uid="uid://fcugklpstngp"
+path="res://.godot/imported/disabledButtonOverlay.png-cd242d03729a5acdb5c3c16cd0bb6fa8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/baseSkillButton.png"
-dest_files=["res://.godot/imported/baseSkillButton.png-9a44e67415a1db862108e32f7dbb5797.ctex"]
+source_file="res://Assets/UI/skillTreeButtons/disabledButtonOverlay.png"
+dest_files=["res://.godot/imported/disabledButtonOverlay.png-cd242d03729a5acdb5c3c16cd0bb6fa8.ctex"]
 
 [params]
 

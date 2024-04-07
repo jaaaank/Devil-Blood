@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vbuu0grr4u6y"
-path="res://.godot/imported/priestBaseSkillButton.png-371931979f58c4b4631b031e807dd97c.ctex"
+uid="uid://dk6j5y823mxq7"
+path="res://.godot/imported/revolver.png-20bc52492d234e97c24c581eb878c302.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/priestBaseSkillButton.png"
-dest_files=["res://.godot/imported/priestBaseSkillButton.png-371931979f58c4b4631b031e807dd97c.ctex"]
+source_file="res://Assets/UI/skillTreeButtons/icons/revolver.png"
+dest_files=["res://.godot/imported/revolver.png-20bc52492d234e97c24c581eb878c302.ctex"]
 
 [params]
 

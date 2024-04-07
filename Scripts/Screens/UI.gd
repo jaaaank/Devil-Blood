@@ -31,4 +31,4 @@ func _input(_event):
 
 func updateUI():
 	healthBar.value = PlayerAutoload.health
-	soulCount.text = "	Soul: " + str(PlayerAutoload.soul)
+	soulCount.text = "	Soul: " + str(PlayerAutoload.impureSoul)

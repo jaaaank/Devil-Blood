@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y8g80iooeeec"
-path="res://.godot/imported/baseWitchSkillButton.png-7c7a8531d2d7c4dc5f6c70392d66ea2d.ctex"
+uid="uid://nncfj6jvqtkj"
+path="res://.godot/imported/skilltreebackground.png-7d1337492bfa7740c60cee2831c36ec6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/baseWitchSkillButton.png"
-dest_files=["res://.godot/imported/baseWitchSkillButton.png-7c7a8531d2d7c4dc5f6c70392d66ea2d.ctex"]
+source_file="res://Assets/UI/skillTreeButtons/skilltreebackground.png"
+dest_files=["res://.godot/imported/skilltreebackground.png-7d1337492bfa7740c60cee2831c36ec6.ctex"]
 
 [params]
 

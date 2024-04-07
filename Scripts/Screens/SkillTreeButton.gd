@@ -15,8 +15,11 @@ func _ready():
 		3: if SaveData.witchSkillTree[skillIndex]:
 				texture_disabled = texture_hover
 				disabled = true
+	if SaveData.pureSoul<cost:
+		disabled = true
 
 func _on_pressed():
+	SaveData.pureSoul-=cost
 	match character:
 		1: SaveData.priestSkillTree[skillIndex] = true
 		2: SaveData.knightSkillTree[skillIndex] = true

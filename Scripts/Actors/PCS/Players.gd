@@ -7,9 +7,13 @@ class_name Player
 var iframes = false
 
 func _ready():
+	if !PlayerAutoload.midRun:
+		PlayerAutoload.startRun()
+		PlayerAutoload.midRun = true
 	sprite = $PlayerSprite
 # warning-ignore:return_value_discarded
 	PlayerAutoload.connect("player_dead", Callable(self, "die"))
+	
 
 func _physics_process(_delta):
 	move_and_slide()

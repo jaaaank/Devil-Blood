@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4yshx3gr5anr"]
+[gd_scene load_steps=10 format=3 uid="uid://c4yshx3gr5anr"]
 
-[ext_resource type="Texture2D" uid="uid://nncfj6jvqtkj" path="res://Assets/UI/skilltreebackground.png" id="1_xgc1w"]
-[ext_resource type="Texture2D" uid="uid://vbuu0grr4u6y" path="res://Assets/UI/priestBaseSkillButton.png" id="2_vifq7"]
+[ext_resource type="Texture2D" uid="uid://nncfj6jvqtkj" path="res://Assets/UI/skillTreeButtons/skilltreebackground.png" id="1_xgc1w"]
+[ext_resource type="Texture2D" uid="uid://vbuu0grr4u6y" path="res://Assets/UI/skillTreeButtons/priestBaseSkillButton.png" id="2_vifq7"]
 [ext_resource type="Script" path="res://Scripts/Screens/SkillTreeButton.gd" id="3_80er7"]
-[ext_resource type="Texture2D" uid="uid://jyucga50q5w8" path="res://Assets/UI/priestHoverSkillButton.png" id="3_lk838"]
-[ext_resource type="Texture2D" uid="uid://derm45wox2o5c" path="res://Assets/UI/priestDisabledSkillButton.png" id="4_hnwak"]
-[ext_resource type="BitMap" uid="uid://ba1va04mwqw42" path="res://Assets/UI/skillButtonMask.png" id="4_jck84"]
-[ext_resource type="Texture2D" uid="uid://fcugklpstngp" path="res://Assets/UI/disabledButtonOverlay.png" id="4_mfbkj"]
+[ext_resource type="Texture2D" uid="uid://jyucga50q5w8" path="res://Assets/UI/skillTreeButtons/priestHoverSkillButton.png" id="3_lk838"]
+[ext_resource type="Texture2D" uid="uid://derm45wox2o5c" path="res://Assets/UI/skillTreeButtons/priestDisabledSkillButton.png" id="4_hnwak"]
+[ext_resource type="BitMap" uid="uid://ba1va04mwqw42" path="res://Assets/UI/skillTreeButtons/skillButtonMask.png" id="4_jck84"]
+[ext_resource type="Texture2D" uid="uid://fcugklpstngp" path="res://Assets/UI/skillTreeButtons/disabledButtonOverlay.png" id="4_mfbkj"]
+[ext_resource type="Texture2D" uid="uid://dk6j5y823mxq7" path="res://Assets/UI/skillTreeButtons/icons/revolver.png" id="8_pgd0h"]
+[ext_resource type="Texture2D" uid="uid://dpc8b30gb5hwl" path="res://Assets/UI/skillTreeButtons/icons/rosary.png" id="9_vccnd"]
 
 [node name="PriestSkillTree" type="Control"]
 layout_mode = 3
@@ -38,7 +40,7 @@ offset_top = -49.816
 offset_right = 50.0
 offset_bottom = 50.184
 grow_horizontal = 2
-tooltip_text = "ya momma"
+tooltip_text = "Revolver: Allows the priest to use a six-shot revolver (Press 2 to equip in game)"
 texture_normal = ExtResource("2_vifq7")
 texture_hover = ExtResource("3_lk838")
 texture_disabled = ExtResource("4_hnwak")
@@ -47,6 +49,10 @@ texture_click_mask = ExtResource("4_jck84")
 script = ExtResource("3_80er7")
 cost = 1
 character = 1
+
+[node name="icon" type="Sprite2D" parent="CanvasLayer/Revolver"]
+texture = ExtResource("8_pgd0h")
+centered = false
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Revolver"]
 visible = false
@@ -74,33 +80,11 @@ cost = 1
 skillIndex = 1
 character = 1
 
+[node name="icon" type="Sprite2D" parent="CanvasLayer/Rosary"]
+texture = ExtResource("9_vccnd")
+centered = false
+
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Rosary"]
-visible = false
-texture = ExtResource("4_mfbkj")
-offset = Vector2(50, 50)
-
-[node name="Crucifix" type="TextureButton" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_left = 0.221
-anchor_top = 0.383
-anchor_right = 0.221
-anchor_bottom = 0.383
-offset_left = -49.592
-offset_top = -50.184
-offset_right = 50.408
-offset_bottom = 49.816
-tooltip_text = "ya momma"
-texture_normal = ExtResource("2_vifq7")
-texture_hover = ExtResource("3_lk838")
-texture_disabled = ExtResource("4_hnwak")
-texture_focused = ExtResource("3_lk838")
-texture_click_mask = ExtResource("4_jck84")
-script = ExtResource("3_80er7")
-cost = 2
-skillIndex = 4
-character = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Crucifix"]
 visible = false
 texture = ExtResource("4_mfbkj")
 offset = Vector2(50, 50)
@@ -154,6 +138,32 @@ skillIndex = 3
 character = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Crossbow"]
+visible = false
+texture = ExtResource("4_mfbkj")
+offset = Vector2(50, 50)
+
+[node name="Crucifix" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.221
+anchor_top = 0.383
+anchor_right = 0.221
+anchor_bottom = 0.383
+offset_left = -49.592
+offset_top = -50.184
+offset_right = 50.408
+offset_bottom = 49.816
+tooltip_text = "ya momma"
+texture_normal = ExtResource("2_vifq7")
+texture_hover = ExtResource("3_lk838")
+texture_disabled = ExtResource("4_hnwak")
+texture_focused = ExtResource("3_lk838")
+texture_click_mask = ExtResource("4_jck84")
+script = ExtResource("3_80er7")
+cost = 2
+skillIndex = 4
+character = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Crucifix"]
 visible = false
 texture = ExtResource("4_mfbkj")
 offset = Vector2(50, 50)
@@ -228,7 +238,7 @@ texture_disabled = ExtResource("4_hnwak")
 texture_focused = ExtResource("3_lk838")
 texture_click_mask = ExtResource("4_jck84")
 script = ExtResource("3_80er7")
-cost = 1
+cost = 3
 skillIndex = 7
 character = 1
 
@@ -238,3 +248,10 @@ texture = ExtResource("4_mfbkj")
 offset = Vector2(50, 50)
 
 [connection signal="pressed" from="CanvasLayer/Revolver" to="CanvasLayer/Revolver" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Rosary" to="CanvasLayer/Rosary" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Scope" to="CanvasLayer/Scope" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Crossbow" to="CanvasLayer/Crossbow" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Crucifix" to="CanvasLayer/Crucifix" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Shotgun" to="CanvasLayer/Shotgun" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Ability" to="CanvasLayer/Ability" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ExtraShell" to="CanvasLayer/ExtraShell" method="_on_pressed"]

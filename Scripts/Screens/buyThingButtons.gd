@@ -7,16 +7,16 @@ func _ready():
 	tooltip_text = itemID.description
 	mainshop.updated.connect(self.checkAvailability)
 	icon = itemID["atlas"]
-	if SaveData.soulboundDevilBlood - mainshop.moneySpent < itemID["cost"]:
+	if SaveData.refinedSoul - mainshop.moneySpent < itemID["cost"]:
 		disabled = true
 
 func _on_buyThingButton_pressed():
 	itemID.purchased = true
 	mainshop.selectedItems.append(itemID)
 	mainshop.updateShopInterface()
-	if SaveData.soulboundDevilBlood - mainshop.moneySpent < itemID["cost"] or (itemID.singlePurchase and itemID.purchased):
+	if SaveData.refinedSoul - mainshop.moneySpent < itemID["cost"] or (itemID.singlePurchase and itemID.purchased):
 		disabled = true
 
 func checkAvailability():
-	if SaveData.soulboundDevilBlood - mainshop.moneySpent < itemID["cost"] or mainshop.selectedItems.size()>=PlayerAutoload.inventory.size():
+	if SaveData.refinedSoul - mainshop.moneySpent < itemID["cost"] or mainshop.selectedItems.size()>=PlayerAutoload.inventory.size():
 		disabled = true
