@@ -31,3 +31,11 @@ func buythis():
 	for i in selectedItems:
 		print(i.name)
 		PlayerAutoload.inventory.append(i)
+
+
+func _on_skill_tree_button_pressed():
+	match PlayerAutoload.playerCharacter:
+		1:
+			$PriestSkillTree.set_visible(true)
+		3:
+			$WitchSkillTree.set_visible(true)

@@ -1,11 +1,31 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbi1kwx8e0c8l"]
+[gd_scene load_steps=21 format=3 uid="uid://dbi1kwx8e0c8l"]
 
 [ext_resource type="Script" path="res://Scripts/Screens/PreRunShop.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Screens/buyThingButtons.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://cep45no1j83h3" path="res://Assets/Items/coagdevbl.tres" id="3_5uyeq"]
 [ext_resource type="Texture2D" uid="uid://yba4i31mj8li" path="res://Assets/Items/crystdevbl.tres" id="4_e5qw7"]
 [ext_resource type="Script" path="res://Scripts/Screens/startRunButton.gd" id="5"]
-[ext_resource type="Texture2D" uid="uid://dja17vewt4g0f" path="res://Assets/Items/satchel.tres" id="5_yi2nl"]
+[ext_resource type="Texture2D" uid="uid://dja17vewt4g0f" path="res://Assets/Items/Satchel.tres" id="5_yi2nl"]
+[ext_resource type="Texture2D" uid="uid://nncfj6jvqtkj" path="res://Assets/UI/skillTreeButtons/skilltreebackground.png" id="7_43j47"]
+[ext_resource type="Texture2D" uid="uid://vbuu0grr4u6y" path="res://Assets/UI/skillTreeButtons/priestBaseSkillButton.png" id="8_70nga"]
+[ext_resource type="Texture2D" uid="uid://jyucga50q5w8" path="res://Assets/UI/skillTreeButtons/priestHoverSkillButton.png" id="9_6timi"]
+[ext_resource type="Texture2D" uid="uid://derm45wox2o5c" path="res://Assets/UI/skillTreeButtons/priestDisabledSkillButton.png" id="10_xp8t7"]
+[ext_resource type="BitMap" uid="uid://ba1va04mwqw42" path="res://Assets/UI/skillTreeButtons/skillButtonMask.png" id="11_8wc8f"]
+[ext_resource type="Script" path="res://Scripts/Screens/SkillTreeButton.gd" id="12_orxn7"]
+[ext_resource type="Texture2D" uid="uid://dk6j5y823mxq7" path="res://Assets/UI/skillTreeButtons/icons/revolver.png" id="13_s3ww0"]
+[ext_resource type="Texture2D" uid="uid://fcugklpstngp" path="res://Assets/UI/skillTreeButtons/disabledButtonOverlay.png" id="14_ai2pn"]
+[ext_resource type="Texture2D" uid="uid://dpc8b30gb5hwl" path="res://Assets/UI/skillTreeButtons/icons/rosary.png" id="15_c2xp2"]
+[ext_resource type="Texture2D" uid="uid://dexhws0p1h2bd" path="res://Assets/UI/skillTreeButtons/icons/crossbow.png" id="16_bmr6h"]
+[ext_resource type="Texture2D" uid="uid://dhkdiqqj8ms2b" path="res://Assets/UI/skillTreeButtons/icons/crucifix.png" id="17_s1ahd"]
+[ext_resource type="Texture2D" uid="uid://dtedinnqt6gxq" path="res://Assets/UI/skillTreeButtons/icons/shotgun.png" id="18_djnuh"]
+[ext_resource type="Texture2D" uid="uid://y8g80iooeeec" path="res://Assets/UI/skillTreeButtons/baseWitchSkillButton.png" id="19_dxq03"]
+
+[sub_resource type="GDScript" id="GDScript_l7kov"]
+script/source = "extends Button
+
+func _on_pressed():
+	get_parent().set_visible(false)
+"
 
 [node name="PreRunShop" type="Control"]
 layout_mode = 3
@@ -96,6 +116,304 @@ layout_mode = 2
 text = "Play"
 script = ExtResource("5")
 
+[node name="PriestSkillTree" type="CanvasLayer" parent="."]
+layer = 5
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="PriestSkillTree"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_43j47")
+expand_mode = 1
+
+[node name="BackButton" type="Button" parent="PriestSkillTree"]
+offset_right = 121.0
+offset_bottom = 31.0
+text = "Back to shop"
+script = SubResource("GDScript_l7kov")
+
+[node name="Revolver" type="TextureButton" parent="PriestSkillTree"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.117
+anchor_right = 0.5
+anchor_bottom = 0.117
+offset_left = -50.0
+offset_top = -49.816
+offset_right = 50.0
+offset_bottom = 50.184
+grow_horizontal = 2
+tooltip_text = "Revolver: Allows the priest to use a six-shot revolver (Press 2 to equip in game)"
+texture_normal = ExtResource("8_70nga")
+texture_hover = ExtResource("9_6timi")
+texture_disabled = ExtResource("10_xp8t7")
+texture_focused = ExtResource("9_6timi")
+texture_click_mask = ExtResource("11_8wc8f")
+script = ExtResource("12_orxn7")
+cost = 1
+character = 1
+
+[node name="icon" type="Sprite2D" parent="PriestSkillTree/Revolver"]
+texture = ExtResource("13_s3ww0")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="PriestSkillTree/Revolver"]
+visible = false
+texture = ExtResource("14_ai2pn")
+offset = Vector2(50, 50)
+
+[node name="Rosary" type="TextureButton" parent="PriestSkillTree"]
+anchors_preset = -1
+anchor_left = 0.221
+anchor_top = 0.117
+anchor_right = 0.221
+anchor_bottom = 0.117
+offset_left = -49.592
+offset_top = -49.816
+offset_right = 50.408
+offset_bottom = 50.184
+tooltip_text = "ya momma"
+texture_normal = ExtResource("8_70nga")
+texture_hover = ExtResource("9_6timi")
+texture_disabled = ExtResource("10_xp8t7")
+texture_focused = ExtResource("9_6timi")
+texture_click_mask = ExtResource("11_8wc8f")
+script = ExtResource("12_orxn7")
+cost = 1
+skillIndex = 1
+character = 1
+
+[node name="icon" type="Sprite2D" parent="PriestSkillTree/Rosary"]
+texture = ExtResource("15_c2xp2")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="PriestSkillTree/Rosary"]
+visible = false
+texture = ExtResource("14_ai2pn")
+offset = Vector2(50, 50)
+
+[node name="Scope" type="TextureButton" parent="PriestSkillTree"]
+anchors_preset = -1
+anchor_left = 0.803
+anchor_top = 0.117
+anchor_right = 0.803
+anchor_bottom = 0.117
+offset_left = -50.056
+offset_top = -49.816
+offset_right = 49.944
+offset_bottom = 50.184
+tooltip_text = "ya momma"
+texture_normal = ExtResource("8_70nga")
+texture_hover = ExtResource("9_6timi")
+texture_disabled = ExtResource("10_xp8t7")
+texture_focused = ExtResource("9_6timi")
+texture_click_mask = ExtResource("11_8wc8f")
+script = ExtResource("12_orxn7")
+cost = 1
+skillIndex = 2
+character = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="PriestSkillTree/Scope"]
+visible = false
+texture = ExtResource("14_ai2pn")
+offset = Vector2(50, 50)
+
+[node name="Crossbow" type="TextureButton" parent="PriestSkillTree"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.383
+anchor_right = 0.5
+anchor_bottom = 0.383
+offset_left = -50.0
+offset_top = -50.184
+offset_right = 50.0
+offset_bottom = 49.816
+grow_horizontal = 2
+tooltip_text = "ya momma"
+texture_normal = ExtResource("8_70nga")
+texture_hover = ExtResource("9_6timi")
+texture_disabled = ExtResource("10_xp8t7")
+texture_focused = ExtResource("9_6timi")
+texture_click_mask = ExtResource("11_8wc8f")
+script = ExtResource("12_orxn7")
+cost = 2
+skillIndex = 3
+character = 1
+
+[node name="icon" type="Sprite2D" parent="PriestSkillTree/Crossbow"]
+texture = ExtResource("16_bmr6h")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="PriestSkillTree/Crossbow"]
+visible = false
+texture = ExtResource("14_ai2pn")
+offset = Vector2(50, 50)
+
+[node name="Crucifix" type="TextureButton" parent="PriestSkillTree"]
+anchors_preset = -1
+anchor_left = 0.221
+anchor_top = 0.383
+anchor_right = 0.221
+anchor_bottom = 0.383
+offset_left = -49.592
+offset_top = -50.184
+offset_right = 50.408
+offset_bottom = 49.816
+tooltip_text = "ya momma"
+texture_normal = ExtResource("8_70nga")
+texture_hover = ExtResource("9_6timi")
+texture_disabled = ExtResource("10_xp8t7")
+texture_focused = ExtResource("9_6timi")
+texture_click_mask = ExtResource("11_8wc8f")
+script = ExtResource("12_orxn7")
+cost = 2
+skillIndex = 4
+character = 1
+
+[node name="icon" type="Sprite2D" parent="PriestSkillTree/Crucifix"]
+texture = ExtResource("17_s1ahd")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="PriestSkillTree/Crucifix"]
+visible = false
+texture = ExtResource("14_ai2pn")
+offset = Vector2(50, 50)
+
+[node name="Shotgun" type="TextureButton" parent="PriestSkillTree"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.627
+anchor_right = 0.5
+anchor_bottom = 0.627
+offset_left = -50.0
+offset_top = -50.296
+offset_right = 50.0
+offset_bottom = 49.704
+grow_horizontal = 2
+tooltip_text = "ya momma"
+texture_normal = ExtResource("8_70nga")
+texture_hover = ExtResource("9_6timi")
+texture_disabled = ExtResource("10_xp8t7")
+texture_focused = ExtResource("9_6timi")
+texture_click_mask = ExtResource("11_8wc8f")
+script = ExtResource("12_orxn7")
+cost = 3
+skillIndex = 5
+character = 1
+
+[node name="icon" type="Sprite2D" parent="PriestSkillTree/Shotgun"]
+texture = ExtResource("18_djnuh")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="PriestSkillTree/Shotgun"]
+visible = false
+texture = ExtResource("14_ai2pn")
+offset = Vector2(50, 50)
+
+[node name="Ability" type="TextureButton" parent="PriestSkillTree"]
+anchors_preset = -1
+anchor_left = 0.922
+anchor_top = 0.627
+anchor_right = 0.922
+anchor_bottom = 0.627
+offset_left = -50.144
+offset_top = -50.296
+offset_right = 49.856
+offset_bottom = 49.704
+tooltip_text = "ya momma"
+texture_normal = ExtResource("8_70nga")
+texture_hover = ExtResource("9_6timi")
+texture_disabled = ExtResource("10_xp8t7")
+texture_focused = ExtResource("9_6timi")
+texture_click_mask = ExtResource("11_8wc8f")
+script = ExtResource("12_orxn7")
+cost = 3
+skillIndex = 6
+character = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="PriestSkillTree/Ability"]
+visible = false
+texture = ExtResource("14_ai2pn")
+offset = Vector2(50, 50)
+
+[node name="ExtraShell" type="TextureButton" parent="PriestSkillTree"]
+anchors_preset = -1
+anchor_left = 0.803
+anchor_top = 0.627
+anchor_right = 0.803
+anchor_bottom = 0.627
+offset_left = -50.056
+offset_top = -50.296
+offset_right = 49.944
+offset_bottom = 49.704
+tooltip_text = "ya momma"
+texture_normal = ExtResource("8_70nga")
+texture_hover = ExtResource("9_6timi")
+texture_disabled = ExtResource("10_xp8t7")
+texture_focused = ExtResource("9_6timi")
+texture_click_mask = ExtResource("11_8wc8f")
+script = ExtResource("12_orxn7")
+cost = 3
+skillIndex = 7
+character = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="PriestSkillTree/ExtraShell"]
+visible = false
+texture = ExtResource("14_ai2pn")
+offset = Vector2(50, 50)
+
+[node name="WitchSkillTree" type="CanvasLayer" parent="."]
+layer = 5
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="WitchSkillTree"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_43j47")
+expand_mode = 1
+
+[node name="Blood Scythe" type="TextureButton" parent="WitchSkillTree"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("19_dxq03")
+script = ExtResource("12_orxn7")
+
+[node name="Sprite2D" type="Sprite2D" parent="WitchSkillTree/Blood Scythe"]
+visible = false
+texture = ExtResource("14_ai2pn")
+offset = Vector2(50, 50)
+
+[node name="BackButton" type="Button" parent="WitchSkillTree"]
+offset_right = 121.0
+offset_bottom = 31.0
+text = "Back to shop"
+script = SubResource("GDScript_l7kov")
+
+[node name="SkillTreeButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -125.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "View Skill Tree"
+
 [connection signal="pressed" from="Purchasables/COADB" to="Purchasables/COADB" method="_on_buyThingButton_pressed"]
 [connection signal="pressed" from="Purchasables/CRYDB" to="Purchasables/CRYDB" method="_on_buyThingButton_pressed"]
 [connection signal="pressed" from="Purchasables/GREAVES" to="Purchasables/GREAVES" method="_on_buyThingButton_pressed"]
@@ -103,3 +421,14 @@ script = ExtResource("5")
 [connection signal="pressed" from="Purchasables/SABATON" to="Purchasables/SABATON" method="_on_buyThingButton_pressed"]
 [connection signal="pressed" from="rightside/continue" to="." method="buythis"]
 [connection signal="pressed" from="rightside/continue" to="rightside/continue" method="_on_continue_pressed"]
+[connection signal="pressed" from="PriestSkillTree/BackButton" to="PriestSkillTree/BackButton" method="_on_pressed"]
+[connection signal="pressed" from="PriestSkillTree/Revolver" to="PriestSkillTree/Revolver" method="_on_pressed"]
+[connection signal="pressed" from="PriestSkillTree/Rosary" to="PriestSkillTree/Rosary" method="_on_pressed"]
+[connection signal="pressed" from="PriestSkillTree/Scope" to="PriestSkillTree/Scope" method="_on_pressed"]
+[connection signal="pressed" from="PriestSkillTree/Crossbow" to="PriestSkillTree/Crossbow" method="_on_pressed"]
+[connection signal="pressed" from="PriestSkillTree/Crucifix" to="PriestSkillTree/Crucifix" method="_on_pressed"]
+[connection signal="pressed" from="PriestSkillTree/Shotgun" to="PriestSkillTree/Shotgun" method="_on_pressed"]
+[connection signal="pressed" from="PriestSkillTree/Ability" to="PriestSkillTree/Ability" method="_on_pressed"]
+[connection signal="pressed" from="PriestSkillTree/ExtraShell" to="PriestSkillTree/ExtraShell" method="_on_pressed"]
+[connection signal="pressed" from="WitchSkillTree/BackButton" to="WitchSkillTree/BackButton" method="_on_pressed"]
+[connection signal="pressed" from="SkillTreeButton" to="." method="_on_skill_tree_button_pressed"]
