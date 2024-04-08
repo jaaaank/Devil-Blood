@@ -10,6 +10,7 @@ func _ready():
 	set_physics_process(false)
 
 func activate(_body):
+	$Healthbar.set_visible(true)
 	set_physics_process(true)
 	randomize()
 	$attackTimer.start(3)
@@ -36,7 +37,11 @@ func attack():
 
 func stun():
 	pass
-	
+
+func damage(dmgdealt):
+	super(dmgdealt)
+	$Healthbar/ProgressBar.value = health/200
+
 func spawnShockwave():
 	var pee = shockwave.instantiate()
 	add_sibling(pee)

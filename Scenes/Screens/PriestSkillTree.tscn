@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4yshx3gr5anr"]
+[gd_scene load_steps=13 format=3 uid="uid://c4yshx3gr5anr"]
 
 [ext_resource type="Texture2D" uid="uid://nncfj6jvqtkj" path="res://Assets/UI/skillTreeButtons/skilltreebackground.png" id="1_xgc1w"]
 [ext_resource type="Texture2D" uid="uid://vbuu0grr4u6y" path="res://Assets/UI/skillTreeButtons/priestBaseSkillButton.png" id="2_vifq7"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://fcugklpstngp" path="res://Assets/UI/skillTreeButtons/disabledButtonOverlay.png" id="4_mfbkj"]
 [ext_resource type="Texture2D" uid="uid://dk6j5y823mxq7" path="res://Assets/UI/skillTreeButtons/icons/revolver.png" id="8_pgd0h"]
 [ext_resource type="Texture2D" uid="uid://dpc8b30gb5hwl" path="res://Assets/UI/skillTreeButtons/icons/rosary.png" id="9_vccnd"]
+[ext_resource type="Texture2D" uid="uid://dtedinnqt6gxq" path="res://Assets/UI/skillTreeButtons/icons/shotgun.png" id="10_0vyt1"]
+[ext_resource type="Texture2D" uid="uid://dhkdiqqj8ms2b" path="res://Assets/UI/skillTreeButtons/icons/crucifix.png" id="10_1kio2"]
+[ext_resource type="Texture2D" uid="uid://dexhws0p1h2bd" path="res://Assets/UI/skillTreeButtons/icons/crossbow.png" id="10_cvpnp"]
 
 [node name="PriestSkillTree" type="Control"]
 layout_mode = 3
@@ -137,6 +140,10 @@ cost = 2
 skillIndex = 3
 character = 1
 
+[node name="icon" type="Sprite2D" parent="CanvasLayer/Crossbow"]
+texture = ExtResource("10_cvpnp")
+centered = false
+
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Crossbow"]
 visible = false
 texture = ExtResource("4_mfbkj")
@@ -162,6 +169,10 @@ script = ExtResource("3_80er7")
 cost = 2
 skillIndex = 4
 character = 1
+
+[node name="icon" type="Sprite2D" parent="CanvasLayer/Crucifix"]
+texture = ExtResource("10_1kio2")
+centered = false
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Crucifix"]
 visible = false
@@ -189,6 +200,10 @@ script = ExtResource("3_80er7")
 cost = 3
 skillIndex = 5
 character = 1
+
+[node name="icon" type="Sprite2D" parent="CanvasLayer/Shotgun"]
+texture = ExtResource("10_0vyt1")
+centered = false
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Shotgun"]
 visible = false
