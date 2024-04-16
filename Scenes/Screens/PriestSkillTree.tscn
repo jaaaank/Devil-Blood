@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c4yshx3gr5anr"]
+[gd_scene load_steps=15 format=3 uid="uid://c4yshx3gr5anr"]
 
 [ext_resource type="Texture2D" uid="uid://nncfj6jvqtkj" path="res://Assets/UI/skillTreeButtons/skilltreebackground.png" id="1_xgc1w"]
 [ext_resource type="Texture2D" uid="uid://vbuu0grr4u6y" path="res://Assets/UI/skillTreeButtons/priestBaseSkillButton.png" id="2_vifq7"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dtedinnqt6gxq" path="res://Assets/UI/skillTreeButtons/icons/shotgun.png" id="10_0vyt1"]
 [ext_resource type="Texture2D" uid="uid://dhkdiqqj8ms2b" path="res://Assets/UI/skillTreeButtons/icons/crucifix.png" id="10_1kio2"]
 [ext_resource type="Texture2D" uid="uid://dexhws0p1h2bd" path="res://Assets/UI/skillTreeButtons/icons/crossbow.png" id="10_cvpnp"]
+[ext_resource type="Texture2D" uid="uid://333ou3aap0n4" path="res://Assets/UI/skillTreeButtons/icons/silverCrucifix.png" id="11_t2cd7"]
+[ext_resource type="Texture2D" uid="uid://b2s4lnoqe7tgh" path="res://Assets/UI/skillTreeButtons/icons/shell.png" id="14_j0v03"]
 
 [node name="PriestSkillTree" type="Control"]
 layout_mode = 3
@@ -171,10 +173,40 @@ skillIndex = 4
 character = 1
 
 [node name="icon" type="Sprite2D" parent="PriestSkillTree/Crucifix"]
-texture = ExtResource("10_1kio2")
+texture = ExtResource("11_t2cd7")
 centered = false
 
 [node name="Sprite2D" type="Sprite2D" parent="PriestSkillTree/Crucifix"]
+visible = false
+texture = ExtResource("4_mfbkj")
+offset = Vector2(50, 50)
+
+[node name="GoldCrucifix" type="TextureButton" parent="PriestSkillTree"]
+anchors_preset = -1
+anchor_left = 0.221
+anchor_top = 0.627
+anchor_right = 0.221
+anchor_bottom = 0.627
+offset_left = -49.592
+offset_top = -50.296
+offset_right = 50.408
+offset_bottom = 49.704
+tooltip_text = "ya momma"
+texture_normal = ExtResource("2_vifq7")
+texture_hover = ExtResource("3_lk838")
+texture_disabled = ExtResource("4_hnwak")
+texture_focused = ExtResource("3_lk838")
+texture_click_mask = ExtResource("4_jck84")
+script = ExtResource("3_80er7")
+cost = 2
+skillIndex = 4
+character = 1
+
+[node name="icon" type="Sprite2D" parent="PriestSkillTree/GoldCrucifix"]
+texture = ExtResource("10_1kio2")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="PriestSkillTree/GoldCrucifix"]
 visible = false
 texture = ExtResource("4_mfbkj")
 offset = Vector2(50, 50)
@@ -262,11 +294,16 @@ visible = false
 texture = ExtResource("4_mfbkj")
 offset = Vector2(50, 50)
 
+[node name="icon" type="Sprite2D" parent="PriestSkillTree/ExtraShell"]
+texture = ExtResource("14_j0v03")
+centered = false
+
 [connection signal="pressed" from="PriestSkillTree/Revolver" to="PriestSkillTree/Revolver" method="_on_pressed"]
 [connection signal="pressed" from="PriestSkillTree/Rosary" to="PriestSkillTree/Rosary" method="_on_pressed"]
 [connection signal="pressed" from="PriestSkillTree/Scope" to="PriestSkillTree/Scope" method="_on_pressed"]
 [connection signal="pressed" from="PriestSkillTree/Crossbow" to="PriestSkillTree/Crossbow" method="_on_pressed"]
 [connection signal="pressed" from="PriestSkillTree/Crucifix" to="PriestSkillTree/Crucifix" method="_on_pressed"]
+[connection signal="pressed" from="PriestSkillTree/GoldCrucifix" to="PriestSkillTree/GoldCrucifix" method="_on_pressed"]
 [connection signal="pressed" from="PriestSkillTree/Shotgun" to="PriestSkillTree/Shotgun" method="_on_pressed"]
 [connection signal="pressed" from="PriestSkillTree/Ability" to="PriestSkillTree/Ability" method="_on_pressed"]
 [connection signal="pressed" from="PriestSkillTree/ExtraShell" to="PriestSkillTree/ExtraShell" method="_on_pressed"]

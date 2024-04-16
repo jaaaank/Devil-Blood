@@ -30,7 +30,7 @@ func _on_Bullet_area_entered(area):
 		pierce -=1
 		if pierce<=0:
 			queue_free()
-
+			
 func _on_body_entered(_body):
 	pierce -=1
 	if pierce<=0:

@@ -10,6 +10,8 @@ func _ready():
 	set_physics_process(false)
 
 func activate(_body):
+	@warning_ignore("integer_division")
+	$Healthbar/ProgressBar.value = health/2
 	$Healthbar.set_visible(true)
 	set_physics_process(true)
 	randomize()
@@ -40,7 +42,8 @@ func stun():
 
 func damage(dmgdealt):
 	super(dmgdealt)
-	$Healthbar/ProgressBar.value = health/200
+	@warning_ignore("integer_division")
+	$Healthbar/ProgressBar.value = health/2
 
 func spawnShockwave():
 	var pee = shockwave.instantiate()

@@ -50,8 +50,8 @@ func armorCalculation():
 func dropDrops():
 		for i in drops:
 			var a = i.instantiate()
-			get_parent().add_child(a)
-			a.global_transform = global_transform
+			get_parent().call_deferred("add_child", a)
+			a.set_deferred("global_transform", global_transform)
 	
 func die():
 	dropDrops()

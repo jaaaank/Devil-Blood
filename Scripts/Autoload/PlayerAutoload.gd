@@ -18,6 +18,9 @@ var inventorySize: = 3
 signal interacted
 signal player_dead
 
+func _ready():
+	get_window().set_min_size(Vector2(800,450))
+	
 func startRun():
 	match playerCharacter:
 		1:
