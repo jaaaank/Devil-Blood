@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dj8x8askyl5n0"]
+[gd_scene load_steps=5 format=3 uid="uid://dj8x8askyl5n0"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/Objects/SoulRefinery.gd" id="1_6d7hy"]
+[ext_resource type="PackedScene" uid="uid://ca3qq02cwak41" path="res://Scenes/Screens/Popups/PopupTextBox.tscn" id="2_2leje"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0jft"]
 
@@ -10,6 +11,13 @@ radius = 100.841
 [node name="SoulRefinery" type="StaticBody2D"]
 script = ExtResource("1_6d7hy")
 
+[node name="PopupTextBox" parent="." instance=ExtResource("2_2leje")]
+possilbleText = Array[String](["Press E to Refine Soul"])
+
+[node name="Text" parent="PopupTextBox" index="1"]
+anchors_preset = 0
+text = "[center]Press E to Refine Soul"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_r0jft")
 
@@ -17,3 +25,5 @@ shape = SubResource("RectangleShape2D_r0jft")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_snxm8")
+
+[editable path="PopupTextBox"]

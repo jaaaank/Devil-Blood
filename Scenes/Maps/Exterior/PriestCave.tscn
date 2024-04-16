@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://blr80b87lchfo"]
+[gd_scene load_steps=11 format=3 uid="uid://blr80b87lchfo"]
 
 [ext_resource type="Script" path="res://Scripts/maps.gd" id="1_s4rqn"]
 [ext_resource type="PackedScene" uid="uid://cuugv52nxnrn7" path="res://Scenes/Screens/Popups/LocationText.tscn" id="2"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bl1jm4fcdllqj" path="res://Scenes/Actors/Objects/BlockingVines.tscn" id="6_nc2t3"]
 [ext_resource type="PackedScene" uid="uid://ly01s1e7dope" path="res://Scenes/Actors/Objects/soul.tscn" id="8_niswn"]
 [ext_resource type="PackedScene" path="res://Scenes/Maps/SceneLoader.tscn" id="9_theay"]
+[ext_resource type="PackedScene" uid="uid://dj8x8askyl5n0" path="res://Scenes/Actors/Objects/SoulRefinery.tscn" id="10_qbdo4"]
 
 [node name="PriestCave" type="Node2D"]
 z_as_relative = false
@@ -134,3 +135,6 @@ position = Vector2(4630, 1989)
 rotation = 1.5708
 newSpawnPoint = Vector2(257, 770)
 nextScene = "res://Scenes/Maps/Exterior/OutsideShelter.tscn"
+
+[node name="SoulRefinery" parent="." instance=ExtResource("10_qbdo4")]
+position = Vector2(344, 665)
