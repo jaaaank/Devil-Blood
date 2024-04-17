@@ -12,10 +12,11 @@ radius = 100.841
 script = ExtResource("1_6d7hy")
 
 [node name="PopupTextBox" parent="." instance=ExtResource("2_2leje")]
+canHide = true
 possilbleText = Array[String](["Press E to Refine Soul"])
 
 [node name="Text" parent="PopupTextBox" index="1"]
-anchors_preset = 0
+visible = false
 text = "[center]Press E to Refine Soul"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

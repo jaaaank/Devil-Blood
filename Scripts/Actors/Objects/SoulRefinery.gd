@@ -1,11 +1,10 @@
 extends StaticBody2D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+@export var efficiency: float = .5
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _input(event):
+	if Input.is_action_just_pressed("interact"):
+		for i in $Area2D.get_overlapping_bodies():
+			if i.is_in_group("player"):
+				print("peepe")

@@ -18,16 +18,16 @@ monitorable = false
 shape = SubResource("CircleShape2D_0rx1s")
 
 [node name="Text" type="RichTextLabel" parent="."]
-anchors_preset = -1
+z_index = 10
 offset_right = 147.0
 offset_bottom = 69.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
-text = "[center]You know you're not welcome"
+text = "[center]You know you're not welcome here"
 fit_content = true
 
 [node name="TextBG" type="ColorRect" parent="Text"]
-z_as_relative = false
+z_index = -1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,4 +39,5 @@ color = Color(1, 1, 1, 0.32549)
 [node name="talkingTimer" type="Timer" parent="."]
 wait_time = 2.0
 
-[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_entered" from="DetectionArea" to="." method="showText"]
+[connection signal="body_exited" from="DetectionArea" to="." method="hideText"]

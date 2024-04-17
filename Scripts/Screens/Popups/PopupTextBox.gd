@@ -1,6 +1,7 @@
 extends Node2D
 
 var talking: bool
+@export var canHide: bool
 @export var oneTime: bool
 @export var charRequired: int
 @export var random: bool
@@ -13,12 +14,8 @@ var talking: bool
 func _ready():
 	randomize()
 	$talkingTimer.wait_time = waitTime
-
-func _on_detection_area_body_entered(_body):
-	showText()
-
-
-func showText():
+	
+func showText(_body):
 	if !talking and (charRequired == 0 or PlayerAutoload.playerCharacter == charRequired):
 		talking = true
 		$Text.set_visible(true)
@@ -38,3 +35,8 @@ func showText():
 			$Text/TextBG.size = $Text.size
 			if oneTime:
 				queue_free()
+
+func hideText(_body):
+	if canHide:
+		talking = false
+		$Text.set_visible(false)

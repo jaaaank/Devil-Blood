@@ -120,6 +120,7 @@ script = ExtResource("5")
 
 [node name="PriestSkillTree" type="CanvasLayer" parent="."]
 layer = 5
+visible = false
 
 [node name="TextureRect" type="TextureRect" parent="PriestSkillTree"]
 anchors_preset = 15
