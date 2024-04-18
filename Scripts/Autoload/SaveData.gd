@@ -26,7 +26,7 @@ func saveData() -> void:
 	print ("Saving Data")
 	var file = FileAccess.open(saveFile, FileAccess.WRITE)
 	file.open(saveFile, FileAccess.WRITE)
-	file.store_line(JSON.new().stringify(saveDict))
+	file.store_line(JSON.stringify(saveDict))
 	file.close()
 	
 func editData() -> void:

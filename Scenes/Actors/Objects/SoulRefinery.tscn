@@ -4,12 +4,17 @@
 [ext_resource type="PackedScene" uid="uid://ca3qq02cwak41" path="res://Scenes/Screens/Popups/PopupTextBox.tscn" id="2_2leje"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0jft"]
+size = Vector2(36, 40)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_snxm8"]
 radius = 100.841
 
 [node name="SoulRefinery" type="StaticBody2D"]
+collision_layer = 16
 script = ExtResource("1_6d7hy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_r0jft")
 
 [node name="PopupTextBox" parent="." instance=ExtResource("2_2leje")]
 canHide = true
@@ -19,10 +24,8 @@ possilbleText = Array[String](["Press E to Refine Soul"])
 visible = false
 text = "[center]Press E to Refine Soul"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_r0jft")
-
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_snxm8")

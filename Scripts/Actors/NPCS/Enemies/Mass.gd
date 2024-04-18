@@ -2,7 +2,7 @@ extends enemy
 class_name  mass
 @export var textures: Array
 var target: Vector2
-@onready var walktimer:= $walktimer
+@onready var walktimer:= $WalkTimer
 
 func _ready():
 	walkrange = 500
@@ -29,7 +29,7 @@ func _on_walktimer_timeout():
 func stun():
 	stunned = true
 	set_physics_process(false)
-	$stuntimer.start()
+	$StunTimer.start()
 	if PlayerAutoload.playerCharacter == 1 and SaveData.priestSkillTree[8]:
 		die()
 		

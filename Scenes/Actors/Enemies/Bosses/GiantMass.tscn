@@ -241,7 +241,7 @@ collision_layer = 128
 position = Vector2(-1, -30)
 shape = SubResource("RectangleShape2D_uohr4")
 
-[node name="walktimer" type="Timer" parent="."]
+[node name="WalkTimer" type="Timer" parent="."]
 one_shot = true
 
 [node name="stuntimer" type="Timer" parent="."]
@@ -292,7 +292,7 @@ pivot_offset = Vector2(150, 14)
 step = 1.0
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
-[connection signal="timeout" from="walktimer" to="." method="_on_walktimer_timeout"]
+[connection signal="timeout" from="WalkTimer" to="." method="_on_walktimer_timeout"]
 [connection signal="timeout" from="stuntimer" to="." method="unstun"]
 [connection signal="timeout" from="attackTimer" to="." method="attack"]
 [connection signal="area_entered" from="ActivationSensor" to="." method="activate"]
