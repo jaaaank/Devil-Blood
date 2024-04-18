@@ -1,6 +1,6 @@
 extends Player
 
-@onready var bloodParticles: GPUParticles2D= $BloodParticles
+@onready var bloodParticles: GPUParticles2D = $BloodParticles
 var equippedWeapon: int = 0: set = set_Equipped_Weapon
 @export var Bullet: PackedScene
 @export var Crucifix: PackedScene

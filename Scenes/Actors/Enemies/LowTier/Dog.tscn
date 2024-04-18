@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://brfy0gch4x60s"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/NPCS/Enemies/Dog.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://cglxeqkpxjmug" path="res://Assets/Actors/dog.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cglxeqkpxjmug" path="res://Assets/Actors/enemies/dog.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="3"]
 [ext_resource type="PackedScene" uid="uid://cci7teggrridn" path="res://Scenes/Actors/Objects/DamageNumbers.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://db0oj2l3gdnuk" path="res://Scenes/Actors/Objects/enemybiteattack.tscn" id="7"]

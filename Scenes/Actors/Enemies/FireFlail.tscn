@@ -2,12 +2,13 @@
 
 [ext_resource type="Script" path="res://Scripts/Actors/NPCS/Enemies/FireFlailEnemy.gd" id="1_8a60b"]
 [ext_resource type="PackedScene" uid="uid://cci7teggrridn" path="res://Scenes/Actors/Objects/DamageNumbers.tscn" id="3_02qj4"]
-[ext_resource type="Texture2D" uid="uid://wpqchm11756g" path="res://Assets/Actors/fireguyBack.png" id="4_jyrhh"]
+[ext_resource type="Texture2D" uid="uid://wpqchm11756g" path="res://Assets/Actors/enemies/fireguyBack.png" id="4_jyrhh"]
 [ext_resource type="PackedScene" uid="uid://dtaauklbu7xhf" path="res://Scenes/Actors/Objects/FireBall.tscn" id="4_tg1op"]
 [ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="5_68vnc"]
-[ext_resource type="Texture2D" uid="uid://bqra2vum200ct" path="res://Assets/Actors/fireguy.png" id="5_fpfqh"]
-[ext_resource type="Texture2D" uid="uid://b4e47breh5co8" path="res://Assets/Actors/fireguySide.png" id="5_ngnaj"]
+[ext_resource type="Texture2D" uid="uid://bqra2vum200ct" path="res://Assets/Actors/enemies/fireguy.png" id="5_fpfqh"]
+[ext_resource type="Texture2D" uid="uid://b4e47breh5co8" path="res://Assets/Actors/enemies/fireguySide.png" id="5_ngnaj"]
 [ext_resource type="Texture2D" uid="uid://bc6o2qj0qokhn" path="res://Assets/Actors/objects/fireflail.png" id="6_s60iw"]
+
 
 [sub_resource type="RectangleShape2D" id="2"]
 size = Vector2(50, 112)

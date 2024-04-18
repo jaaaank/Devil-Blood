@@ -7,9 +7,9 @@ class_name Actor
 @export var armor: = 0
 @export var sprites: Array[Texture2D]
 
-var stunned = false
+var stunned: bool = false
 var sprite
-var push_force = 80
+var push_force:int = 80
 
 func _process(_delta):
 	if velocity.x<0:

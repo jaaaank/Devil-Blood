@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2xsflxmx2od8"
-path="res://.godot/imported/masssheet3.png-6c645d8c0dcb36b827ae59fec1084b0e.ctex"
+uid="uid://wxorxuc17lrs"
+path="res://.godot/imported/masssheet4.png-07172ffbc94b00da45dc8245fab62bff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Actors/masssheet3.png"
-dest_files=["res://.godot/imported/masssheet3.png-6c645d8c0dcb36b827ae59fec1084b0e.ctex"]
+source_file="res://Assets/Actors/enemies/masssheet4.png"
+dest_files=["res://.godot/imported/masssheet4.png-07172ffbc94b00da45dc8245fab62bff.ctex"]
 
 [params]
 

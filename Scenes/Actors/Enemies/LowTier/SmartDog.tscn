@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Actors/NPCS/Enemies/SmartDog.gd" id="1_x6amr"]
 [ext_resource type="PackedScene" uid="uid://db0oj2l3gdnuk" path="res://Scenes/Actors/Objects/enemybiteattack.tscn" id="2_hw7ha"]
 [ext_resource type="PackedScene" uid="uid://cci7teggrridn" path="res://Scenes/Actors/Objects/DamageNumbers.tscn" id="3_utmxs"]
-[ext_resource type="Texture2D" uid="uid://cglxeqkpxjmug" path="res://Assets/Actors/dog.png" id="4_smp51"]
+[ext_resource type="Texture2D" uid="uid://cglxeqkpxjmug" path="res://Assets/Actors/enemies/dog.png" id="4_smp51"]
 [ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="5_ieq8p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pnfmo"]

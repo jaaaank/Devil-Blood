@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqra2vum200ct"
-path="res://.godot/imported/fireguy.png-228bb6aae206a3fd0fb8d98639129362.ctex"
+uid="uid://b2xsflxmx2od8"
+path="res://.godot/imported/masssheet3.png-54639a4afa84b7d09ea4daeb609bfb6a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Actors/fireguy.png"
-dest_files=["res://.godot/imported/fireguy.png-228bb6aae206a3fd0fb8d98639129362.ctex"]
+source_file="res://Assets/Actors/enemies/masssheet3.png"
+dest_files=["res://.godot/imported/masssheet3.png-54639a4afa84b7d09ea4daeb609bfb6a.ctex"]
 
 [params]
 

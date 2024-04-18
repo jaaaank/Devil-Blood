@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://blr80b87lchfo"]
+[gd_scene load_steps=12 format=3 uid="uid://blr80b87lchfo"]
 
 [ext_resource type="Script" path="res://Scripts/maps.gd" id="1_s4rqn"]
 [ext_resource type="PackedScene" uid="uid://cuugv52nxnrn7" path="res://Scenes/Screens/Popups/LocationText.tscn" id="2"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ly01s1e7dope" path="res://Scenes/Actors/Objects/soul.tscn" id="8_niswn"]
 [ext_resource type="PackedScene" path="res://Scenes/Maps/SceneLoader.tscn" id="9_theay"]
 [ext_resource type="PackedScene" uid="uid://dj8x8askyl5n0" path="res://Scenes/Actors/Objects/SoulRefinery.tscn" id="10_qbdo4"]
+[ext_resource type="PackedScene" uid="uid://r8cfx6hhlvy5" path="res://Scenes/Actors/Enemies/LowTier/Impurity.tscn" id="11_okxqj"]
 
 [node name="PriestCave" type="Node2D"]
 z_as_relative = false
@@ -138,3 +139,6 @@ nextScene = "res://Scenes/Maps/Exterior/OutsideShelter.tscn"
 
 [node name="SoulRefinery" parent="." instance=ExtResource("10_qbdo4")]
 position = Vector2(344, 665)
+
+[node name="Impurity" parent="." instance=ExtResource("11_okxqj")]
+position = Vector2(-67, -296)

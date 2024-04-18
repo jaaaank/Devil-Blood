@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtbtjrc6w2t2j"
-path="res://.godot/imported/knight.png-4f9e5f92cb25ba08c721446cb307cced.ctex"
+uid="uid://b4e47breh5co8"
+path="res://.godot/imported/fireguySide.png-1ddbd380feb190190077fec37681b32e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Actors/knight.png"
-dest_files=["res://.godot/imported/knight.png-4f9e5f92cb25ba08c721446cb307cced.ctex"]
+source_file="res://Assets/Actors/enemies/fireguySide.png"
+dest_files=["res://.godot/imported/fireguySide.png-1ddbd380feb190190077fec37681b32e.ctex"]
 
 [params]
 

@@ -1,12 +1,12 @@
 [gd_scene load_steps=14 format=3 uid="uid://blmpwvome25ko"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/NPCS/Enemies/Mass.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://cjc87yril4sye" path="res://Assets/Actors/masssheet.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cjc87yril4sye" path="res://Assets/Actors/enemies/masssheet.png" id="2"]
 [ext_resource type="PackedScene" uid="uid://cci7teggrridn" path="res://Scenes/Actors/Objects/DamageNumbers.tscn" id="3"]
-[ext_resource type="Texture2D" uid="uid://bennm4mpw5d2e" path="res://Assets/Actors/masssheet2.png" id="3_m5n15"]
+[ext_resource type="Texture2D" uid="uid://bennm4mpw5d2e" path="res://Assets/Actors/enemies/masssheet2.png" id="3_m5n15"]
 [ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="4_d76ti"]
-[ext_resource type="Texture2D" uid="uid://b2xsflxmx2od8" path="res://Assets/Actors/masssheet3.png" id="4_qh36f"]
-[ext_resource type="Texture2D" uid="uid://wxorxuc17lrs" path="res://Assets/Actors/masssheet4.png" id="5_cil4q"]
+[ext_resource type="Texture2D" uid="uid://b2xsflxmx2od8" path="res://Assets/Actors/enemies/masssheet3.png" id="4_qh36f"]
+[ext_resource type="Texture2D" uid="uid://wxorxuc17lrs" path="res://Assets/Actors/enemies/masssheet4.png" id="5_cil4q"]
 [ext_resource type="PackedScene" uid="uid://ly01s1e7dope" path="res://Scenes/Actors/Objects/soul.tscn" id="6_ceit3"]
 
 [sub_resource type="RectangleShape2D" id="1"]

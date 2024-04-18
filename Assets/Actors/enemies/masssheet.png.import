@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wxorxuc17lrs"
-path="res://.godot/imported/masssheet4.png-a879938cc02793dc582c20cf8970bca8.ctex"
+uid="uid://cjc87yril4sye"
+path="res://.godot/imported/masssheet.png-a073a6ebaa15c214eaf2f18b13369803.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Actors/masssheet4.png"
-dest_files=["res://.godot/imported/masssheet4.png-a879938cc02793dc582c20cf8970bca8.ctex"]
+source_file="res://Assets/Actors/enemies/masssheet.png"
+dest_files=["res://.godot/imported/masssheet.png-a073a6ebaa15c214eaf2f18b13369803.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

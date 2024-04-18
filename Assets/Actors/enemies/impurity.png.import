@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cglxeqkpxjmug"
-path="res://.godot/imported/dog.png-26e2d4120395305a2f5871a0f88bda3c.ctex"
+uid="uid://cxehxc83uwpw7"
+path="res://.godot/imported/impurity.png-1c7eae0b87f94a1932a86004e47a3edd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Actors/dog.png"
-dest_files=["res://.godot/imported/dog.png-26e2d4120395305a2f5871a0f88bda3c.ctex"]
+source_file="res://Assets/Actors/enemies/impurity.png"
+dest_files=["res://.godot/imported/impurity.png-1c7eae0b87f94a1932a86004e47a3edd.ctex"]
 
 [params]
 

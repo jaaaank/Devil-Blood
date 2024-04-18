@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://bgcdy521frcxo" path="res://Scenes/Actors/Enemies/Bosses/Tendril.tscn" id="2_3vadu"]
 [ext_resource type="PackedScene" uid="uid://cci7teggrridn" path="res://Scenes/Actors/Objects/DamageNumbers.tscn" id="2_xlypf"]
 [ext_resource type="PackedScene" uid="uid://blmpwvome25ko" path="res://Scenes/Actors/Enemies/LowTier/Mass.tscn" id="3_7wq30"]
-[ext_resource type="Texture2D" uid="uid://c1l3cr7pqsvjw" path="res://Assets/Actors/giantmass.png" id="3_ht247"]
 [ext_resource type="PackedScene" uid="uid://c4tlkb7wxnw71" path="res://Scenes/Actors/Enemies/Bosses/Shockwave.tscn" id="4_ovfwl"]
 [ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="4_xmaav"]
+[ext_resource type="Texture2D" uid="uid://c1l3cr7pqsvjw" path="res://Assets/Actors/enemies/giantmass.png" id="6_gyp54"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(589, 61)
@@ -215,7 +215,7 @@ health = 200
 [node name="Masssheet" type="Sprite2D" parent="."]
 y_sort_enabled = true
 position = Vector2(0, -67)
-texture = ExtResource("3_ht247")
+texture = ExtResource("6_gyp54")
 offset = Vector2(0, -260)
 hframes = 3
 vframes = 3

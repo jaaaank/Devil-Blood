@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ckemnaeok2ood"]
 
-[ext_resource type="Texture2D" uid="uid://dtbtjrc6w2t2j" path="res://Assets/Actors/knight.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://dtbtjrc6w2t2j" path="res://Assets/Actors/enemies/knight.png" id="1"]
 [ext_resource type="Script" path="res://Scripts/Actors/PCS/Knight.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://bcg40bubf73t4" path="res://Scenes/Actors/Objects/playerSwordAttack.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://ccdohvwqd23c5" path="res://Scenes/Actors/Objects/playerLanceAttack.tscn" id="4"]
