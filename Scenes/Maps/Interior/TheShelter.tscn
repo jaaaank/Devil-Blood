@@ -62,7 +62,7 @@ position = Vector2(-1988, 1674)
 collision_layer = 272
 
 [node name="Door3" parent="kennel1" instance=ExtResource("6_ghfkt")]
-position = Vector2(195, -236)
+position = Vector2(382, -253)
 rotation = 1.5708
 locked = true
 keyItemID = 1

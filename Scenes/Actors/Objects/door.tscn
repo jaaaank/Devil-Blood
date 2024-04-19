@@ -10,17 +10,20 @@ script/source = "extends StaticBody2D
 
 func _ready():
 	if locked:
-		$Door.set_deferred(\"freeze\",false)
-	else:
-		$Door/unlockSensor.queue_free()
+		$Door.set_deferred(\"freeze\",true)
 
 func _on_unlock_sensor_body_entered(body):
 	if body.is_in_group(\"player\"):
 		for i in PlayerAutoload.inventory:
-			if i.id == keyItemID:
+			if i!=null and i.id == keyItemID:
 				print(\"unlocked\")
 				$Door.set_deferred(\"freeze\",false)
-				$Door/unlockSensor.queue_free()
+				
+func _input(_event):
+	if Input.is_action_just_pressed(\"interact\") and !locked:
+		for i in $Door/unlockSensor.get_overlapping_areas():
+			if i.is_in_group(\"playerHurtbox\"):
+				$Door.set_deferred(\"rotation\",0)
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x6lds"]

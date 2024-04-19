@@ -7,9 +7,10 @@ var equippedWeapon: int = 0: set = set_Equipped_Weapon
 @onready var timey:= $Guns/Timer
 var reloadTime: float = 1.0
 var revolve: int = 6
-var cooldown = false
+var cooldown:bool = false
+var cruceCooldown:bool = false
 var cruce
-var crucing = false
+var crucing:bool = false
 
 func _ready():
 	super()
@@ -88,7 +89,7 @@ func shoot():
 	timey.start(reloadTime)
 	
 func altAttack():
-	if !crucing and SaveData.priestSkillTree[4]:
+	if !crucing and !cruceCooldown and SaveData.priestSkillTree[4]:
 		crucing = true
 		var b = Crucifix.instantiate()
 		add_child(b)
@@ -97,6 +98,8 @@ func altAttack():
 	
 func unaltAttack():
 	if crucing:
+		cruceCooldown=true
+		$CrucifixCooldown.start()
 		crucing = false
 		speed *=3
 		cruce.queue_free()
@@ -116,3 +119,6 @@ func set_Equipped_Weapon(value: int):
 	
 func switchWeapon():
 	bloodParticles.emitting = true
+
+func _on_crucifix_cooldown_timeout():
+	cruceCooldown=false

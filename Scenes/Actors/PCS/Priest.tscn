@@ -87,8 +87,9 @@ volume_db = -10.0
 
 [node name="deathsound" type="AudioStreamPlayer" parent="."]
 
-[node name="Burntime" type="Timer" parent="."]
-wait_time = 10.0
+[node name="CrucifixCooldown" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
 
 [node name="BloodParticles" type="GPUParticles2D" parent="."]
 position = Vector2(0, -65)
@@ -110,5 +111,5 @@ texture = ExtResource("7_kf6v7")
 
 [connection signal="timeout" from="Guns/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="finished" from="deathsound" to="." method="_on_deathsound_finished"]
-[connection signal="timeout" from="Burntime" to="." method="_on_Burntime_timeout"]
+[connection signal="timeout" from="CrucifixCooldown" to="." method="_on_crucifix_cooldown_timeout"]
 [connection signal="timeout" from="IframesTimer" to="." method="_on_IframesTimer_timeout"]
