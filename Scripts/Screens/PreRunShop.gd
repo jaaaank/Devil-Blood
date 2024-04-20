@@ -31,6 +31,7 @@ func buythis():
 	for i in selectedItems:
 		print(i.name)
 		PlayerAutoload.inventory.append(i)
+	SaveData.saveData()
 
 
 func _on_skill_tree_button_pressed():

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cep45no1j83h3" path="res://Assets/Items/coagdevbl.tres" id="3_5uyeq"]
 [ext_resource type="Texture2D" uid="uid://yba4i31mj8li" path="res://Assets/Items/crystdevbl.tres" id="4_e5qw7"]
 [ext_resource type="Script" path="res://Scripts/Screens/startRunButton.gd" id="5"]
-[ext_resource type="Texture2D" uid="uid://dja17vewt4g0f" path="res://Assets/Items/satchel.tres" id="5_yi2nl"]
+[ext_resource type="Texture2D" uid="uid://dja17vewt4g0f" path="res://Assets/Items/Satchel.tres" id="5_yi2nl"]
 [ext_resource type="Texture2D" uid="uid://nncfj6jvqtkj" path="res://Assets/UI/skillTreeButtons/skilltreebackground.png" id="7_43j47"]
 [ext_resource type="Texture2D" uid="uid://vbuu0grr4u6y" path="res://Assets/UI/skillTreeButtons/priestBaseSkillButton.png" id="8_70nga"]
 [ext_resource type="Texture2D" uid="uid://jyucga50q5w8" path="res://Assets/UI/skillTreeButtons/priestHoverSkillButton.png" id="9_6timi"]

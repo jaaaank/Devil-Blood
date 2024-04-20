@@ -4,32 +4,26 @@ var saveFile: String = "user://playerData.txt"
 var priestSkillTree: Array =[true,true,true,true,true,true,true,true,true]
 var knightSkillTree: Array =[false,false,false]
 var witchSkillTree: Array =[false,false,false]
-var refinedSoul: int = 50
-var pureSoul: int = 0
-
-@export var saveDict: Dictionary = {
+var refinedSoul: int
+var pureSoul: int
+var saveDict: Dictionary = {
 	"priestsave" = priestSkillTree,
 	"knightsave" = knightSkillTree,
 	"witchsave" = witchSkillTree,
-	"pureSoul" = pureSoul,
-	"refinedSoul" = refinedSoul
+	"refinedSoul" = refinedSoul,
+	"pureSoul" = pureSoul
 }
 
 func _ready() -> void:
-	saveData()
-	print("Original Data: ", saveDict)
 	loadData()
-	print("Altered Data: ", saveDict)
 	
 func saveData() -> void:
-	editData()
-	print ("Saving Data")
+	editDict()
+	print ("Saving Data: " + str(saveDict))
 	var file = FileAccess.open(saveFile, FileAccess.WRITE)
-	file.open(saveFile, FileAccess.WRITE)
-	file.store_line(JSON.stringify(saveDict))
-	file.close()
-	
-func editData() -> void:
+	file.store_var(saveDict)
+
+func editDict():
 	saveDict = {
 	"priestsave" = priestSkillTree,
 	"knightsave" = knightSkillTree,
@@ -39,21 +33,15 @@ func editData() -> void:
 }
 
 func loadData() -> void:
-	var dataFile = FileAccess.open(saveFile, FileAccess.WRITE)
-	if !dataFile.file_exists(saveFile):
+	if !FileAccess.file_exists(saveFile):
 		print ("No Save Data Found")
 		return
 	else:
-		print ("Loading Save Data")
-	dataFile.open(saveFile, FileAccess.READ)
-	
-	while dataFile.get_position() < dataFile.get_length():
-		var test_json_conv = JSON.new()
-		test_json_conv.parse(dataFile.get_line())
-		var nodeData = test_json_conv.get_data()
-		saveDict.priestsave = nodeData["priestsave"]
-		saveDict.knightsave = nodeData["knightsave"]
-		saveDict.witchsave = nodeData["witchsave"]
-		saveDict.refinedSoul = nodeData["refinedSoul"]
-		saveDict.pureSoul = nodeData["pureSoul"]
-	dataFile.close()
+		var file = FileAccess.open(saveFile, FileAccess.READ)
+		saveDict = file.get_var()
+		print ("Loaded Save Data: " + str(saveDict))
+		priestSkillTree = saveDict["priestsave"]
+		knightSkillTree = saveDict["knightsave"]
+		witchSkillTree = saveDict["witchsave"]
+		refinedSoul = saveDict["refinedSoul"]
+		pureSoul = saveDict["pureSoul"]

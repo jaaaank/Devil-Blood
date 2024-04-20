@@ -9,7 +9,8 @@ func _input(_event):
 		for i in $Area2D.get_overlapping_bodies():
 			if i.is_in_group("player"):
 				@warning_ignore("narrowing_conversion")
-				PlayerAutoload.set_refinedSoul(PlayerAutoload.refinedSoul+PlayerAutoload.impureSoul*efficiency)
+				SaveData.refinedSoul+=(PlayerAutoload.impureSoul*efficiency)
+				SaveData.saveData()
 				spawnImpurities()
 				for a in PlayerAutoload.impureSoul*(abs(efficiency-1)):
 					spawnImpurities()

@@ -11,8 +11,6 @@ func _ready():
 		PlayerAutoload.startRun()
 		PlayerAutoload.midRun = true
 	sprite = $PlayerSprite
-# warning-ignore:return_value_discarded
-	PlayerAutoload.connect("player_dead", Callable(self, "die"))
 	
 
 func _physics_process(_delta):
@@ -59,8 +57,7 @@ func damage(damageTaken: float):
 		find_child("UI").call("updateUI")
 		$Hurtbox.monitoring = false
 	if PlayerAutoload.health <=0:
-		PlayerAutoload.charDie()
-		queue_free()
+		die()
 		
 func heal(healingFactor: float):
 # warning-ignore:narrowing_conversion
@@ -90,3 +87,7 @@ func useItem(id):
 	match id:
 		1:
 			heal(10)
+			
+func die():
+	get_tree().change_scene_to_file("res://Scenes/Screens/DeathScreen.tscn")
+	SaveData.saveData()
