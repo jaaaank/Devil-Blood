@@ -89,5 +89,5 @@ func useItem(id):
 			heal(10)
 			
 func die():
-	get_tree().change_scene_to_file("res://Scenes/Screens/DeathScreen.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://Scenes/Screens/DeathScreen.tscn")
 	SaveData.saveData()

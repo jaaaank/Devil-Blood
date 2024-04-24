@@ -14,10 +14,10 @@ var saveDict: Dictionary = {
 	"pureSoul" = pureSoul
 }
 
-func _ready() -> void:
+func _ready():
 	loadData()
 	
-func saveData() -> void:
+func saveData():
 	editDict()
 	print ("Saving Data: " + str(saveDict))
 	var file = FileAccess.open(saveFile, FileAccess.WRITE)
@@ -32,7 +32,7 @@ func editDict():
 	"pureSoul" = pureSoul
 }
 
-func loadData() -> void:
+func loadData():
 	if !FileAccess.file_exists(saveFile):
 		print ("No Save Data Found")
 		return
