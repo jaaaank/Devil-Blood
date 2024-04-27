@@ -1,0 +1,6 @@
+[gd_resource type="AnimatedTexture" load_steps=2 format=3 uid="uid://b53tojtfbnuns"]
+
+[ext_resource type="Texture2D" uid="uid://d2yl4uat618sx" path="res://Assets/UI/revolverui.png" id="1_0isnr"]
+
+[resource]
+frame_0/texture = ExtResource("1_0isnr")

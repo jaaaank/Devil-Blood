@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://1jx4svoldd4m"]
+[gd_scene load_steps=15 format=3 uid="uid://1jx4svoldd4m"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/NPCS/Enemies/GiantMass.gd" id="1_5ayer"]
 [ext_resource type="PackedScene" uid="uid://bgcdy521frcxo" path="res://Scenes/Actors/Enemies/Bosses/Tendril.tscn" id="2_3vadu"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://blmpwvome25ko" path="res://Scenes/Actors/Enemies/LowTier/Mass.tscn" id="3_7wq30"]
 [ext_resource type="PackedScene" uid="uid://c4tlkb7wxnw71" path="res://Scenes/Actors/Enemies/Bosses/Shockwave.tscn" id="4_ovfwl"]
 [ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="4_xmaav"]
+[ext_resource type="PackedScene" uid="uid://ly01s1e7dope" path="res://Scenes/Actors/Objects/soul.tscn" id="5_gtsy1"]
 [ext_resource type="Texture2D" uid="uid://c1l3cr7pqsvjw" path="res://Assets/Actors/enemies/giantmass.png" id="6_gyp54"]
 
 [sub_resource type="RectangleShape2D" id="1"]
@@ -206,6 +207,7 @@ script = ExtResource("1_5ayer")
 tendril = ExtResource("2_3vadu")
 baby = ExtResource("3_7wq30")
 shockwave = ExtResource("4_ovfwl")
+drops = Array[PackedScene]([ExtResource("5_gtsy1"), ExtResource("5_gtsy1"), ExtResource("5_gtsy1"), ExtResource("5_gtsy1"), ExtResource("5_gtsy1"), ExtResource("5_gtsy1")])
 basedamage = 15
 damagenumbers = ExtResource("2_xlypf")
 attackrange = 1000

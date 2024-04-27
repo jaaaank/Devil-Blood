@@ -5,20 +5,12 @@
 [sub_resource type="GDScript" id="GDScript_y2noi"]
 script/source = "extends Area2D
 
-
-
 func _on_body_entered(body):
 	if body.name!=\"GiantMass\":
 		body.call(\"damage\", 15)
 
-
 func _on_animation_player_animation_finished(_anim_name):
 	queue_free()
-
-
-func _on_area_entered(area):
-	if area.get_collision_layer()==4:
-		area.queue_free()
 "
 
 [sub_resource type="Animation" id="Animation_55wku"]
@@ -90,7 +82,7 @@ height = 54.0667
 [node name="Shockwave" type="Area2D"]
 z_index = -1
 collision_layer = 0
-collision_mask = 7
+collision_mask = 3
 script = SubResource("GDScript_y2noi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -106,6 +98,5 @@ autoplay = "attack"
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_rfqex")
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
