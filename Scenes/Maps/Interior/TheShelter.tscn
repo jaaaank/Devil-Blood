@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://1i702iuvlqqe"]
+[gd_scene load_steps=11 format=3 uid="uid://1i702iuvlqqe"]
 
 [ext_resource type="Script" path="res://Scripts/maps.gd" id="1_dg40k"]
 [ext_resource type="Texture2D" uid="uid://b37n648cudhu2" path="res://Assets/Placeholders/theshelterplaceholdermap.png" id="1_eev7f"]
@@ -8,6 +8,7 @@
 [ext_resource type="TileSet" uid="uid://b6akqfrrsw2h5" path="res://Assets/TileMaps/shelterInterrior.tres" id="7_01f04"]
 [ext_resource type="PackedScene" path="res://Scenes/Maps/SceneLoader.tscn" id="8_xxg3t"]
 [ext_resource type="Texture2D" uid="uid://cjqr8ikmmgwwk" path="res://Assets/kennel1.png" id="9_avptp"]
+[ext_resource type="PackedScene" uid="uid://dcrsm1jbpr0nb" path="res://Scenes/Actors/Enemies/LowTier/DogOnChain.tscn" id="10_5maf3"]
 [ext_resource type="PackedScene" uid="uid://8hk32ilblkwt" path="res://Scenes/Actors/Enemies/LowTier/SmartDog.tscn" id="10_ymjr5"]
 
 [node name="Shelter" type="Node2D"]
@@ -24,7 +25,7 @@ locationName = "The Shelter"
 [node name="PlayerSpawner" parent="." instance=ExtResource("3_2r1n7")]
 z_as_relative = false
 y_sort_enabled = true
-position = Vector2(-891, 3262)
+position = Vector2(-894, 3265)
 
 [node name="reference" type="Sprite2D" parent="."]
 visible = false
@@ -86,3 +87,9 @@ scale = Vector2(0.9, 1)
 [node name="Door5" parent="." instance=ExtResource("6_ghfkt")]
 position = Vector2(-1553, 637)
 rotation = 1.5708
+
+[node name="SmartDog2" parent="." instance=ExtResource("10_ymjr5")]
+position = Vector2(-817, 2291)
+
+[node name="Stake" parent="." instance=ExtResource("10_5maf3")]
+position = Vector2(-2072, 1443)

@@ -110,8 +110,8 @@ bias = 0.9
 
 [node name="joint1" type="RigidBody2D" parent="."]
 position = Vector2(50, -33)
-collision_layer = 0
-collision_mask = 0
+collision_layer = 16
+collision_mask = 16
 gravity_scale = 0.0
 
 [node name="PinJoint2D2" type="PinJoint2D" parent="joint1"]
@@ -130,8 +130,8 @@ nextnode = "joint2"
 
 [node name="joint2" type="RigidBody2D" parent="."]
 position = Vector2(100, -33)
-collision_layer = 0
-collision_mask = 0
+collision_layer = 16
+collision_mask = 16
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="joint2"]
@@ -150,8 +150,8 @@ nextnode = "joint3"
 
 [node name="joint3" type="RigidBody2D" parent="."]
 position = Vector2(150, -33)
-collision_layer = 0
-collision_mask = 0
+collision_layer = 16
+collision_mask = 16
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="joint3"]
@@ -170,8 +170,8 @@ nextnode = "joint4"
 
 [node name="joint4" type="RigidBody2D" parent="."]
 position = Vector2(200, -33)
-collision_layer = 0
-collision_mask = 0
+collision_layer = 16
+collision_mask = 16
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="joint4"]
@@ -190,8 +190,8 @@ nextnode = "joint5"
 
 [node name="joint5" type="RigidBody2D" parent="."]
 position = Vector2(250, -33)
-collision_layer = 0
-collision_mask = 0
+collision_layer = 16
+collision_mask = 16
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="joint5"]
@@ -210,8 +210,8 @@ nextnode = "joint6"
 
 [node name="joint6" type="RigidBody2D" parent="."]
 position = Vector2(300, -33)
-collision_layer = 0
-collision_mask = 0
+collision_layer = 16
+collision_mask = 16
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="joint6"]
@@ -229,5 +229,5 @@ script = SubResource("9")
 nextnode = "Dog"
 
 [node name="Dog" parent="." instance=ExtResource("4_ejek0")]
-position = Vector2(350, 0)
+position = Vector2(351, -2)
 speed = 300

@@ -3,6 +3,7 @@ extends enemy
 var movementTarget: Vector2 
 var agressive: bool = false
 var attacking: bool = false
+@export var senseRange: int = 750
 @export var biteattack: PackedScene
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
@@ -19,7 +20,7 @@ func _physics_process(delta):
 	set_movement_target(PlayerAutoload.playerPos)
 	if navigation_agent.distance_to_target()<50:
 		attack()
-	elif navigation_agent.distance_to_target()<1000:
+	elif navigation_agent.distance_to_target()<senseRange:
 		var next_path_position: Vector2 = navigation_agent.get_next_path_position()
 		velocity = global_position.direction_to(next_path_position) * speed
 		move_and_slide()

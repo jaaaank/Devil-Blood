@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://blr80b87lchfo"]
+[gd_scene load_steps=10 format=3 uid="uid://blr80b87lchfo"]
 
 [ext_resource type="Script" path="res://Scripts/maps.gd" id="1_s4rqn"]
 [ext_resource type="PackedScene" uid="uid://cuugv52nxnrn7" path="res://Scenes/Screens/Popups/LocationText.tscn" id="2"]
@@ -7,10 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://1jx4svoldd4m" path="res://Scenes/Actors/Enemies/Bosses/GiantMass.tscn" id="5_hcuel"]
 [ext_resource type="TileSet" uid="uid://dl3q7oy5jowgi" path="res://Assets/TileMaps/wastes.tres" id="6"]
 [ext_resource type="PackedScene" uid="uid://bl1jm4fcdllqj" path="res://Scenes/Actors/Objects/BlockingVines.tscn" id="6_nc2t3"]
-[ext_resource type="PackedScene" uid="uid://ly01s1e7dope" path="res://Scenes/Actors/Objects/soul.tscn" id="8_niswn"]
 [ext_resource type="PackedScene" path="res://Scenes/Maps/SceneLoader.tscn" id="9_theay"]
 [ext_resource type="PackedScene" uid="uid://dj8x8askyl5n0" path="res://Scenes/Actors/Objects/SoulRefinery.tscn" id="10_qbdo4"]
-[ext_resource type="PackedScene" uid="uid://r8cfx6hhlvy5" path="res://Scenes/Actors/Enemies/LowTier/Impurity.tscn" id="11_okxqj"]
 
 [node name="PriestCave" type="Node2D"]
 z_as_relative = false
@@ -128,9 +126,6 @@ position = Vector2(-449, 3508)
 [node name="Mass9" parent="." instance=ExtResource("4_nnb4d")]
 position = Vector2(345, 3798)
 
-[node name="Soul" parent="." instance=ExtResource("8_niswn")]
-position = Vector2(-2, -234)
-
 [node name="SceneLoader" parent="." instance=ExtResource("9_theay")]
 position = Vector2(4630, 1989)
 rotation = 1.5708
@@ -139,6 +134,3 @@ nextScene = "res://Scenes/Maps/Exterior/OutsideShelter.tscn"
 
 [node name="SoulRefinery" parent="." instance=ExtResource("10_qbdo4")]
 position = Vector2(344, 665)
-
-[node name="Impurity" parent="." instance=ExtResource("11_okxqj")]
-position = Vector2(-67, -296)
