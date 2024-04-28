@@ -122,6 +122,5 @@ scale = Vector2(1.06349, 0.677419)
 texture = ExtResource("7_kf6v7")
 
 [connection signal="timeout" from="Guns/Timer" to="." method="_on_Timer_timeout"]
-[connection signal="finished" from="deathsound" to="." method="_on_deathsound_finished"]
 [connection signal="timeout" from="CrucifixCooldown" to="." method="_on_crucifix_cooldown_timeout"]
 [connection signal="timeout" from="IframesTimer" to="." method="_on_IframesTimer_timeout"]

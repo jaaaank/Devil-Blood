@@ -7,7 +7,8 @@ func _on_AnimationPlayer_animation_finished(_anim_name):
 	
 
 func _on_Sword_area_entered(area):
-	area.owner.damage(basedamage)
+	if area.is_in_group("playerHurtbox"):
+		area.owner.damage(basedamage)
 
 
 func _on_Timer_timeout():

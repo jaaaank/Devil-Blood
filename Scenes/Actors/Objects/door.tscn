@@ -1,12 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://dcpjy60mgi6kg"]
 
-[ext_resource type="Texture2D" uid="uid://shfnxql0ajpo" path="res://Assets/Placeholders/doorplaceholder.png" id="1_i23dq"]
+[ext_resource type="Texture2D" uid="uid://shfnxql0ajpo" path="res://Assets/Placeholders/door.png" id="1_p8cgb"]
 
 [sub_resource type="GDScript" id="GDScript_5tsct"]
 script/source = "extends StaticBody2D
 
 @export var locked: bool
 @export var keyItemID: int
+var spin: float
 
 func _ready():
 	if locked:
@@ -19,6 +20,15 @@ func _on_unlock_sensor_body_entered(body):
 				print(\"unlocked\")
 				$Door.set_deferred(\"freeze\",false)
 				
+func _physics_process(_delta):
+	spin = $Door.rotation_degrees
+	if spin<22.5 && spin>=0 || spin>-22.5 && spin<=0 || spin>157.5 && spin<=180 || spin<-157.5 && spin>=-180:
+		$Door/Sprite.frame = 2
+	elif spin<112.5 && spin>67.5 || spin>-112.5 && spin<-67.5:
+		$Door/Sprite.frame = 0
+	else:
+		$Door/Sprite.frame = 1
+		
 func _input(_event):
 	if Input.is_action_just_pressed(\"interact\") and !locked:
 		for i in $Door/unlockSensor.get_overlapping_areas():
@@ -47,7 +57,7 @@ shape = SubResource("CircleShape2D_x6lds")
 [node name="Door" type="RigidBody2D" parent="."]
 position = Vector2(96, 0)
 collision_layer = 16
-collision_mask = 19
+collision_mask = 259
 gravity_scale = 0.0
 max_contacts_reported = 5
 contact_monitor = true
@@ -59,9 +69,10 @@ position = Vector2(-96, 0)
 radius = 1.0
 vertices = PackedVector2Array(0, -13, 86, -13, 96, -1, 85, 9, -87, 9, -96, 0, -88, -13)
 
-[node name="Doorplaceholder" type="Sprite2D" parent="Door"]
+[node name="Sprite" type="Sprite2D" parent="Door"]
 position = Vector2(-96, -24)
-texture = ExtResource("1_i23dq")
+texture = ExtResource("1_p8cgb")
+hframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
 position = Vector2(-96, 0)
