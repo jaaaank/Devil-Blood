@@ -32,3 +32,10 @@ func _input(_event):
 func updateUI():
 	healthBar.value = PlayerAutoload.health
 	soulCount.text = "	Soul: " + str(PlayerAutoload.impureSoul)
+
+
+func _on_full_screen_button_pressed():
+	if !get_window().mode == Window.MODE_FULLSCREEN:
+		get_window().set_mode(Window.MODE_FULLSCREEN)
+	else:
+		get_window().set_mode(Window.MODE_WINDOWED)

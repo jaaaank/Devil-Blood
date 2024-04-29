@@ -269,7 +269,7 @@ autoplay = "RESET"
 position = Vector2(0, -206)
 
 [node name="ActivationSensor" type="Area2D" parent="."]
-collision_layer = 16
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActivationSensor"]
 position = Vector2(1178, -196)

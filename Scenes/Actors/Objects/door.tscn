@@ -83,6 +83,7 @@ node_a = NodePath("../..")
 node_b = NodePath("..")
 
 [node name="unlockSensor" type="Area2D" parent="Door"]
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door/unlockSensor"]
 position = Vector2(-96, 0)

@@ -73,4 +73,11 @@ process_priority = 10
 layout_mode = 2
 text = "Resume"
 
+[node name="FullScreenButton" type="Button" parent="CanvasLayer/PauseMenu/MenuButtons"]
+process_mode = 2
+process_priority = 10
+layout_mode = 2
+text = "Toggle Fullscreen"
+
 [connection signal="pressed" from="CanvasLayer/PauseMenu/MenuButtons/ResumeButton" to="." method="set_paused" binds= [false]]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/MenuButtons/FullScreenButton" to="." method="_on_full_screen_button_pressed"]
