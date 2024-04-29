@@ -21,7 +21,7 @@ func _on_unlock_sensor_body_entered(body):
 				$Door.set_deferred(\"freeze\",false)
 				
 func _physics_process(_delta):
-	spin = $Door.rotation_degrees
+	spin = $Door.global_rotation_degrees
 	if spin<22.5 && spin>=0 || spin>-22.5 && spin<=0 || spin>157.5 && spin<=180 || spin<-157.5 && spin>=-180:
 		$Door/Sprite.frame = 2
 	elif spin<112.5 && spin>67.5 || spin>-112.5 && spin<-67.5:
