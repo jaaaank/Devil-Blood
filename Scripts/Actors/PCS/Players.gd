@@ -38,6 +38,8 @@ func _input(_event):
 		call("attack")
 	if Input.is_action_just_pressed("altattack"):
 		call("altAttack")
+	if Input.is_action_just_pressed("ability"):
+		call("ability")
 	if Input.is_action_just_pressed("wheelSelect"):
 		$UI/SelectionWheel.set_visible(true)
 	if Input.is_action_just_released("wheelSelect"):
@@ -56,6 +58,7 @@ func damage(damageTaken: float):
 		spawnDamageNums(round(damageTaken*armorCalculation()), Color.FIREBRICK)
 		find_child("UI").call("updateUI")
 		$Hurtbox.monitoring = false
+		iframesTimer.start()
 	if PlayerAutoload.health <=0:
 		die()
 		
@@ -76,7 +79,7 @@ func spawnDamageNums(damagetaken, clr):
 	b.global_position = global_position
 	b.get_node("RichTextLabel").text = str(damagetaken)
 	b.get_node("RichTextLabel").add_theme_color_override("default_color", clr)
-	iframesTimer.start()
+
 
 func _on_IframesTimer_timeout():
 	iframes = false

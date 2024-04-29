@@ -115,12 +115,18 @@ randomness = 1.0
 
 [node name="IframesTimer" type="Timer" parent="."]
 wait_time = 1.5
+one_shot = true
 
 [node name="Shadow" type="Sprite2D" parent="."]
 z_index = -1
 scale = Vector2(1.06349, 0.677419)
 texture = ExtResource("7_kf6v7")
 
+[node name="abilityCooldown" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+
 [connection signal="timeout" from="Guns/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="CrucifixCooldown" to="." method="_on_crucifix_cooldown_timeout"]
 [connection signal="timeout" from="IframesTimer" to="." method="_on_IframesTimer_timeout"]
+[connection signal="timeout" from="abilityCooldown" to="." method="_on_ability_cooldown_timeout"]

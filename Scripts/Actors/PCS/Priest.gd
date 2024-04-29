@@ -1,16 +1,18 @@
 extends Player
 
-@onready var bloodParticles: GPUParticles2D = $BloodParticles
-var equippedWeapon: int = 0: set = set_Equipped_Weapon
-@export var Bullet: PackedScene
-@export var Crucifix: PackedScene
-@onready var timey:= $Guns/Timer
-var reloadTime: float = 1.0
-var revolve: int = 6
+@onready var bloodParticles:GPUParticles2D = $BloodParticles
+var equippedWeapon:int = 0: set = set_Equipped_Weapon
+@export var Bullet:PackedScene
+@export var Crucifix:PackedScene
+@onready var timey:Timer = $Guns/Timer
+var reloadTime:float = 1.0
+var revolve:int = 6
 var cooldown:bool = false
 var cruceCooldown:bool = false
-var cruce
+var cruce:Area2D
 var crucing:bool = false
+var canAbility:bool = true
+var abilitying:bool = false
 
 func _ready():
 	super()
@@ -91,17 +93,33 @@ func shoot():
 func altAttack():
 	if !crucing and !cruceCooldown and SaveData.priestSkillTree[4]:
 		crucing = true
-		var b = Crucifix.instantiate()
-		add_child(b)
-		cruce = b
+		cruce = Crucifix.instantiate()
+		add_child(cruce)
 		speed /= 3
 	
 func unaltAttack():
-	if crucing:
+	if crucing && !abilitying:
 		cruceCooldown=true
 		$CrucifixCooldown.start()
-		crucing = false
-		speed *=3
+		crucing=false
+		speed*=3
+		cruce.queue_free()
+	
+func ability():
+	if SaveData.priestSkillTree[6]&&canAbility&&!crucing:
+		canAbility=false
+		armor+=10
+		abilitying = true
+		crucing = true
+		cruce = Crucifix.instantiate()
+		add_child(cruce)
+		for i in 10:
+			heal(2)
+			await get_tree().create_timer(1.0).timeout
+		$abilityCooldown.start()
+		armor-=10
+		abilitying=false
+		crucing=false
 		cruce.queue_free()
 	
 func randomSpread():
@@ -118,7 +136,10 @@ func set_Equipped_Weapon(value: int):
 	switchWeapon()
 	
 func switchWeapon():
-	bloodParticles.emitting = true
+	bloodParticles.emitting=true
 
 func _on_crucifix_cooldown_timeout():
 	cruceCooldown=false
+
+func _on_ability_cooldown_timeout():
+	canAbility=true
