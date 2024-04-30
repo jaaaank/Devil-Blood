@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgqi0y0iofow"]
+[gd_scene load_steps=7 format=3 uid="uid://b6xv6y51wjx1e"]
 
-[ext_resource type="Texture2D" uid="uid://cvctslx0ljdj1" path="res://Assets/Actors/rats.png" id="1_m6yfr"]
-[ext_resource type="Script" path="res://Scripts/Actors/NPCS/rats.gd" id="1_pdmw7"]
-[ext_resource type="PackedScene" uid="uid://ca3qq02cwak41" path="res://Scenes/Screens/Popups/PopupTextBox.tscn" id="2_vn21l"]
-[ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="3_2vxxn"]
+[ext_resource type="Script" path="res://Scripts/Actors/NPCS/rats.gd" id="1_3mceh"]
+[ext_resource type="Texture2D" uid="uid://cvctslx0ljdj1" path="res://Assets/Actors/rats.png" id="2_wgjba"]
+[ext_resource type="PackedScene" uid="uid://ca3qq02cwak41" path="res://Scenes/Screens/Popups/PopupTextBox.tscn" id="3_u7are"]
+[ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="4_0lmj5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lid8e"]
 radius = 5.0
@@ -17,7 +17,7 @@ height = 150.0
 position = Vector2(0, -4)
 collision_layer = 128
 collision_mask = 159
-script = ExtResource("1_pdmw7")
+script = ExtResource("1_3mceh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3.72529e-09, 0)
@@ -28,14 +28,15 @@ shape = SubResource("CapsuleShape2D_lid8e")
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(0, -42)
-texture = ExtResource("1_m6yfr")
+rotation = 3.14159
+texture = ExtResource("2_wgjba")
 
-[node name="PopupTextBox" parent="." instance=ExtResource("2_vn21l")]
+[node name="PopupTextBox" parent="." instance=ExtResource("3_u7are")]
 position = Vector2(0, -42)
 oneTime = true
 sequential = true
-waitTime = 3.0
-possilbleText = Array[String](["Hey, can you help me?", "My name is Rats...", "I went into this building with my friends, ", "but then some scary monsters came out", "None of my friends made it out...", "Can you help me find them?"])
+waitTime = 4.0
+possilbleText = Array[String](["Where did you come from?", "You don't look like one of them angels.", "Well if you're not gonna try and kill me then maybe you can help me out.", "I'm looking for someone. A greasy little kid.", "If you can help me find him, I'll make it worth your while."])
 
 [node name="CollisionShape2D" parent="PopupTextBox/DetectionArea" index="0"]
 position = Vector2(0, 11)
@@ -51,7 +52,7 @@ offset_bottom = -72.0
 z_index = -1
 position = Vector2(0, 1)
 scale = Vector2(0.858752, 0.547005)
-texture = ExtResource("3_2vxxn")
+texture = ExtResource("4_0lmj5")
 
 [node name="InteractionShape2D" type="Area2D" parent="."]
 position = Vector2(0, -42)

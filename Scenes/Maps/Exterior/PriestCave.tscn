@@ -8,7 +8,7 @@
 [ext_resource type="TileSet" uid="uid://dl3q7oy5jowgi" path="res://Assets/TileMaps/wastes.tres" id="6"]
 [ext_resource type="PackedScene" uid="uid://bl1jm4fcdllqj" path="res://Scenes/Actors/Objects/BlockingVines.tscn" id="6_nc2t3"]
 [ext_resource type="PackedScene" path="res://Scenes/Maps/SceneLoader.tscn" id="9_theay"]
-[ext_resource type="PackedScene" uid="uid://dj8x8askyl5n0" path="res://Scenes/Actors/Objects/SoulRefinery.tscn" id="10_qbdo4"]
+[ext_resource type="PackedScene" uid="uid://b6xv6y51wjx1e" path="res://Scenes/Actors/NPCS/doctor.tscn" id="9_vbwwb"]
 
 [node name="PriestCave" type="Node2D"]
 z_as_relative = false
@@ -132,5 +132,5 @@ rotation = 1.5708
 newSpawnPoint = Vector2(257, 770)
 nextScene = "res://Scenes/Maps/Exterior/OutsideShelter.tscn"
 
-[node name="SoulRefinery" parent="." instance=ExtResource("10_qbdo4")]
-position = Vector2(344, 665)
+[node name="Rats" parent="." instance=ExtResource("9_vbwwb")]
+position = Vector2(360, 704)
