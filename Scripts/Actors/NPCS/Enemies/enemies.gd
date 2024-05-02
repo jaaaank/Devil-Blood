@@ -51,7 +51,7 @@ func armorCalculation():
 func dropDrops():
 		for i in drops:
 			var chance = randf_range(0,1)
-			if chance < dropChance:
+			if chance <= dropChance:
 				var a = i.instantiate()
 				get_parent().call_deferred("add_child", a)
 				a.set_deferred("global_transform", global_transform)
