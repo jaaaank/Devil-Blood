@@ -5,8 +5,9 @@ class_name enemy
 @export var walkrange: int = 1000
 @export var basedamage: int
 @export var damagenumbers:PackedScene = load("res://Scenes/Actors/Objects/DamageNumbers.tscn")
-@export var attackrange = 125
-var knight = false
+@export var attackrange: float = 125
+@export var dropChance: float = 1
+var knight :bool = false
 
 
 func _physics_process(_delta):
@@ -49,9 +50,11 @@ func armorCalculation():
 	
 func dropDrops():
 		for i in drops:
-			var a = i.instantiate()
-			get_parent().call_deferred("add_child", a)
-			a.set_deferred("global_transform", global_transform)
+			var chance = randf_range(0,1)
+			if chance < dropChance:
+				var a = i.instantiate()
+				get_parent().call_deferred("add_child", a)
+				a.set_deferred("global_transform", global_transform)
 	
 func die():
 	dropDrops()

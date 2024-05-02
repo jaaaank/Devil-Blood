@@ -63,6 +63,7 @@ textures = [ExtResource("2"), ExtResource("3_m5n15"), ExtResource("4_qh36f"), Ex
 drops = Array[PackedScene]([ExtResource("6_ceit3")])
 basedamage = 5
 damagenumbers = ExtResource("3")
+dropChance = 0.1
 speed = 100
 health = 5
 

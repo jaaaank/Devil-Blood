@@ -94,7 +94,6 @@ func useItem(id):
 			
 func spriteDirection():
 	var angl:float = roundf(rad_to_deg(velocity.angle()))
-	print(angl)
 	if velocity!=Vector2.ZERO:
 		if angl == 0 or angl == 180: 
 			sprite.texture = sprites[2]

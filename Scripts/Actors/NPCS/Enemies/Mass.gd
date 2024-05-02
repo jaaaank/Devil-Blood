@@ -5,6 +5,7 @@ var target: Vector2
 @onready var walktimer:= $WalkTimer
 
 func _ready():
+	dropChance = .1
 	walkrange = 500
 	sprite = $Masssheet
 	randomize()

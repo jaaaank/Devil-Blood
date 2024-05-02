@@ -210,7 +210,6 @@ shockwave = ExtResource("4_ovfwl")
 drops = Array[PackedScene]([ExtResource("5_gtsy1"), ExtResource("5_gtsy1"), ExtResource("5_gtsy1"), ExtResource("5_gtsy1"), ExtResource("5_gtsy1"), ExtResource("5_gtsy1")])
 basedamage = 15
 damagenumbers = ExtResource("2_xlypf")
-attackrange = 1000
 speed = 200
 health = 200
 
