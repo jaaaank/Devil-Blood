@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://b4e47breh5co8" path="res://Assets/Actors/enemies/fireguySide.png" id="5_ngnaj"]
 [ext_resource type="Texture2D" uid="uid://bc6o2qj0qokhn" path="res://Assets/Actors/objects/fireflail.png" id="6_s60iw"]
 
-
 [sub_resource type="RectangleShape2D" id="2"]
 size = Vector2(50, 112)
 

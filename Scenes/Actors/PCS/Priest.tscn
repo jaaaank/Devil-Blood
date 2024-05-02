@@ -1,12 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://ckh7b65wr83dv"]
+[gd_scene load_steps=14 format=3 uid="uid://ckh7b65wr83dv"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/PCS/Priest.gd" id="1_mpl5p"]
 [ext_resource type="PackedScene" uid="uid://cpgb6vtopm1m5" path="res://Scenes/Actors/Objects/Bullet.tscn" id="2_ndgk7"]
 [ext_resource type="PackedScene" uid="uid://dahxkqiclhhvn" path="res://Scenes/Actors/Objects/Crucifix.tscn" id="3_syaw8"]
 [ext_resource type="PackedScene" uid="uid://cci7teggrridn" path="res://Scenes/Actors/Objects/DamageNumbers.tscn" id="4_e3jdr"]
 [ext_resource type="PackedScene" uid="uid://dewtt0y5sychm" path="res://Scenes/Screens/UI.tscn" id="5_ktuji"]
+[ext_resource type="Texture2D" uid="uid://c2x8pi1o1mif2" path="res://Assets/Actors/priestBack.png" id="6_myjf8"]
 [ext_resource type="Texture2D" uid="uid://dw73u4kyeofv0" path="res://Assets/Actors/priest.png" id="6_nj2yu"]
 [ext_resource type="Texture2D" uid="uid://b53tojtfbnuns" path="res://Assets/UI/revolverUi.tres" id="6_o8t5n"]
+[ext_resource type="Texture2D" uid="uid://guol3syectg5" path="res://Assets/Actors/priestSide.png" id="6_qw78b"]
 [ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="7_kf6v7"]
 
 [sub_resource type="RectangleShape2D" id="2"]
@@ -34,6 +36,7 @@ Crucifix = ExtResource("3_syaw8")
 damagenumbers = ExtResource("4_e3jdr")
 speed = 375
 health = 90
+sprites = Array[Texture2D]([ExtResource("6_nj2yu"), ExtResource("6_myjf8"), ExtResource("6_qw78b")])
 
 [node name="UI" parent="." instance=ExtResource("5_ktuji")]
 

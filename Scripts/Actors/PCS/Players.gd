@@ -31,6 +31,7 @@ func _input(_event):
 	if Input.is_action_pressed("moveright"):
 		velocity.x = 1
 	velocity = velocity.normalized()*speed
+	spriteDirection()
 	
 	if Input.is_action_just_pressed("interact"):
 		interact()
@@ -91,6 +92,17 @@ func useItem(id):
 		1:
 			heal(10)
 			
+func spriteDirection():
+	var angl:float = roundf(rad_to_deg(velocity.angle()))
+	print(angl)
+	if velocity!=Vector2.ZERO:
+		if angl == 0 or angl == 180: 
+			sprite.texture = sprites[2]
+		elif angl<0:
+			sprite.texture = sprites[1]
+		else:
+			sprite.texture = sprites[0]
+
 func die():
 	get_tree().call_deferred("change_scene_to_file", "res://Scenes/Screens/DeathScreen.tscn")
 	SaveData.saveData()
