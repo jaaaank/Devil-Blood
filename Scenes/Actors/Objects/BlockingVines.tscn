@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bl1jm4fcdllqj"]
+[gd_scene load_steps=8 format=3 uid="uid://bl1jm4fcdllqj"]
 
 [ext_resource type="Texture2D" uid="uid://eqwvydy2d55v" path="res://Assets/Actors/objects/blockingVines.png" id="1_aqnpc"]
 
@@ -6,7 +6,7 @@
 script/source = "extends StaticBody2D
 
 func _on_area_2d_area_entered(_area):
-	queue_free()
+	$AnimationPlayer.play(\"die\")
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j54wc"]
@@ -15,6 +15,57 @@ size = Vector2(199, 56)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s21h4"]
 radius = 32.0
 height = 154.0
+
+[sub_resource type="Animation" id="Animation_cxth4"]
+resource_name = "die"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_g5mt1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cvq7o"]
+_data = {
+"RESET": SubResource("Animation_g5mt1"),
+"die": SubResource("Animation_cxth4")
+}
 
 [node name="BlockingVines" type="StaticBody2D"]
 collision_layer = 272
@@ -28,6 +79,7 @@ shape = SubResource("RectangleShape2D_j54wc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_aqnpc")
+hframes = 3
 region_rect = Rect2(0, 0, 154, 75)
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -39,5 +91,10 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_s21h4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cvq7o")
+}
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
