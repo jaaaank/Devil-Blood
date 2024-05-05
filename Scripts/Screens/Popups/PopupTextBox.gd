@@ -36,6 +36,12 @@ func showText(_body):
 			if oneTime:
 				queue_free()
 
+func say(words: String):
+	$Text.text = "[center]" + words
+	talking = true
+	$Text.set_visible(true)
+	$Text/TextBG.size = $Text.size
+	
 func hideText(_body):
 	if canHide:
 		talking = false

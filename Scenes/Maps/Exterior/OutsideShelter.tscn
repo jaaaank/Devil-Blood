@@ -39,7 +39,7 @@ position = Vector2(257, 770)
 position = Vector2(504, -530)
 
 [node name="SceneLoader" parent="." instance=ExtResource("7_hynja")]
-position = Vector2(246, -736)
+position = Vector2(246, -740)
 rotation = 1.5708
 scale = Vector2(0.358288, 0.358288)
 newSpawnPoint = Vector2(-891, 3262)
@@ -48,3 +48,9 @@ nextScene = "res://Scenes/Maps/Interior/TheShelter.tscn"
 [node name="ShelterExterior" type="Sprite2D" parent="."]
 position = Vector2(253, -1263)
 texture = ExtResource("8_dnf0a")
+
+[node name="SceneLoader2" parent="." instance=ExtResource("7_hynja")]
+position = Vector2(258, 1032)
+rotation = 1.5708
+newSpawnPoint = Vector2(4614, 2170)
+nextScene = "res://Scenes/Maps/Exterior/PriestCave.tscn"

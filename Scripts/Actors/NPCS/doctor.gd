@@ -7,11 +7,15 @@ func _ready():
 
 func _on_interaction_shape_2d_body_entered(_body):
 	interactable = true
-	MapAutoload.metRats = true
 	
 func _on_interaction_shape_2d_body_exited(_body):
 	interactable = false
 
 func interacted():
-	if interactable:
-		print("interacted")
+	if interactable && MapAutoload.metRats:
+		$metRats.set_visible(true)
+
+func yorn(yes: bool):
+	$metRats.set_visible(false)
+	if yes:
+		$PopupTextBox.say("Thanks.")

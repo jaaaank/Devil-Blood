@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b6xv6y51wjx1e"]
 
-[ext_resource type="Script" path="res://Scripts/Actors/NPCS/rats.gd" id="1_3mceh"]
+[ext_resource type="Script" path="res://Scripts/Actors/NPCS/doctor.gd" id="1_47b7b"]
 [ext_resource type="Texture2D" uid="uid://cvctslx0ljdj1" path="res://Assets/Actors/rats.png" id="2_wgjba"]
 [ext_resource type="PackedScene" uid="uid://ca3qq02cwak41" path="res://Scenes/Screens/Popups/PopupTextBox.tscn" id="3_u7are"]
 [ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="4_0lmj5"]
@@ -13,11 +13,11 @@ height = 24.0
 radius = 58.0
 height = 150.0
 
-[node name="Rats" type="CharacterBody2D"]
+[node name="Doctor" type="CharacterBody2D"]
 position = Vector2(0, -4)
 collision_layer = 128
 collision_mask = 159
-script = ExtResource("1_3mceh")
+script = ExtResource("1_47b7b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3.72529e-09, 0)
@@ -63,7 +63,40 @@ monitorable = false
 position = Vector2(0, 16)
 shape = SubResource("CapsuleShape2D_cble4")
 
+[node name="metRats" type="VBoxContainer" parent="."]
+visible = false
+z_index = 10
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -114.0
+offset_top = -58.0
+offset_right = 114.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="metRats"]
+layout_mode = 2
+text = "Tell the Doctor where Rats is?"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="metRats"]
+layout_mode = 2
+
+[node name="yes" type="Button" parent="metRats/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Yes"
+
+[node name="no" type="Button" parent="metRats/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "No"
+
 [connection signal="body_entered" from="InteractionShape2D" to="." method="_on_interaction_shape_2d_body_entered"]
 [connection signal="body_exited" from="InteractionShape2D" to="." method="_on_interaction_shape_2d_body_exited"]
+[connection signal="pressed" from="metRats/HBoxContainer/yes" to="." method="yorn" binds= [true]]
+[connection signal="pressed" from="metRats/HBoxContainer/no" to="." method="yorn" binds= [false]]
 
 [editable path="PopupTextBox"]
