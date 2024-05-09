@@ -2,10 +2,11 @@ extends Actor
 class_name Player
 
 @export var damagenumbers: PackedScene = load("res://Scenes/Actors/Objects/DamageNumbers.tscn")
-@onready var hurtbox:= $Hurtbox/HurtBoxShape
-@onready var iframesTimer:= $IframesTimer
+@onready var hurtbox:CollisionShape2D= $Hurtbox/HurtBoxShape
+@onready var iframesTimer:Timer= $IframesTimer
 @onready var camera: Camera2D = $PlayerCamera
-var iframes = false
+var mouseInWindow: bool = true
+var iframes:bool = false
 
 func _ready():
 	if !PlayerAutoload.midRun:
@@ -20,7 +21,18 @@ func _physics_process(_delta):
 		var c = get_slide_collision(i)
 		if c.get_collider() is RigidBody2D:
 			c.get_collider().apply_central_impulse(-c.get_normal()*push_force)
-	camera.offset = camera.offset.move_toward(get_local_mouse_position()/10, 10) 
+			
+	if mouseInWindow || get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN:
+		camera.offset = camera.offset.move_toward(get_local_mouse_position()/8, 15) 
+	elif !get_window().mode == Window.MODE_FULLSCREEN:
+		camera.offset = Vector2.ZERO
+	
+func _notification(what):
+	match what:
+		NOTIFICATION_WM_MOUSE_EXIT:
+			mouseInWindow=false
+		NOTIFICATION_WM_MOUSE_ENTER:
+			mouseInWindow=true
 
 
 func _input(_event):

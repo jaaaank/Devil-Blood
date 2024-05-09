@@ -33,9 +33,12 @@ func updateUI():
 	healthBar.value = PlayerAutoload.health
 	soulCount.text = "	Soul: " + str(PlayerAutoload.impureSoul)
 
-
-func _on_full_screen_button_pressed():
-	if !get_window().mode == Window.MODE_FULLSCREEN:
-		get_window().set_mode(Window.MODE_FULLSCREEN)
-	else:
-		get_window().set_mode(Window.MODE_WINDOWED)
+func _on_full_screen_button_toggled(toggled_on):
+	if toggled_on:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+		
+	if !toggled_on:
+		#Have to do this because there seems to be a bug in Godot rn where 
+			#setting the window to windowed doesn't work if the window was previously maximized
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MINIMIZED)
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
