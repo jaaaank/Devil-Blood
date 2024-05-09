@@ -35,3 +35,7 @@ func _on_body_entered(_body):
 	pierce -=1
 	if pierce<=0:
 		queue_free()
+
+
+func _on_timer_2_timeout():
+	$PointLight2D.queue_free()

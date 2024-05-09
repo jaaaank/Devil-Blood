@@ -4,6 +4,7 @@ class_name Player
 @export var damagenumbers: PackedScene = load("res://Scenes/Actors/Objects/DamageNumbers.tscn")
 @onready var hurtbox:= $Hurtbox/HurtBoxShape
 @onready var iframesTimer:= $IframesTimer
+@onready var camera: Camera2D = $PlayerCamera
 var iframes = false
 
 func _ready():
@@ -19,6 +20,8 @@ func _physics_process(_delta):
 		var c = get_slide_collision(i)
 		if c.get_collider() is RigidBody2D:
 			c.get_collider().apply_central_impulse(-c.get_normal()*push_force)
+	camera.offset = camera.offset.move_toward(get_local_mouse_position()/10, 10) 
+
 
 func _input(_event):
 	velocity = Vector2.ZERO
