@@ -1,13 +1,13 @@
 [gd_scene load_steps=7 format=3 uid="uid://b6xv6y51wjx1e"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/NPCS/doctor.gd" id="1_47b7b"]
-[ext_resource type="Texture2D" uid="uid://cvctslx0ljdj1" path="res://Assets/Actors/rats.png" id="2_wgjba"]
+[ext_resource type="Texture2D" uid="uid://bgw25tsm4lnf0" path="res://Assets/Actors/doctor.png" id="2_uyff7"]
 [ext_resource type="PackedScene" uid="uid://ca3qq02cwak41" path="res://Scenes/Screens/Popups/PopupTextBox.tscn" id="3_u7are"]
 [ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="4_0lmj5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lid8e"]
-radius = 5.0
-height = 24.0
+radius = 12.0
+height = 47.9983
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cble4"]
 radius = 58.0
@@ -20,7 +20,7 @@ collision_mask = 159
 script = ExtResource("1_47b7b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3.72529e-09, 0)
+position = Vector2(-3.72529e-09, 22)
 rotation = 1.56995
 shape = SubResource("CapsuleShape2D_lid8e")
 
@@ -28,15 +28,14 @@ shape = SubResource("CapsuleShape2D_lid8e")
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(0, -42)
-rotation = 3.14159
-texture = ExtResource("2_wgjba")
+texture = ExtResource("2_uyff7")
 
 [node name="PopupTextBox" parent="." instance=ExtResource("3_u7are")]
 position = Vector2(0, -42)
 oneTime = true
 sequential = true
 waitTime = 4.0
-possilbleText = Array[String](["Where did you come from?", "You don't look like one of them angels.", "Well if you're not gonna try and kill me then maybe you can help me out.", "I'm looking for someone. A greasy little kid.", "If you can help me find him, I'll make it worth your while."])
+possilbleText = Array[String](["Where did you come from?", "You don't look like one of them angels.", "Well if you're not gonna try and kill me then maybe you can help me out.", "I'm looking for something, a bag of my supplies.", "If you can help me find it, I'll make it worth your while."])
 
 [node name="CollisionShape2D" parent="PopupTextBox/DetectionArea" index="0"]
 position = Vector2(0, 11)
@@ -50,8 +49,7 @@ offset_bottom = -72.0
 
 [node name="Shadow" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(0, 1)
-scale = Vector2(0.858752, 0.547005)
+position = Vector2(0, 22)
 texture = ExtResource("4_0lmj5")
 
 [node name="InteractionShape2D" type="Area2D" parent="."]
