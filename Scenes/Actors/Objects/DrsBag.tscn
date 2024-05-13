@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqgnft17oxod7"]
+
+[ext_resource type="Texture2D" uid="uid://dymd20ok8rwb5" path="res://Assets/Items/drbag.png" id="1_qckpu"]
+
+[sub_resource type="GDScript" id="GDScript_jxxot"]
+script/source = "extends Area2D
+
+var bag: itemType = load(\"res://Scenes/Items/drsbag.tres\")
+
+func _on_area_entered(area):
+	if area.is_in_group(\"playerHurtbox\"):
+		PlayerAutoload.inventory.append(bag)
+		area.get_parent().get_node(\"UI/SelectionWheel\").slots = PlayerAutoload.inventory
+		print(PlayerAutoload.inventory)
+		queue_free()
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_phv0f"]
+
+[node name="DrsBag" type="Area2D"]
+collision_layer = 0
+script = SubResource("GDScript_jxxot")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_phv0f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qckpu")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

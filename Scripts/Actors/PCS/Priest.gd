@@ -1,7 +1,10 @@
 extends Player
 
 @onready var bloodParticles:GPUParticles2D = $BloodParticles
+@onready var gunSounds: AudioStreamPlayer = $Guns/attack
+@onready var gunanimp: AnimationPlayer = $UI/PriestCanvas/ammoUi/reloadAnims
 var equippedWeapon:int = 0: set = set_Equipped_Weapon
+@export var reloadUis: Array
 @export var Bullet:PackedScene
 @export var Crucifix:PackedScene
 @onready var timey:Timer = $Guns/Timer
@@ -39,7 +42,7 @@ func _input(_event):
 		reloadTime = 2
 	if Input.is_action_just_pressed("weap4")and SaveData.priestSkillTree[3]:
 		set_Equipped_Weapon(3)
-		reloadTime = 2
+		reloadTime = 1.75
 		
 func attack():
 	if !cooldown:
@@ -55,18 +58,24 @@ func shoot():
 			a.scale = $Guns/Muzzle.scale
 			a.rotation_degrees = $Guns/Muzzle.rotation_degrees + randomSpread()
 			a.projDamage = 10
+			gunSounds.play()
+			gunanimp.play("rifleReload")
 		1:
-			get_parent().get_parent().add_child(a)
-			a.position = $Guns/Muzzle.global_position
-			a.scale = $Guns/Muzzle.scale
-			a.rotation_degrees = $Guns/Muzzle.rotation_degrees + randomSpread()
-			a.projDamage = 5
-			a.scale *= .5
-			revolve -=1
-			if revolve <= 0:
-				timey.start(5)
-				revolve = 6
-				return
+			if revolve>0:
+				get_parent().get_parent().add_child(a)
+				a.position = $Guns/Muzzle.global_position
+				a.scale = $Guns/Muzzle.scale
+				a.rotation_degrees = $Guns/Muzzle.rotation_degrees + randomSpread()
+				a.projDamage = 5
+				a.scale *= .5
+				revolve -=1
+				$UI/PriestCanvas/ammoUi/revolver.set_frame(6-revolve)
+				gunSounds.play()
+				$Guns/revolverTimer.start()
+				#if revolve <= 0:
+					#timey.start(4)
+					#revolve = 6
+					#return
 		2:
 			var b = Bullet.instantiate()
 			var c = Bullet.instantiate()
@@ -76,11 +85,13 @@ func shoot():
 				var e = Bullet.instantiate()
 				bullets.append(e)
 			for i in bullets:
+				gunSounds.play()
 				get_parent().get_parent().add_child(i)
 				i.position = $Guns/Muzzle.global_position
 				i.scale = $Guns/Muzzle.scale
 				i.rotation_degrees = $Guns/Muzzle.rotation_degrees + randomSpread()*3
 				i.projDamage = 5
+			gunanimp.play("shotgunReload")
 		3:
 			get_parent().get_parent().add_child(a)
 			a.position = $Guns/Muzzle.global_position
@@ -133,6 +144,14 @@ func _on_Timer_timeout():
 	
 func set_Equipped_Weapon(value: int):
 	equippedWeapon = value
+	var indx: int = 0
+	for i in reloadUis:
+		print(i)
+		if indx == value:
+			get_node(i).set_visible(true)
+		else:
+			get_node(i).set_visible(false)
+		indx+=1
 	switchWeapon()
 	
 func switchWeapon():
@@ -143,3 +162,9 @@ func _on_crucifix_cooldown_timeout():
 
 func _on_ability_cooldown_timeout():
 	canAbility=true
+
+func _on_revolver_timer_timeout():
+	revolve +=1
+	$UI/PriestCanvas/ammoUi/revolver.set_frame(6-revolve)
+	if revolve<6:
+		$Guns/revolverTimer.start()

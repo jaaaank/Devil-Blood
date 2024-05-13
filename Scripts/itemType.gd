@@ -7,3 +7,4 @@ class_name itemType
 @export var singlePurchase: bool
 @export var purchased: bool
 @export var description: String
+@export var usable: bool = true

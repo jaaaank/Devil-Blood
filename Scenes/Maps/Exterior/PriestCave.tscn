@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://blr80b87lchfo"]
+[gd_scene load_steps=11 format=3 uid="uid://blr80b87lchfo"]
 
 [ext_resource type="Script" path="res://Scripts/maps.gd" id="1_s4rqn"]
 [ext_resource type="PackedScene" uid="uid://cuugv52nxnrn7" path="res://Scenes/Screens/Popups/LocationText.tscn" id="2"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bl1jm4fcdllqj" path="res://Scenes/Actors/Objects/BlockingVines.tscn" id="6_nc2t3"]
 [ext_resource type="PackedScene" path="res://Scenes/Maps/SceneLoader.tscn" id="9_theay"]
 [ext_resource type="PackedScene" uid="uid://b6xv6y51wjx1e" path="res://Scenes/Actors/NPCS/doctor.tscn" id="9_vbwwb"]
+[ext_resource type="PackedScene" uid="uid://dqgnft17oxod7" path="res://Scenes/Actors/Objects/DrsBag.tscn" id="10_txswq"]
 
 [node name="PriestCave" type="Node2D"]
 z_as_relative = false
@@ -132,5 +133,8 @@ rotation = 1.5708
 newSpawnPoint = Vector2(257, 770)
 nextScene = "res://Scenes/Maps/Exterior/OutsideShelter.tscn"
 
-[node name="Rats" parent="." instance=ExtResource("9_vbwwb")]
+[node name="Doctor" parent="." instance=ExtResource("9_vbwwb")]
 position = Vector2(360, 704)
+
+[node name="DrsBag" parent="." instance=ExtResource("10_txswq")]
+position = Vector2(563, 815)

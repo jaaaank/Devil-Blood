@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6xv6y51wjx1e"]
+[gd_scene load_steps=10 format=3 uid="uid://b6xv6y51wjx1e"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/NPCS/doctor.gd" id="1_47b7b"]
 [ext_resource type="Texture2D" uid="uid://bgw25tsm4lnf0" path="res://Assets/Actors/doctor.png" id="2_uyff7"]
@@ -10,8 +10,47 @@ radius = 12.0
 height = 47.9983
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cble4"]
-radius = 58.0
-height = 150.0
+radius = 162.0
+height = 412.0
+
+[sub_resource type="Animation" id="Animation_qxdfn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_f2n2i"]
+resource_name = "idle"
+length = 5.0
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_323s7"]
+_data = {
+"RESET": SubResource("Animation_qxdfn"),
+"idle": SubResource("Animation_f2n2i")
+}
 
 [node name="Doctor" type="CharacterBody2D"]
 position = Vector2(0, -4)
@@ -29,6 +68,7 @@ z_as_relative = false
 y_sort_enabled = true
 position = Vector2(0, -42)
 texture = ExtResource("2_uyff7")
+hframes = 2
 
 [node name="PopupTextBox" parent="." instance=ExtResource("3_u7are")]
 position = Vector2(0, -42)
@@ -61,7 +101,7 @@ monitorable = false
 position = Vector2(0, 16)
 shape = SubResource("CapsuleShape2D_cble4")
 
-[node name="metRats" type="VBoxContainer" parent="."]
+[node name="hasBag" type="VBoxContainer" parent="."]
 visible = false
 z_index = 10
 anchors_preset = 7
@@ -70,31 +110,39 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -114.0
-offset_top = -58.0
+offset_top = 61.0
 offset_right = 114.0
+offset_bottom = 119.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Label" type="Label" parent="metRats"]
+[node name="Label" type="Label" parent="hasBag"]
 layout_mode = 2
-text = "Tell the Doctor where Rats is?"
+text = "Give the doctor his bag?"
+horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="metRats"]
+[node name="HBoxContainer" type="HBoxContainer" parent="hasBag"]
 layout_mode = 2
 
-[node name="yes" type="Button" parent="metRats/HBoxContainer"]
+[node name="yes" type="Button" parent="hasBag/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Yes"
 
-[node name="no" type="Button" parent="metRats/HBoxContainer"]
+[node name="no" type="Button" parent="hasBag/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "No"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_323s7")
+}
+autoplay = "idle"
+
 [connection signal="body_entered" from="InteractionShape2D" to="." method="_on_interaction_shape_2d_body_entered"]
 [connection signal="body_exited" from="InteractionShape2D" to="." method="_on_interaction_shape_2d_body_exited"]
-[connection signal="pressed" from="metRats/HBoxContainer/yes" to="." method="yorn" binds= [true]]
-[connection signal="pressed" from="metRats/HBoxContainer/no" to="." method="yorn" binds= [false]]
+[connection signal="pressed" from="hasBag/HBoxContainer/yes" to="." method="yorn" binds= [true]]
+[connection signal="pressed" from="hasBag/HBoxContainer/no" to="." method="yorn" binds= [false]]
 
 [editable path="PopupTextBox"]

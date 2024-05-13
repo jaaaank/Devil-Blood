@@ -1,21 +1,130 @@
-[gd_scene load_steps=14 format=3 uid="uid://ckh7b65wr83dv"]
+[gd_scene load_steps=30 format=3 uid="uid://ckh7b65wr83dv"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/PCS/Priest.gd" id="1_mpl5p"]
 [ext_resource type="PackedScene" uid="uid://cpgb6vtopm1m5" path="res://Scenes/Actors/Objects/Bullet.tscn" id="2_ndgk7"]
 [ext_resource type="PackedScene" uid="uid://dahxkqiclhhvn" path="res://Scenes/Actors/Objects/Crucifix.tscn" id="3_syaw8"]
 [ext_resource type="PackedScene" uid="uid://cci7teggrridn" path="res://Scenes/Actors/Objects/DamageNumbers.tscn" id="4_e3jdr"]
 [ext_resource type="PackedScene" uid="uid://dewtt0y5sychm" path="res://Scenes/Screens/UI.tscn" id="5_ktuji"]
-[ext_resource type="Texture2D" uid="uid://c2x8pi1o1mif2" path="res://Assets/Actors/priestBack.png" id="6_myjf8"]
-[ext_resource type="Texture2D" uid="uid://dw73u4kyeofv0" path="res://Assets/Actors/priest.png" id="6_nj2yu"]
+[ext_resource type="Texture2D" uid="uid://dw73u4kyeofv0" path="res://Assets/Actors/players/priest.png" id="5_ruavs"]
+[ext_resource type="Texture2D" uid="uid://c2x8pi1o1mif2" path="res://Assets/Actors/players/priestBack.png" id="6_d3a7i"]
 [ext_resource type="Texture2D" uid="uid://b53tojtfbnuns" path="res://Assets/UI/revolverUi.tres" id="6_o8t5n"]
-[ext_resource type="Texture2D" uid="uid://guol3syectg5" path="res://Assets/Actors/priestSide.png" id="6_qw78b"]
 [ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="7_kf6v7"]
+[ext_resource type="Texture2D" uid="uid://guol3syectg5" path="res://Assets/Actors/players/priestSide.png" id="7_ufnqh"]
+[ext_resource type="AudioStream" uid="uid://cy36dgvncpnac" path="res://Assets/Audio/gunshots/gunshot1.wav" id="10_6oa1k"]
+[ext_resource type="Texture2D" uid="uid://148i6ck32cqc" path="res://Assets/UI/rifleui.png" id="10_ck8po"]
+[ext_resource type="AudioStream" uid="uid://bmondtq7fq7a" path="res://Assets/Audio/gunshots/gunshot2.wav" id="11_0jk1l"]
+[ext_resource type="Texture2D" uid="uid://cydieyg84jjk8" path="res://Assets/UI/shotgunui.png" id="11_ujrt1"]
+[ext_resource type="Texture2D" uid="uid://6hofvhcwmxmf" path="res://Assets/UI/crossbowui.png" id="12_38i8n"]
+[ext_resource type="AudioStream" uid="uid://c8jt477w18udm" path="res://Assets/Audio/gunshots/gunshot3.wav" id="12_ab6js"]
+[ext_resource type="AudioStream" uid="uid://nd78nchjcsmm" path="res://Assets/Audio/gunshots/gunshot4.wav" id="13_xqp24"]
+
+[sub_resource type="Animation" id="Animation_fpwvm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ammoUi/rifle/cover:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ammoUi/shotgun/cover:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -50)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ammoUi/revolver:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_0cnne"]
+resource_name = "rifleReload"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ammoUi/rifle/cover:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -50)]
+}
+
+[sub_resource type="Animation" id="Animation_mxlff"]
+resource_name = "shotgunReload"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ammoUi/shotgun/cover:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -50)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eyxde"]
+_data = {
+"RESET": SubResource("Animation_fpwvm"),
+"rifleReload": SubResource("Animation_0cnne"),
+"shotgunReload": SubResource("Animation_mxlff")
+}
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jtg62"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ysvb8"]
+width = 50
+height = 50
+noise = SubResource("FastNoiseLite_jtg62")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qvtuv"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mhcok"]
+width = 50
+height = 50
+noise = SubResource("FastNoiseLite_qvtuv")
 
 [sub_resource type="RectangleShape2D" id="2"]
 size = Vector2(40, 60)
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(55, 25)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_j8avc"]
+streams_count = 4
+stream_0/stream = ExtResource("11_0jk1l")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("10_6oa1k")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("12_ab6js")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("13_xqp24")
+stream_3/weight = 1.0
 
 [sub_resource type="ParticleProcessMaterial" id="4"]
 lifetime_randomness = 0.5
@@ -31,31 +140,70 @@ y_sort_enabled = true
 collision_mask = 144
 motion_mode = 1
 script = ExtResource("1_mpl5p")
+reloadUis = [NodePath("UI/PriestCanvas/ammoUi/rifle"), NodePath("UI/PriestCanvas/ammoUi/revolver"), NodePath("UI/PriestCanvas/ammoUi/shotgun"), NodePath("UI/PriestCanvas/ammoUi/crossbow")]
 Bullet = ExtResource("2_ndgk7")
 Crucifix = ExtResource("3_syaw8")
 damagenumbers = ExtResource("4_e3jdr")
 speed = 375
 health = 90
-sprites = Array[Texture2D]([ExtResource("6_nj2yu"), ExtResource("6_myjf8"), ExtResource("6_qw78b")])
+sprites = Array[Texture2D]([ExtResource("5_ruavs"), ExtResource("6_d3a7i"), ExtResource("7_ufnqh")])
 
 [node name="UI" parent="." instance=ExtResource("5_ktuji")]
 
 [node name="PriestCanvas" type="CanvasLayer" parent="UI"]
 
-[node name="TextureRect" type="TextureRect" parent="UI/PriestCanvas"]
+[node name="ammoUi" type="Control" parent="UI/PriestCanvas"]
+layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -50.0
-offset_right = 350.0
 grow_vertical = 0
+
+[node name="reloadAnims" type="AnimationPlayer" parent="UI/PriestCanvas/ammoUi"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_eyxde")
+}
+
+[node name="rifle" type="Sprite2D" parent="UI/PriestCanvas/ammoUi"]
+clip_children = 2
+position = Vector2(100, -100)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("10_ck8po")
+
+[node name="cover" type="Sprite2D" parent="UI/PriestCanvas/ammoUi/rifle"]
+position = Vector2(0, -50)
+texture = SubResource("NoiseTexture2D_ysvb8")
+
+[node name="revolver" type="Sprite2D" parent="UI/PriestCanvas/ammoUi"]
+visible = false
+position = Vector2(100, -100)
+scale = Vector2(3.5, 3.5)
 texture = ExtResource("6_o8t5n")
+vframes = 7
+
+[node name="shotgun" type="Sprite2D" parent="UI/PriestCanvas/ammoUi"]
+visible = false
+clip_children = 2
+position = Vector2(100, -100)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("11_ujrt1")
+
+[node name="cover" type="Sprite2D" parent="UI/PriestCanvas/ammoUi/shotgun"]
+position = Vector2(0, -50)
+texture = SubResource("NoiseTexture2D_mhcok")
+
+[node name="crossbow" type="Sprite2D" parent="UI/PriestCanvas/ammoUi"]
+visible = false
+position = Vector2(100, -100)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("12_38i8n")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(0, -11)
-texture = ExtResource("6_nj2yu")
+texture = ExtResource("5_ruavs")
 offset = Vector2(0, -54)
 
 [node name="Hurtbox" type="Area2D" parent="." groups=["playerHurtbox"]]
@@ -89,7 +237,11 @@ hframes = 4
 [node name="Timer" type="Timer" parent="Guns"]
 one_shot = true
 
+[node name="revolverTimer" type="Timer" parent="Guns"]
+one_shot = true
+
 [node name="attack" type="AudioStreamPlayer" parent="Guns"]
+stream = SubResource("AudioStreamRandomizer_j8avc")
 
 [node name="ouchsound" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, -65)
@@ -102,10 +254,6 @@ volume_db = -10.0
 
 [node name="deathsound" type="AudioStreamPlayer" parent="."]
 
-[node name="CrucifixCooldown" type="Timer" parent="."]
-wait_time = 4.0
-one_shot = true
-
 [node name="BloodParticles" type="GPUParticles2D" parent="."]
 position = Vector2(0, -65)
 emitting = false
@@ -116,8 +264,16 @@ speed_scale = 1.5
 explosiveness = 1.0
 randomness = 1.0
 
+[node name="CrucifixCooldown" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
 [node name="IframesTimer" type="Timer" parent="."]
 wait_time = 1.5
+one_shot = true
+
+[node name="abilityCooldown" type="Timer" parent="."]
+wait_time = 60.0
 one_shot = true
 
 [node name="Shadow" type="Sprite2D" parent="."]
@@ -125,11 +281,8 @@ z_index = -1
 scale = Vector2(1.06349, 0.677419)
 texture = ExtResource("7_kf6v7")
 
-[node name="abilityCooldown" type="Timer" parent="."]
-wait_time = 60.0
-one_shot = true
-
 [connection signal="timeout" from="Guns/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Guns/revolverTimer" to="." method="_on_revolver_timer_timeout"]
 [connection signal="timeout" from="CrucifixCooldown" to="." method="_on_crucifix_cooldown_timeout"]
 [connection signal="timeout" from="IframesTimer" to="." method="_on_IframesTimer_timeout"]
 [connection signal="timeout" from="abilityCooldown" to="." method="_on_ability_cooldown_timeout"]

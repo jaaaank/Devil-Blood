@@ -7,7 +7,6 @@ func _ready():
 
 func _on_interaction_shape_2d_body_entered(_body):
 	interactable = true
-	MapAutoload.metRats = true
 	
 func _on_interaction_shape_2d_body_exited(_body):
 	interactable = false

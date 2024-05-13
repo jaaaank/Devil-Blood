@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s7ecjctr06vx"
-path="res://.godot/imported/witch.png-f899ffe7d91062c37a0a3eabf47873d9.ctex"
+uid="uid://6hofvhcwmxmf"
+path="res://.godot/imported/crossbowui.png-839aefb48222f24587f35275565cdd89.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Actors/witch.png"
-dest_files=["res://.godot/imported/witch.png-f899ffe7d91062c37a0a3eabf47873d9.ctex"]
+source_file="res://Assets/UI/crossbowui.png"
+dest_files=["res://.godot/imported/crossbowui.png-839aefb48222f24587f35275565cdd89.ctex"]
 
 [params]
 

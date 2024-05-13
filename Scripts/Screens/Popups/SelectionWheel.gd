@@ -53,7 +53,7 @@ func _process(_delta):
 	queue_redraw()
 	
 func _input(_event):
-	if Input.is_action_just_pressed("attack") and !slots.is_empty() and visible and slots[select]!=null:
+	if Input.is_action_just_pressed("attack") && !slots.is_empty() && visible && slots[select]!=null && slots[select].usable:
 		print("itemused: " + slots[select].name)
 		get_parent().get_parent().call("useItem", slots[select].id)
 		slots[select] = null

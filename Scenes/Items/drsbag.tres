@@ -1,0 +1,16 @@
+[gd_resource type="AtlasTexture" script_class="itemType" load_steps=3 format=3 uid="uid://dhy00wqlh7jh5"]
+
+[ext_resource type="Texture2D" uid="uid://dymd20ok8rwb5" path="res://Assets/Items/drbag.png" id="1_yyx6d"]
+[ext_resource type="Script" path="res://Scripts/itemType.gd" id="2_dsowq"]
+
+[resource]
+atlas = ExtResource("1_yyx6d")
+region = Rect2(0, 0, 16, 16)
+script = ExtResource("2_dsowq")
+name = "The Doctor's Supply Bag"
+id = 3
+cost = 0
+singlePurchase = false
+purchased = false
+description = "Return this to the Doctor for a reward."
+usable = false

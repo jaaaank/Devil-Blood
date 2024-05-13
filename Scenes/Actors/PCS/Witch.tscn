@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://cf6q2wrwpvmjj"]
 
-[ext_resource type="Texture2D" uid="uid://s7ecjctr06vx" path="res://Assets/Actors/witch.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://s7ecjctr06vx" path="res://Assets/Actors/players/witch.png" id="1"]
 [ext_resource type="Script" path="res://Scripts/Actors/PCS/Witch.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="3"]
 [ext_resource type="PackedScene" uid="uid://cci7teggrridn" path="res://Scenes/Actors/Objects/DamageNumbers.tscn" id="3_nlqyh"]

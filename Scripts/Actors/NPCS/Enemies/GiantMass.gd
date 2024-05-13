@@ -53,4 +53,5 @@ func spawnShockwave():
 
 func die():
 	dropDrops()
+	$Healthbar.set_visible(false)
 	animP.play("death")

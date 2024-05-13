@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://ddmifqa1yt0ab"]
 
 [ext_resource type="Script" path="res://Scripts/Screens/Popups/SelectionWheel.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://mn6yg32fyd0p" path="res://Assets/Items/empty.tres" id="2_i3twy"]
-[ext_resource type="Texture2D" uid="uid://cep45no1j83h3" path="res://Assets/Items/coagdevbl.tres" id="2_xqkeo"]
-[ext_resource type="Texture2D" uid="uid://yba4i31mj8li" path="res://Assets/Items/crystdevbl.tres" id="3_wwrj6"]
-[ext_resource type="Texture2D" uid="uid://dja17vewt4g0f" path="res://Assets/Items/satchel.tres" id="4_46who"]
+[ext_resource type="Texture2D" uid="uid://mn6yg32fyd0p" path="res://Scenes/Items/empty.tres" id="2_i3twy"]
+[ext_resource type="Texture2D" uid="uid://cep45no1j83h3" path="res://Scenes/Items/coagdevbl.tres" id="2_xqkeo"]
+[ext_resource type="Texture2D" uid="uid://yba4i31mj8li" path="res://Scenes/Items/crystdevbl.tres" id="3_wwrj6"]
+[ext_resource type="Texture2D" uid="uid://dja17vewt4g0f" path="res://Scenes/Items/satchel.tres" id="4_46who"]
 
 [node name="SelectionWheel" type="Control"]
 layout_mode = 3

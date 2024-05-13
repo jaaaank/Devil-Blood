@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ibgs8igl1go0"]
+[gd_scene load_steps=9 format=3 uid="uid://ibgs8igl1go0"]
 
 [ext_resource type="Script" path="res://Scripts/maps.gd" id="1_0lojt"]
 [ext_resource type="PackedScene" uid="uid://cuugv52nxnrn7" path="res://Scenes/Screens/Popups/LocationText.tscn" id="2_e57g3"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dgqi0y0iofow" path="res://Scenes/Actors/NPCS/rats.tscn" id="6_gv6qb"]
 [ext_resource type="PackedScene" path="res://Scenes/Maps/SceneLoader.tscn" id="7_hynja"]
 [ext_resource type="Texture2D" uid="uid://bmue8vvx2j2et" path="res://Assets/shelterExterior.png" id="8_dnf0a"]
-[ext_resource type="PackedScene" uid="uid://cpgb6vtopm1m5" path="res://Scenes/Actors/Objects/Bullet.tscn" id="9_uchwl"]
 
 [node name="OutsideShelter" type="Node2D"]
 y_sort_enabled = true
@@ -55,6 +54,3 @@ position = Vector2(258, 1032)
 rotation = 1.5708
 newSpawnPoint = Vector2(4614, 2170)
 nextScene = "res://Scenes/Maps/Exterior/PriestCave.tscn"
-
-[node name="Bullet" parent="." instance=ExtResource("9_uchwl")]
-position = Vector2(239, -72)

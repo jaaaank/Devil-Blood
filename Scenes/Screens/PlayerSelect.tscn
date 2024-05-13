@@ -10,6 +10,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="CharacterSelect" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.018
+anchor_top = 0.025
+anchor_right = 0.018
+anchor_bottom = 0.025
+offset_left = 0.263998
+offset_top = -0.200001
+offset_right = 539.264
+offset_bottom = 68.8
+theme_override_font_sizes/font_size = 50
+text = "Select Your Character:"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -23,25 +37,48 @@ offset_right = 86.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 80
 alignment = 1
 
 [node name="PlayerSelectButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "Priest"
 script = ExtResource("1")
 characternum = 1
 
 [node name="PlayerSelectButton2" type="Button" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
+disabled = true
 text = "Knight"
 script = ExtResource("1")
 characternum = 2
 
 [node name="PlayerSelectButton3" type="Button" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
+disabled = true
 text = "Witch"
 script = ExtResource("1")
 characternum = 3
+
+[node name="Coming Soon" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.602
+anchor_top = 0.597
+anchor_right = 0.602
+anchor_bottom = 0.597
+offset_left = -226.504
+offset_top = -20.856
+offset_right = 224.496
+offset_bottom = 21.144
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 21)
+theme_override_font_sizes/font_size = 30
+text = "Knight and Witch Coming soon!"
 
 [connection signal="pressed" from="HBoxContainer/PlayerSelectButton" to="HBoxContainer/PlayerSelectButton" method="_on_PlayerSelectButton_pressed"]
 [connection signal="pressed" from="HBoxContainer/PlayerSelectButton2" to="HBoxContainer/PlayerSelectButton2" method="_on_PlayerSelectButton_pressed"]

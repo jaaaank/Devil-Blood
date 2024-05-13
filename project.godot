@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Devil Blood"
-run/main_scene="res://Scenes/Screens/Opening.tscn"
+run/main_scene="res://Scenes/Screens/MainMenu.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="devilblood"
 config/features=PackedStringArray("4.2")
@@ -41,6 +41,7 @@ folder_colors={
 "res://Scenes/Actors/Enemies/": "red",
 "res://Scenes/Actors/Objects/": "gray",
 "res://Scenes/Actors/PCS/": "pink",
+"res://Scenes/Items/": "red",
 "res://Scenes/Maps/": "purple",
 "res://Scripts/": "green"
 }
