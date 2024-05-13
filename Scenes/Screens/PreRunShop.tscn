@@ -47,6 +47,7 @@ offset_bottom = 578.0
 
 [node name="Active Items" type="Label" parent="Purchasables"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 25
 text = "Active items"
 
 [node name="COADB" type="Button" parent="Purchasables"]
@@ -63,6 +64,7 @@ itemID = ExtResource("4_e5qw7")
 
 [node name="Passive Items" type="Label" parent="Purchasables"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 25
 text = "Passive items"
 
 [node name="buyThingButton3" type="Button" parent="Purchasables"]

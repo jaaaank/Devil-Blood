@@ -8,8 +8,9 @@
 atlas = SubResource("AtlasTexture_ncdtx")
 script = ExtResource("2_22ry7")
 name = "null"
-id = 99
+id = 0
 cost = 0
 singlePurchase = true
 purchased = false
 description = " "
+usable = true

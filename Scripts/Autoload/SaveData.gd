@@ -1,21 +1,20 @@
 extends Node
 var saveFile: String = "user://playerData.txt"
 
-var priestSkillTree: Array =[true,true,true,true,true,true,true,true,true]
+var priestSkillTree: Array =[false,false,false,false,false,false,false,false,false]
 var knightSkillTree: Array =[false,false,false]
 var witchSkillTree: Array =[false,false,false]
+var unlockedPurchasables: Array = [null,true,false,false,false,false,false,false,false]
 var refinedSoul: int
 var pureSoul: int
 var saveDict: Dictionary = {
 	"priestsave" = priestSkillTree,
 	"knightsave" = knightSkillTree,
 	"witchsave" = witchSkillTree,
+	"unlockedPurchasables" = unlockedPurchasables,
 	"refinedSoul" = refinedSoul,
 	"pureSoul" = pureSoul
 }
-
-func _ready():
-	loadData()
 	
 func saveData():
 	editDict()
@@ -28,6 +27,7 @@ func editDict():
 	"priestsave" = priestSkillTree,
 	"knightsave" = knightSkillTree,
 	"witchsave" = witchSkillTree,
+	"unlockedPurchasables"= unlockedPurchasables,
 	"refinedSoul" = refinedSoul,
 	"pureSoul" = pureSoul
 }
@@ -43,5 +43,6 @@ func loadData():
 		priestSkillTree = saveDict["priestsave"]
 		knightSkillTree = saveDict["knightsave"]
 		witchSkillTree = saveDict["witchsave"]
+		unlockedPurchasables = saveDict["unlockedPurchasables"]
 		refinedSoul = saveDict["refinedSoul"]
 		pureSoul = saveDict["pureSoul"]

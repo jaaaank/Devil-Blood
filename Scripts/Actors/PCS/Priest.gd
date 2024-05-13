@@ -146,7 +146,6 @@ func set_Equipped_Weapon(value: int):
 	equippedWeapon = value
 	var indx: int = 0
 	for i in reloadUis:
-		print(i)
 		if indx == value:
 			get_node(i).set_visible(true)
 		else:

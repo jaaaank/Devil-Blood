@@ -4,6 +4,10 @@ extends Button
 @export var itemID: itemType
 
 func _ready():
+	if !SaveData.unlockedPurchasables[itemID.id]:
+		set_visible(false)
+	else:
+		set_visible(true)
 	tooltip_text = itemID.description
 	mainshop.updated.connect(self.checkAvailability)
 	icon = itemID["atlas"]
