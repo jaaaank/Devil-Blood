@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dj8x8askyl5n0"]
+[gd_scene load_steps=6 format=3 uid="uid://dj8x8askyl5n0"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/Objects/SoulRefinery.gd" id="1_6d7hy"]
 [ext_resource type="PackedScene" uid="uid://ca3qq02cwak41" path="res://Scenes/Screens/Popups/PopupTextBox.tscn" id="2_2leje"]
+[ext_resource type="Texture2D" uid="uid://cr05n423yrcd" path="res://Assets/Actors/objects/soulRefinery.png" id="2_21vh2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0jft"]
 size = Vector2(36, 40)
@@ -12,6 +13,9 @@ radius = 100.841
 [node name="SoulRefinery" type="StaticBody2D"]
 collision_layer = 16
 script = ExtResource("1_6d7hy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_21vh2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_r0jft")

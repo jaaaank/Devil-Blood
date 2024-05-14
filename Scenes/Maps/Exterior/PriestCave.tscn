@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://blr80b87lchfo"]
+[gd_scene load_steps=13 format=3 uid="uid://blr80b87lchfo"]
 
 [ext_resource type="Script" path="res://Scripts/maps.gd" id="1_s4rqn"]
 [ext_resource type="PackedScene" uid="uid://cuugv52nxnrn7" path="res://Scenes/Screens/Popups/LocationText.tscn" id="2"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" path="res://Scenes/Maps/SceneLoader.tscn" id="9_theay"]
 [ext_resource type="PackedScene" uid="uid://b6xv6y51wjx1e" path="res://Scenes/Actors/NPCS/doctor.tscn" id="9_vbwwb"]
 [ext_resource type="PackedScene" uid="uid://dqgnft17oxod7" path="res://Scenes/Actors/Objects/DrsBag.tscn" id="10_txswq"]
+[ext_resource type="PackedScene" uid="uid://vcu3wc3ch0n1" path="res://Scenes/Actors/Enemies/FireFlail.tscn" id="11_uuybn"]
+[ext_resource type="PackedScene" uid="uid://dj8x8askyl5n0" path="res://Scenes/Actors/Objects/SoulRefinery.tscn" id="12_jdiu8"]
 
 [node name="PriestCave" type="Node2D"]
 z_as_relative = false
@@ -34,6 +36,9 @@ locationName = "Infested Cave"
 
 [node name="Mass" parent="." instance=ExtResource("4_nnb4d")]
 position = Vector2(-179, -226)
+
+[node name="SoulRefinery" parent="." instance=ExtResource("12_jdiu8")]
+position = Vector2(1008, 3271)
 
 [node name="BlockingVines" parent="." instance=ExtResource("6_nc2t3")]
 position = Vector2(-290, 531)
@@ -138,3 +143,6 @@ position = Vector2(360, 704)
 
 [node name="DrsBag" parent="." instance=ExtResource("10_txswq")]
 position = Vector2(563, 815)
+
+[node name="FireFlailEnemy" parent="." instance=ExtResource("11_uuybn")]
+position = Vector2(2512, 3509)

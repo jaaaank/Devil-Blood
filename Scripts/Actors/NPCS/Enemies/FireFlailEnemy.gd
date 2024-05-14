@@ -8,7 +8,7 @@ var spinspeed: int = 2
 
 func _ready():
 	randomize()
-	spinspeed = randf_range(6,14)
+	spinspeed = randi_range(6,14)
 	sprite = $Sprite
 	await get_tree().physics_frame
 	randomWalk()

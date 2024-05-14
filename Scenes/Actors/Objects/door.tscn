@@ -3,41 +3,39 @@
 [ext_resource type="Texture2D" uid="uid://shfnxql0ajpo" path="res://Assets/Placeholders/door.png" id="1_p8cgb"]
 
 [sub_resource type="GDScript" id="GDScript_5tsct"]
-script/source = "extends StaticBody2D
+script/source = "extends Node2D
 
 @export var locked: bool
 @export var keyItemID: int
-var spin: float
+var closed: bool = true
 
 func _ready():
-	if locked:
-		$Door.set_deferred(\"freeze\",true)
+	checkSpin()
 
 func _on_unlock_sensor_body_entered(body):
 	if body.is_in_group(\"player\"):
 		for i in PlayerAutoload.inventory:
 			if i!=null and i.id == keyItemID:
 				print(\"unlocked\")
-				$Door.set_deferred(\"freeze\",false)
 				
-func _physics_process(_delta):
-	spin = $Door.global_rotation_degrees
+func checkSpin():
+	var spin: float = $ActualDoor.global_rotation_degrees
 	if spin<22.5 && spin>=0 || spin>-22.5 && spin<=0 || spin>157.5 && spin<=180 || spin<-157.5 && spin>=-180:
-		$Door/Sprite.frame = 2
+		$ActualDoor/Sprite.frame = 2
 	elif spin<112.5 && spin>67.5 || spin>-112.5 && spin<-67.5:
-		$Door/Sprite.frame = 0
+		$ActualDoor/Sprite.frame = 0
 	else:
-		$Door/Sprite.frame = 1
-		
-func _input(_event):
-	if Input.is_action_just_pressed(\"interact\") and !locked:
-		for i in $Door/unlockSensor.get_overlapping_areas():
-			if i.is_in_group(\"playerHurtbox\"):
-				$Door.set_deferred(\"rotation\",0)
-"
+		$ActualDoor/Sprite.frame = 1
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_x6lds"]
-radius = 1.0
+func _input(_event):
+	if Input.is_action_just_pressed(\"interact\") && !locked && $ActualDoor/unlockSensor.overlaps_body(PlayerAutoload.get_player()):
+		if closed:
+			rotate(PI/2)
+		else:
+			rotate(-PI/2)
+		closed = !closed
+		checkSpin()
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_llwks"]
 size = Vector2(180, 2)
@@ -45,48 +43,37 @@ size = Vector2(180, 2)
 [sub_resource type="CircleShape2D" id="CircleShape2D_6o57d"]
 radius = 102.0
 
-[node name="Door" type="StaticBody2D"]
-disable_mode = 1
-collision_layer = 0
-collision_mask = 0
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yj02u"]
+polygon = PackedVector2Array(-96, 5, -91, 8, 91, 8, 96, 5, 96, -13, -96, -13)
+
+[node name="DoorPivot" type="Node2D"]
+position = Vector2(94, 0)
 script = SubResource("GDScript_5tsct")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_x6lds")
-
-[node name="Door" type="RigidBody2D" parent="."]
-position = Vector2(96, 0)
+[node name="ActualDoor" type="StaticBody2D" parent="."]
+position = Vector2(-94, 0)
 collision_layer = 16
-collision_mask = 259
-gravity_scale = 0.0
-max_contacts_reported = 5
-contact_monitor = true
-linear_damp = 5.0
-angular_damp = 100.0
 
-[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Door"]
-position = Vector2(-96, 0)
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="ActualDoor"]
 radius = 1.0
 vertices = PackedVector2Array(0, -13, 86, -13, 96, -1, 85, 9, -87, 9, -96, 0, -88, -13)
 
-[node name="Sprite" type="Sprite2D" parent="Door"]
-position = Vector2(-96, -24)
+[node name="Sprite" type="Sprite2D" parent="ActualDoor"]
+position = Vector2(95, 1)
 texture = ExtResource("1_p8cgb")
+offset = Vector2(-95, -25)
 hframes = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
-position = Vector2(-96, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActualDoor"]
 shape = SubResource("RectangleShape2D_llwks")
 
-[node name="PinJoint2D" type="PinJoint2D" parent="Door"]
-node_a = NodePath("../..")
-node_b = NodePath("..")
-
-[node name="unlockSensor" type="Area2D" parent="Door"]
+[node name="unlockSensor" type="Area2D" parent="ActualDoor"]
+position = Vector2(96, 0)
 collision_layer = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/unlockSensor"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActualDoor/unlockSensor"]
 position = Vector2(-96, 0)
 shape = SubResource("CircleShape2D_6o57d")
 
-[connection signal="body_entered" from="Door/unlockSensor" to="." method="_on_unlock_sensor_body_entered"]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="ActualDoor"]
+occluder = SubResource("OccluderPolygon2D_yj02u")
