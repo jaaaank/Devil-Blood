@@ -24,3 +24,5 @@ func _on_pressed():
 		1: SaveData.priestSkillTree[skillIndex] = true
 		2: SaveData.knightSkillTree[skillIndex] = true
 		3: SaveData.witchSkillTree[skillIndex] = true
+	SaveData.saveData()
+	get_parent()._ready()

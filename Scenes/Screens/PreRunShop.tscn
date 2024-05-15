@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dbi1kwx8e0c8l"]
+[gd_scene load_steps=29 format=3 uid="uid://dbi1kwx8e0c8l"]
 
 [ext_resource type="Script" path="res://Scripts/Screens/PreRunShop.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Screens/buyThingButtons.gd" id="2"]
@@ -21,12 +21,63 @@
 [ext_resource type="Texture2D" uid="uid://333ou3aap0n4" path="res://Assets/UI/skillTreeButtons/icons/silverCrucifix.png" id="18_rte4x"]
 [ext_resource type="Texture2D" uid="uid://y8g80iooeeec" path="res://Assets/UI/skillTreeButtons/baseWitchSkillButton.png" id="19_dxq03"]
 [ext_resource type="Texture2D" uid="uid://b2s4lnoqe7tgh" path="res://Assets/UI/skillTreeButtons/icons/shell.png" id="20_bnq80"]
+[ext_resource type="Texture2D" uid="uid://dpu7t3beer60t" path="res://Assets/UI/upButton.png" id="22_x6rpw"]
+[ext_resource type="Texture2D" uid="uid://cw3bqnk3xq7pf" path="res://Assets/UI/downButton.png" id="23_8clip"]
+[ext_resource type="Texture2D" uid="uid://cqav3mfw17pbx" path="res://Assets/UI/upButtonpressed.png" id="23_aplsv"]
+[ext_resource type="Texture2D" uid="uid://d0glnkpeejnfn" path="res://Assets/UI/downButtonpressed.png" id="25_y17it"]
+
+[sub_resource type="GDScript" id="GDScript_jxs3x"]
+script/source = "extends CanvasLayer
+
+
+func _ready():
+	for i in get_children():
+		if i.is_class(\"TextureButton\"):
+			i._ready()
+"
 
 [sub_resource type="GDScript" id="GDScript_l7kov"]
 script/source = "extends Button
 
 func _on_pressed():
 	get_parent().set_visible(false)
+"
+
+[sub_resource type="GDScript" id="GDScript_b8fr2"]
+script/source = "extends CanvasLayer
+
+@onready var desc: Label = $GridContainer/Yield
+var lineone: String
+var linetwo: String
+var linethree: String
+var soulNum: int = 0
+
+func _ready():
+	lineone = \"Current Refined Soul: \" + str(SaveData.refinedSoul)
+	linetwo  = \"Ending Refined Soul: \" + str(SaveData.refinedSoul - soulNum)
+	linethree = \"Gained Purified Soul: \" + str(soulNum/2)
+	$GridContainer/yeahHowMuch.text = str(soulNum)
+	desc.text = lineone + \"\\n\" + linetwo + \"\\n\" + \"Efficiency: 50%\" + \"\\n\" + linethree
+
+func _on_cancel_button_pressed():
+	set_visible(false)
+
+func _on_up_button_pressed():
+	if SaveData.refinedSoul>soulNum:
+		soulNum +=1
+	_ready()
+func _on_down_button_pressed():
+	if soulNum>0:
+		soulNum -=1
+	_ready()
+	
+func _on_confirm_button_pressed():
+	SaveData.refinedSoul-= soulNum
+	SaveData.pureSoul+= soulNum/2
+	SaveData.saveData()
+	soulNum=0
+	_ready()
+	set_visible(false)
 "
 
 [node name="PreRunShop" type="Control"]
@@ -120,9 +171,22 @@ layout_mode = 2
 text = "Play"
 script = ExtResource("5")
 
+[node name="soulPurify" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = -80.0
+offset_right = 215.0
+offset_bottom = -22.0
+grow_vertical = 0
+text = "Purify Your Soul"
+
 [node name="PriestSkillTree" type="CanvasLayer" parent="."]
 layer = 5
 visible = false
+script = SubResource("GDScript_jxs3x")
 
 [node name="TextureRect" type="TextureRect" parent="PriestSkillTree"]
 anchors_preset = 15
@@ -442,6 +506,80 @@ offset_bottom = 31.0
 text = "Back to shop"
 script = SubResource("GDScript_l7kov")
 
+[node name="SoulPurification" type="CanvasLayer" parent="."]
+visible = false
+script = SubResource("GDScript_b8fr2")
+
+[node name="ColorRect" type="ColorRect" parent="SoulPurification"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.168627, 0.168627, 0.168627, 0.552941)
+
+[node name="GridContainer" type="GridContainer" parent="SoulPurification"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -20.0
+offset_right = 45.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 4
+
+[node name="HowMuch" type="Label" parent="SoulPurification/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "How Much?"
+
+[node name="DownButton" type="TextureButton" parent="SoulPurification/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("23_8clip")
+texture_pressed = ExtResource("25_y17it")
+texture_hover = ExtResource("25_y17it")
+texture_focused = ExtResource("25_y17it")
+
+[node name="yeahHowMuch" type="Label" parent="SoulPurification/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "0"
+
+[node name="UpButton" type="TextureButton" parent="SoulPurification/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("22_x6rpw")
+texture_pressed = ExtResource("23_aplsv")
+texture_hover = ExtResource("23_aplsv")
+texture_focused = ExtResource("23_aplsv")
+
+[node name="Yield" type="Label" parent="SoulPurification/GridContainer"]
+layout_mode = 2
+text = "Current Refined Soul: x
+Ending Refined Soul: x
+Efficiency: 50%
+Gained Purified Soul: x"
+
+[node name="spacer" type="Control" parent="SoulPurification/GridContainer"]
+layout_mode = 2
+
+[node name="spacer2" type="Control" parent="SoulPurification/GridContainer"]
+layout_mode = 2
+
+[node name="spacer3" type="Control" parent="SoulPurification/GridContainer"]
+layout_mode = 2
+
+[node name="CancelButton" type="Button" parent="SoulPurification/GridContainer"]
+layout_mode = 2
+text = "Cancel"
+
+[node name="ConfirmButton" type="Button" parent="SoulPurification/GridContainer"]
+layout_mode = 2
+text = "Confirm"
+
 [node name="SkillTreeButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 1
@@ -459,6 +597,7 @@ text = "View Skill Tree"
 [connection signal="pressed" from="Purchasables/SABATON" to="Purchasables/SABATON" method="_on_buyThingButton_pressed"]
 [connection signal="pressed" from="rightside/continue" to="." method="buythis"]
 [connection signal="pressed" from="rightside/continue" to="rightside/continue" method="_on_continue_pressed"]
+[connection signal="pressed" from="soulPurify" to="." method="_on_soul_purify_pressed"]
 [connection signal="pressed" from="PriestSkillTree/BackButton" to="PriestSkillTree/BackButton" method="_on_pressed"]
 [connection signal="pressed" from="PriestSkillTree/Revolver" to="PriestSkillTree/Revolver" method="_on_pressed"]
 [connection signal="pressed" from="PriestSkillTree/Rosary" to="PriestSkillTree/Rosary" method="_on_pressed"]
@@ -470,4 +609,8 @@ text = "View Skill Tree"
 [connection signal="pressed" from="PriestSkillTree/GoldCrucifix" to="PriestSkillTree/GoldCrucifix" method="_on_pressed"]
 [connection signal="pressed" from="PriestSkillTree/ExtraShell" to="PriestSkillTree/ExtraShell" method="_on_pressed"]
 [connection signal="pressed" from="WitchSkillTree/BackButton" to="WitchSkillTree/BackButton" method="_on_pressed"]
+[connection signal="pressed" from="SoulPurification/GridContainer/DownButton" to="SoulPurification" method="_on_down_button_pressed"]
+[connection signal="pressed" from="SoulPurification/GridContainer/UpButton" to="SoulPurification" method="_on_up_button_pressed"]
+[connection signal="pressed" from="SoulPurification/GridContainer/CancelButton" to="SoulPurification" method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="SoulPurification/GridContainer/ConfirmButton" to="SoulPurification" method="_on_confirm_button_pressed"]
 [connection signal="pressed" from="SkillTreeButton" to="." method="_on_skill_tree_button_pressed"]

@@ -39,3 +39,7 @@ func _on_skill_tree_button_pressed():
 			$PriestSkillTree.set_visible(true)
 		3:
 			$WitchSkillTree.set_visible(true)
+	
+	
+func _on_soul_purify_pressed():
+	$SoulPurification.set_visible(true)
