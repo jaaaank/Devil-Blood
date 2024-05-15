@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/Maps/SceneLoader.tscn" id="8_xxg3t"]
 [ext_resource type="Texture2D" uid="uid://cjqr8ikmmgwwk" path="res://Assets/kennel1.png" id="9_avptp"]
 [ext_resource type="PackedScene" uid="uid://dcrsm1jbpr0nb" path="res://Scenes/Actors/Enemies/LowTier/DogOnChain.tscn" id="10_5maf3"]
-[ext_resource type="Texture2D" uid="uid://dkf8cxe1h312p" path="res://Assets/Actors/objects/lights.png" id="10_s3kbc"]
+[ext_resource type="PackedScene" uid="uid://bw5hiu7vcs1ff" path="res://Scenes/Actors/Objects/torch.tscn" id="10_dyjo1"]
 [ext_resource type="PackedScene" uid="uid://8hk32ilblkwt" path="res://Scenes/Actors/Enemies/LowTier/SmartDog.tscn" id="10_ymjr5"]
 
 [node name="Shelter" type="Node2D"]
@@ -105,23 +105,47 @@ keyItemID = 1
 
 [node name="Lights" type="Node2D" parent="."]
 
-[node name="PointLight2D" type="PointLight2D" parent="Lights"]
-position = Vector2(-1229, 2983)
-color = Color(1, 1, 0.537255, 1)
-blend_mode = 2
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 2.0
-texture = ExtResource("10_s3kbc")
+[node name="Torch" parent="Lights" instance=ExtResource("10_dyjo1")]
+unique_name_in_owner = true
+position = Vector2(-1236, 2943)
 
-[node name="PointLight2D2" type="PointLight2D" parent="Lights"]
-position = Vector2(-551, 2977)
-rotation = -3.13946
-scale = Vector2(0.5, 0.5)
-color = Color(1, 1, 0.537255, 1)
-blend_mode = 2
-shadow_enabled = true
-shadow_filter = 2
-shadow_filter_smooth = 2.0
-texture = ExtResource("10_s3kbc")
-texture_scale = 2.43
+[node name="Torch2" parent="Lights" instance=ExtResource("10_dyjo1")]
+unique_name_in_owner = true
+position = Vector2(-554, 2943)
+scale = Vector2(-1, 1)
+
+[node name="Torch3" parent="Lights" instance=ExtResource("10_dyjo1")]
+unique_name_in_owner = true
+position = Vector2(-1235, 2363.5)
+
+[node name="Torch4" parent="Lights" instance=ExtResource("10_dyjo1")]
+unique_name_in_owner = true
+position = Vector2(-554, 2363.5)
+scale = Vector2(-1, 1)
+
+[node name="Torch5" parent="Lights" instance=ExtResource("10_dyjo1")]
+position = Vector2(-1236, 2639.5)
+
+[node name="Torch6" parent="Lights" instance=ExtResource("10_dyjo1")]
+position = Vector2(-554, 2639.5)
+scale = Vector2(-1, 1)
+
+[node name="Torch7" parent="Lights" instance=ExtResource("10_dyjo1")]
+position = Vector2(-1337, 1985)
+
+[node name="Torch8" parent="Lights" instance=ExtResource("10_dyjo1")]
+position = Vector2(-440, 1983)
+
+[node name="Torch9" parent="Lights" instance=ExtResource("10_dyjo1")]
+unique_name_in_owner = true
+position = Vector2(-1450.5, 2943)
+scale = Vector2(-1, 1)
+
+[node name="Torch10" parent="Lights" instance=ExtResource("10_dyjo1")]
+unique_name_in_owner = true
+position = Vector2(-1450.5, 2363.5)
+scale = Vector2(-1, 1)
+
+[node name="Torch11" parent="Lights" instance=ExtResource("10_dyjo1")]
+position = Vector2(-1450.5, 2639.5)
+scale = Vector2(-1, 1)

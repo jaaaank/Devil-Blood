@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw5hiu7vcs1ff"]
+
+[ext_resource type="Texture2D" uid="uid://dtcch7f4blo6o" path="res://Assets/Actors/objects/torch.png" id="1_vxggp"]
+[ext_resource type="Texture2D" uid="uid://dkf8cxe1h312p" path="res://Assets/Actors/objects/lights.png" id="2_dbhd3"]
+
+[node name="Torch" type="Sprite2D"]
+texture = ExtResource("1_vxggp")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-3, -6)
+color = Color(0.980392, 0.627451, 0, 1)
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 4.0
+texture = ExtResource("2_dbhd3")
