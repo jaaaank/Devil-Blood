@@ -17,6 +17,7 @@ func set_movement_target(target: Vector2):
 
 func _physics_process(delta):
 	super(delta)
+	spriteDirection()
 	set_movement_target(PlayerAutoload.playerPos)
 	if navigation_agent.distance_to_target()<50:
 		attack()
@@ -35,7 +36,18 @@ func attack():
 func stun():
 	stunned = true
 	$attkcooldown.start(0.3)
-
+	
+func spriteDirection():
+	var angl:float = roundf(rad_to_deg(velocity.angle()))
+	print(angl)
+	if velocity!=Vector2.ZERO:
+		if angl <= 45 && angl>=0 or angl >= -45 && angl<0 or angl <= 180 && angl>=135 or angl >=-180 && angl <= -135: 
+			sprite.get_node("DogSprite").texture = sprites[2]
+		elif angl<0:
+			sprite.get_node("DogSprite").texture = sprites[1]
+		else:
+			sprite.get_node("DogSprite").texture = sprites[0]
+			
 func _on_attkcooldown_timeout():
 	attacking = false
 	stunned = false

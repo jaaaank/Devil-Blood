@@ -31,7 +31,7 @@ func attack():
 				$Aim.look_at(PlayerAutoload.playerPos)
 				$Aim.add_child(tendril.instantiate())
 			2:
-				var randomPos = [Vector2(-12000,-500), Vector2(-12000, 1500), Vector2(-10500, 1500), Vector2(-10500, -500), Vector2(-11500, 1000), Vector2(-11500, 0)]
+				var randomPos = [Vector2(-4000,-500), Vector2(-4000, 1500), Vector2(-3000, 1500), Vector2(-3000, -500), Vector2(-3000, 1000), Vector2(-3000, 0)]
 				for i in randomPos:
 					var b = baby.instantiate()
 					add_sibling(b)

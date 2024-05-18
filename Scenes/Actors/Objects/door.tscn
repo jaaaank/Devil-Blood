@@ -47,6 +47,7 @@ radius = 102.0
 polygon = PackedVector2Array(-96, 5, -91, 8, 91, 8, 96, 5, 96, -13, -96, -13)
 
 [node name="DoorPivot" type="Node2D"]
+y_sort_enabled = true
 position = Vector2(94, 0)
 script = SubResource("GDScript_5tsct")
 

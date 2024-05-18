@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dbi1kwx8e0c8l"]
+[gd_scene load_steps=30 format=3 uid="uid://dbi1kwx8e0c8l"]
 
 [ext_resource type="Script" path="res://Scripts/Screens/PreRunShop.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Screens/buyThingButtons.gd" id="2"]
@@ -29,11 +29,31 @@
 [sub_resource type="GDScript" id="GDScript_jxs3x"]
 script/source = "extends CanvasLayer
 
+var selectedSkill: int
+var selectedCost: int
 
 func _ready():
+	#checks every skill to see if its been purchased
 	for i in get_children():
 		if i.is_class(\"TextureButton\"):
 			i._ready()
+
+func selectSkill(skillName: String, skillDesc: String, cost: int, index: int):
+	$SkillDescPopup.set_visible(true)
+	$SkillDescPopup/SkillName.text = skillName
+	$SkillDescPopup/Description/UpgradeDescription.text = \" \\n \"+skillDesc
+	$SkillDescPopup/Description/Cost.text = \"Cost: \" + str(cost) + \" Purified Soul\"
+	selectedSkill = index
+	selectedCost = cost
+	
+func _on_confirm_button_pressed():
+	if SaveData.pureSoul>= selectedCost:
+		SaveData.pureSoul-selectedCost
+		SaveData.priestSkillTree[selectedSkill] = true
+		_ready()
+		SaveData.saveData()
+	
+
 "
 
 [sub_resource type="GDScript" id="GDScript_l7kov"]
@@ -43,6 +63,12 @@ func _on_pressed():
 	get_parent().set_visible(false)
 "
 
+[sub_resource type="GDScript" id="GDScript_udnjx"]
+script/source = "extends ColorRect
+func _process(delta):
+	size = get_parent().size
+"
+
 [sub_resource type="GDScript" id="GDScript_b8fr2"]
 script/source = "extends CanvasLayer
 
@@ -50,15 +76,19 @@ script/source = "extends CanvasLayer
 var lineone: String
 var linetwo: String
 var linethree: String
+var linefour: String
+var linefive: String
 var soulNum: int = 0
 
 func _ready():
 	lineone = \"Current Refined Soul: \" + str(SaveData.refinedSoul)
 	linetwo  = \"Ending Refined Soul: \" + str(SaveData.refinedSoul - soulNum)
-	linethree = \"Gained Purified Soul: \" + str(soulNum/2)
+	linethree = \"Current Purified Soul: \" + str(SaveData.pureSoul)
+	linefour = \"Gained Purified Soul: \" + str(soulNum/2)
+	linefive = \"Final Purified Soul: \" + str(SaveData.pureSoul + soulNum/2)
 	$GridContainer/yeahHowMuch.text = str(soulNum)
-	desc.text = lineone + \"\\n\" + linetwo + \"\\n\" + \"Efficiency: 50%\" + \"\\n\" + linethree
-
+	desc.text = lineone + \"\\n\" + linetwo + \"\\n\" + \"Efficiency: 50%\" + \"\\n\" + linethree + \"\\n\" + linefour + \"\\n\" + linefive
+	
 func _on_cancel_button_pressed():
 	set_visible(false)
 
@@ -185,7 +215,6 @@ text = "Purify Your Soul"
 
 [node name="PriestSkillTree" type="CanvasLayer" parent="."]
 layer = 5
-visible = false
 script = SubResource("GDScript_jxs3x")
 
 [node name="TextureRect" type="TextureRect" parent="PriestSkillTree"]
@@ -198,9 +227,12 @@ texture = ExtResource("7_43j47")
 expand_mode = 1
 
 [node name="BackButton" type="Button" parent="PriestSkillTree"]
-offset_right = 121.0
-offset_bottom = 31.0
-text = "Back to shop"
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 208.0
+offset_bottom = 120.0
+text = "Back to 
+shop"
 script = SubResource("GDScript_l7kov")
 
 [node name="Revolver" type="TextureButton" parent="PriestSkillTree"]
@@ -214,7 +246,6 @@ offset_top = -49.816
 offset_right = 50.0
 offset_bottom = 50.184
 grow_horizontal = 2
-tooltip_text = "Revolver: Allows the priest to use a six-shot revolver (Press 2 to equip in game)"
 texture_normal = ExtResource("8_70nga")
 texture_hover = ExtResource("9_6timi")
 texture_disabled = ExtResource("10_xp8t7")
@@ -222,6 +253,8 @@ texture_focused = ExtResource("9_6timi")
 texture_click_mask = ExtResource("11_8wc8f")
 script = ExtResource("12_orxn7")
 cost = 1
+skillName = "Revolver"
+skillDesc = "Allows the priest to use a six-shot revolver (Press 2 to equip in game)"
 character = 1
 
 [node name="icon" type="Sprite2D" parent="PriestSkillTree/Revolver"]
@@ -243,7 +276,6 @@ offset_left = -49.592
 offset_top = -49.816
 offset_right = 50.408
 offset_bottom = 50.184
-tooltip_text = "ya momma"
 texture_normal = ExtResource("8_70nga")
 texture_hover = ExtResource("9_6timi")
 texture_disabled = ExtResource("10_xp8t7")
@@ -251,6 +283,7 @@ texture_focused = ExtResource("9_6timi")
 texture_click_mask = ExtResource("11_8wc8f")
 script = ExtResource("12_orxn7")
 cost = 1
+skillName = "Rosary"
 skillIndex = 1
 character = 1
 
@@ -273,7 +306,6 @@ offset_left = -50.056
 offset_top = -49.816
 offset_right = 49.944
 offset_bottom = 50.184
-tooltip_text = "ya momma"
 texture_normal = ExtResource("8_70nga")
 texture_hover = ExtResource("9_6timi")
 texture_disabled = ExtResource("10_xp8t7")
@@ -281,6 +313,7 @@ texture_focused = ExtResource("9_6timi")
 texture_click_mask = ExtResource("11_8wc8f")
 script = ExtResource("12_orxn7")
 cost = 1
+skillName = "Scope"
 skillIndex = 2
 character = 1
 
@@ -300,7 +333,6 @@ offset_top = -50.184
 offset_right = 50.0
 offset_bottom = 49.816
 grow_horizontal = 2
-tooltip_text = "ya momma"
 texture_normal = ExtResource("8_70nga")
 texture_hover = ExtResource("9_6timi")
 texture_disabled = ExtResource("10_xp8t7")
@@ -308,6 +340,8 @@ texture_focused = ExtResource("9_6timi")
 texture_click_mask = ExtResource("11_8wc8f")
 script = ExtResource("12_orxn7")
 cost = 2
+skillName = "Crossbow"
+skillDesc = "Allows the priest to use a crossbow (Press 4 to equip in game)"
 skillIndex = 3
 character = 1
 
@@ -330,7 +364,6 @@ offset_left = -49.592
 offset_top = -50.184
 offset_right = 50.408
 offset_bottom = 49.816
-tooltip_text = "ya momma"
 texture_normal = ExtResource("8_70nga")
 texture_hover = ExtResource("9_6timi")
 texture_disabled = ExtResource("10_xp8t7")
@@ -338,6 +371,7 @@ texture_focused = ExtResource("9_6timi")
 texture_click_mask = ExtResource("11_8wc8f")
 script = ExtResource("12_orxn7")
 cost = 2
+skillName = "Crucifix"
 skillIndex = 4
 character = 1
 
@@ -361,7 +395,6 @@ offset_top = -50.296
 offset_right = 50.0
 offset_bottom = 49.704
 grow_horizontal = 2
-tooltip_text = "ya momma"
 texture_normal = ExtResource("8_70nga")
 texture_hover = ExtResource("9_6timi")
 texture_disabled = ExtResource("10_xp8t7")
@@ -369,6 +402,8 @@ texture_focused = ExtResource("9_6timi")
 texture_click_mask = ExtResource("11_8wc8f")
 script = ExtResource("12_orxn7")
 cost = 3
+skillName = "Shotgun"
+skillDesc = "Allows the priest to use a shotgun (Press 3 to equip in game)"
 skillIndex = 5
 character = 1
 
@@ -391,7 +426,6 @@ offset_left = -50.144
 offset_top = -50.296
 offset_right = 49.856
 offset_bottom = 49.704
-tooltip_text = "ya momma"
 texture_normal = ExtResource("8_70nga")
 texture_hover = ExtResource("9_6timi")
 texture_disabled = ExtResource("10_xp8t7")
@@ -399,6 +433,7 @@ texture_focused = ExtResource("9_6timi")
 texture_click_mask = ExtResource("11_8wc8f")
 script = ExtResource("12_orxn7")
 cost = 3
+skillName = "Faith"
 skillIndex = 6
 character = 1
 
@@ -417,7 +452,6 @@ offset_left = -49.592
 offset_top = -50.296
 offset_right = 50.408
 offset_bottom = 49.704
-tooltip_text = "ya momma"
 texture_normal = ExtResource("8_70nga")
 texture_hover = ExtResource("9_6timi")
 texture_disabled = ExtResource("10_xp8t7")
@@ -425,6 +459,7 @@ texture_focused = ExtResource("9_6timi")
 texture_click_mask = ExtResource("11_8wc8f")
 script = ExtResource("12_orxn7")
 cost = 2
+skillName = "Gold Crucifix"
 skillIndex = 8
 character = 1
 
@@ -447,7 +482,6 @@ offset_left = -50.056
 offset_top = -50.296
 offset_right = 49.944
 offset_bottom = 49.704
-tooltip_text = "ya momma"
 texture_normal = ExtResource("8_70nga")
 texture_hover = ExtResource("9_6timi")
 texture_disabled = ExtResource("10_xp8t7")
@@ -455,6 +489,8 @@ texture_focused = ExtResource("9_6timi")
 texture_click_mask = ExtResource("11_8wc8f")
 script = ExtResource("12_orxn7")
 cost = 3
+skillName = "Extra Shell"
+skillDesc = "Makes the shotgun fire an extra shell"
 skillIndex = 7
 character = 1
 
@@ -466,6 +502,60 @@ offset = Vector2(50, 50)
 [node name="icon" type="Sprite2D" parent="PriestSkillTree/ExtraShell"]
 texture = ExtResource("20_bnq80")
 centered = false
+
+[node name="SkillDescPopup" type="HBoxContainer" parent="PriestSkillTree"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -419.0
+offset_top = -140.0
+offset_right = 419.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="SkillName" type="Label" parent="PriestSkillTree/SkillDescPopup"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 65
+text = "SKILL NAME:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="VBoxContainer" parent="PriestSkillTree/SkillDescPopup"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="UpgradeDescription" type="Label" parent="PriestSkillTree/SkillDescPopup/Description"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "This describes what the upgrade does."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cost" type="Label" parent="PriestSkillTree/SkillDescPopup/Description"]
+layout_mode = 2
+text = "Cost: __ Purified Soul"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PriestSkillTree/SkillDescPopup/Description/Cost"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 578.0
+offset_bottom = 23.0
+color = Color(0.176471, 0.0156863, 0, 1)
+script = SubResource("GDScript_udnjx")
+
+[node name="ConfirmButton" type="Button" parent="PriestSkillTree/SkillDescPopup"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Confirm 	
+Purchase"
 
 [node name="WitchSkillTree" type="CanvasLayer" parent="."]
 layer = 5
@@ -608,6 +698,7 @@ text = "View Skill Tree"
 [connection signal="pressed" from="PriestSkillTree/Ability" to="PriestSkillTree/Ability" method="_on_pressed"]
 [connection signal="pressed" from="PriestSkillTree/GoldCrucifix" to="PriestSkillTree/GoldCrucifix" method="_on_pressed"]
 [connection signal="pressed" from="PriestSkillTree/ExtraShell" to="PriestSkillTree/ExtraShell" method="_on_pressed"]
+[connection signal="pressed" from="PriestSkillTree/SkillDescPopup/ConfirmButton" to="PriestSkillTree" method="_on_confirm_button_pressed"]
 [connection signal="pressed" from="WitchSkillTree/BackButton" to="WitchSkillTree/BackButton" method="_on_pressed"]
 [connection signal="pressed" from="SoulPurification/GridContainer/DownButton" to="SoulPurification" method="_on_down_button_pressed"]
 [connection signal="pressed" from="SoulPurification/GridContainer/UpButton" to="SoulPurification" method="_on_up_button_pressed"]

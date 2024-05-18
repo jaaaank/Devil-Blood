@@ -134,7 +134,7 @@ position = Vector2(927, 3424)
 position = Vector2(796, 3351)
 
 [node name="SceneLoader" parent="." instance=ExtResource("9_theay")]
-position = Vector2(4630, 1989)
+position = Vector2(4619, 1989)
 rotation = 1.5708
 newSpawnPoint = Vector2(257, 770)
 nextScene = "res://Scenes/Maps/Exterior/OutsideShelter.tscn"
@@ -146,4 +146,4 @@ position = Vector2(360, 704)
 position = Vector2(563, 815)
 
 [node name="FireFlailEnemy" parent="." instance=ExtResource("11_uuybn")]
-position = Vector2(2512, 3509)
+position = Vector2(4832, 3274)

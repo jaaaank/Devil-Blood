@@ -50,9 +50,9 @@ func attack():
 		cooldown = true
 		
 func shoot():
-	var a = Bullet.instantiate()
 	match equippedWeapon:
 		0:
+			var a = Bullet.instantiate()
 			get_parent().get_parent().add_child(a)
 			a.position = $Guns/Muzzle.global_position
 			a.scale = $Guns/Muzzle.scale
@@ -62,6 +62,7 @@ func shoot():
 			gunanimp.play("rifleReload")
 		1:
 			if revolve>0:
+				var a = Bullet.instantiate()
 				get_parent().get_parent().add_child(a)
 				a.position = $Guns/Muzzle.global_position
 				a.scale = $Guns/Muzzle.scale
@@ -77,22 +78,20 @@ func shoot():
 					#revolve = 6
 					#return
 		2:
-			var b = Bullet.instantiate()
-			var c = Bullet.instantiate()
-			var d = Bullet.instantiate()
-			var bullets:Array =[a,b,c,d]
+			var bullets: int = 3
 			if SaveData.priestSkillTree[7]:
-				var e = Bullet.instantiate()
-				bullets.append(e)
+				bullets +=1
 			for i in bullets:
+				var b = Bullet.instantiate()
 				gunSounds.play()
-				get_parent().get_parent().add_child(i)
-				i.position = $Guns/Muzzle.global_position
-				i.scale = $Guns/Muzzle.scale
-				i.rotation_degrees = $Guns/Muzzle.rotation_degrees + randomSpread()*3
-				i.projDamage = 5
+				get_parent().get_parent().add_child(b)
+				b.position = $Guns/Muzzle.global_position
+				b.scale = $Guns/Muzzle.scale
+				b.rotation_degrees = $Guns/Muzzle.rotation_degrees + randomSpread()*3
+				b.projDamage = 5
 			gunanimp.play("shotgunReload")
 		3:
+			var a = Bullet.instantiate()
 			get_parent().get_parent().add_child(a)
 			a.position = $Guns/Muzzle.global_position
 			a.scale = $Guns/Muzzle.scale

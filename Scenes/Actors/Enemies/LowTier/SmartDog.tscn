@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://8hk32ilblkwt"]
+[gd_scene load_steps=12 format=3 uid="uid://8hk32ilblkwt"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/NPCS/Enemies/SmartDog.gd" id="1_x6amr"]
 [ext_resource type="PackedScene" uid="uid://db0oj2l3gdnuk" path="res://Scenes/Actors/Objects/enemybiteattack.tscn" id="2_hw7ha"]
 [ext_resource type="PackedScene" uid="uid://cci7teggrridn" path="res://Scenes/Actors/Objects/DamageNumbers.tscn" id="3_utmxs"]
 [ext_resource type="Texture2D" uid="uid://cglxeqkpxjmug" path="res://Assets/Actors/enemies/dog.png" id="4_smp51"]
+[ext_resource type="Texture2D" uid="uid://lttgfg4adrfu" path="res://Assets/Actors/enemies/dogfront.png" id="4_t0vay"]
 [ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="5_ieq8p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pnfmo"]
@@ -69,6 +70,7 @@ biteattack = ExtResource("2_hw7ha")
 damagenumbers = ExtResource("3_utmxs")
 speed = 350
 health = 35
+sprites = Array[Texture2D]([ExtResource("4_t0vay"), ExtResource("4_t0vay"), ExtResource("4_smp51")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)

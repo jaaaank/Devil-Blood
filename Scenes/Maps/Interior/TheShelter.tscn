@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://1i702iuvlqqe"]
+[gd_scene load_steps=12 format=3 uid="uid://1i702iuvlqqe"]
 
 [ext_resource type="Script" path="res://Scripts/maps.gd" id="1_dg40k"]
 [ext_resource type="PackedScene" uid="uid://djsnpeesrgq5f" path="res://Scenes/Actors/PCS/PlayerSpawner.tscn" id="3_2r1n7"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dcrsm1jbpr0nb" path="res://Scenes/Actors/Enemies/LowTier/DogOnChain.tscn" id="10_5maf3"]
 [ext_resource type="PackedScene" uid="uid://bw5hiu7vcs1ff" path="res://Scenes/Actors/Objects/torch.tscn" id="10_dyjo1"]
 [ext_resource type="PackedScene" uid="uid://8hk32ilblkwt" path="res://Scenes/Actors/Enemies/LowTier/SmartDog.tscn" id="10_ymjr5"]
+[ext_resource type="Texture2D" uid="uid://lttgfg4adrfu" path="res://Assets/Actors/enemies/dogfront.png" id="11_ygd7t"]
 
 [node name="Shelter" type="Node2D"]
 z_as_relative = false
@@ -68,12 +69,10 @@ polygon = PackedVector2Array(-7, -338, 3, -349, 18, -352, 18, -465, 365, -465, 3
 position = Vector2(-2072, 1443)
 
 [node name="SmartDog" parent="." instance=ExtResource("10_ymjr5")]
-position = Vector2(-1319, 605)
-
-[node name="SmartDog2" parent="." instance=ExtResource("10_ymjr5")]
-position = Vector2(-817, 2291)
+position = Vector2(-891, 1984)
 
 [node name="Doors" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="DoorPivot" parent="Doors" instance=ExtResource("6_ghfkt")]
 position = Vector2(19, -2725)
@@ -104,6 +103,15 @@ locked = true
 keyItemID = 1
 
 [node name="Lights" type="Node2D" parent="."]
+
+[node name="Torch12" parent="Lights" instance=ExtResource("10_dyjo1")]
+position = Vector2(-340.5, 2943)
+
+[node name="Torch13" parent="Lights" instance=ExtResource("10_dyjo1")]
+position = Vector2(-339.5, 2363.5)
+
+[node name="Torch14" parent="Lights" instance=ExtResource("10_dyjo1")]
+position = Vector2(-340.5, 2639.5)
 
 [node name="Torch" parent="Lights" instance=ExtResource("10_dyjo1")]
 unique_name_in_owner = true
@@ -149,3 +157,7 @@ scale = Vector2(-1, 1)
 [node name="Torch11" parent="Lights" instance=ExtResource("10_dyjo1")]
 position = Vector2(-1450.5, 2639.5)
 scale = Vector2(-1, 1)
+
+[node name="Dogfront" type="Sprite2D" parent="."]
+position = Vector2(-920, 2867)
+texture = ExtResource("11_ygd7t")
