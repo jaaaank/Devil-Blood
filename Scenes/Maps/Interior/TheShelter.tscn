@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://1i702iuvlqqe"]
+[gd_scene load_steps=11 format=3 uid="uid://1i702iuvlqqe"]
 
 [ext_resource type="Script" path="res://Scripts/maps.gd" id="1_dg40k"]
 [ext_resource type="PackedScene" uid="uid://djsnpeesrgq5f" path="res://Scenes/Actors/PCS/PlayerSpawner.tscn" id="3_2r1n7"]
@@ -6,11 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dcpjy60mgi6kg" path="res://Scenes/Actors/Objects/door.tscn" id="6_ghfkt"]
 [ext_resource type="TileSet" uid="uid://b6akqfrrsw2h5" path="res://Assets/TileMaps/shelterInterrior.tres" id="7_01f04"]
 [ext_resource type="PackedScene" path="res://Scenes/Maps/SceneLoader.tscn" id="8_xxg3t"]
-[ext_resource type="Texture2D" uid="uid://cjqr8ikmmgwwk" path="res://Assets/kennel1.png" id="9_avptp"]
 [ext_resource type="PackedScene" uid="uid://dcrsm1jbpr0nb" path="res://Scenes/Actors/Enemies/LowTier/DogOnChain.tscn" id="10_5maf3"]
 [ext_resource type="PackedScene" uid="uid://bw5hiu7vcs1ff" path="res://Scenes/Actors/Objects/torch.tscn" id="10_dyjo1"]
+[ext_resource type="PackedScene" uid="uid://ct2aquws2smc4" path="res://Scenes/Maps/Interior/Kennel1.tscn" id="10_xmj83"]
 [ext_resource type="PackedScene" uid="uid://8hk32ilblkwt" path="res://Scenes/Actors/Enemies/LowTier/SmartDog.tscn" id="10_ymjr5"]
-[ext_resource type="Texture2D" uid="uid://lttgfg4adrfu" path="res://Assets/Actors/enemies/dogfront.png" id="11_ygd7t"]
 
 [node name="Shelter" type="Node2D"]
 z_as_relative = false
@@ -45,28 +44,8 @@ scale = Vector2(0.25, 0.25)
 newSpawnPoint = Vector2(211, -557)
 nextScene = "res://Scenes/Maps/Exterior/OutsideShelter.tscn"
 
-[node name="kennel1" type="StaticBody2D" parent="."]
-y_sort_enabled = true
-position = Vector2(-1988, 1674)
-collision_layer = 272
-
-[node name="Door3" parent="kennel1" instance=ExtResource("6_ghfkt")]
-position = Vector2(382, -158)
-rotation = 1.5708
-
-[node name="Kennel1" type="Sprite2D" parent="kennel1"]
-position = Vector2(0, -500)
-texture = ExtResource("9_avptp")
-offset = Vector2(0, 500)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="kennel1"]
-polygon = PackedVector2Array(20, -194, 18, -17, 365, -17, 365, -153, 400, -153, 400, 142, 395, 154, 380, 171, 367, 162, 371, 150, 365, 139, 365, 18, 18, 18, 18, 465, 365, 465, 365, 363, 378, 365, 391, 356, 400, 360, 400, 500, -400, 500, -400, 292, -365, 292, -365, 465, -17, 466, -17, 18, -365, 18, -365, 190, -400, 190, -400, -190, -365, -190, -365, -17, -17, -17, -17, -201, -7, -210, 7, -198)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="kennel1"]
-polygon = PackedVector2Array(-7, -338, 3, -349, 18, -352, 18, -465, 365, -465, 365, -352, 400, -352, 400, -500, -400, -500, -400, -292, -365, -292, -365, -465, -17, -465, -17, -350)
-
 [node name="Stake" parent="." instance=ExtResource("10_5maf3")]
-position = Vector2(-2072, 1443)
+position = Vector2(-2277, 1743)
 
 [node name="SmartDog" parent="." instance=ExtResource("10_ymjr5")]
 position = Vector2(-891, 1984)
@@ -158,6 +137,5 @@ scale = Vector2(-1, 1)
 position = Vector2(-1450.5, 2639.5)
 scale = Vector2(-1, 1)
 
-[node name="Dogfront" type="Sprite2D" parent="."]
-position = Vector2(-920, 2867)
-texture = ExtResource("11_ygd7t")
+[node name="Kennel1" parent="." instance=ExtResource("10_xmj83")]
+position = Vector2(-1983, 2052)

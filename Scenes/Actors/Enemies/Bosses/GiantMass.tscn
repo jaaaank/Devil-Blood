@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://1jx4svoldd4m"]
+[gd_scene load_steps=18 format=3 uid="uid://1jx4svoldd4m"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/NPCS/Enemies/GiantMass.gd" id="1_5ayer"]
 [ext_resource type="PackedScene" uid="uid://bgcdy521frcxo" path="res://Scenes/Actors/Enemies/Bosses/Tendril.tscn" id="2_3vadu"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ly01s1e7dope" path="res://Scenes/Actors/Objects/soul.tscn" id="5_gtsy1"]
 [ext_resource type="Texture2D" uid="uid://c1l3cr7pqsvjw" path="res://Assets/Actors/enemies/giantmass.png" id="6_gyp54"]
 [ext_resource type="AudioStream" uid="uid://dmele4evib7tj" path="res://Assets/Audio/massjump.wav" id="9_fjhs5"]
+[ext_resource type="AudioStream" uid="uid://f43xkwqva0r" path="res://Assets/Audio/giantmassdeath.wav" id="10_inj34"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(589, 61)
@@ -18,6 +19,7 @@ size = Vector2(586, 80)
 
 [sub_resource type="Animation" id="Animation_hltlk"]
 length = 0.001
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -28,7 +30,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -67)]
+"values": [Vector2(0, -20)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -179,6 +181,21 @@ tracks/4/keys = {
 "method": &"set_physics_process"
 }]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("sound")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10_inj34")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_gl0ki"]
 resource_name = "jumpajumpa"
@@ -193,7 +210,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4),
 "transitions": PackedFloat32Array(1, 4, 1, 1, 4, 1, 1, 4, 1),
 "update": 0,
-"values": [Vector2(0, -67), Vector2(0, -367), Vector2(0, -67), Vector2(0, -67), Vector2(0, -367), Vector2(0, -67), Vector2(0, -67), Vector2(0, -367), Vector2(0, -67)]
+"values": [Vector2(0, -20), Vector2(0, -367), Vector2(0, -20), Vector2(0, -20), Vector2(0, -367), Vector2(0, -20), Vector2(0, -20), Vector2(0, -367), Vector2(0, -20)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -278,7 +295,7 @@ tracks/6/keys = {
 tracks/7/type = "audio"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Jumpsound")
+tracks/7/path = NodePath("sound")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -329,9 +346,9 @@ health = 200
 
 [node name="Masssheet" type="Sprite2D" parent="."]
 y_sort_enabled = true
-position = Vector2(0, -67)
+position = Vector2(0, -20)
 texture = ExtResource("6_gyp54")
-offset = Vector2(0, -260)
+offset = Vector2(0, -310)
 hframes = 3
 vframes = 3
 
@@ -376,7 +393,6 @@ one_shot = true
 libraries = {
 "": SubResource("AnimationLibrary_lmibj")
 }
-autoplay = "RESET"
 
 [node name="Aim" type="Node2D" parent="."]
 position = Vector2(0, -206)
@@ -392,35 +408,41 @@ debug_color = Color(1, 0, 0.0980392, 0.419608)
 [node name="Healthbar" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="ProgressBar" type="ProgressBar" parent="Healthbar"]
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.046
-anchor_right = 0.5
-anchor_bottom = 0.046
-offset_left = -150.0
-offset_top = 0.191999
-offset_right = 150.0
-offset_bottom = 28.192
-grow_horizontal = 2
-pivot_offset = Vector2(150, 14)
-step = 1.0
-
 [node name="Label" type="Label" parent="Healthbar"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -84.5
+offset_left = -163.5
 offset_top = 7.0
-offset_right = 84.5
-offset_bottom = 30.0
+offset_right = 163.5
+offset_bottom = 49.0
 grow_horizontal = 2
-text = "GIANT MASS OF GORE"
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 30
+text = "GIANT MASS OF FLESH"
 
-[node name="Jumpsound" type="AudioStreamPlayer2D" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="Healthbar"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.048
+anchor_right = 0.5
+anchor_bottom = 0.048
+offset_left = -250.0
+offset_top = 20.896
+offset_right = 250.0
+offset_bottom = 48.896
+grow_horizontal = 2
+pivot_offset = Vector2(250, 14)
+step = 1.0
+value = 100.0
+
+[node name="sound" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walktimer_timeout"]
 [connection signal="timeout" from="stuntimer" to="." method="unstun"]
 [connection signal="timeout" from="attackTimer" to="." method="attack"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="area_entered" from="ActivationSensor" to="." method="activate"]

@@ -5,6 +5,7 @@ class_name Player
 @onready var hurtbox:CollisionShape2D= $Hurtbox/HurtBoxShape
 @onready var iframesTimer:Timer= $IframesTimer
 @onready var camera: Camera2D = $PlayerCamera
+@onready var animP: AnimationPlayer = $AnimationPlayer
 var mouseInWindow: bool = true
 var iframes:bool = false
 
@@ -46,6 +47,10 @@ func _input(_event):
 	if Input.is_action_pressed("moveright"):
 		velocity.x = 1
 	velocity = velocity.normalized()*speed
+	if velocity!=Vector2.ZERO:
+		animP.play("walk")
+	else:
+		animP.play("idle")
 	spriteDirection()
 	
 	if Input.is_action_just_pressed("interact"):

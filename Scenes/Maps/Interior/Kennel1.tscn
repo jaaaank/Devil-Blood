@@ -1,0 +1,181 @@
+[gd_scene load_steps=10 format=3 uid="uid://ct2aquws2smc4"]
+
+[ext_resource type="Texture2D" uid="uid://cys0llopy254l" path="res://Assets/kennelfront.png" id="1_lpeki"]
+[ext_resource type="Texture2D" uid="uid://cjnae5ag2oarg" path="res://Assets/kennelside.png" id="2_ygc8l"]
+[ext_resource type="Texture2D" uid="uid://boy7najsnf3nf" path="res://Assets/kennelpillar.png" id="3_t1bha"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00ao8"]
+size = Vector2(726, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a2p25"]
+size = Vector2(8, 951)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmfuf"]
+size = Vector2(8, 710)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3uid"]
+size = Vector2(8, 951)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1wmo"]
+size = Vector2(726, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0it31"]
+size = Vector2(726, 10)
+
+[node name="Kennel1" type="StaticBody2D"]
+y_sort_enabled = true
+collision_layer = 16
+
+[node name="BottomShape" type="CollisionShape2D" parent="."]
+position = Vector2(1, -5)
+shape = SubResource("RectangleShape2D_00ao8")
+
+[node name="Bottom" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Kennelfront" type="Sprite2D" parent="Bottom"]
+position = Vector2(-239, 0)
+texture = ExtResource("1_lpeki")
+offset = Vector2(0, -77)
+
+[node name="Kennelfront2" type="Sprite2D" parent="Bottom"]
+position = Vector2(1, 0)
+texture = ExtResource("1_lpeki")
+offset = Vector2(0, -77)
+
+[node name="Kennelfront3" type="Sprite2D" parent="Bottom"]
+position = Vector2(241, 0)
+texture = ExtResource("1_lpeki")
+offset = Vector2(0, -77)
+
+[node name="Kennelfront4" type="Sprite2D" parent="Bottom"]
+position = Vector2(-239, -470)
+texture = ExtResource("1_lpeki")
+offset = Vector2(0, -77)
+
+[node name="Kennelfront5" type="Sprite2D" parent="Bottom"]
+position = Vector2(1, -470)
+texture = ExtResource("1_lpeki")
+offset = Vector2(0, -77)
+
+[node name="Kennelfront6" type="Sprite2D" parent="Bottom"]
+position = Vector2(241, -470)
+texture = ExtResource("1_lpeki")
+offset = Vector2(0, -77)
+
+[node name="Sides" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Kennelside" type="Sprite2D" parent="Sides"]
+position = Vector2(-359, 0)
+texture = ExtResource("2_ygc8l")
+offset = Vector2(0, -120)
+
+[node name="Kennelside2" type="Sprite2D" parent="Sides"]
+position = Vector2(361, 0)
+texture = ExtResource("2_ygc8l")
+offset = Vector2(0, -120)
+
+[node name="Kennelside3" type="Sprite2D" parent="Sides"]
+position = Vector2(-359, -237)
+texture = ExtResource("2_ygc8l")
+offset = Vector2(0, -120)
+
+[node name="Kennelside4" type="Sprite2D" parent="Sides"]
+position = Vector2(361, -237)
+texture = ExtResource("2_ygc8l")
+offset = Vector2(0, -120)
+
+[node name="Kennelside5" type="Sprite2D" parent="Sides"]
+position = Vector2(-359, -471)
+texture = ExtResource("2_ygc8l")
+offset = Vector2(0, -120)
+
+[node name="Kennelside6" type="Sprite2D" parent="Sides"]
+position = Vector2(361, -471)
+texture = ExtResource("2_ygc8l")
+offset = Vector2(0, -120)
+
+[node name="Kennelside7" type="Sprite2D" parent="Sides"]
+position = Vector2(-359, -708)
+texture = ExtResource("2_ygc8l")
+offset = Vector2(0, -120)
+
+[node name="KennelMiddle" type="Sprite2D" parent="Sides"]
+texture = ExtResource("2_ygc8l")
+offset = Vector2(0, -120)
+
+[node name="KennelMiddle2" type="Sprite2D" parent="Sides"]
+position = Vector2(0, -237)
+texture = ExtResource("2_ygc8l")
+offset = Vector2(0, -120)
+
+[node name="KennelMiddle3" type="Sprite2D" parent="Sides"]
+position = Vector2(0, -471)
+texture = ExtResource("2_ygc8l")
+offset = Vector2(0, -120)
+
+[node name="KennelMiddle4" type="Sprite2D" parent="Sides"]
+position = Vector2(0, -708)
+texture = ExtResource("2_ygc8l")
+offset = Vector2(0, -120)
+
+[node name="LSide" type="StaticBody2D" parent="Sides"]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sides/LSide"]
+position = Vector2(-359, -475.5)
+shape = SubResource("RectangleShape2D_a2p25")
+
+[node name="RSide" type="StaticBody2D" parent="Sides"]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sides/RSide"]
+position = Vector2(361, -355)
+shape = SubResource("RectangleShape2D_lmfuf")
+
+[node name="Middle" type="StaticBody2D" parent="Sides"]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sides/Middle"]
+position = Vector2(0, -477)
+shape = SubResource("RectangleShape2D_s3uid")
+
+[node name="Top" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -941)
+
+[node name="Top" type="StaticBody2D" parent="Top"]
+position = Vector2(0, 941)
+collision_layer = 16
+
+[node name="TopShape" type="CollisionShape2D" parent="Top/Top"]
+position = Vector2(1, -946)
+shape = SubResource("RectangleShape2D_d1wmo")
+
+[node name="Kennelfront" type="Sprite2D" parent="Top"]
+position = Vector2(-239, 0)
+texture = ExtResource("1_lpeki")
+offset = Vector2(0, -77)
+
+[node name="Kennelfront2" type="Sprite2D" parent="Top"]
+position = Vector2(1, 0)
+texture = ExtResource("1_lpeki")
+offset = Vector2(0, -77)
+
+[node name="Kennelfront3" type="Sprite2D" parent="Top"]
+position = Vector2(241, 0)
+texture = ExtResource("1_lpeki")
+offset = Vector2(0, -77)
+
+[node name="Kennelpillar" type="Sprite2D" parent="Top"]
+texture = ExtResource("3_t1bha")
+offset = Vector2(0, -77)
+
+[node name="Middle" type="StaticBody2D" parent="Top"]
+position = Vector2(0, 1412)
+collision_layer = 16
+
+[node name="TopShape" type="CollisionShape2D" parent="Top/Middle"]
+position = Vector2(1, -946)
+shape = SubResource("RectangleShape2D_0it31")

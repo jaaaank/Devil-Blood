@@ -47,8 +47,8 @@ func selectSkill(skillName: String, skillDesc: String, cost: int, index: int):
 	selectedCost = cost
 	
 func _on_confirm_button_pressed():
-	if SaveData.pureSoul>= selectedCost:
-		SaveData.pureSoul-selectedCost
+	if SaveData.pureSoul>=selectedCost:
+		SaveData.pureSoul-=selectedCost
 		SaveData.priestSkillTree[selectedSkill] = true
 		_ready()
 		SaveData.saveData()
@@ -65,7 +65,7 @@ func _on_pressed():
 
 [sub_resource type="GDScript" id="GDScript_udnjx"]
 script/source = "extends ColorRect
-func _process(delta):
+func _process(_delta):
 	size = get_parent().size
 "
 
@@ -215,6 +215,7 @@ text = "Purify Your Soul"
 
 [node name="PriestSkillTree" type="CanvasLayer" parent="."]
 layer = 5
+visible = false
 script = SubResource("GDScript_jxs3x")
 
 [node name="TextureRect" type="TextureRect" parent="PriestSkillTree"]
@@ -472,37 +473,6 @@ visible = false
 texture = ExtResource("14_ai2pn")
 offset = Vector2(50, 50)
 
-[node name="ExtraShell" type="TextureButton" parent="PriestSkillTree"]
-anchors_preset = -1
-anchor_left = 0.803
-anchor_top = 0.627
-anchor_right = 0.803
-anchor_bottom = 0.627
-offset_left = -50.056
-offset_top = -50.296
-offset_right = 49.944
-offset_bottom = 49.704
-texture_normal = ExtResource("8_70nga")
-texture_hover = ExtResource("9_6timi")
-texture_disabled = ExtResource("10_xp8t7")
-texture_focused = ExtResource("9_6timi")
-texture_click_mask = ExtResource("11_8wc8f")
-script = ExtResource("12_orxn7")
-cost = 3
-skillName = "Extra Shell"
-skillDesc = "Makes the shotgun fire an extra shell"
-skillIndex = 7
-character = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="PriestSkillTree/ExtraShell"]
-visible = false
-texture = ExtResource("14_ai2pn")
-offset = Vector2(50, 50)
-
-[node name="icon" type="Sprite2D" parent="PriestSkillTree/ExtraShell"]
-texture = ExtResource("20_bnq80")
-centered = false
-
 [node name="SkillDescPopup" type="HBoxContainer" parent="PriestSkillTree"]
 anchors_preset = 7
 anchor_left = 0.5
@@ -556,6 +526,37 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Confirm 	
 Purchase"
+
+[node name="ExtraShell" type="TextureButton" parent="PriestSkillTree"]
+anchors_preset = -1
+anchor_left = 0.803
+anchor_top = 0.627
+anchor_right = 0.803
+anchor_bottom = 0.627
+offset_left = -50.056
+offset_top = -50.296
+offset_right = 49.944
+offset_bottom = 49.704
+texture_normal = ExtResource("8_70nga")
+texture_hover = ExtResource("9_6timi")
+texture_disabled = ExtResource("10_xp8t7")
+texture_focused = ExtResource("9_6timi")
+texture_click_mask = ExtResource("11_8wc8f")
+script = ExtResource("12_orxn7")
+cost = 3
+skillName = "Extra Shell"
+skillDesc = "Makes the shotgun fire an extra shell"
+skillIndex = 7
+character = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="PriestSkillTree/ExtraShell"]
+visible = false
+texture = ExtResource("14_ai2pn")
+offset = Vector2(50, 50)
+
+[node name="icon" type="Sprite2D" parent="PriestSkillTree/ExtraShell"]
+texture = ExtResource("20_bnq80")
+centered = false
 
 [node name="WitchSkillTree" type="CanvasLayer" parent="."]
 layer = 5
@@ -697,8 +698,8 @@ text = "View Skill Tree"
 [connection signal="pressed" from="PriestSkillTree/Shotgun" to="PriestSkillTree/Shotgun" method="_on_pressed"]
 [connection signal="pressed" from="PriestSkillTree/Ability" to="PriestSkillTree/Ability" method="_on_pressed"]
 [connection signal="pressed" from="PriestSkillTree/GoldCrucifix" to="PriestSkillTree/GoldCrucifix" method="_on_pressed"]
-[connection signal="pressed" from="PriestSkillTree/ExtraShell" to="PriestSkillTree/ExtraShell" method="_on_pressed"]
 [connection signal="pressed" from="PriestSkillTree/SkillDescPopup/ConfirmButton" to="PriestSkillTree" method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="PriestSkillTree/ExtraShell" to="PriestSkillTree/ExtraShell" method="_on_pressed"]
 [connection signal="pressed" from="WitchSkillTree/BackButton" to="WitchSkillTree/BackButton" method="_on_pressed"]
 [connection signal="pressed" from="SoulPurification/GridContainer/DownButton" to="SoulPurification" method="_on_down_button_pressed"]
 [connection signal="pressed" from="SoulPurification/GridContainer/UpButton" to="SoulPurification" method="_on_up_button_pressed"]

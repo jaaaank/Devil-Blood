@@ -30,7 +30,7 @@ position = Vector2(671, 755)
 
 [node name="PlayerSpawner" parent="." instance=ExtResource("4")]
 y_sort_enabled = true
-position = Vector2(66, -598)
+position = Vector2(62, -669)
 
 [node name="UI" type="CanvasLayer" parent="."]
 

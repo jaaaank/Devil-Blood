@@ -54,4 +54,11 @@ func spawnShockwave():
 func die():
 	dropDrops()
 	$Healthbar.set_visible(false)
-	animP.play("death")
+	animP.call_deferred("stop")
+	animP.call_deferred("clear_queue")
+	animP.call_deferred("play","RESET")
+	animP.call_deferred("play","death")
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name=="death":
+		animP.queue_free()

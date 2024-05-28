@@ -30,7 +30,7 @@ movie_writer/fps=30
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/timer/plugin.cfg")
 
 [file_customization]
 
