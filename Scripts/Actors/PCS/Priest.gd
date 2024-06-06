@@ -53,7 +53,7 @@ func shoot():
 	match equippedWeapon:
 		0:
 			var a = Bullet.instantiate()
-			get_parent().get_parent().add_child(a)
+			get_parent().add_sibling(a)
 			a.position = $Guns/Muzzle.global_position
 			a.scale = $Guns/Muzzle.scale
 			a.rotation_degrees = $Guns/Muzzle.rotation_degrees + randomSpread()
@@ -63,7 +63,7 @@ func shoot():
 		1:
 			if revolve>0:
 				var a = Bullet.instantiate()
-				get_parent().get_parent().add_child(a)
+				get_parent().add_sibling(a)
 				a.position = $Guns/Muzzle.global_position
 				a.scale = $Guns/Muzzle.scale
 				a.rotation_degrees = $Guns/Muzzle.rotation_degrees + randomSpread()
@@ -84,7 +84,7 @@ func shoot():
 			for i in bullets:
 				var b = Bullet.instantiate()
 				gunSounds.play()
-				get_parent().get_parent().add_child(b)
+				get_parent().add_sibling(b)
 				b.position = $Guns/Muzzle.global_position
 				b.scale = $Guns/Muzzle.scale
 				b.rotation_degrees = $Guns/Muzzle.rotation_degrees + randomSpread()*3
@@ -92,7 +92,7 @@ func shoot():
 			gunanimp.play("shotgunReload")
 		3:
 			var a = Bullet.instantiate()
-			get_parent().get_parent().add_child(a)
+			get_parent().add_sibling(a)
 			a.position = $Guns/Muzzle.global_position
 			a.scale = $Guns/Muzzle.scale
 			a.rotation_degrees = $Guns/Muzzle.rotation_degrees

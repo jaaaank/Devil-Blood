@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://blmpwvome25ko"]
+[gd_scene load_steps=15 format=3 uid="uid://blmpwvome25ko"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/NPCS/Enemies/Mass.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://cjc87yril4sye" path="res://Assets/Actors/enemies/masssheet.png" id="2"]
@@ -30,6 +30,36 @@ tracks/0/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_p2wlv"]
+resource_name = "death"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Masssheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 2, 3]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_2ll4e"]
 resource_name = "walk"
 loop_mode = 1
@@ -49,6 +79,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n8keq"]
 _data = {
 "RESET": SubResource("Animation_lo2jb"),
+"death": SubResource("Animation_p2wlv"),
 "walk": SubResource("Animation_2ll4e")
 }
 
@@ -70,7 +101,7 @@ health = 5
 [node name="Masssheet" type="Sprite2D" parent="."]
 position = Vector2(0, -31)
 texture = ExtResource("2")
-hframes = 2
+hframes = 4
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 position = Vector2(0, -12)

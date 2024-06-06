@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c86l2rvf1k0mn"
-path="res://.godot/imported/shelterplaceholdermap.png-6de0037fd11e1ec4e714c7f020396d22.ctex"
+uid="uid://buk1lonrroibm"
+path="res://.godot/imported/ratsFriends.png-36491388728ac177dba47ca67b8f30a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TileMaps/shelterplaceholdermap.png"
-dest_files=["res://.godot/imported/shelterplaceholdermap.png-6de0037fd11e1ec4e714c7f020396d22.ctex"]
+source_file="res://Assets/Items/ratsFriends.png"
+dest_files=["res://.godot/imported/ratsFriends.png-36491388728ac177dba47ca67b8f30a5.ctex"]
 
 [params]
 

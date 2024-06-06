@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dewtt0y5sychm"]
+[gd_scene load_steps=6 format=3 uid="uid://dewtt0y5sychm"]
 
 [ext_resource type="Script" path="res://Scripts/Screens/UI.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://ddmifqa1yt0ab" path="res://Scenes/Screens/Popups/SelectionWheel.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://bebyip17kgxkt" path="res://Assets/UI/HealthBar/hbunder.png" id="3_5fm77"]
 [ext_resource type="Texture2D" uid="uid://c26guwe5ckkbj" path="res://Assets/UI/HealthBar/armorBar.png" id="3_famag"]
 [ext_resource type="Texture2D" uid="uid://bbvods5tvijga" path="res://Assets/UI/HealthBar/healthBar.tres" id="3_kpc5h"]
 
@@ -33,6 +34,7 @@ offset_bottom = -0.216003
 [node name="HealthBar" type="TextureProgressBar" parent="CanvasLayer/TopLeftUI"]
 layout_mode = 2
 value = 100.0
+texture_under = ExtResource("3_5fm77")
 texture_over = ExtResource("3_famag")
 texture_progress = ExtResource("3_kpc5h")
 

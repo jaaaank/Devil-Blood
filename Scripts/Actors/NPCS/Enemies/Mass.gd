@@ -41,3 +41,9 @@ func unstun():
 func _on_Hurtbox_area_entered(area):
 	if area.collision_layer == 1 and !stunned:
 		area.get_parent().damage(basedamage)
+
+func die():
+	dropDrops()
+	set_physics_process(false)
+	$Hurtbox/CollisionShape2D.set_deferred("disabled", true)
+	$AnimationPlayer.play("death")

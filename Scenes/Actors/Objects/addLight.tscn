@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvqm0kkod5p84"]
+
+[ext_resource type="Texture2D" uid="uid://dtcch7f4blo6o" path="res://Assets/Actors/objects/torch.png" id="1_7r0f0"]
+[ext_resource type="Texture2D" uid="uid://dkf8cxe1h312p" path="res://Assets/Actors/objects/lights.png" id="2_7fod8"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_llvjq"]
+blend_mode = 1
+
+[node name="AddLight" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7r0f0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_llvjq")
+texture = ExtResource("2_7fod8")

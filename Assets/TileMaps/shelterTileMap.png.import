@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjqr8ikmmgwwk"
-path="res://.godot/imported/kennel1.png-3575f2044e52958877ddaa4752ac08a6.ctex"
+uid="uid://c86l2rvf1k0mn"
+path="res://.godot/imported/shelterTileMap.png-4d7fbea3b9a544493bf63f8d9130fc86.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/kennel1.png"
-dest_files=["res://.godot/imported/kennel1.png-3575f2044e52958877ddaa4752ac08a6.ctex"]
+source_file="res://Assets/TileMaps/shelterTileMap.png"
+dest_files=["res://.godot/imported/shelterTileMap.png-4d7fbea3b9a544493bf63f8d9130fc86.ctex"]
 
 [params]
 

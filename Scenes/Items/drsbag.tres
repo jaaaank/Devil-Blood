@@ -5,7 +5,7 @@
 
 [resource]
 atlas = ExtResource("1_yyx6d")
-region = Rect2(0, 0, 16, 16)
+region = Rect2(0, 0, 32, 32)
 script = ExtResource("2_dsowq")
 name = "The Doctor's Supply Bag"
 id = 3

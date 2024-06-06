@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dloumty0i26md"]
+
+[ext_resource type="Script" path="res://Scripts/Actors/Objects/PickupItem.gd" id="1_fr3n1"]
+[ext_resource type="Texture2D" uid="uid://bj5hpms2hmi6b" path="res://Scenes/Items/ratsFriends.tres" id="2_j2cus"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_78006"]
+radius = 34.0
+
+[node name="RatsFriends" type="Area2D"]
+script = ExtResource("1_fr3n1")
+item = ExtResource("2_j2cus")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_78006")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_j2cus")

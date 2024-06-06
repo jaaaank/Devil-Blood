@@ -47,6 +47,7 @@ layout_mode = 2
 text = "Play"
 
 [node name="settingsButton" type="Button" parent="Buttons"]
+visible = false
 layout_mode = 2
 text = "Settings"
 
@@ -54,6 +55,11 @@ text = "Settings"
 layout_mode = 2
 text = "Credits"
 
+[node name="quitButton" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Quit"
+
 [connection signal="pressed" from="Buttons/playButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Buttons/settingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Buttons/creditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Buttons/quitButton" to="." method="_on_quit_button_pressed"]

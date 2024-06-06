@@ -10,14 +10,22 @@ script/source = "extends Node2D
 var closed: bool = true
 
 func _ready():
+	if locked:
+		$Label.text = \"Locked\"
 	checkSpin()
+	$Label.rotation = -rotation
 
 func _on_unlock_sensor_body_entered(body):
+	$Label.set_visible(true)
 	if body.is_in_group(\"player\"):
 		for i in PlayerAutoload.inventory:
 			if i!=null and i.id == keyItemID:
-				print(\"unlocked\")
+				$Label.text = \"Press E to Open/Close\"
 				
+func _on_unlock_sensor_body_exited(body):
+	if body.is_in_group(\"player\"):
+		$Label.set_visible(false)
+	
 func checkSpin():
 	var spin: float = $ActualDoor.global_rotation_degrees
 	if spin<22.5 && spin>=0 || spin>-22.5 && spin<=0 || spin>157.5 && spin<=180 || spin<-157.5 && spin>=-180:
@@ -31,22 +39,25 @@ func _input(_event):
 	if Input.is_action_just_pressed(\"interact\") && !locked && $ActualDoor/unlockSensor.overlaps_body(PlayerAutoload.get_player()):
 		if closed:
 			rotate(PI/2)
+			$Label.rotation += (-PI/2)
 		else:
 			rotate(-PI/2)
+			$Label.rotation += (PI/2)
 		closed = !closed
 		checkSpin()
+
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_llwks"]
 size = Vector2(180, 2)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6o57d"]
-radius = 102.0
+radius = 148.014
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yj02u"]
-polygon = PackedVector2Array(-96, 5, -91, 8, 91, 8, 96, 5, 96, -13, -96, -13)
+polygon = PackedVector2Array(-96, 5, -91, 8, 91, 8, 96, 5, 91, -71, -90, -71)
 
-[node name="DoorPivot" type="Node2D"]
+[node name="Door" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(94, 0)
 script = SubResource("GDScript_5tsct")
@@ -78,3 +89,15 @@ shape = SubResource("CircleShape2D_6o57d")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="ActualDoor"]
 occluder = SubResource("OccluderPolygon2D_yj02u")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+z_index = 1
+offset_left = -178.0
+offset_top = 18.0
+offset_right = -9.0
+offset_bottom = 41.0
+text = "Press E to Open/Close"
+
+[connection signal="body_entered" from="ActualDoor/unlockSensor" to="." method="_on_unlock_sensor_body_entered"]
+[connection signal="body_exited" from="ActualDoor/unlockSensor" to="." method="_on_unlock_sensor_body_exited"]

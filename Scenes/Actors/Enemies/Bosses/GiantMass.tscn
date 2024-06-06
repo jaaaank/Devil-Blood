@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://1jx4svoldd4m"]
+[gd_scene load_steps=21 format=3 uid="uid://1jx4svoldd4m"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/NPCS/Enemies/GiantMass.gd" id="1_5ayer"]
 [ext_resource type="PackedScene" uid="uid://bgcdy521frcxo" path="res://Scenes/Actors/Enemies/Bosses/Tendril.tscn" id="2_3vadu"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c1l3cr7pqsvjw" path="res://Assets/Actors/enemies/giantmass.png" id="6_gyp54"]
 [ext_resource type="AudioStream" uid="uid://dmele4evib7tj" path="res://Assets/Audio/massjump.wav" id="9_fjhs5"]
 [ext_resource type="AudioStream" uid="uid://f43xkwqva0r" path="res://Assets/Audio/giantmassdeath.wav" id="10_inj34"]
+[ext_resource type="Texture2D" uid="uid://dxatbevqrd0kj" path="res://Assets/Actors/objects/redblockingVines.png" id="11_bo1tx"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(589, 61)
@@ -326,6 +327,24 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5opdb"]
 size = Vector2(69, 202)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1fx4"]
+bg_color = Color(1, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 500
+corner_radius_top_right = 500
+corner_radius_bottom_right = 500
+corner_radius_bottom_left = 500
+corner_detail = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 6
+shadow_offset = Vector2(-5, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vt0om"]
+size = Vector2(20, 202)
+
 [node name="GiantMass" type="CharacterBody2D"]
 z_as_relative = false
 y_sort_enabled = true
@@ -398,6 +417,7 @@ libraries = {
 position = Vector2(0, -206)
 
 [node name="ActivationSensor" type="Area2D" parent="."]
+position = Vector2(-50, 0)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActivationSensor"]
@@ -435,10 +455,30 @@ offset_right = 250.0
 offset_bottom = 48.896
 grow_horizontal = 2
 pivot_offset = Vector2(250, 14)
+theme_override_colors/font_outline_color = Color(0.705882, 0.705882, 0.705882, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/fill = SubResource("StyleBoxFlat_e1fx4")
 step = 1.0
 value = 100.0
 
 [node name="sound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Wall" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2(1230, -204.5)
+collision_layer = 272
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+shape = SubResource("RectangleShape2D_vt0om")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall"]
+rotation = 1.5708
+texture = ExtResource("11_bo1tx")
+hframes = 3
+frame = 2
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walktimer_timeout"]

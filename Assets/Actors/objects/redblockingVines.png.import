@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pew63wavlgpx"
-path="res://.godot/imported/doctor.png-284d9e02727ebeed4e46f69b9ea30d1d.ctex"
+uid="uid://dxatbevqrd0kj"
+path="res://.godot/imported/redblockingVines.png-03425eb2a41ea1fa6869f694984e7997.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Actors/players/doctor.png"
-dest_files=["res://.godot/imported/doctor.png-284d9e02727ebeed4e46f69b9ea30d1d.ctex"]
+source_file="res://Assets/Actors/objects/redblockingVines.png"
+dest_files=["res://.godot/imported/redblockingVines.png-03425eb2a41ea1fa6869f694984e7997.ctex"]
 
 [params]
 

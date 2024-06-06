@@ -1,6 +1,7 @@
 extends mass
 
-@onready var animP = $AnimationPlayer
+@onready var animP: AnimationPlayer = $AnimationPlayer
+@onready var wall: StaticBody2D = $Wall
 @export var tendril: PackedScene
 @export var baby: PackedScene
 @export var shockwave: PackedScene
@@ -17,6 +18,9 @@ func activate(_body):
 	randomize()
 	$attackTimer.start(3)
 	randomWalk()
+	wall.set_deferred("visible",true)
+	wall.get_child(0).set_deferred("disabled",false)
+	wall.call_deferred("reparent",get_parent())
 	$ActivationSensor.queue_free()
 	
 func attack():
@@ -53,6 +57,7 @@ func spawnShockwave():
 
 func die():
 	dropDrops()
+	wall.queue_free()
 	$Healthbar.set_visible(false)
 	animP.call_deferred("stop")
 	animP.call_deferred("clear_queue")

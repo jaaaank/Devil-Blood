@@ -9,4 +9,7 @@ func _on_settings_button_pressed():
 	pass # Replace with function body.
 
 func _on_credits_button_pressed():
-	pass # Replace with function body.
+	OS.shell_open("https://eepyjank.itch.io/")
+
+func _on_quit_button_pressed():
+	get_tree().quit()
