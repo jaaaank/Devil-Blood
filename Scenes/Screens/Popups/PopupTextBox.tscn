@@ -19,11 +19,12 @@ shape = SubResource("CircleShape2D_0rx1s")
 
 [node name="Text" type="RichTextLabel" parent="."]
 z_index = 10
-offset_right = 147.0
-offset_bottom = 69.0
+custom_minimum_size = Vector2(300, 70)
+offset_right = 300.0
+offset_bottom = 70.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
-text = "[center]You know you're not welcome here"
+text = "[center]Where did you come from?"
 fit_content = true
 
 [node name="TextBG" type="ColorRect" parent="Text"]

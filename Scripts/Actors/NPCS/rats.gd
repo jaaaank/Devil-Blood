@@ -1,7 +1,5 @@
 extends InteractableNPC
 
-var interactable = false
-
 func _ready():
 	PlayerAutoload.connect("interacted", Callable(self, "interacted"))
 

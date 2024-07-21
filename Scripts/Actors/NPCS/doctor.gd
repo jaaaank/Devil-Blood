@@ -1,7 +1,6 @@
 extends InteractableNPC
 
-@onready var animP: AnimationPlayer=$AnimationPlayer
-var interactable = false
+@onready var animP: AnimationPlayer = $AnimationPlayer
 
 func _ready():
 	PlayerAutoload.connect("interacted", Callable(self, "interacted"))
@@ -16,7 +15,7 @@ func _on_interaction_shape_2d_body_exited(_body):
 	$hasBag.set_visible(false)
 
 
-func interacted():
+func interact():
 	pass
 
 func yorn(yes: bool):

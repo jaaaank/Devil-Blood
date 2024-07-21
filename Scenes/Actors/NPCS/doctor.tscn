@@ -72,20 +72,19 @@ hframes = 2
 
 [node name="PopupTextBox" parent="." instance=ExtResource("3_u7are")]
 position = Vector2(0, -42)
-oneTime = true
+canHide = true
 sequential = true
 waitTime = 4.0
-possilbleText = Array[String](["Where did you come from?", "You don't look like one of them angels.", "Well if you're not gonna try and kill me then maybe you can help me out.", "I'm looking for something, a bag of my supplies.", "If you can help me find it, I'll make it worth your while."])
+possilbleText = Array[String](["Where did you come from?", "If you're not gonna try and kill me, then maybe you can help me out.", "I'm looking for something, a bag of my supplies.", "If you help me find it, I can help you find what you're looking for."])
 
 [node name="CollisionShape2D" parent="PopupTextBox/DetectionArea" index="0"]
 position = Vector2(0, 11)
 
 [node name="Text" parent="PopupTextBox" index="1"]
-visible = false
-offset_left = -73.0
-offset_top = -137.0
-offset_right = 74.0
-offset_bottom = -72.0
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = -80.0
 
 [node name="Shadow" type="Sprite2D" parent="."]
 z_index = -1

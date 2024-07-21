@@ -112,8 +112,9 @@ noise = SubResource("FastNoiseLite_qvtuv")
 [sub_resource type="RectangleShape2D" id="2"]
 size = Vector2(40, 60)
 
-[sub_resource type="RectangleShape2D" id="1"]
-size = Vector2(55, 25)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fnwb2"]
+radius = 14.0
+height = 48.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_j8avc"]
 streams_count = 4
@@ -277,8 +278,9 @@ position = Vector2(0, 33)
 shape = SubResource("2")
 
 [node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(0, -11.5)
-shape = SubResource("1")
+position = Vector2(0, -10)
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_fnwb2")
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 position = Vector2(0, -65)

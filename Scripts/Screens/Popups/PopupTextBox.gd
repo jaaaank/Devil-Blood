@@ -8,8 +8,7 @@ var talking: bool
 @export var sequential: bool
 @export var waitTime: float = 2
 #can't be both sequential and random
-@export var possilbleText: Array[String]
-
+@export_multiline var possilbleText: Array[String]
 
 func _ready():
 	randomize()
@@ -35,7 +34,8 @@ func showText(_body):
 			$Text/TextBG.size = $Text.size
 			if oneTime:
 				queue_free()
-
+		hideText(null)
+		
 func say(words: String):
 	$Text.text = "[center]" + words
 	talking = true
