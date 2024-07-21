@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c50aeqrjh2373"]
+
+[ext_resource type="Script" path="res://Scripts/Autoload/MapAutoload.gd" id="1_422h3"]
+
+[node name="MapAutoload" type="Node"]
+script = ExtResource("1_422h3")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true

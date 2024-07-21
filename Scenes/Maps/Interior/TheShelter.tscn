@@ -1,21 +1,23 @@
-[gd_scene load_steps=12 format=3 uid="uid://1i702iuvlqqe"]
+[gd_scene load_steps=13 format=3 uid="uid://1i702iuvlqqe"]
 
 [ext_resource type="Script" path="res://Scripts/maps.gd" id="1_dg40k"]
+[ext_resource type="AudioStream" uid="uid://drw1xr8mwd45j" path="res://Assets/Audio/music/cellarDoor.mp3" id="2_27qvx"]
 [ext_resource type="PackedScene" uid="uid://djsnpeesrgq5f" path="res://Scenes/Actors/PCS/PlayerSpawner.tscn" id="3_2r1n7"]
 [ext_resource type="PackedScene" uid="uid://cuugv52nxnrn7" path="res://Scenes/Screens/Popups/LocationText.tscn" id="4_0h8w0"]
 [ext_resource type="PackedScene" uid="uid://dcpjy60mgi6kg" path="res://Scenes/Actors/Objects/door.tscn" id="6_ghfkt"]
 [ext_resource type="TileSet" uid="uid://b6akqfrrsw2h5" path="res://Assets/TileMaps/shelterInterrior.tres" id="7_01f04"]
 [ext_resource type="PackedScene" path="res://Scenes/Maps/SceneLoader.tscn" id="8_xxg3t"]
-[ext_resource type="PackedScene" uid="uid://dcrsm1jbpr0nb" path="res://Scenes/Actors/Enemies/LowTier/DogOnChain.tscn" id="10_5maf3"]
 [ext_resource type="PackedScene" uid="uid://bw5hiu7vcs1ff" path="res://Scenes/Actors/Objects/torch.tscn" id="10_dyjo1"]
 [ext_resource type="PackedScene" uid="uid://ct2aquws2smc4" path="res://Scenes/Maps/Interior/Kennel1.tscn" id="10_xmj83"]
 [ext_resource type="PackedScene" uid="uid://8hk32ilblkwt" path="res://Scenes/Actors/Enemies/LowTier/SmartDog.tscn" id="10_ymjr5"]
 [ext_resource type="PackedScene" uid="uid://dloumty0i26md" path="res://Scenes/Actors/Objects/RatsFriends.tscn" id="11_fg6jb"]
+[ext_resource type="PackedScene" uid="uid://blmpwvome25ko" path="res://Scenes/Actors/Enemies/LowTier/Mass.tscn" id="11_vwyn4"]
 
 [node name="Shelter" type="Node2D"]
 z_as_relative = false
 y_sort_enabled = true
 script = ExtResource("1_dg40k")
+music = ExtResource("2_27qvx")
 limits = Array[float]([-3200.0, -3200.0, 900.0, 3350.0])
 
 [node name="Darkness" type="CanvasModulate" parent="."]
@@ -45,9 +47,6 @@ rotation = 1.5708
 scale = Vector2(0.25, 0.25)
 newSpawnPoint = Vector2(4614, 2170)
 nextScene = "res://Scenes/Maps/Exterior/PriestCave.tscn"
-
-[node name="Stake" parent="." instance=ExtResource("10_5maf3")]
-position = Vector2(-2277, 1743)
 
 [node name="SmartDog" parent="." instance=ExtResource("10_ymjr5")]
 position = Vector2(-891, 1984)
@@ -273,7 +272,13 @@ position = Vector2(-590, -638)
 rotation = 1.08033
 
 [node name="Kennel1" parent="." instance=ExtResource("10_xmj83")]
-position = Vector2(-1983, 2052)
+position = Vector2(-1983, 2062)
 
 [node name="RatsFriends" parent="." instance=ExtResource("11_fg6jb")]
 position = Vector2(-461, 556)
+
+[node name="Mass" parent="." instance=ExtResource("11_vwyn4")]
+position = Vector2(-2322, 516)
+
+[node name="SmartDog2" parent="." instance=ExtResource("10_ymjr5")]
+position = Vector2(-1810, 1794)

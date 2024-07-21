@@ -7,3 +7,11 @@ func set_spawnPoint(value: Vector2):
 
 func reset():
 	pass
+
+func changeMusic(music):
+	if music == null:
+		$AudioStreamPlayer.stop()
+		return
+	elif music!=$AudioStreamPlayer.stream:
+		$AudioStreamPlayer.stream = music
+		$AudioStreamPlayer.play()

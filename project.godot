@@ -20,7 +20,7 @@ config/icon="res://icon.png"
 [autoload]
 
 PlayerAutoload="*res://Scripts/Autoload/PlayerAutoload.gd"
-MapAutoload="*res://Scripts/Autoload/MapAutoload.gd"
+MapAutoload="*res://Scripts/Autoload/MapAutoload.tscn"
 SaveData="*res://Scripts/Autoload/SaveData.gd"
 
 [editor]

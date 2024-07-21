@@ -42,3 +42,14 @@ func _on_full_screen_button_toggled(toggled_on):
 			#setting the window to windowed doesn't work if the window was previously maximized
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MINIMIZED)
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+
+func _on_return_to_menu_pressed():
+	$CanvasLayer/PauseMenu/areusure.set_visible(true)
+	
+func _on_yes_pressed():
+	set_paused(false)
+	get_tree().change_scene_to_file("res://Scenes/Screens/MainMenu.tscn")
+
+func _on_no_pressed():
+	$CanvasLayer/PauseMenu/areusure.set_visible(false)

@@ -627,6 +627,7 @@ columns = 4
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "How Much?"
+horizontal_alignment = 1
 
 [node name="DownButton" type="TextureButton" parent="SoulPurification/GridContainer"]
 layout_mode = 2
@@ -634,11 +635,13 @@ texture_normal = ExtResource("23_8clip")
 texture_pressed = ExtResource("25_y17it")
 texture_hover = ExtResource("25_y17it")
 texture_focused = ExtResource("25_y17it")
+stretch_mode = 3
 
 [node name="yeahHowMuch" type="Label" parent="SoulPurification/GridContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "0"
+horizontal_alignment = 1
 
 [node name="UpButton" type="TextureButton" parent="SoulPurification/GridContainer"]
 layout_mode = 2
@@ -646,6 +649,7 @@ texture_normal = ExtResource("22_x6rpw")
 texture_pressed = ExtResource("23_aplsv")
 texture_hover = ExtResource("23_aplsv")
 texture_focused = ExtResource("23_aplsv")
+stretch_mode = 3
 
 [node name="Yield" type="Label" parent="SoulPurification/GridContainer"]
 layout_mode = 2
@@ -653,6 +657,8 @@ text = "Current Refined Soul: x
 Ending Refined Soul: x
 Efficiency: 50%
 Gained Purified Soul: x"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="spacer" type="Control" parent="SoulPurification/GridContainer"]
 layout_mode = 2
@@ -663,13 +669,22 @@ layout_mode = 2
 [node name="spacer3" type="Control" parent="SoulPurification/GridContainer"]
 layout_mode = 2
 
-[node name="CancelButton" type="Button" parent="SoulPurification/GridContainer"]
-layout_mode = 2
-text = "Cancel"
-
 [node name="ConfirmButton" type="Button" parent="SoulPurification/GridContainer"]
 layout_mode = 2
 text = "Confirm"
+
+[node name="spacer4" type="Control" parent="SoulPurification/GridContainer"]
+layout_mode = 2
+
+[node name="spacer5" type="Control" parent="SoulPurification/GridContainer"]
+layout_mode = 2
+
+[node name="spacer6" type="Control" parent="SoulPurification/GridContainer"]
+layout_mode = 2
+
+[node name="CancelButton" type="Button" parent="SoulPurification/GridContainer"]
+layout_mode = 2
+text = "Cancel"
 
 [node name="SkillTreeButton" type="Button" parent="."]
 layout_mode = 1
@@ -703,6 +718,6 @@ text = "View Skill Tree"
 [connection signal="pressed" from="WitchSkillTree/BackButton" to="WitchSkillTree/BackButton" method="_on_pressed"]
 [connection signal="pressed" from="SoulPurification/GridContainer/DownButton" to="SoulPurification" method="_on_down_button_pressed"]
 [connection signal="pressed" from="SoulPurification/GridContainer/UpButton" to="SoulPurification" method="_on_up_button_pressed"]
-[connection signal="pressed" from="SoulPurification/GridContainer/CancelButton" to="SoulPurification" method="_on_cancel_button_pressed"]
 [connection signal="pressed" from="SoulPurification/GridContainer/ConfirmButton" to="SoulPurification" method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="SoulPurification/GridContainer/CancelButton" to="SoulPurification" method="_on_cancel_button_pressed"]
 [connection signal="pressed" from="SkillTreeButton" to="." method="_on_skill_tree_button_pressed"]

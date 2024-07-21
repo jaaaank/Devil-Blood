@@ -81,5 +81,76 @@ process_priority = 10
 layout_mode = 2
 text = "Toggle Fullscreen"
 
+[node name="returnToMenu" type="Button" parent="CanvasLayer/PauseMenu/MenuButtons"]
+layout_mode = 2
+text = "Return to Menu"
+
+[node name="areusure" type="ColorRect" parent="CanvasLayer/PauseMenu"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.5
+offset_top = -90.0
+offset_right = 148.5
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0431373, 0.0431373, 0.0431373, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/PauseMenu/areusure"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.5
+offset_top = -76.0
+offset_right = 147.5
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Are you sure?
+Your progress will not be saved."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="yes" type="Button" parent="CanvasLayer/PauseMenu/areusure"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.5
+offset_top = 11.0
+offset_right = 17.5
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Return to Menu"
+
+[node name="no" type="Button" parent="CanvasLayer/PauseMenu/areusure"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.5
+offset_top = 47.0
+offset_right = 15.5
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Cancel"
+
 [connection signal="pressed" from="CanvasLayer/PauseMenu/MenuButtons/ResumeButton" to="." method="set_paused" binds= [false]]
 [connection signal="toggled" from="CanvasLayer/PauseMenu/MenuButtons/FullScreenButton" to="." method="_on_full_screen_button_toggled"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/MenuButtons/returnToMenu" to="." method="_on_return_to_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/areusure/yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/areusure/no" to="." method="_on_no_pressed"]

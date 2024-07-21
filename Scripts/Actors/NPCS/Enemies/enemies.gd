@@ -40,8 +40,8 @@ func spawnDamageNums(damagetaken, clr):
 	var b = damagenumbers.instantiate()
 	get_parent().add_child(b)
 	b.global_position = global_position + Vector2(randi_range(-50, 50), randi_range(-50, 50))
-	b.get_node("RichTextLabel").text = str(damagetaken)
-	b.get_node("RichTextLabel").add_theme_color_override("default_color", clr)
+	b.get_node("Label").text = str(damagetaken)
+	b.get_node("Label").label_settings.outline_color = clr
 		
 func armorCalculation():
 	if armor !=0:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://blr80b87lchfo"]
+[gd_scene load_steps=17 format=3 uid="uid://blr80b87lchfo"]
 
 [ext_resource type="Script" path="res://Scripts/maps.gd" id="1_s4rqn"]
 [ext_resource type="PackedScene" uid="uid://cuugv52nxnrn7" path="res://Scenes/Screens/Popups/LocationText.tscn" id="2"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dj8x8askyl5n0" path="res://Scenes/Actors/Objects/SoulRefinery.tscn" id="12_jdiu8"]
 [ext_resource type="PackedScene" uid="uid://dgqi0y0iofow" path="res://Scenes/Actors/NPCS/rats.tscn" id="13_m0dj3"]
 [ext_resource type="Texture2D" uid="uid://bmue8vvx2j2et" path="res://Assets/shelterExterior.png" id="14_p477n"]
+[ext_resource type="AudioStream" uid="uid://drw1xr8mwd45j" path="res://Assets/Audio/music/cellarDoor.mp3" id="15_78h5u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oatap"]
 size = Vector2(1000, 933)
@@ -22,6 +23,7 @@ size = Vector2(1000, 933)
 z_as_relative = false
 y_sort_enabled = true
 script = ExtResource("1_s4rqn")
+music = ExtResource("15_78h5u")
 limits = Array[float]([-12800.0, -1023.0, 7500.0, 5000.0])
 
 [node name="TileMap" type="TileMap" parent="."]

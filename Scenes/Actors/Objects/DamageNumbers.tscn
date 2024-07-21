@@ -1,20 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://cci7teggrridn"]
+[gd_scene load_steps=3 format=3 uid="uid://cci7teggrridn"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/Objects/DamageNumbers.gd" id="1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_84ofa"]
+font_size = 20
+outline_size = 15
+outline_color = Color(1, 0, 0, 1)
+shadow_size = 15
+shadow_color = Color(0, 0, 0, 0.486275)
+shadow_offset = Vector2(3, 3)
 
 [node name="DamageNumbers" type="Node2D"]
 z_index = 10
 script = ExtResource("1")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(2, 2)
-text = "numeros"
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
 autostart = true
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "10"
+label_settings = SubResource("LabelSettings_84ofa")
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
