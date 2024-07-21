@@ -87,13 +87,17 @@ text = "Back
 [node name="RichTextLabel" type="RichTextLabel" parent="credits"]
 offset_left = 59.0
 offset_top = 235.0
-offset_right = 689.0
-offset_bottom = 406.0
+offset_right = 674.0
+offset_bottom = 479.0
 text = "Eepyjank: Programmer, Artist
+
 Xelebrious: Artist
+
 Royalty Free Music from Tunetank.com
 Track: Cellar Door by Finval
-https://tunetank.com/track/3903-cellar-door/"
+https://tunetank.com/track/3903-cellar-door/
+
+Dog Bark Staffordshire Bullterrier by Anton -- https://freesound.org/s/157322/ -- License: Attribution 4.0"
 
 [connection signal="pressed" from="Buttons/playButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Buttons/settingsButton" to="." method="_on_settings_button_pressed"]

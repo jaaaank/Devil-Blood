@@ -32,6 +32,7 @@ func attack():
 		$hurtbox/DogSprite/Marker2D.add_child(b)
 		attacking = true
 		$attkcooldown.start(1)
+		$attack.play()
 
 func stun():
 	stunned = true
@@ -50,3 +51,9 @@ func spriteDirection():
 func _on_attkcooldown_timeout():
 	attacking = false
 	stunned = false
+
+
+func _on_random_bark_timeout():
+	$randomBark.start(randf_range(3.0, 10.0))
+	if !attacking:
+		$bark.play()

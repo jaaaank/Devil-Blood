@@ -43,6 +43,7 @@ func _on_Hurtbox_area_entered(area):
 		area.get_parent().damage(basedamage)
 
 func die():
+	$AudioStreamPlayer2D.play()
 	dropDrops()
 	set_physics_process(false)
 	$Hurtbox/CollisionShape2D.set_deferred("disabled", true)

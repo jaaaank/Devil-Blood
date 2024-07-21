@@ -6,5 +6,5 @@
 script = ExtResource("1_422h3")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-volume_db = -10.0
+volume_db = -15.0
 autoplay = true
