@@ -42,10 +42,10 @@ position = Vector2(0, 11)
 
 [node name="Text" parent="PopupTextBox" index="1"]
 visible = false
-offset_left = -73.0
-offset_top = -137.0
-offset_right = 74.0
-offset_bottom = -72.0
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = -80.0
 
 [node name="Shadow" type="Sprite2D" parent="."]
 z_index = -1

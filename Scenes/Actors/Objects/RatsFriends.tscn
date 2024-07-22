@@ -1,17 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://dloumty0i26md"]
+[gd_scene load_steps=6 format=3 uid="uid://dloumty0i26md"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/Objects/PickupItem.gd" id="1_fr3n1"]
 [ext_resource type="Texture2D" uid="uid://bj5hpms2hmi6b" path="res://Scenes/Items/ratsFriends.tres" id="2_j2cus"]
+[ext_resource type="Texture2D" uid="uid://5nsy63h8xhy5" path="res://Assets/Actors/objects/pileofrats.png" id="3_b8w3u"]
+[ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="3_koa8c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_78006"]
-radius = 34.0
+radius = 29.0172
 
 [node name="RatsFriends" type="Area2D"]
+collision_layer = 0
 script = ExtResource("1_fr3n1")
 item = ExtResource("2_j2cus")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_78006")
 
+[node name="shadow" type="Sprite2D" parent="."]
+position = Vector2(-1, 1)
+scale = Vector2(0.68777, 1.52866)
+texture = ExtResource("3_koa8c")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_j2cus")
+texture = ExtResource("3_b8w3u")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
