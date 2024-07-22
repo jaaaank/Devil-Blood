@@ -77,7 +77,7 @@ position = Vector2(-1647, -37)
 rotation = 1.5708
 
 [node name="Door3" parent="Doors" instance=ExtResource("6_ghfkt")]
-position = Vector2(17, 859)
+position = Vector2(17, 604)
 rotation = 1.5708
 locked = true
 keyItemID = 1
