@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://ckh7b65wr83dv"]
+[gd_scene load_steps=35 format=3 uid="uid://ckh7b65wr83dv"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/PCS/Priest.gd" id="1_mpl5p"]
 [ext_resource type="PackedScene" uid="uid://cpgb6vtopm1m5" path="res://Scenes/Actors/Objects/Bullet.tscn" id="2_ndgk7"]
@@ -135,6 +135,9 @@ spread = 45.39
 flatness = 1.0
 gravity = Vector3(0, 150, 0)
 color = Color(0.839216, 0, 0, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_68ipv"]
+blend_mode = 2
 
 [sub_resource type="Animation" id="Animation_f7ps5"]
 length = 0.001
@@ -340,6 +343,7 @@ one_shot = true
 
 [node name="Shadow" type="Sprite2D" parent="."]
 z_index = -1
+material = SubResource("CanvasItemMaterial_68ipv")
 scale = Vector2(1.06349, 0.677419)
 texture = ExtResource("7_kf6v7")
 

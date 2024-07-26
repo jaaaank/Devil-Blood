@@ -7,7 +7,7 @@ func _ready():
 
 func _on_interaction_shape_2d_body_entered(_body):
 	interactable = true
-	if checkForBag():
+	if checkForItem():
 		$hasBag.set_visible(true)
 		
 func _on_interaction_shape_2d_body_exited(_body):
@@ -24,10 +24,5 @@ func yorn(yes: bool):
 	PlayerAutoload.inventory.append(load("res://Scenes/Items/crystdevbl.tres"))
 	SaveData.unlockedPurchasables[2] = true
 	if yes:
-		$PopupTextBox.say("Thanks.")
+		$PopupTextBox.say("Thanks. Take this and head south.")
 		
-func checkForBag():
-	for i in PlayerAutoload.inventory:
-		if i && i.id == 3:
-			return true
-	return false
