@@ -52,6 +52,7 @@ func attack():
 func shoot():
 	match equippedWeapon:
 		0:
+			$PlayerCamera.shake(4.0)
 			var a = Bullet.instantiate()
 			get_parent().add_sibling(a)
 			a.position = $Guns/Muzzle.global_position
@@ -62,6 +63,7 @@ func shoot():
 			gunanimp.play("rifleReload")
 		1:
 			if revolve>0:
+				$PlayerCamera.shake(2.0)
 				var a = Bullet.instantiate()
 				get_parent().add_sibling(a)
 				a.position = $Guns/Muzzle.global_position
@@ -78,6 +80,7 @@ func shoot():
 					#revolve = 6
 					#return
 		2:
+			$PlayerCamera.shake(15.0)
 			var bullets: int = 3
 			if SaveData.priestSkillTree[7]:
 				bullets +=1
