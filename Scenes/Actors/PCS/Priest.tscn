@@ -126,7 +126,8 @@ var rng = RandomNumberGenerator.new()
 var shakeStrength: float = 0.0
 
 func shake(randomStrength):
-	shakeStrength = randomStrength
+	if !SaveData.settings[0]:
+		shakeStrength = randomStrength
 	
 func _process(delta):
 	if shakeStrength > 0.1:
