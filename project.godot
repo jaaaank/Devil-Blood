@@ -157,6 +157,7 @@ ability={
 2d_physics/layer_7="holyLight"
 2d_physics/layer_8="npcs"
 2d_physics/layer_9="bulletKiller"
+2d_physics/layer_10="soul"
 
 [physics]
 

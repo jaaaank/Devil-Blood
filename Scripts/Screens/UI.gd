@@ -7,6 +7,7 @@ var paused: = false: set = set_paused
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	healthBar.max_value = get_parent().health
+	healthBar.value = healthBar.max_value
 	updateUI()
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -30,7 +31,7 @@ func _input(_event):
 		$SelectionWheel.set_deferred("visible", false)
 
 func updateUI():
-	healthBar.value = PlayerAutoload.health
+	healthBar.value = get_parent().health
 	soulCount.text = "	Soul: " + str(PlayerAutoload.impureSoul)
 
 func _on_full_screen_button_toggled(toggled_on):

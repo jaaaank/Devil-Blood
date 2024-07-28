@@ -33,7 +33,6 @@ offset_bottom = -0.216003
 
 [node name="HealthBar" type="TextureProgressBar" parent="CanvasLayer/TopLeftUI"]
 layout_mode = 2
-value = 100.0
 texture_under = ExtResource("3_5fm77")
 texture_over = ExtResource("3_famag")
 texture_progress = ExtResource("3_kpc5h")

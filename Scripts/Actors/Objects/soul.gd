@@ -1,4 +1,4 @@
-extends Area2D
+extends RigidBody2D
 
 var player
 @export var worth: int = 1
@@ -13,4 +13,9 @@ func _physics_process(delta):
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		PlayerAutoload.set_impureSoul(PlayerAutoload.impureSoul + 1)
-		queue_free()
+		$PickupSound.play()
+		visible = false
+		$Area2D/CollisionShape2D.disabled=true
+
+func _on_pickup_sound_finished():
+	queue_free()

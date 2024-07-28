@@ -24,7 +24,11 @@ func _ready():
 
 func _physics_process(_delta):
 	super(_delta)
-	$Guns/Muzzle.look_at(get_global_mouse_position())
+	$Guns.look_at(get_global_mouse_position())
+	if absi(int($Guns.rotation_degrees)%360)>90 and absi(int($Guns.rotation_degrees)%360)<270:
+		$Guns.flip_v = true
+	else:
+		$Guns.flip_v = false
 	PlayerAutoload.playerPos = global_position
 
 func _input(_event):
@@ -57,7 +61,7 @@ func shoot():
 			get_parent().add_sibling(a)
 			a.position = $Guns/Muzzle.global_position
 			a.scale = $Guns/Muzzle.scale
-			a.rotation_degrees = $Guns/Muzzle.rotation_degrees + randomSpread()
+			a.rotation_degrees = $Guns.rotation_degrees + randomSpread()
 			a.projDamage = 10
 			gunSounds.play()
 			gunanimp.play("rifleReload")
@@ -68,7 +72,7 @@ func shoot():
 				get_parent().add_sibling(a)
 				a.position = $Guns/Muzzle.global_position
 				a.scale = $Guns/Muzzle.scale
-				a.rotation_degrees = $Guns/Muzzle.rotation_degrees + randomSpread()
+				a.rotation_degrees = $Guns.rotation_degrees + randomSpread()
 				a.projDamage = 5
 				a.scale *= .5
 				revolve -=1
@@ -90,7 +94,7 @@ func shoot():
 				get_parent().add_sibling(b)
 				b.position = $Guns/Muzzle.global_position
 				b.scale = $Guns/Muzzle.scale
-				b.rotation_degrees = $Guns/Muzzle.rotation_degrees + randomSpread()*3
+				b.rotation_degrees = $Guns.rotation_degrees + randomSpread()*3
 				b.projDamage = 5
 			gunanimp.play("shotgunReload")
 		3:
@@ -98,7 +102,7 @@ func shoot():
 			get_parent().add_sibling(a)
 			a.position = $Guns/Muzzle.global_position
 			a.scale = $Guns/Muzzle.scale
-			a.rotation_degrees = $Guns/Muzzle.rotation_degrees
+			a.rotation_degrees = $Guns.rotation_degrees
 			a.projDamage = 6
 			a.pierce = 3
 	timey.start(reloadTime)

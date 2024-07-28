@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://ckh7b65wr83dv"]
+[gd_scene load_steps=37 format=3 uid="uid://ckh7b65wr83dv"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/PCS/Priest.gd" id="1_mpl5p"]
 [ext_resource type="PackedScene" uid="uid://cpgb6vtopm1m5" path="res://Scenes/Actors/Objects/Bullet.tscn" id="2_ndgk7"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cydieyg84jjk8" path="res://Assets/UI/shotgunui.png" id="11_ujrt1"]
 [ext_resource type="Texture2D" uid="uid://6hofvhcwmxmf" path="res://Assets/UI/crossbowui.png" id="12_38i8n"]
 [ext_resource type="AudioStream" uid="uid://c8jt477w18udm" path="res://Assets/Audio/gunshots/gunshot3.wav" id="12_ab6js"]
+[ext_resource type="Texture2D" uid="uid://b5j7if6sv5m0a" path="res://Assets/Actors/objects/rifle.png" id="13_4rvrp"]
 [ext_resource type="AudioStream" uid="uid://nd78nchjcsmm" path="res://Assets/Audio/gunshots/gunshot4.wav" id="13_xqp24"]
 
 [sub_resource type="Animation" id="Animation_fpwvm"]
@@ -230,7 +231,7 @@ Bullet = ExtResource("2_ndgk7")
 Crucifix = ExtResource("3_syaw8")
 damagenumbers = ExtResource("4_e3jdr")
 speed = 375
-health = 90
+health = 75
 sprites = Array[Texture2D]([ExtResource("5_ruavs"), ExtResource("6_d3a7i"), ExtResource("7_ufnqh")])
 
 [node name="UI" parent="." instance=ExtResource("5_ktuji")]
@@ -318,10 +319,12 @@ editor_draw_drag_margin = true
 script = SubResource("GDScript_2pnri")
 
 [node name="Guns" type="Sprite2D" parent="."]
-position = Vector2(0, -65)
-hframes = 4
+z_index = 2
+position = Vector2(0, -69)
+texture = ExtResource("13_4rvrp")
 
 [node name="Muzzle" type="Marker2D" parent="Guns"]
+position = Vector2(6, -2)
 
 [node name="Timer" type="Timer" parent="Guns"]
 one_shot = true
