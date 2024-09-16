@@ -84,7 +84,9 @@ func _ready():
 	lineone = \"Current Refined Soul: \" + str(SaveData.refinedSoul)
 	linetwo  = \"Ending Refined Soul: \" + str(SaveData.refinedSoul - soulNum)
 	linethree = \"Current Purified Soul: \" + str(SaveData.pureSoul)
+	@warning_ignore(\"integer_division\")
 	linefour = \"Gained Purified Soul: \" + str(soulNum/2)
+	@warning_ignore(\"integer_division\")
 	linefive = \"Final Purified Soul: \" + str(SaveData.pureSoul + soulNum/2)
 	$GridContainer/yeahHowMuch.text = str(soulNum)
 	desc.text = lineone + \"\\n\" + linetwo + \"\\n\" + \"Efficiency: 50%\" + \"\\n\" + linethree + \"\\n\" + linefour + \"\\n\" + linefive
@@ -103,6 +105,7 @@ func _on_down_button_pressed():
 	
 func _on_confirm_button_pressed():
 	SaveData.refinedSoul-= soulNum
+	@warning_ignore(\"integer_division\")
 	SaveData.pureSoul+= soulNum/2
 	SaveData.saveData()
 	soulNum=0

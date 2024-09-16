@@ -15,7 +15,7 @@ func _on_body_entered(body):
 		PlayerAutoload.set_impureSoul(PlayerAutoload.impureSoul + 1)
 		$PickupSound.play()
 		visible = false
-		$Area2D/CollisionShape2D.disabled=true
+		$Area2D/CollisionShape2D.set_deferred("disabled",true)
 
 func _on_pickup_sound_finished():
 	queue_free()

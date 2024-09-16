@@ -17,18 +17,31 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 shape = SubResource("CircleShape2D_0rx1s")
 
-[node name="Text" type="RichTextLabel" parent="."]
-z_index = 10
+[node name="talkingTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer"]
 custom_minimum_size = Vector2(300, 70)
-offset_right = 300.0
-offset_bottom = 70.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -327.5
+offset_top = -98.0
+offset_right = 327.5
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center]Where did you come from?"
 fit_content = true
 
-[node name="TextBG" type="ColorRect" parent="Text"]
-z_index = -1
+[node name="TextBG" type="ColorRect" parent="CanvasLayer/Text"]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,9 +49,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0.32549)
-
-[node name="talkingTimer" type="Timer" parent="."]
-wait_time = 2.0
 
 [connection signal="body_entered" from="DetectionArea" to="." method="showText"]
 [connection signal="body_exited" from="DetectionArea" to="." method="hideText"]

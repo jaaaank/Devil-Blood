@@ -1,6 +1,8 @@
 extends InteractableNPC
 
 @onready var animP: AnimationPlayer = $AnimationPlayer
+@export var dialogue: PackedStringArray
+
 
 func _ready():
 	PlayerAutoload.connect("interacted", Callable(self, "interacted"))
