@@ -97,7 +97,7 @@ autoplay = "idle"
 [node name="PopupTextBox" parent="." instance=ExtResource("5_yq5q7")]
 position = Vector2(0, -31)
 sequential = true
-possilbleText = Array[String](["Hey you!", "Where did you come from?", "You're a priest?", "If you're not gonna try to kill me, maybe you can help me help someone."])
+possilbleText = Array[String](["Hey you!", "Where did you come from?", "You're a priest?", "If you're not gonna try to kill me, maybe you can help me help someone.", "I'm looking for something."])
 
 [connection signal="body_entered" from="InteractionShape2D" to="." method="_on_interaction_shape_2d_body_entered"]
 [connection signal="body_exited" from="InteractionShape2D" to="." method="_on_interaction_shape_2d_body_exited"]
