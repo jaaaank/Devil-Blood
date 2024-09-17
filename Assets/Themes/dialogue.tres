@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bhbtcgwm1ue40"]
+
+[ext_resource type="FontFile" uid="uid://djw0ulki86t6g" path="res://Assets/Themes/Fonts/pixelSans/PixelifySans-Regular.ttf" id="1_4jqua"]
+
+[resource]
+default_font = ExtResource("1_4jqua")
+default_font_size = 30

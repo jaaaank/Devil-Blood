@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvctslx0ljdj1"
-path="res://.godot/imported/rats.png-2b583904cb44b636fb25b1ba134c2878.ctex"
+path="res://.godot/imported/rats.png-cf27bc440bacee4e7c44e7e62782c350.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Actors/rats.png"
-dest_files=["res://.godot/imported/rats.png-2b583904cb44b636fb25b1ba134c2878.ctex"]
+source_file="res://Assets/Actors/npcs/rats.png"
+dest_files=["res://.godot/imported/rats.png-cf27bc440bacee4e7c44e7e62782c350.ctex"]
 
 [params]
 

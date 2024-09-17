@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ca3qq02cwak41"]
+[gd_scene load_steps=4 format=3 uid="uid://ca3qq02cwak41"]
 
 [ext_resource type="Script" path="res://Scripts/Screens/Popups/PopupTextBox.gd" id="1_7wbxq"]
+[ext_resource type="Theme" uid="uid://bhbtcgwm1ue40" path="res://Assets/Themes/dialogue.tres" id="2_42w5l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0rx1s"]
 radius = 362.068
@@ -30,14 +31,15 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -327.5
-offset_top = -98.0
-offset_right = 327.5
+offset_left = -327.0
+offset_top = -149.0
+offset_right = 328.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("2_42w5l")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
-text = "[center]Where did you come from?"
+text = "Where did you come from?"
 fit_content = true
 
 [node name="TextBG" type="ColorRect" parent="CanvasLayer/Text"]
@@ -49,6 +51,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0.32549)
+
+[node name="Buttons" type="VBoxContainer" parent="CanvasLayer/Text"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = -46.0
+offset_right = 102.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="op1" type="Button" parent="CanvasLayer/Text/Buttons"]
+layout_mode = 2
+text = "Yes"
+
+[node name="op2" type="Button" parent="CanvasLayer/Text/Buttons"]
+layout_mode = 2
+text = "No"
 
 [connection signal="body_entered" from="DetectionArea" to="." method="showText"]
 [connection signal="body_exited" from="DetectionArea" to="." method="hideText"]

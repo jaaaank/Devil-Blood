@@ -2,6 +2,8 @@ extends Actor
 class_name InteractableNPC
 
 var interactable: bool = false
+@export var dialogueName: String
+@export var dialogueColor: String
 @export var wantedItem: itemType
 
 

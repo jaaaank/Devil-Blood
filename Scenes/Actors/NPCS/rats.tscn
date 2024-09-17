@@ -1,10 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://dgqi0y0iofow"]
 
-[ext_resource type="Texture2D" uid="uid://cvctslx0ljdj1" path="res://Assets/Actors/rats.png" id="1_m6yfr"]
+[ext_resource type="Texture2D" uid="uid://cvctslx0ljdj1" path="res://Assets/Actors/npcs/rats.png" id="1_m6yfr"]
 [ext_resource type="Script" path="res://Scripts/Actors/NPCS/rats.gd" id="1_pdmw7"]
 [ext_resource type="Texture2D" uid="uid://bj5hpms2hmi6b" path="res://Scenes/Items/ratsFriends.tres" id="2_q5sxn"]
 [ext_resource type="PackedScene" uid="uid://ca3qq02cwak41" path="res://Scenes/Screens/Popups/PopupTextBox.tscn" id="2_vn21l"]
 [ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="3_2vxxn"]
+
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lid8e"]
 radius = 5.0

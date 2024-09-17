@@ -1,3 +1,6 @@
-[gd_resource type="Theme" format=3 uid="uid://ds7wm5eucurlm"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ds7wm5eucurlm"]
+
+[ext_resource type="FontFile" uid="uid://djw0ulki86t6g" path="res://Assets/Themes/Fonts/pixelSans/PixelifySans-Regular.ttf" id="1_hrtk5"]
 
 [resource]
+default_font = ExtResource("1_hrtk5")

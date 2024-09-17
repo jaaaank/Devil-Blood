@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b6xv6y51wjx1e"]
+[gd_scene load_steps=11 format=3 uid="uid://b6xv6y51wjx1e"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/NPCS/doctor.gd" id="1_47b7b"]
 [ext_resource type="Texture2D" uid="uid://dhy00wqlh7jh5" path="res://Scenes/Items/drsbag.tres" id="2_4a16y"]
-[ext_resource type="Texture2D" uid="uid://bgw25tsm4lnf0" path="res://Assets/Actors/doctor.png" id="2_uyff7"]
+[ext_resource type="Texture2D" uid="uid://bgw25tsm4lnf0" path="res://Assets/Actors/npcs/doctor.png" id="2_uyff7"]
 [ext_resource type="Texture2D" uid="uid://boiwnnrpjwx62" path="res://Assets/Actors/objects/shadow.png" id="4_0lmj5"]
+[ext_resource type="PackedScene" uid="uid://ca3qq02cwak41" path="res://Scenes/Screens/Popups/PopupTextBox.tscn" id="5_yq5q7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lid8e"]
 radius = 12.0
@@ -57,6 +58,8 @@ position = Vector2(0, -4)
 collision_layer = 128
 collision_mask = 159
 script = ExtResource("1_47b7b")
+dialogueName = "Doctor"
+dialogueColor = "f5daef"
 wantedItem = ExtResource("2_4a16y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -85,46 +88,16 @@ monitorable = false
 position = Vector2(0, 16)
 shape = SubResource("CapsuleShape2D_cble4")
 
-[node name="hasBag" type="VBoxContainer" parent="."]
-visible = false
-z_index = 10
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -114.0
-offset_top = 61.0
-offset_right = 114.0
-offset_bottom = 119.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Label" type="Label" parent="hasBag"]
-layout_mode = 2
-text = "Give the doctor his bag?"
-horizontal_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="hasBag"]
-layout_mode = 2
-
-[node name="yes" type="Button" parent="hasBag/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Yes"
-
-[node name="no" type="Button" parent="hasBag/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "No"
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_323s7")
 }
 autoplay = "idle"
 
+[node name="PopupTextBox" parent="." instance=ExtResource("5_yq5q7")]
+position = Vector2(0, -31)
+sequential = true
+possilbleText = Array[String](["Hey you!", "Where did you come from?", "You're a priest?", "If you're not gonna try to kill me, maybe you can help me help someone."])
+
 [connection signal="body_entered" from="InteractionShape2D" to="." method="_on_interaction_shape_2d_body_entered"]
 [connection signal="body_exited" from="InteractionShape2D" to="." method="_on_interaction_shape_2d_body_exited"]
-[connection signal="pressed" from="hasBag/HBoxContainer/yes" to="." method="yorn" binds= [true]]
-[connection signal="pressed" from="hasBag/HBoxContainer/no" to="." method="yorn" binds= [false]]

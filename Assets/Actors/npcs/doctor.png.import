@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwrtymprim155"
-path="res://.godot/imported/sonasheet.png-128c51465a05f05761a6da8adaaa2b73.ctex"
+uid="uid://bgw25tsm4lnf0"
+path="res://.godot/imported/doctor.png-0fdbf90a3e9cab593fe0e63ac01e0bf8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Actors/sonasheet.png"
-dest_files=["res://.godot/imported/sonasheet.png-128c51465a05f05761a6da8adaaa2b73.ctex"]
+source_file="res://Assets/Actors/npcs/doctor.png"
+dest_files=["res://.godot/imported/doctor.png-0fdbf90a3e9cab593fe0e63ac01e0bf8.ctex"]
 
 [params]
 
